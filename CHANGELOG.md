@@ -13,6 +13,39 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.6.0] - 2026-10-26
+
+### 🎵 Player Oficial do Hino, Fotos Autênticas do Mundial 2000, Identidade no Gráfico da Dívida e Panteão Feminino
+
+Esta versão traz cinco aprimoramentos de peso solicitados pela comunidade: a integração de um player moderno com o hino oficial do clube, a correção documental das fotografias da Invasão do Mundial de 2000, nova paleta temática para o gráfico da dívida consolidada, atualização da imagem de Sócrates de corpo inteiro e a consagração das lendárias "Brabas" no Panteão de Ídolos.
+
+### ✨ Adicionado (Added)
+- **Player de Áudio do Hino do Corinthians ("Salve o Corinthians" - Lauro D'Ávila, 1953):**
+  - Player flutuante dockável (`hino-floating-player`) no canto inferior da tela, com disco de vinil giratório, carimbo com o brasão do portal, controles completos (Play/Pause, Stop, Reiniciar), barra de progresso interativa para avanço/recuo de tempo, cronômetro de reprodução e duração total, controle de volume deslizante com atalho de mudo, e botão de minimizar para modo compacto.
+  - Botão de acesso rápido integrado à barra de navegação superior (`btn-hino-header`), com animação de equalizador sonoro alvinegro em CSS e sincronização com o player flutuante.
+  - Áudio de alta fidelidade armazenado localmente em `assets/audio/hino-corinthians.mp3`.
+- **Expansão do Panteão de Ídolos com as Lendas do Futebol Feminino ("As Brabas"):**
+  - **Gabi Zanotti (A Mágica da Camisa 10):** 230 jogos, 68 gols, tetracampeã da Libertadores e hexacampeã brasileira, com fotografia autêntica em 4K erguendo a taça da Libertadores com a camisa 10 (`assets/images/idolos/gabi_zanotti.jpg` - Staff Images Woman / CONMEBOL Libertadores).
+  - **Vic Albuquerque (A Artilheira Histórica):** 215 jogos, mais de 100 gols marcados (maior artilheira da história do Corinthians Feminino), com foto real em celebração de gol com o manto alvinegro (`assets/images/idolos/vic_albuquerque.jpg` - Agência Corinthians / Rodrigo Gazzanel).
+  - **Tamires Dias (Mãe e Capitã da Fiel):** 175 jogos, multicampeã de tudo pelo Corinthians e medalhista de prata olímpica em Paris 2024, capitã da Seleção e referência de liderança mundial (`assets/images/idolos/tamires.jpg` - Agência Corinthians / Acervo SCCP).
+
+### 🔄 Modificado (Changed)
+- **Correção Documental e Fotos Históricas da Invasão de 2000 (Mundial FIFA no Maracanã):**
+  - *Foto 1:* Substituição da fotografia incorreta da moderna Neo Química Arena por fotografia histórica real da final do 1º Mundial de Clubes da FIFA no Maracanã (`assets/images/invasoes/2000_orla_copacabana.jpg`), registrando a histórica defesa de pênalti de Dida no chute de Gilberto perante mais de 35 mil corinthianos (foto de Ricardo Corrêa / Revista Placar Especial Nº 1159-A, Jan/2000).
+  - *Foto 2:* Substituição da miniatura de baixa resolução por fotografia colorida autêntica em alta definição do capitão Freddy Rincón no topo do pódio no Maracanã (`assets/images/invasoes/2000_maracana_arquibancada.jpg`), erguendo a taça do Mundial ao lado do presidente Joseph Blatter e do técnico Oswaldo de Oliveira (Acervo FIFA / CBF / Agência Estado).
+- **Substituição da Imagem de Sócrates no Panteão de Ídolos:**
+  - Substituição da foto de busto/frase por uma autêntica fotografia esportiva histórica de Sócrates em campo, de corpo inteiro, vestindo o manto sagrado listrado do Corinthians, calção e meias, em clássica postura de jogo no gramado executando seu genial toque de calcanhar (`assets/images/idolos/socrates.jpg` - Revista Placar / Acervo Histórico).
+- **Paleta Temática e Contraste no Gráfico de Composição da Dívida Consolidada:**
+  - Substituição dos tons monocromáticos de cinza no gráfico em formato de rosca (`chartComposicao`) por uma paleta vibrante, característica e fiel às cores históricas do Timão:
+    - *Passivo Fiscal e Tributário (Profut / Perse / FGTS):* Vermelho Escudo do Timão (`#dc2626`)
+    - *Financiamento da Arena (Caixa):* Branco Alvinegro (`#ffffff`) com borda contrastante
+    - *Direitos de Imagem, Luvas e Atletas:* Dourado Campeão Mundial (`#eab308`)
+    - *Empréstimos Bancários e Financiamentos:* Azul Centenário / São Jorge (`#2563eb`)
+    - *Fornecedores e Intermediários:* Cinza Chumbo Metálico (`#64748b`)
+  - Atualização dos metadados em `data/corinthians-data.js` e binding dinâmico em `js/app.js`.
+
+---
+
 ## [1.5.0] - 2026-10-26
 
 ### 📷 Substituição Integral por Fotografias Históricas Reais (Sem IA)

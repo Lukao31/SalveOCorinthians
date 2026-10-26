@@ -291,11 +291,11 @@ const CORINTHIANS_DATA = {
 
     // Composição da Dívida Atual do Clube (em R$ Milhões)
     composicaoDivida: [
-      { categoria: "Passivo Fiscal e Tributário (Profut / Perse / FGTS)", valor: 480, cor: "#ffffff", pct: 33 },
-      { categoria: "Financiamento da Arena (Caixa Econômica)", valor: 700, cor: "#b3b3b3", pct: 32 },
-      { categoria: "Direitos de Imagem, Luvas e Atletas", valor: 310, cor: "#737373", pct: 14 },
-      { categoria: "Empréstimos Bancários e Financiamentos", valor: 240, cor: "#525252", pct: 11 },
-      { categoria: "Fornecedores e Intermediários de Atletas", valor: 220, cor: "#333333", pct: 10 }
+      { categoria: "Passivo Fiscal e Tributário (Profut / Perse / FGTS)", valor: 480, cor: "#dc2626", pct: 33 },
+      { categoria: "Financiamento da Arena (Caixa Econômica)", valor: 700, cor: "#ffffff", pct: 32 },
+      { categoria: "Direitos de Imagem, Luvas e Atletas", valor: 310, cor: "#eab308", pct: 14 },
+      { categoria: "Empréstimos Bancários e Financiamentos", valor: 240, cor: "#2563eb", pct: 11 },
+      { categoria: "Fornecedores e Intermediários de Atletas", valor: 220, cor: "#64748b", pct: 10 }
     ],
 
     // Composição das Receitas Anuais Estimadas (em R$ Milhões)
@@ -608,8 +608,8 @@ const CORINTHIANS_DATA = {
       legado: "Símbolo máximo da inteligência, elegância com toques de calcanhar e líder da Democracia Corinthiana. Médico, pensador e ícone da resistência popular contra a ditadura militar.",
       tag: "democracia",
       foto: "assets/images/idolos/socrates.jpg",
-      fotoMomento: "Dr. Sócrates com o manto sagrado do Corinthians, erguendo o braço direito e o punho cerrado, o gesto que imortalizou a Democracia Corinthiana.",
-      fonteFoto: "Acervo Histórico / Fiel Torcida"
+      fotoMomento: "Dr. Sócrates em clássica jogada de corpo inteiro com a bola no gramado vestindo o manto sagrado alvinegro e executando seu genial toque de calcanhar.",
+      fonteFoto: "Acervo Histórico / Revista Placar"
     },
     {
       id: "marcelinho",
@@ -777,6 +777,51 @@ const CORINTHIANS_DATA = {
       fonteFoto: "Acervo Meu Timão / Agência Corinthians"
     },
     {
+      id: "gabi-zanotti",
+      nome: "Gabi Zanotti (A Mágica da 10)",
+      periodo: "2018 - Presente",
+      jogos: 230,
+      gols: 68,
+      posicao: "Meio-campista / Camisa 10",
+      titulos: "Libertadores Feminina (2018, 2021, 2023, 2024), Brasileirão (2018, 2020, 2021, 2022, 2023, 2024), Supercopa (2022, 2023, 2024), Paulistas",
+      frase: "'Vestir a camisa 10 do Corinthians é saber que quando você entra em campo, 35 milhões de corações jogam com você.'",
+      legado: "A grande maestrina da dinastia das Brabas. Eleita melhor jogadora do continente, dona de inteligência ímpar e autora de gols antológicos em decisões de Libertadores e Brasileirão.",
+      tag: "as-brabas",
+      foto: "assets/images/idolos/gabi_zanotti.jpg",
+      fotoMomento: "Gabi Zanotti com a medalha de campeã continental no peito erguendo a taça da Copa Libertadores Feminina com o manto sagrado alvinegro.",
+      fonteFoto: "Staff Images Woman / CONMEBOL Libertadores"
+    },
+    {
+      id: "vic-albuquerque",
+      nome: "Vic Albuquerque (A Artilheira Histórica)",
+      periodo: "2019 - 2021, 2022 - Presente",
+      jogos: 215,
+      gols: 108,
+      posicao: "Atacante / Meia Ofensiva",
+      titulos: "Libertadores Feminina (4x), Brasileirão Feminino (5x), Supercopa (3x), Paulistas",
+      frase: "'Ultrapassar 100 gols com a camisa do Timão é viver um sonho que eu nunca quero acordar.'",
+      legado: "Maior artilheira de toda a história do Corinthians Feminino, superando a marca centenária de gols. Decisiva e fria em clássicos e finais, sinônimo de raça e precisão goleadora.",
+      tag: "as-brabas",
+      foto: "assets/images/idolos/vic_albuquerque.jpg",
+      fotoMomento: "Vic Albuquerque em comemoração efusiva celebrando gol histórico pelas Brabas do Timão.",
+      fonteFoto: "Agência Corinthians / Rodrigo Gazzanel"
+    },
+    {
+      id: "tamires",
+      nome: "Tamires Dias (Mãe e Capitã da Fiel)",
+      periodo: "2019 - Presente",
+      jogos: 175,
+      gols: 35,
+      posicao: "Lateral-esquerda / Ala",
+      titulos: "Libertadores Feminina (4x), Brasileirão Feminino (5x), Supercopa (3x), Prata Olímpica Paris 2024",
+      frase: "'A Fiel nos abraçou e mostrou que aqui nós jogamos por um propósito maior do que o futebol.'",
+      legado: "Capitã da Seleção Brasileira e ícone global do esporte. Modelo de vigor atlético, liderança ética e qualidade técnica internacional, multicampeã de tudo pelo Corinthians.",
+      tag: "as-brabas",
+      foto: "assets/images/idolos/tamires.jpg",
+      fotoMomento: "Tamires em ação pelo Corinthians na lateral-esquerda, desfilando sua classe e raça alvinegra.",
+      fonteFoto: "Agência Corinthians / Acervo SCCP"
+    },
+    {
       id: "basilio",
       nome: "Basílio (Pé de Anjo de 77)",
       periodo: "1975 - 1981",
@@ -900,15 +945,15 @@ const CORINTHIANS_DATA = {
         fotos: [
           {
             url: "assets/images/invasoes/2000_orla_copacabana.jpg",
-            titulo: "A Fiel e o Grande Bandeirão Alvinegro no Maracanã",
-            legenda: "Registro fotográfico real da torcida do Corinthians desfraldando seu grande bandeirão e cantando no Maracanã durante a invasão histórica de mais de 35 mil alvinegros na final contra o Vasco.",
-            credito: "Foto Real: Torcida do Corinthians / Acervo Wikimedia Commons"
+            titulo: "A Muralha Dida: Defesa de Pênalti no Maracanã (Final 2000)",
+            legenda: "Registro fotográfico autêntico da decisão do 1º Mundial de Clubes da FIFA no Maracanã: o goleiro Dida salta no canto e defende o pênalti de Gilberto, garantindo o título perante mais de 35 mil corinthianos.",
+            credito: "Foto Real: Ricardo Corrêa / Revista Placar Especial Nº 1159-A (Jan/2000)"
           },
           {
             url: "assets/images/invasoes/2000_maracana_arquibancada.jpg",
-            titulo: "Revista Placar Nº 1159: Corinthians Campeão Mundial 2000",
-            legenda: "Capa documental autêntica da edição histórica da Revista Placar de janeiro de 2000 após a final no Maracanã, com Marcelinho Carioca, Freddy Rincón e o elenco corinthiano erguendo a taça do primeiro Mundial de Clubes da FIFA.",
-            credito: "Documento Real: Revista Placar / Acervo Internet Archive (Nº 1159, Jan/2000)"
+            titulo: "Freddy Rincón Ergue a Taça de Campeão Mundial no Maracanã (2000)",
+            legenda: "Fotografia colorida autêntica em alta definição do capitão Freddy Rincón no topo do pódio no Maracanã erguendo a taça do 1º Mundial de Clubes da FIFA, ao lado do presidente Joseph Blatter e do técnico Oswaldo de Oliveira.",
+            credito: "Foto Real: Acervo Histórico FIFA / CBF / Agência Estado"
           },
           {
             url: "assets/images/invasoes/2000_taca_mundial.jpg",

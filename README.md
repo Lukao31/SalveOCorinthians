@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.5.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.6.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -53,7 +53,7 @@ Quadro comparativo aprofundado:
 ### 4. 📊 Balanço Financeiro & Gráficos Interativos (Chart.js)
 Três gráficos analíticos integrados:
 1. **Evolução da Dívida Consolidada (2012–2026):** Salto de R$ 180 milhões (2012) para os atuais R$ 2,35 bilhões (incluindo passivo do clube social, futebol e financiamento do estádio).
-2. **Composição da Dívida Atual:** Divisão entre Dívida Tributária/Fiscal, Empréstimos Bancários, Direitos de Imagem/Atletas, Fornecedores e Neo Química Arena.
+2. **Composição da Dívida Atual:** Visualização em rosca com paleta temática e contrastante do Timão (Vermelho Escudo, Branco Alvinegro, Dourado Campeão, Azul São Jorge e Grafite Metálico) dividindo Dívida Tributária/Fiscal, Financiamento da Arena, Direitos de Imagem/Atletas, Empréstimos Bancários e Fornecedores.
 3. **Receitas vs. Despesas (2025):** Comparativo de bilheteria, direitos de transmissão, patrocínios, sócio-torcedor e custos com elenco e juros.
 
 ### 5. 🧮 Simulador Dinâmico SAFIEL
@@ -63,21 +63,28 @@ Ferramenta interativa onde o torcedor ajusta:
 - Exibe o valor arrecadado por mês e por ano, além de prever em quantos meses a dívida do clube seria integralmente quitada pela Fiel.
 
 ### 6. ⚽ Central de Jogos e Resultados
-Acompanhamento dos jogos recentes e confrontos futuros do Timão, com placares, competições, datas e locais.
+Acompanhamento dos jogos recentes e confrontos futuros do Timão, com placares, competições, datas e locais mantidos em ordem cronológica contínua.
 
 ### 7. 🏆 Memorial de Títulos
 Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa Libertadores Invicta, Brasileirões, Copas do Brasil, Recopa Sul-Americana e Paulistões lendários.
 
 ### 8. 🛡️ Panteão de Ídolos Eternos
-Cards com biografias, estatísticas de partidas, gols marcados, conquistas e frases marcantes de lendas como Sócrates, Rivellino, Marcelinho Carioca, Cássio, Luizinho e outros. Conta com modal de visualização aprofundada ao clicar.
+Cards com biografias, estatísticas de partidas, gols marcados, conquistas e frases marcantes com modal detalhado ao clicar:
+- **Lendas Históricas Masculinas:** Sócrates (com fotografia clássica de corpo inteiro em campo com o manto alvinegro executando passe de calcanhar), Rivellino, Marcelinho Carioca, Cássio, Luizinho e mais.
+- **As Brabas (Futebol Feminino Multicampeão):** Gabi Zanotti (A Mágica da Camisa 10, tetracampeã da América), Vic Albuquerque (maior artilheira da história do Timão com mais de 100 gols) e Tamires (capitã da Fiel e referência da Seleção Brasileira).
 
 ### 9. 🚂 As Três Grandes Invasões da Fiel (Fotografias Históricas Reais & Relatos)
 Experiência imersiva com as três maiores mobilizações de torcida da história: **1976 (Maracanã)**, **2000 (Mundial no Rio)** e **2012 (Mundial no Japão)**.
 - Ao clicar em cada invasão, abre-se um modal dedicado com **3 fotografias históricas 100% reais (sem imagens de IA)**, resgatadas de acervos jornalísticos e institucionais (9 fotos no total).
-- Registros autênticos de Mílton Jung, Acervo Fortepan, Memorial Corinthians, Tomofumi Kitano e Revista Placar.
+- Registros autênticos do Mundial de 2000: defesa épica de pênalti de Dida no Maracanã e o capitão Freddy Rincón erguendo o troféu da FIFA no topo do pódio (Revista Placar / Acervo FIFA).
 - Carrossel com navegação por miniaturas, setas e teclado (`ArrowLeft` / `ArrowRight`).
 - **Relatos de Fontes Confiáveis:** Citações documentadas de Nelson Rodrigues, Tite, Cássio, Tobias, Freddy Rincón, Dinei, Marcelinho Carioca, Frank Lampard, FIFA Technical Report e imprensa da época.
 - **Cortes & Registros em Vídeo:** Botões diretos para assistir a momentos decisivos e documentários no YouTube.
+
+### 10. 🎵 Player Interativo do Hino do Corinthians
+- **Player Flutuante Dockável:** Localizado no canto inferior, com disco de vinil animado, controles de reprodução (Play, Pause, Stop, Reiniciar), barra interativa de tempo (scrubber), cronômetro dinâmico e controle de volume deslizante.
+- **Botão Rápido no Topo:** Integrado à barra de navegação com barras animadas de equalizador alvinegro para rápida ativação em qualquer página ou dispositivo.
+- **Áudio Nativo:** Gravação oficial ("Salve o Corinthians" - Lauro D'Ávila, 1953) servida localmente em alta fidelidade.
 
 ---
 
@@ -95,6 +102,8 @@ Experiência imersiva com as três maiores mobilizações de torcida da históri
 ```text
 Salve o Corinthians/
 ├── assets/
+│   ├── audio/
+│   │   └── hino-corinthians.mp3    # Hino oficial em alta fidelidade
 │   └── images/
 │       ├── hero.jpg
 │       ├── historia.jpg
@@ -102,19 +111,19 @@ Salve o Corinthians/
 │       ├── logo-salve-corinthians.svg
 │       ├── logo-salve-corinthians-emblem.svg
 │       ├── logo-safiel.svg
-│       ├── idolos/
+│       ├── idolos/                 # Sócrates (corpo inteiro), Cássio, Marcelinho, Rivellino, Brabas (Gabi Zanotti, Vic, Tamires)
 │       ├── titulos/
-│       └── invasoes/        # 9 fotos históricas (3 para 1976, 3 para 2000, 3 para 2012)
+│       └── invasoes/               # 9 fotos históricas reais (1976, 2000 com Dida e Rincón, 2012)
 ├── css/
-│   └── style.css            # Folha de estilo completa, responsiva e com design system alvinegro
+│   └── style.css                   # Design system, responsividade, componentes do player de hino
 ├── data/
-│   └── corinthians-data.js   # Base de dados estruturada (fatos, finanças, jogos, títulos, ídolos, invasões)
+│   └── corinthians-data.js          # Base estruturada (fatos, finanças com paleta alvinegra, jogos, títulos, ídolos, invasões)
 ├── js/
-│   └── app.js               # Lógica interativa, modais de galeria e relatos, gráficos, simulador
-├── .gitignore               # Arquivos ignorados pelo Git
-├── CHANGELOG.md             # Registro de todas as versões, alterações e adições
-├── README.md                # Documentação técnica e visão geral do projeto
-└── index.html               # Estrutura HTML5 semântica e acessível
+│   └── app.js                      # Lógica interativa, player de áudio do hino, modais, gráficos Chart.js, simulador
+├── .gitignore                      # Arquivos ignorados pelo Git
+├── CHANGELOG.md                    # Registro completo de todas as versões e alterações
+├── README.md                       # Documentação técnica e visão geral do projeto
+└── index.html                      # Estrutura HTML5 com player do hino, central de jogos e seções interativas
 ```
 
 ---

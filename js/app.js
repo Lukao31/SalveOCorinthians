@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderIdolos('todos');
   renderEstatisticas();
   renderFontes();
+  initHinoPlayer();
   setupEventListeners();
   setupScrollSpy();
 });
@@ -158,8 +159,8 @@ function initFinancialCharts() {
         labels: compLabels,
         datasets: [{
           data: compValues,
-          backgroundColor: ['#ffffff', '#cccccc', '#888888', '#555555', '#2c2c2c'],
-          borderColor: '#111111',
+          backgroundColor: compColors,
+          borderColor: '#0a0a0a',
           borderWidth: 3,
           hoverOffset: 8
         }]
@@ -1131,5 +1132,175 @@ window.abrirModalInvasao = abrirModalInvasao;
 window.fecharModalInvasao = fecharModalInvasao;
 window.mudarFotoInvasao = mudarFotoInvasao;
 window.selecionarFotoInvasao = selecionarFotoInvasao;
+
+/* ==========================================================================
+   10. Player Oficial do Hino do Corinthians
+   ========================================================================== */
+function initHinoPlayer() {
+  const audio = document.getElementById('corinthians-anthem-audio');
+  const playerContainer = document.getElementById('hino-player-container');
+  const navBtn = document.getElementById('btn-toggle-hino-nav');
+  const playBtn = document.getElementById('hino-btn-play');
+  const playIcon = document.getElementById('hino-icon-play');
+  const prevBtn = document.getElementById('hino-btn-prev');
+  const stopBtn = document.getElementById('hino-btn-stop');
+  const muteBtn = document.getElementById('hino-btn-mute');
+  const volumeIcon = document.getElementById('hino-icon-volume');
+  const volumeSlider = document.getElementById('hino-volume-slider');
+  const progressWrap = document.getElementById('hino-progress-wrap');
+  const progressFill = document.getElementById('hino-progress-fill');
+  const timeCurrent = document.getElementById('hino-time-current');
+  const timeDuration = document.getElementById('hino-time-duration');
+  const vinyl = document.getElementById('hino-vinyl');
+  const minimizeBtn = document.getElementById('hino-btn-minimize');
+  const collapseIcon = document.getElementById('hino-icon-collapse');
+
+  if (!audio || !playerContainer) return;
+
+  function formatTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  }
+
+  function setPlayingState(isPlaying) {
+    if (isPlaying) {
+      playerContainer.classList.add('is-playing');
+      if (playIcon) playIcon.className = 'fa-solid fa-pause';
+      if (navBtn) navBtn.classList.add('is-playing');
+      if (vinyl) vinyl.classList.add('rotating');
+    } else {
+      playerContainer.classList.remove('is-playing');
+      if (playIcon) playIcon.className = 'fa-solid fa-play';
+      if (navBtn) navBtn.classList.remove('is-playing');
+      if (vinyl) vinyl.classList.remove('rotating');
+    }
+  }
+
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play().then(() => {
+        setPlayingState(true);
+      }).catch(err => {
+        console.warn('Playback prevented:', err);
+      });
+    } else {
+      audio.pause();
+      setPlayingState(false);
+    }
+  }
+
+  // Toggle pelo botão da barra de navegação
+  if (navBtn) {
+    navBtn.addEventListener('click', () => {
+      // Se o player estiver minimizado, expande
+      playerContainer.classList.remove('minimized');
+      if (collapseIcon) collapseIcon.className = 'fa-solid fa-chevron-down';
+      togglePlay();
+    });
+  }
+
+  // Controles do player
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      audio.currentTime = 0;
+    });
+  }
+
+  if (stopBtn) {
+    stopBtn.addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+      setPlayingState(false);
+      if (progressFill) progressFill.style.width = '0%';
+      if (timeCurrent) timeCurrent.textContent = '0:00';
+    });
+  }
+
+  // Eventos de tempo do áudio
+  audio.addEventListener('timeupdate', () => {
+    const current = audio.currentTime;
+    const duration = audio.duration || 0;
+    if (timeCurrent) timeCurrent.textContent = formatTime(current);
+    if (duration > 0 && progressFill) {
+      const pct = (current / duration) * 100;
+      progressFill.style.width = `${pct}%`;
+      if (progressWrap) progressWrap.setAttribute('aria-valuenow', Math.round(pct));
+    }
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    if (timeDuration && audio.duration) {
+      timeDuration.textContent = formatTime(audio.duration);
+    }
+  });
+
+  audio.addEventListener('ended', () => {
+    setPlayingState(false);
+    audio.currentTime = 0;
+    if (progressFill) progressFill.style.width = '0%';
+    if (timeCurrent) timeCurrent.textContent = '0:00';
+  });
+
+  // Barra de progresso interativa
+  if (progressWrap) {
+    const handleSeek = (e) => {
+      const rect = progressWrap.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      if (width > 0 && audio.duration) {
+        const targetPercent = Math.max(0, Math.min(1, clickX / width));
+        audio.currentTime = targetPercent * audio.duration;
+      }
+    };
+    progressWrap.addEventListener('click', handleSeek);
+  }
+
+  // Controle de volume
+  if (volumeSlider) {
+    audio.volume = parseFloat(volumeSlider.value);
+    volumeSlider.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      audio.volume = val;
+      audio.muted = (val === 0);
+      updateVolumeIcon(val);
+    });
+  }
+
+  function updateVolumeIcon(vol) {
+    if (!volumeIcon) return;
+    if (audio.muted || vol === 0) {
+      volumeIcon.className = 'fa-solid fa-volume-xmark';
+    } else if (vol < 0.5) {
+      volumeIcon.className = 'fa-solid fa-volume-low';
+    } else {
+      volumeIcon.className = 'fa-solid fa-volume-high';
+    }
+  }
+
+  if (muteBtn) {
+    muteBtn.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      if (volumeSlider) {
+        volumeSlider.value = audio.muted ? 0 : audio.volume;
+      }
+      updateVolumeIcon(audio.muted ? 0 : audio.volume);
+    });
+  }
+
+  // Minimizar / Expandir Player
+  if (minimizeBtn) {
+    minimizeBtn.addEventListener('click', () => {
+      playerContainer.classList.toggle('minimized');
+      const isMinimized = playerContainer.classList.contains('minimized');
+      if (collapseIcon) {
+        collapseIcon.className = isMinimized ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
+      }
+    });
+  }
+}
 
 
