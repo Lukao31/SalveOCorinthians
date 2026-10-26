@@ -1,63 +1,226 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 100" width="540" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 110" width="570" height="110">
   <defs>
-    <!-- Filtros de sombra e brilho sutil -->
-    <filter id="corinthiansGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#ffffff" flood-opacity="0.25" />
-    </filter>
-    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#cccccc" />
+    <!-- Gradientes Principais: Alvinegro, Vermelho Timão e Ouro Mundial -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2b2"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#704e00"/>
     </linearGradient>
+
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f5d77f"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+
+    <linearGradient id="redCorinthians" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef233c"/>
+      <stop offset="50%" stop-color="#c90016"/>
+      <stop offset="100%" stop-color="#7a0008"/>
+    </linearGradient>
+
+    <linearGradient id="oarWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d90429"/>
+      <stop offset="50%" stop-color="#9d0208"/>
+      <stop offset="100%" stop-color="#590004"/>
+    </linearGradient>
+
+    <linearGradient id="whiteTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#f4f4f5"/>
+      <stop offset="100%" stop-color="#d1d1d6"/>
+    </linearGradient>
+
+    <linearGradient id="blackShield" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="50%" stop-color="#09090b"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#d4af37" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="starGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#ffd700" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- Caminho curvo para texto da bóia -->
+    <path id="topArcText" d="M 21 55 A 34 34 0 0 1 89 55" fill="none"/>
+    <path id="botArcText" d="M 89 55 A 34 34 0 0 1 21 55" fill="none"/>
   </defs>
 
-  <!-- Escudo e Âncora Ícone à Esquerda -->
-  <g transform="translate(10, 10)">
-    <!-- Círculo externo -->
-    <circle cx="40" cy="40" r="38" fill="#080808" stroke="#ffffff" stroke-width="3" filter="url(#corinthiansGlow)"/>
+  <!-- ==========================================================================
+       LADO ESQUERDO: BRASÃO HERÁLDICO ORIGINAL (Âncora, Remos, Bóia e Bandeira)
+       Centro do brasão em (55, 55)
+       ========================================================================== -->
+  <g transform="translate(4, 0)" filter="url(#logoGlow)">
     
-    <!-- Remos Cruzados (Vetor simplificado) -->
-    <line x1="16" y1="16" x2="64" y2="64" stroke="#888888" stroke-width="3.5" stroke-linecap="round"/>
-    <line x1="64" y1="16" x2="16" y2="64" stroke="#888888" stroke-width="3.5" stroke-linecap="round"/>
-    
-    <!-- Pá dos remos -->
-    <rect x="12" y="12" width="7" height="11" rx="2" transform="rotate(45 15.5 17.5)" fill="#ffffff"/>
-    <rect x="61" y="61" width="7" height="11" rx="2" transform="rotate(45 64.5 66.5)" fill="#ffffff"/>
-    <rect x="61" y="12" width="7" height="11" rx="2" transform="rotate(-45 64.5 17.5)" fill="#ffffff"/>
-    <rect x="12" y="61" width="7" height="11" rx="2" transform="rotate(-45 15.5 66.5)" fill="#ffffff"/>
+    <!-- 1. REMOS NÁUTICOS CRUZADOS (45° e -45°) -->
+    <g transform="rotate(45 55 55)">
+      <rect x="53" y="10" width="4" height="90" rx="2" fill="url(#oarWood)" stroke="#ffffff" stroke-width="0.8"/>
+      <!-- Pá Superior -->
+      <path d="M 51 9 C 51 6, 59 6, 59 9 L 60 21 C 60 23, 50 23, 50 21 Z" fill="url(#redCorinthians)" stroke="#ffffff" stroke-width="0.8"/>
+      <line x1="55" y1="9" x2="55" y2="20" stroke="url(#goldGrad)" stroke-width="0.8"/>
+      <!-- Pá Inferior -->
+      <path d="M 51 101 C 51 104, 59 104, 59 101 L 60 89 C 60 87, 50 87, 50 89 Z" fill="url(#redCorinthians)" stroke="#ffffff" stroke-width="0.8"/>
+      <line x1="55" y1="101" x2="55" y2="90" stroke="url(#goldGrad)" stroke-width="0.8"/>
+    </g>
 
-    <!-- Âncora Central -->
-    <circle cx="40" cy="22" r="5" fill="none" stroke="#ffffff" stroke-width="2.5"/>
-    <line x1="40" y1="27" x2="40" y2="63" stroke="#ffffff" stroke-width="3"/>
-    <line x1="28" y1="33" x2="52" y2="33" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- Curva da âncora -->
-    <path d="M 23 52 C 27 66, 53 66, 57 52" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-    <polygon points="21,50 25,50 23,45" fill="#ffffff"/>
-    <polygon points="55,50 59,50 57,45" fill="#ffffff"/>
+    <g transform="rotate(-45 55 55)">
+      <rect x="53" y="10" width="4" height="90" rx="2" fill="url(#oarWood)" stroke="#ffffff" stroke-width="0.8"/>
+      <!-- Pá Superior -->
+      <path d="M 51 9 C 51 6, 59 6, 59 9 L 60 21 C 60 23, 50 23, 50 21 Z" fill="url(#redCorinthians)" stroke="#ffffff" stroke-width="0.8"/>
+      <line x1="55" y1="9" x2="55" y2="20" stroke="url(#goldGrad)" stroke-width="0.8"/>
+      <!-- Pá Inferior -->
+      <path d="M 51 101 C 51 104, 59 104, 59 101 L 60 89 C 60 87, 50 87, 50 89 Z" fill="url(#redCorinthians)" stroke="#ffffff" stroke-width="0.8"/>
+      <line x1="55" y1="101" x2="55" y2="90" stroke="url(#goldGrad)" stroke-width="0.8"/>
+    </g>
 
-    <!-- Escudo Central do Timão -->
-    <path d="M 31 35 L 49 35 C 49 46, 46 53, 40 56 C 34 53, 31 46, 31 35 Z" fill="#000000" stroke="#ffffff" stroke-width="1.5"/>
-    <!-- Listras do escudo -->
-    <line x1="37" y1="38" x2="37" y2="52" stroke="#ffffff" stroke-width="1.2"/>
-    <line x1="43" y1="38" x2="43" y2="52" stroke="#ffffff" stroke-width="1.2"/>
-    <!-- Estrela Central -->
-    <polygon points="40,29 41.5,33 45,33.5 42.5,36 43,39.5 40,37.5 37,39.5 37.5,36 35,33.5 38.5,33" fill="#ffffff"/>
-  </g>
+    <!-- 2. ÂNCORA NÁUTICA CORINTHIANA -->
+    <!-- Anel Superior -->
+    <circle cx="55" cy="17" r="7" fill="none" stroke="url(#goldGrad)" stroke-width="2.4"/>
+    <circle cx="55" cy="17" r="4" fill="#000000" stroke="#ffffff" stroke-width="0.8"/>
 
-  <!-- Tipografia do Logo "SALVE O CORINTHIANS" -->
-  <g transform="translate(100, 0)">
-    <!-- Linha Superior: SALVE O -->
-    <text x="0" y="34" font-family="'Montserrat', sans-serif" font-weight="900" font-size="24" fill="#ffffff" letter-spacing="4">
-      SALVE O
+    <!-- Braço Transversal Superior -->
+    <rect x="36" y="24" width="38" height="4" rx="1.5" fill="url(#redCorinthians)" stroke="#ffffff" stroke-width="0.8"/>
+    <circle cx="36" cy="26" r="2.5" fill="url(#goldGrad)"/>
+    <circle cx="74" cy="26" r="2.5" fill="url(#goldGrad)"/>
+
+    <!-- Haste Vertical Central -->
+    <rect x="53" y="20" width="4" height="74" rx="1" fill="url(#redCorinthians)" stroke="#ffffff" stroke-width="0.8"/>
+
+    <!-- Arco Inferior Curvo da Âncora com Unhas Douradas -->
+    <path d="M 26 76 C 33 97, 77 97, 84 76" fill="none" stroke="url(#redCorinthians)" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M 26 76 C 33 97, 77 97, 84 76" fill="none" stroke="#ffffff" stroke-width="0.8"/>
+    <polygon points="25,78 19,70 30,71" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="0.8"/>
+    <polygon points="85,78 91,70 80,71" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="0.8"/>
+
+    <!-- 3. A BÓIA SALVA-VIDAS ALVINEGRA (Símbolo de "SALVE O CORINTHIANS") -->
+    <circle cx="55" cy="55" r="36" fill="#000000" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="55" cy="55" r="33" fill="none" stroke="#ffffff" stroke-width="5.5"/>
+
+    <!-- 4 Tiras de Salvamento Vermelhas -->
+    <rect x="53" y="22" width="4" height="6" fill="url(#redCorinthians)"/>
+    <rect x="53" y="82" width="4" height="6" fill="url(#redCorinthians)"/>
+    <rect x="22" y="53" width="6" height="4" fill="url(#redCorinthians)"/>
+    <rect x="82" y="53" width="6" height="4" fill="url(#redCorinthians)"/>
+
+    <!-- Cordas de Amortecimento em Ouro -->
+    <path d="M 29 35 C 34 27, 44 25, 52 24" fill="none" stroke="url(#goldGrad)" stroke-width="1.2"/>
+    <path d="M 58 24 C 66 25, 76 27, 81 35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2"/>
+    <path d="M 81 75 C 76 83, 66 85, 58 86" fill="none" stroke="url(#goldGrad)" stroke-width="1.2"/>
+    <path d="M 52 86 C 44 85, 34 83, 29 75" fill="none" stroke="url(#goldGrad)" stroke-width="1.2"/>
+
+    <!-- Anel Interno Preto -->
+    <circle cx="55" cy="55" r="28" fill="url(#blackShield)" stroke="url(#goldGrad)" stroke-width="1.4"/>
+
+    <!-- Inscrição da Bóia: "SALVE O CORINTHIANS" -->
+    <text font-family="'Montserrat', sans-serif" font-weight="900" font-size="4.8" fill="url(#goldLight)" letter-spacing="1">
+      <textPath href="#topArcText" startOffset="50%" text-anchor="middle">
+        SALVE O CORINTHIANS
+      </textPath>
     </text>
 
-    <!-- Linha Principal: CORINTHIANS -->
-    <text x="0" y="68" font-family="'Montserrat', sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="1.5" filter="url(#corinthiansGlow)">
+    <!-- Inscrição Inferior: "★ 1910 ★" -->
+    <text font-family="'Montserrat', sans-serif" font-weight="900" font-size="4.6" fill="#ffffff" letter-spacing="1.5">
+      <textPath href="#botArcText" startOffset="50%" text-anchor="middle">
+        ★ 1910 ★
+      </textPath>
+    </text>
+
+    <!-- 4. BRASÃO CENTRAL COM A BANDEIRA DE SÃO PAULO -->
+    <path d="M 41 42 C 41 40, 55 39, 55 39 C 55 39, 69 40, 69 42 L 69 57 C 69 66, 55 72, 55 72 C 55 72, 41 66, 41 57 Z"
+          fill="url(#blackShield)" stroke="url(#goldGrad)" stroke-width="1.4"/>
+
+    <!-- 13 Listras Preto e Branco da Bandeira Paulista -->
+    <g transform="translate(42.5, 43)">
+      <rect x="0" y="0" width="25" height="1.6" fill="#ffffff"/>
+      <rect x="0" y="1.6" width="25" height="1.6" fill="#000000"/>
+      <rect x="0" y="3.2" width="25" height="1.6" fill="#ffffff"/>
+      <rect x="0" y="4.8" width="25" height="1.6" fill="#000000"/>
+      <rect x="0" y="6.4" width="25" height="1.6" fill="#ffffff"/>
+      <rect x="0" y="8.0" width="25" height="1.6" fill="#000000"/>
+      <rect x="0" y="9.6" width="25" height="1.6" fill="#ffffff"/>
+      <rect x="0" y="11.2" width="25" height="1.6" fill="#000000"/>
+      <rect x="0" y="12.8" width="25" height="1.6" fill="#ffffff"/>
+      <rect x="0" y="14.4" width="25" height="1.6" fill="#000000"/>
+      <rect x="0" y="16.0" width="25" height="1.6" fill="#ffffff"/>
+      <rect x="0" y="17.6" width="25" height="1.6" fill="#000000"/>
+      <rect x="0" y="19.2" width="25" height="1.6" fill="#ffffff"/>
+
+      <!-- Cantão Vermelho Paulista -->
+      <rect x="0" y="0" width="10" height="8" fill="url(#redCorinthians)" stroke="#ffffff" stroke-width="0.5"/>
+      <circle cx="5" cy="4" r="2.5" fill="#ffffff"/>
+      <circle cx="5" cy="4" r="1.8" fill="url(#redCorinthians)"/>
+      <polygon points="5,2.5 5.5,3.6 6.7,3.6 5.8,4.3 6.1,5.4 5,4.7 3.9,5.4 4.2,4.3 3.3,3.6 4.5,3.6" fill="url(#goldLight)"/>
+    </g>
+
+    <!-- Borda Interna do Brasão Central -->
+    <path d="M 42.5 43 C 42.5 41, 55 40, 55 40 C 55 40, 67.5 41, 67.5 43 L 67.5 57 C 67.5 65, 55 70.5, 55 70.5 C 55 70.5, 42.5 65, 42.5 57 Z"
+          fill="none" stroke="#ffffff" stroke-width="1"/>
+
+    <!-- 5. ESTRELA DOURADA DO MUNDIAL (Topo) -->
+    <g filter="url(#starGlow)">
+      <polygon points="55,3 56.8,8 62,8.3 58,11.8 59.2,17 55,14 50.8,17 52,11.8 48,8.3 53.2,8"
+               fill="url(#goldLight)" stroke="#ffffff" stroke-width="0.5"/>
+    </g>
+    <!-- Estrelas de apoio -->
+    <polygon points="42,9 43.2,12.5 46.8,12.7 44,15.2 44.8,18.7 42,16.7 39.2,18.7 40,15.2 37.2,12.7 40.8,12.5"
+             fill="url(#goldGrad)" stroke="#ffffff" stroke-width="0.4"/>
+    <polygon points="68,9 69.2,12.5 72.8,12.7 70,15.2 70.8,18.7 68,16.7 65.2,18.7 66,15.2 63.2,12.7 66.8,12.5"
+             fill="url(#goldGrad)" stroke="#ffffff" stroke-width="0.4"/>
+  </g>
+
+  <!-- ==========================================================================
+       LADO DIREITO: TIPOGRAFIA MONUMENTAL E IDENTITÁRIA "SALVE O CORINTHIANS"
+       ========================================================================== -->
+  <g transform="translate(122, 0)">
+    
+    <!-- Linha 1: SALVE O com insígnia dourada e carmesim -->
+    <g transform="translate(0, 32)">
+      <!-- Pequena fita/badge vermelha de fundo sutil -->
+      <rect x="0" y="-18" width="115" height="22" rx="4" fill="rgba(201, 0, 22, 0.18)" stroke="rgba(212, 175, 55, 0.45)" stroke-width="1"/>
+      
+      <!-- Mini escudo / losango dourado à esquerda -->
+      <polygon points="12,-7 16,-12 20,-7 16,-2" fill="url(#goldGrad)"/>
+      
+      <!-- Texto SALVE O -->
+      <text x="28" y="-3" font-family="'Montserrat', sans-serif" font-weight="900" font-size="14.5" fill="url(#goldLight)" letter-spacing="5">
+        SALVE O
+      </text>
+
+      <!-- Ano 1910 à direita da fita -->
+      <rect x="122" y="-18" width="46" height="22" rx="4" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.18)" stroke-width="1"/>
+      <text x="145" y="-3" font-family="'Montserrat', sans-serif" font-weight="800" font-size="10.5" fill="#ffffff" letter-spacing="1.5" text-anchor="middle">
+        1910
+      </text>
+
+      <!-- Tag de autenticidade Fiel -->
+      <circle cx="178" cy="-7" r="3.5" fill="url(#redCorinthians)"/>
+      <text x="188" y="-3" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#9ca3af" letter-spacing="1.8">
+        PORTAL DA FIEL TORCIDA
+      </text>
+    </g>
+
+    <!-- Linha 2: CORINTHIANS em Tipografia Titânica e Elegante -->
+    <text x="0" y="74" font-family="'Montserrat', sans-serif" font-weight="900" font-size="39" fill="url(#whiteTextGrad)" letter-spacing="1.8">
       CORINTHIANS
     </text>
 
-    <!-- Subtítulo Identitário -->
-    <text x="2" y="86" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#a0a0a0" letter-spacing="2.8">
-      1910 • MEMÓRIA, FATOS &amp; TRANSPARÊNCIA
+    <!-- Linha 3: Barra Estilizada Alvinegra com Friso Vermelho e Ouro -->
+    <g transform="translate(0, 84)">
+      <!-- Linha horizontal tricolor: Vermelho / Dourado / Branco -->
+      <rect x="0" y="0" width="80" height="2.5" fill="url(#redCorinthians)" rx="1"/>
+      <rect x="83" y="0" width="80" height="2.5" fill="url(#goldGrad)" rx="1"/>
+      <rect x="166" y="0" width="270" height="2.5" fill="rgba(255, 255, 255, 0.22)" rx="1"/>
+    </g>
+
+    <!-- Linha 4: Slogan Identitário Oficial -->
+    <text x="1" y="101" font-family="'Inter', sans-serif" font-weight="700" font-size="9.2" fill="#d4d4d8" letter-spacing="2.8">
+      GLÓRIAS, FATOS DA DIRETORIA, BALANÇO &amp; FUTURO
     </text>
   </g>
 </svg>

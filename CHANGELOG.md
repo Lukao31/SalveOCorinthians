@@ -13,6 +13,35 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.2.0] - 2026-10-26
+
+### 🦅 Nova Identidade Visual: Logotipo Único e Exclusivo "Salve o Corinthians"
+
+Esta versão reformula integralmente a identidade visual do portal, implementando uma logo 100% autoral, inspirada nas raízes heráldicas do Sport Club Corinthians Paulista, integrando todas as cores institucionais e eliminando qualquer semelhança com canais ou identidades visuais de terceiros.
+
+### ✨ Adicionado (Added)
+- **Novo Emblema Heráldico Dedicado (`logo-salve-corinthians-emblem.svg`):**
+  - Desenho vetorial circular 1:1 de alta fidelidade para aplicação em favicons, selos e mídias sociais.
+  - Composição completa das cores oficiais e históricas do Corinthians: **Preto profundo** (#000000), **Branco puro** (#ffffff), **Vermelho Timão** (#dc2626 / #c90016) e **Dourado Nobre** (#d4af37 / #ffd700).
+  - Elementos clássicos do escudo corinthiano reinterpretados:
+    - Remos náuticos cruzados em madeira e vermelho carmesim (alusão a Francisco Rebolo, 1939).
+    - Âncora náutica clássica em vermelho com relevos e unhas douradas.
+    - Bóia salva-vidas alvinegra com cordas de sustentação em ouro, simbolizando a missão de resgate de *"SALVE O CORINTHIANS"*.
+    - Brasão central com as 13 listras e o cantão vermelho com estrela da bandeira de São Paulo.
+    - Estrela dourada de campeão mundial no topo do conjunto.
+- **Novas Regras de Estilo CSS:**
+  - Classes `.hero-logo-container` e `.hero-logo-img` implementadas no `css/style.css`, garantindo proporção responsiva, alinhamento ótico e sombra projetada suave (*drop-shadow*).
+
+### 🔄 Modificado (Changed)
+- **Logotipo Master Horizontal (`logo-salve-corinthians.svg`):**
+  - Substituição total do design anterior por uma composição moderna com o novo brasão à esquerda e tipografia monumental alvinegra à direita.
+  - Tipografia personalizada em camadas: badge *"SALVE O 1910"* com friso carmesim e dourado, *"CORINTHIANS"* em peso 900 com gradiente e barra tricolor (Vermelho / Ouro / Branco).
+  - Slogan identitário: *"GLÓRIAS, FATOS DA DIRETORIA, BALANÇO & FUTURO"*.
+- **Favicon da Página (`index.html`):**
+  - Atualizado para carregar o novo emblema circular dedicado (`logo-salve-corinthians-emblem.svg`), garantindo nitidez sem distorção em abas do navegador.
+
+---
+
 ## [1.1.0] - 2026-10-26
 
 ### ⚽ Atualização do Feed de Jogos (Ano e Mês Atual: Outubro de 2026)
