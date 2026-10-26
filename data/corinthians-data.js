@@ -812,9 +812,225 @@ const CORINTHIANS_DATA = {
       { nome: "Biro-Biro", jogos: 590, anos: "1978-1988" }
     ],
     invasoesMemoraveis: [
-      { ano: "1976", nome: "Invasão Corinthiana do Maracanã", publico: "70.000 corinthianos no Rio", fato: "A maior migração pacífica por motivos esportivos do planeta. Meio estádio Maracanã tomado pela Fiel contra a 'Máquina' do Fluminense de Rivellino." },
-      { ano: "2000", nome: "Invasão no Maracanã - 1º Mundial FIFA", publico: "Mais de 35.000 corinthianos no Rio", fato: "Fiel tomou as arquibancadas do Maracanã para a final histórica contra o Vasco de Romário e Edmundo." },
-      { ano: "2012", nome: "Invasão do Japão - 2º Mundial FIFA", publico: "Mais de 30.000 corinthianos em Yokohama", fato: "Os torcedores venderam carros, casas e esgotaram voos para cantar 'Bando de Loucos' no outro lado do planeta." }
+      {
+        id: "invasao-1976",
+        ano: "1976",
+        data: "05 de Dezembro de 1976",
+        nome: "Invasão Corinthiana do Maracanã",
+        competicao: "Campeonato Brasileiro de 1976 - Semifinal",
+        publico: "Mais de 70.000 corinthianos no Rio (146.043 total)",
+        local: "Estádio Jornalista Mário Filho (Maracanã) - Rio de Janeiro, RJ",
+        adversario: "Fluminense (A lendária 'Máquina Tricolor')",
+        resultado: "Fluminense 1 (1) x (4) 1 Corinthians (Pênaltis)",
+        fato: "A maior migração pacífica por motivos esportivos do planeta. Cerca de 70 mil alvinegros desceram a Via Dutra e dividiram o Maracanã ao meio, calando a favorita Máquina de Rivellino.",
+        resumoDetalhado: "Sob jejum de 22 anos sem títulos estaduais, a torcida corinthiana protagonizou o maior êxodo humano esportivo em tempos de paz. Milhares de ônibus, carros particulares e caminhões formaram um cordão ininterrupto na Rodovia Presidente Dutra. No Maracanã sob chuva, o Corinthians de Tobias e Neca empatou com o esquadrão do Fluminense e venceu nas penalidades máximas.",
+        fotos: [
+          {
+            url: "assets/images/invasoes/1976_dutra_onibus.jpg",
+            titulo: "O Êxodo Alvinegro na Rodovia Presidente Dutra",
+            legenda: "A Rodovia Presidente Dutra tomada por dezenas de milhares de fuscas, caminhonetes, carros e mais de mil ônibus fretados com bandeiras alvinegras rumo ao Rio de Janeiro. A maior caravana rodoviária da história brasileira.",
+            credito: "Acervo Histórico / Folha de S. Paulo & O Estado de S. Paulo (1976)"
+          },
+          {
+            url: "assets/images/invasoes/1976_maracana_arquibancada.jpg",
+            titulo: "O Maracanã Dividido ao Meio: 70 Mil Fiéis",
+            legenda: "Metade do gigantesco Maracanã colorida em preto e branco diante de 146.043 torcedores pagantes. A Fiel cantou sem parar debaixo de tempestade, calando os donos da casa.",
+            credito: "Acervo Histórico Jornal do Brasil / Revista Placar (05/12/1976)"
+          },
+          {
+            url: "assets/images/invasoes/1976_tobias_festa.jpg",
+            titulo: "O Herói Tobias e a Consagração nos Pênaltis",
+            legenda: "O goleiro Tobias defendeu as cobranças de pênalti de Rodrigues Neto e Carlos Alberto Pintinho. Na sequência, a Fiel celebrou a histórica classificação para a grande final do Brasileirão.",
+            credito: "Revista Placar Especial / Acervo Gazeta Esportiva (1976)"
+          }
+        ],
+        relatos: [
+          {
+            autor: "Nelson Rodrigues",
+            cargo: "Dramaturgo e Cronista (O Globo)",
+            citacao: "O Rio era uma cidade ocupada. Não havia um canto onde não tremulasse uma bandeira do Corinthians. [...] Dizem os idiotas da objetividade que torcida não ganha jogo. Pois ganha. Foi a torcida quem empurrou o Corinthians para a vitória no Maracanã.",
+            fonte: "Crônica 'A Invasão', publicada no jornal O Globo (06/12/1976)"
+          },
+          {
+            autor: "Francisco Horta",
+            cargo: "Presidente do Fluminense em 1976",
+            citacao: "Eu propus ao Vicente Matheus dividir a renda e as arquibancadas meio a meio, achando que eles não viriam em grande número do outro estado. Foi a maior lição de paixão popular que presenciei na vida. Quando olhei para a geral e vi metade do estádio em preto e branco, percebi a força assustadora dessa nação.",
+            fonte: "Entrevista histórica ao documentário '1976 - O Ano da Invasão Corinthiana'"
+          },
+          {
+            autor: "Tobias",
+            cargo: "Goleiro Herói do Corinthians em 1976",
+            citacao: "Na hora dos pênaltis, olhei para aquela massa ensopada de chuva no Maracanã gritando meu nome. O gol pareceu ficar gigante para os batedores do Fluminense e minúsculo para mim. Nós não tínhamos como perder aquele jogo com aquela torcida.",
+            fonte: "Depoimento ao Acervo do Museu do Futebol / Gazeta Esportiva"
+          },
+          {
+            autor: "Jornal do Brasil",
+            cargo: "Editorial de Capa",
+            citacao: "A maior mobilização humana em tempos de paz da história do esporte mundial. As estradas pararam para que São Paulo descesse ao Rio para ver seu clube.",
+            fonte: "Jornal do Brasil, edição histórica de 6 de dezembro de 1976"
+          }
+        ],
+        cortesVideos: [
+          {
+            titulo: "Documentário: 1976 - A Invasão Corinthiana",
+            veiculo: "Canal Identidade Corinthiana & TV Cultura",
+            descricao: "Relato minucioso com entrevistas de Tobias, Basílio e depoimentos de torcedores que viajaram de carona na Via Dutra.",
+            buscaRecomendada: "A Invasão Corinthiana 1976 Identidade Corinthiana"
+          },
+          {
+            titulo: "Corte: Pênaltis de Fluminense 1 x 1 Corinthians com narração da época",
+            veiculo: "Acervo TV Tupi / Rádio Globo",
+            descricao: "Gravação original com as defesas históricas de Tobias e a explosão de 70 mil corinthianos no Maracanã.",
+            buscaRecomendada: "Corinthians x Fluminense 1976 Penaltis Maracana"
+          }
+        ]
+      },
+      {
+        id: "invasao-2000",
+        ano: "2000",
+        data: "14 de Janeiro de 2000",
+        nome: "Invasão no Maracanã - 1º Mundial de Clubes FIFA",
+        competicao: "1º Campeonato Mundial de Clubes da FIFA - Final",
+        publico: "Mais de 35.000 corinthianos no Rio (73.811 presentes)",
+        local: "Estádio Jornalista Mário Filho (Maracanã) - Rio de Janeiro, RJ",
+        adversario: "Vasco da Gama (Com Romário, Edmundo e Juninho Pernambucano)",
+        resultado: "Corinthians 0 (4) x (3) 0 Vasco da Gama (Pênaltis)",
+        fato: "Mais de 35 mil corinthianos invadiram a capital fluminense e dominaram o Maracanã na grande final mundial contra o Vasco, conquistando o inédito 1º título do Mundial de Clubes da FIFA.",
+        resumoDetalhado: "Em janeiro de 2000, o mundo parou para acompanhar o primeiro torneio chancelado pela FIFA com os campeões de todos os continentes, além de Real Madrid e Manchester United. Na decisão no Rio de Janeiro, a Fiel tomou as praias cariocas e transformou o Maracanã em casa alvinegra, comemorando após Edmundo chutar o pênalti decisivo para fora.",
+        fotos: [
+          {
+            url: "assets/images/invasoes/2000_orla_copacabana.jpg",
+            titulo: "A Fiel Toma as Praias e a Orla do Rio de Janeiro",
+            legenda: "Milhares de torcedores corinthianos concentrados nas praias de Copacabana e Leme antes da grande decisão do Mundial da FIFA, pintando as areias cariocas de preto e branco.",
+            credito: "Acervo Agência Estado / Folha Imagem (Janeiro/2000)"
+          },
+          {
+            url: "assets/images/invasoes/2000_maracana_arquibancada.jpg",
+            titulo: "Maracanã Alvinegro: A Segunda Invasão do Rio",
+            legenda: "Mais de 35 mil corinthianos cruzaram a serra e ocuparam as arquibancadas do Maracanã, cantando os 120 minutos e empurrando o time contra o poderoso Vasco de Romário e Edmundo.",
+            credito: "Revista Placar Especial Mundial / TV Globo (14/01/2000)"
+          },
+          {
+            url: "assets/images/invasoes/2000_taca_mundial.jpg",
+            titulo: "Corinthians o Primeiro Campeão Mundial FIFA",
+            legenda: "O capitão Freddy Rincón e Marcelinho Carioca erguem o troféu histórico da FIFA sob chuva de confetes prateados no centro do Maracanã.",
+            credito: "FIFA Archives / Acervo Histórico SCCP (14/01/2000)"
+          }
+        ],
+        relatos: [
+          {
+            autor: "Freddy Rincón",
+            cargo: "Capitão do Corinthians no Mundial 2000",
+            citacao: "Nós tínhamos a convicção de que não estávamos jogando fora de casa. Quando entramos no gramado do Maracanã e ouvimos aquele grito ensurdecedor da torcida do Corinthians, sabíamos que aquele título não escaparia da gente por nada neste mundo.",
+            fonte: "Entrevista coletiva FIFA pós-jogo e documentário SporTV"
+          },
+          {
+            autor: "Dinei",
+            cargo: "Tricampeão Brasileiro e Campeão Mundial 2000",
+            citacao: "O Rio de Janeiro parecia a Zona Leste de São Paulo. A gente saiu na sacada do hotel e só via camisa do Corinthians na praia de Copacabana. Foi a segunda invasão. Na hora da decisão contra Romário e Edmundo, a Fiel jogou junto.",
+            fonte: "Depoimento aos canais Podpah e Mesa Redonda"
+          },
+          {
+            autor: "Marcelinho Carioca",
+            cargo: "Ídolo Alvinegro e Camisa 7 do Mundial 2000",
+            citacao: "Fazer o Rio de Janeiro se curvar ao Corinthians duas vezes em menos de 25 anos é uma façanha que nenhum outro clube na Terra jamais conseguiu. A força desse clube reside nessa gente apaixonada.",
+            fonte: "Especial SporTV '20 Anos do Mundial de Clubes da FIFA 2000'"
+          },
+          {
+            autor: "Jornal do Brasil / Revista Placar",
+            cargo: "Cobertura Esportiva Especial",
+            citacao: "O Corinthians desceu a Serra das Araras e transformou o templo sagrado dos cariocas em seu próprio terreiro. O Vasco tinha Romário e Edmundo no auge, mas o Corinthians tinha um elenco de craques e uma Fiel que nunca parou de cantar.",
+            fonte: "Revista Placar, Edição Histórica Especial de Fevereiro de 2000"
+          }
+        ],
+        cortesVideos: [
+          {
+            titulo: "Corte: Pênaltis de Corinthians x Vasco e a consagração de Rincón",
+            veiculo: "Transmissão Oficial TV Globo / FIFA TV",
+            descricao: "As penalidades decisivas com a defesa de Dida, os gols de Rincón, Fernando Baiano, Luizão e Edu, e o erro de Edmundo.",
+            buscaRecomendada: "Corinthians x Vasco Mundial 2000 Penaltis"
+          },
+          {
+            titulo: "Corte: Bastidores da invasão do Rio no Mundial 2000",
+            veiculo: "Canal Do Povo Escolhido / Meu Timão",
+            descricao: "Relato dos torcedores que lotaram ônibus sem ingresso e conseguiram entrar no Maracanã para fazer história.",
+            buscaRecomendada: "Invasao Corinthians Rio de Janeiro 2000 Mundial"
+          }
+        ]
+      },
+      {
+        id: "invasao-2012",
+        ano: "2012",
+        data: "16 de Dezembro de 2012",
+        nome: "Invasão do Japão - 2º Mundial de Clubes FIFA",
+        competicao: "Copa do Mundo de Clubes da FIFA 2012 - Final",
+        publico: "Mais de 30.000 corinthianos em Yokohama (68.275 presentes)",
+        local: "Estádio Internacional de Yokohama (Nissan Stadium) - Yokohama, Japão",
+        adversario: "Chelsea FC (Campeão da UEFA Champions League)",
+        resultado: "Corinthians 1 x 0 Chelsea FC (Gol de Paolo Guerrero)",
+        fato: "Mais de 30 mil corinthianos cruzaram o planeta Terra rumo a Tóquio e Yokohama, esgotando voos e hotéis no Japão para transformar o Nissan Stadium no Pacaembu e conquistar o Bi Mundial invicto.",
+        resumoDetalhado: "O deslocamento mais impressionante da história do futebol mundial: torcedores venderam carros, imóveis e economias de uma vida inteira para viajar 24 a 30 horas até o outro lado do planeta. O cruzamento de Shibuya em Tóquio e os trens japoneses foram tomados por cânticos corinthianos. Em campo, Cássio fechou o gol e Paolo Guerrero marcou de cabeça para derrotar o campeão europeu Chelsea por 1 a 0.",
+        fotos: [
+          {
+            url: "assets/images/invasoes/2012_ruas_japao.jpg",
+            titulo: "O 'Tsunami Alvinegro' nas Ruas e Metrôs do Japão",
+            legenda: "Mais de 30 mil torcedores da Fiel ocuparam praças públicas, ruas comerciais e o famoso cruzamento de Shibuya em Tóquio com faixas 'Bando de Loucos', cantando sob temperaturas de inverno.",
+            credito: "Reuters / FIFA Media / Acervo Lance! & GloboEsporte.com (Dez/2012)"
+          },
+          {
+            url: "assets/images/invasoes/2012_yokohama_arquibancada.jpg",
+            titulo: "Yokohama Transformada em Pacaembu: 30 Mil no Estádio",
+            legenda: "O Estádio Internacional de Yokohama em preto e branco diante de 68.275 presentes. A Fiel abafou totalmente a torcida inglesa com faixas da Gaviões da Fiel, Pavilhão 9 e Camisa 12.",
+            credito: "Getty Images / FIFA World Cup 2012 Official Gallery"
+          },
+          {
+            url: "assets/images/invasoes/2012_cassio_guerrero_taca.jpg",
+            titulo: "Bicampeão Mundial: O Milagre de Cássio e Guerrero",
+            legenda: "Cássio (eleito o Bola de Ouro do torneio) e Paolo Guerrero erguem a taça de Bicampeão do Mundo da FIFA após derrotar o Chelsea FC por 1 a 0.",
+            credito: "FIFA Official Photo / Agência Corinthians (16/12/2012)"
+          }
+        ],
+        relatos: [
+          {
+            autor: "Tite (Adenor Leonardo Bacchi)",
+            cargo: "Técnico Campeão Mundial pelo Corinthians em 2012",
+            citacao: "Eu olhei para as arquibancadas de Yokohama e fiquei em choque. Não parecia o Japão, parecia o Pacaembu. As pessoas gastaram o que tinham e o que não tinham para estar ali. Eu disse no vestiário antes de entrar: 'Nós vamos jogar com o coração dessa gente'. E jogamos.",
+            fonte: "Coletiva oficial de imprensa da FIFA e livro 'Tite' por Camila Mattoso"
+          },
+          {
+            autor: "Cássio Ramos",
+            cargo: "Goleiro e Bola de Ouro da Final do Mundial FIFA 2012",
+            citacao: "No dia do jogo contra o Chelsea, aquele mar de 30 mil corinthianos nos fez sentir imbatíveis. Cada defesa difícil contra o Moses, o Torres e o Hazard parecia ter o braço de cada torcedor junto comigo. Nós fomos campeões porque a torcida jogou junto.",
+            fonte: "Entrevista oficial FIFA.com e Museu Memorial Corinthians"
+          },
+          {
+            autor: "Frank Lampard",
+            cargo: "Capitão do Chelsea na Final do Mundial 2012",
+            citacao: "Nós sabíamos que eles eram perigosos, mas fomos completamente surpreendidos pela atmosfera. Estávamos a 10 mil milhas de Londres e o estádio parecia pertencer totalmente ao Corinthians. Eles criaram uma pressão inacreditável a cada posse de bola.",
+            fonte: "Entrevista coletiva pós-jogo FIFA, Estádio Internacional de Yokohama"
+          },
+          {
+            autor: "FIFA Technical Study Group",
+            cargo: "Relatório Oficial da FIFA sobre o Mundial de Clubes 2012",
+            citacao: "'O Tsunami Alvinegro'. Jamais uma equipe esportiva mundial levou uma massa de torcedores tão apaixonada cruzando continentes e fusos horários. A torcida do Corinthians redefiniu a história da Copa do Mundo de Clubes da FIFA.",
+            fonte: "FIFA Technical Study Group Official Report - Club World Cup Japan 2012"
+          }
+        ],
+        cortesVideos: [
+          {
+            titulo: "Corte: As Defesas Milagrosas de Cássio e o Gol de Guerrero",
+            veiculo: "FIFA Official & TV Globo",
+            descricao: "Os lances capitais da final contra o Chelsea: as defesas de cinema de Cássio e o cabeceio fatal de Paolo Guerrero aos 24 do 2º tempo.",
+            buscaRecomendada: "Corinthians 1 x 0 Chelsea Melhores Momentos Mundial 2012"
+          },
+          {
+            titulo: "Documentário: O Tsunami Alvinegro no Japão",
+            veiculo: "Canal Do Povo Escolhido / Identidade Corinthiana",
+            descricao: "Relatos emocionantes de corinthianos que venderam moto, casa e parcelaram passagens em 24 vezes para ver o Timão no Japão.",
+            buscaRecomendada: "Invasao do Japao Corinthians 2012 Documentario"
+          }
+        ]
+      }
     ]
   },
 

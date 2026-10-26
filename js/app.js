@@ -501,14 +501,27 @@ function renderEstatisticas() {
   }
 
   if (containerInvasoes) {
-    containerInvasoes.innerHTML = CORINTHIANS_DATA.estatisticas.invasoesMemoraveis.map(item => `
-      <div class="invasao-card">
-        <div class="invasao-ano">${item.ano}</div>
-        <h4 class="invasao-nome">${item.nome}</h4>
-        <div class="invasao-publico"><i class="fa-solid fa-users"></i> ${item.publico}</div>
-        <p class="invasao-fato">${item.fato}</p>
-      </div>
-    `).join('');
+    containerInvasoes.innerHTML = CORINTHIANS_DATA.estatisticas.invasoesMemoraveis.map((item) => {
+      const fotoDestaque = item.fotos && item.fotos[0] ? item.fotos[0].url : '';
+      return `
+        <div class="invasao-card" onclick="abrirModalInvasao('${item.id}')" role="button" tabindex="0" aria-label="Ver 3 fotos e relatos de ${item.nome}" onkeydown="if(event.key==='Enter') abrirModalInvasao('${item.id}')">
+          <div class="invasao-card-img-wrap">
+            <img src="${fotoDestaque}" alt="${item.nome}" class="invasao-card-img" loading="lazy">
+            <div class="invasao-badge-ano">${item.ano}</div>
+            <div class="invasao-badge-fotos"><i class="fa-solid fa-camera"></i> 3 Fotos Históricas</div>
+          </div>
+          <div class="invasao-card-body">
+            <h4 class="invasao-nome">${item.nome}</h4>
+            <div class="invasao-publico"><i class="fa-solid fa-users"></i> ${item.publico}</div>
+            <p class="invasao-fato">${item.fato}</p>
+            <div class="invasao-btn-action">
+              <span>Ver Fotos & Relatos</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
   }
 }
 
@@ -905,8 +918,218 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       fecharModalIdolo();
+      fecharModalInvasao();
+    }
+  });
+
+  // Ouvintes do Modal de Invasões
+  const modalInvasao = document.getElementById('invasao-modal');
+  const closeBtnInvasao = document.getElementById('modal-invasao-close-btn');
+  const btnPrev = document.getElementById('modal-invasao-btn-prev');
+  const btnNext = document.getElementById('modal-invasao-btn-next');
+
+  if (closeBtnInvasao) {
+    closeBtnInvasao.addEventListener('click', fecharModalInvasao);
+  }
+
+  if (modalInvasao) {
+    modalInvasao.addEventListener('click', (e) => {
+      if (e.target === modalInvasao) {
+        fecharModalInvasao();
+      }
+    });
+  }
+
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => mudarFotoInvasao(-1));
+  }
+
+  if (btnNext) {
+    btnNext.addEventListener('click', () => mudarFotoInvasao(1));
+  }
+
+  // Teclas de seta para alternar fotos
+  document.addEventListener('keydown', (e) => {
+    const modalInvasaoAtivo = document.getElementById('invasao-modal');
+    if (modalInvasaoAtivo && modalInvasaoAtivo.classList.contains('active')) {
+      if (e.key === 'ArrowLeft') {
+        mudarFotoInvasao(-1);
+      } else if (e.key === 'ArrowRight') {
+        mudarFotoInvasao(1);
+      }
     }
   });
 });
+
+/* ==========================================================================
+   Modal de Invasões da Fiel (Galeria de 3 Fotos & Relatos Históricos)
+   ========================================================================== */
+let invasaoAtual = null;
+let fotoInvasaoIndex = 0;
+
+function abrirModalInvasao(id) {
+  if (!CORINTHIANS_DATA || !CORINTHIANS_DATA.estatisticas || !CORINTHIANS_DATA.estatisticas.invasoesMemoraveis) {
+    return;
+  }
+
+  const invasao = CORINTHIANS_DATA.estatisticas.invasoesMemoraveis.find(i => i.id === id);
+  if (!invasao) return;
+
+  invasaoAtual = invasao;
+  fotoInvasaoIndex = 0;
+
+  const modal = document.getElementById('invasao-modal');
+  if (!modal) return;
+
+  // Header meta
+  const badgeEl = document.getElementById('modal-invasao-badge');
+  const dataEl = document.getElementById('modal-invasao-data');
+  const nomeEl = document.getElementById('modal-invasao-nome');
+  const subtituloEl = document.getElementById('modal-invasao-subtitulo');
+  const localEl = document.getElementById('modal-invasao-local');
+  const publicoEl = document.getElementById('modal-invasao-publico');
+  const resultadoEl = document.getElementById('modal-invasao-resultado');
+  const resumoTextoEl = document.getElementById('modal-invasao-resumo-texto');
+
+  if (badgeEl) badgeEl.textContent = invasao.ano;
+  if (dataEl) dataEl.textContent = invasao.data || invasao.ano;
+  if (nomeEl) nomeEl.textContent = invasao.nome;
+  if (subtituloEl) subtituloEl.textContent = invasao.competicao || 'Momento Histórico';
+  if (localEl) localEl.textContent = invasao.local || 'Estádio';
+  if (publicoEl) publicoEl.textContent = invasao.publico || 'Multidão Alvinegra';
+  if (resultadoEl) resultadoEl.textContent = `${invasao.adversario || ''} • ${invasao.resultado || ''}`;
+  if (resumoTextoEl) resumoTextoEl.textContent = invasao.resumoDetalhado || invasao.fato;
+
+  // Renderizar Miniaturas
+  renderThumbnailsInvasao();
+
+  // Exibir a primeira foto
+  atualizarFotoInvasao();
+
+  // Renderizar Relatos Históricos
+  const relatosList = document.getElementById('modal-invasao-relatos-list');
+  if (relatosList) {
+    if (invasao.relatos && invasao.relatos.length > 0) {
+      relatosList.innerHTML = invasao.relatos.map(r => `
+        <div class="relato-card">
+          <div class="relato-quote-badge"><i class="fa-solid fa-quote-left"></i></div>
+          <blockquote class="relato-citacao">"${r.citacao}"</blockquote>
+          <div class="relato-author-meta">
+            <div class="relato-author-name">${r.autor}</div>
+            <div class="relato-author-cargo">${r.cargo}</div>
+            <div class="relato-fonte-tag"><i class="fa-solid fa-circle-check"></i> <strong>Fonte:</strong> ${r.fonte}</div>
+          </div>
+        </div>
+      `).join('');
+    } else {
+      relatosList.innerHTML = '<p class="text-muted">Relatos em processo de catalogação histórica.</p>';
+    }
+  }
+
+  // Renderizar Cortes & Vídeos
+  const videosList = document.getElementById('modal-invasao-videos-list');
+  if (videosList) {
+    if (invasao.cortesVideos && invasao.cortesVideos.length > 0) {
+      videosList.innerHTML = invasao.cortesVideos.map(v => {
+        const queryEncoded = encodeURIComponent(v.buscaRecomendada || v.titulo);
+        const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${queryEncoded}`;
+        return `
+          <div class="video-card">
+            <div class="video-info">
+              <h5 class="video-titulo"><i class="fa-brands fa-youtube" style="color: #ff0000; margin-right: 0.4rem;"></i>${v.titulo}</h5>
+              <div class="video-veiculo"><i class="fa-solid fa-broadcast-tower"></i> ${v.veiculo}</div>
+              <p class="video-desc">${v.descricao}</p>
+            </div>
+            <a href="${youtubeSearchUrl}" target="_blank" rel="noopener noreferrer" class="btn-video-watch">
+              <i class="fa-solid fa-play"></i> Assistir Registro
+            </a>
+          </div>
+        `;
+      }).join('');
+    } else {
+      videosList.innerHTML = '<p class="text-muted">Vídeos e cortes catalogados nas fontes parceiras.</p>';
+    }
+  }
+
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModalInvasao() {
+  const modal = document.getElementById('invasao-modal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function mudarFotoInvasao(delta) {
+  if (!invasaoAtual || !invasaoAtual.fotos || invasaoAtual.fotos.length === 0) return;
+  fotoInvasaoIndex = (fotoInvasaoIndex + delta + invasaoAtual.fotos.length) % invasaoAtual.fotos.length;
+  atualizarFotoInvasao();
+}
+
+function selecionarFotoInvasao(index) {
+  if (!invasaoAtual || !invasaoAtual.fotos || !invasaoAtual.fotos[index]) return;
+  fotoInvasaoIndex = index;
+  atualizarFotoInvasao();
+}
+
+function atualizarFotoInvasao() {
+  if (!invasaoAtual || !invasaoAtual.fotos || !invasaoAtual.fotos[fotoInvasaoIndex]) return;
+  const foto = invasaoAtual.fotos[fotoInvasaoIndex];
+
+  const imgEl = document.getElementById('modal-invasao-foto-img');
+  const contadorEl = document.getElementById('modal-invasao-foto-contador');
+  const tituloEl = document.getElementById('modal-invasao-foto-titulo');
+  const descEl = document.getElementById('modal-invasao-foto-desc');
+  const creditoEl = document.getElementById('modal-invasao-foto-credito-val');
+
+  if (imgEl) {
+    imgEl.src = foto.url;
+    imgEl.alt = foto.titulo;
+  }
+  if (contadorEl) {
+    contadorEl.textContent = `Foto ${fotoInvasaoIndex + 1} de ${invasaoAtual.fotos.length}`;
+  }
+  if (tituloEl) {
+    tituloEl.textContent = foto.titulo;
+  }
+  if (descEl) {
+    descEl.textContent = foto.legenda;
+  }
+  if (creditoEl) {
+    creditoEl.textContent = foto.credito;
+  }
+
+  // Atualizar classe ativa nas miniaturas
+  const thumbs = document.querySelectorAll('.gallery-thumb-item');
+  thumbs.forEach((th, idx) => {
+    if (idx === fotoInvasaoIndex) {
+      th.classList.add('active');
+    } else {
+      th.classList.remove('active');
+    }
+  });
+}
+
+function renderThumbnailsInvasao() {
+  const container = document.getElementById('modal-invasao-thumbs');
+  if (!container || !invasaoAtual || !invasaoAtual.fotos) return;
+
+  container.innerHTML = invasaoAtual.fotos.map((f, idx) => `
+    <button class="gallery-thumb-item ${idx === fotoInvasaoIndex ? 'active' : ''}" onclick="selecionarFotoInvasao(${idx})" aria-label="Foto ${idx + 1}: ${f.titulo}">
+      <img src="${f.url}" alt="${f.titulo}">
+      <span class="thumb-badge-num">Foto ${idx + 1}</span>
+    </button>
+  `).join('');
+}
+
+// Tornar funções acessíveis globalmente
+window.abrirModalInvasao = abrirModalInvasao;
+window.fecharModalInvasao = fecharModalInvasao;
+window.mudarFotoInvasao = mudarFotoInvasao;
+window.selecionarFotoInvasao = selecionarFotoInvasao;
 
 

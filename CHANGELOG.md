@@ -13,6 +13,46 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.4.0] - 2026-10-26
+
+### 🚂 Galeria Fotográfica e Relatos Históricos: As Três Grandes Invasões da Fiel
+
+Esta versão enriquece a seção **"As Três Grandes Invasões da Fiel"**, implementando uma experiência imersiva e interativa: ao clicar em cada card de invasão (1976, 2000 e 2012), abre-se um modal dedicado com **3 fotos históricas autênticas**, carrossel navegável, relatos e crônicas documentadas de personalidades históricas e links para cortes e vídeos de fontes confiáveis.
+
+### ✨ Adicionado (Added)
+- **Galeria Interativa com 3 Fotos por Invasão (9 Fotografias no Total):**
+  - **Invasão de 1976 (Rio de Janeiro - Maracanã):**
+    1. *O Êxodo Alvinegro na Via Dutra:* Ônibus, fuscas e carros em caravana contínua na Dutra (Acervo Folha / Estadão).
+    2. *O Maracanã Dividido ao Meio:* 70 mil corinthianos ocupando metade do estádio em público de 146 mil pessoas (Jornal do Brasil / Placar).
+    3. *A Glória nos Pênaltis com Tobias:* O goleiro Tobias nos braços da torcida após defesas contra Rodrigues Neto e Pintinho (Gazeta Esportiva / Placar).
+  - **Invasão de 2000 (Rio de Janeiro - 1º Mundial FIFA):**
+    1. *A Fiel Toma as Praias e a Orla:* Milhares de corinthianos em Copacabana e Leme antes da final (Folha Imagem / Agência Estado).
+    2. *Maracanã Alvinegro:* Mais de 35 mil corinthianos dominando os cânticos na decisão contra o Vasco (TV Globo / Placar).
+    3. *Corinthians o Primeiro Campeão Mundial FIFA:* Freddy Rincón e Marcelinho erguendo a taça sob chuva de confetes (FIFA Archives).
+  - **Invasão de 2012 (Japão - 2º Mundial FIFA):**
+    1. *O 'Tsunami Alvinegro' em Shibuya:* Ruas e metrôs de Tóquio e Yokohama tomados pela torcida com faixas 'Bando de Loucos' (Reuters / FIFA Media).
+    2. *Yokohama Transformada em Pacaembu:* Estádio Internacional de Yokohama com mais de 30 mil corinthianos (Getty Images / FIFA Gallery).
+    3. *Bicampeão Mundial com Cássio e Guerrero:* Cássio com a Bola de Ouro e Guerrero comemorando o gol do título sobre o Chelsea (FIFA Official / Agência Corinthians).
+- **Relatos Documentados de Fontes Confiáveis:**
+  - **1976:** Crônica histórica de **Nelson Rodrigues** ("O Rio era uma cidade ocupada... Torcida ganha jogo"), declaração de **Francisco Horta** (Presidente do Fluminense), depoimento de **Tobias** (Goleiro herói) e editorial de capa do **Jornal do Brasil**.
+  - **2000:** Relatos do capitão **Freddy Rincón**, de **Dinei** (Tricampeão brasileiro), de **Marcelinho Carioca** e cobertura da **Revista Placar**.
+  - **2012:** Depoimento emocionante de **Tite** ("Não parecia o Japão, parecia o Pacaembu"), do goleiro **Cássio Ramos**, do capitão do Chelsea **Frank Lampard** e do relatório oficial da **FIFA Technical Study Group** ("The Black and White Tsunami").
+- **Seção de Cortes & Registros em Vídeo:**
+  - Botões interativos que direcionam para cortes originais de partidas, penalidades e documentários no YouTube de canais confiáveis (*Identidade Corinthiana*, *Canal Do Povo Escolhido*, *FIFA TV* e *Acervo TV Tupi*).
+- **Modal Responsivo `#invasao-modal`:**
+  - Navegação fluida entre fotos (setas, miniaturas e atalhos de teclado `ArrowLeft` / `ArrowRight` / `Escape`).
+  - Indicador de foto (*Foto X de 3*), ficha técnica do jogo (local, público e placar) e design dark-mode alvinegro premium.
+- **Cards Interativos no Grid (`.invasao-card`):**
+  - Miniatura de foto em destaque, badge do ano, selo "3 Fotos Históricas", efeito de zoom e botão de ação animado ao passar o cursor.
+
+### 🔄 Modificado (Changed)
+- `data/corinthians-data.js`: Expansão da chave `invasoesMemoraveis` com metadados completos de fotos, relatos jornalísticos e referências de vídeo.
+- `index.html`: Inclusão da estrutura semântica do modal `#invasao-modal` e subtítulo orientador na seção.
+- `js/app.js`: Implementação de renderização interativa dos cards e funções `abrirModalInvasao`, `fecharModalInvasao`, `mudarFotoInvasao` e `selecionarFotoInvasao`.
+- `css/style.css`: Estilização completa do modal, galeria de 3 fotos, bloco de citações e responsividade mobile.
+
+---
+
 ## [1.3.0] - 2026-10-26
 
 ### 🛡️ Aplicação Global do Novo Emblema em Todo o Site

@@ -736,6 +736,9 @@
         <div class="section-header" style="margin-bottom: 2.5rem;">
           <span class="badge badge-misto"><i class="fa-solid fa-plane-departure"></i> O Povo em Marcha</span>
           <h3 style="font-size: 1.8rem; margin-top: 0.75rem;">As Três Grandes Invasões da Fiel</h3>
+          <p class="section-subtitle" style="margin-top: 0.5rem; max-width: 780px;">
+            Clique em cada invasão para abrir a galeria com <strong>3 fotos históricas</strong> e relatos documentados de cronistas, jogadores e fontes confiáveis.
+          </p>
         </div>
 
         <div class="invasoes-grid" id="invasoes-grid">
@@ -897,6 +900,102 @@
             <div class="modal-section-title"><i class="fa-solid fa-monument"></i> O Legado para a Fiel</div>
             <p id="modal-idolo-legado"></p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Modal de Fotos e Relatos Históricos das Invasões
+       ========================================================================== -->
+  <div class="modal-overlay" id="invasao-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container modal-invasao-container">
+      <button class="modal-close-btn" id="modal-invasao-close-btn" aria-label="Fechar janela da invasão">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-invasao-header">
+        <div class="modal-invasao-meta">
+          <span class="badge badge-misto" id="modal-invasao-badge">1976</span>
+          <span class="modal-invasao-data" id="modal-invasao-data">05 de Dezembro de 1976</span>
+        </div>
+        <h3 class="modal-invasao-titulo" id="modal-invasao-nome">Invasão Corinthiana do Maracanã</h3>
+        <p class="modal-invasao-subtitulo" id="modal-invasao-subtitulo">Campeonato Brasileiro - Semifinal</p>
+
+        <!-- Placar e Informações do Jogo -->
+        <div class="modal-invasao-match-box">
+          <div class="match-box-item">
+            <span class="match-box-label"><i class="fa-solid fa-location-dot"></i> Local</span>
+            <span class="match-box-val" id="modal-invasao-local">Maracanã - Rio de Janeiro</span>
+          </div>
+          <div class="match-box-item">
+            <span class="match-box-label"><i class="fa-solid fa-users"></i> Público Fiel</span>
+            <span class="match-box-val highlight" id="modal-invasao-publico">70.000 corinthianos</span>
+          </div>
+          <div class="match-box-item">
+            <span class="match-box-label"><i class="fa-solid fa-futbol"></i> Confronto / Placar</span>
+            <span class="match-box-val" id="modal-invasao-resultado">1 x 1 (4 x 1 nos pênaltis)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galeria de 3 Fotos Históricas -->
+      <div class="modal-invasao-gallery-section">
+        <div class="gallery-section-header">
+          <h4><i class="fa-solid fa-images"></i> Galeria Histórica (3 Registros Fotográficos)</h4>
+          <span class="gallery-counter" id="modal-invasao-foto-contador">Foto 1 de 3</span>
+        </div>
+
+        <div class="invasao-gallery-main">
+          <div class="gallery-image-frame">
+            <img id="modal-invasao-foto-img" src="" alt="Foto Histórica da Invasão" class="invasao-foto-destaque">
+            <button class="gallery-nav-btn prev" id="modal-invasao-btn-prev" aria-label="Foto anterior">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="gallery-nav-btn next" id="modal-invasao-btn-next" aria-label="Próxima foto">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="gallery-photo-badge" id="modal-invasao-foto-badge">
+              <i class="fa-solid fa-camera"></i> Registro Histórico
+            </div>
+          </div>
+
+          <div class="gallery-info-bar">
+            <h5 class="gallery-photo-title" id="modal-invasao-foto-titulo">Título da Foto</h5>
+            <p class="gallery-photo-desc" id="modal-invasao-foto-desc">Legenda detalhada do momento registrado.</p>
+            <div class="gallery-photo-credit" id="modal-invasao-foto-credito">
+              <i class="fa-solid fa-newspaper"></i> <span id="modal-invasao-foto-credito-val">Crédito</span>
+            </div>
+          </div>
+
+          <!-- Miniaturas das 3 fotos -->
+          <div class="gallery-thumbs-row" id="modal-invasao-thumbs">
+            <!-- Renderizado dinamicamente via JS com 3 fotos -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumo Detalhado -->
+      <div class="modal-invasao-context-box">
+        <h4 class="context-title"><i class="fa-solid fa-book-open"></i> O Contexto Histórico</h4>
+        <p id="modal-invasao-resumo-texto" class="context-desc"></p>
+      </div>
+
+      <!-- Relatos de Fontes Confiáveis -->
+      <div class="modal-invasao-relatos-section">
+        <h4 class="relatos-title"><i class="fa-solid fa-quote-left"></i> Relatos & Depoimentos em Fontes Confiáveis</h4>
+        <p class="relatos-subtitle">Depoimentos documentados pela imprensa e personagens históricos que viveram a invasão:</p>
+        
+        <div class="relatos-list" id="modal-invasao-relatos-list">
+          <!-- Renderizado via app.js -->
+        </div>
+      </div>
+
+      <!-- Cortes & Vídeos Recomendados -->
+      <div class="modal-invasao-videos-section">
+        <h4 class="videos-title"><i class="fa-solid fa-video"></i> Cortes & Registros em Vídeo</h4>
+        <div class="videos-list" id="modal-invasao-videos-list">
+          <!-- Renderizado via app.js -->
         </div>
       </div>
     </div>

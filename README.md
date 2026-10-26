@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.3.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.4.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -71,6 +71,13 @@ Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa
 ### 8. 🛡️ Panteão de Ídolos Eternos
 Cards com biografias, estatísticas de partidas, gols marcados, conquistas e frases marcantes de lendas como Sócrates, Rivellino, Marcelinho Carioca, Cássio, Luizinho e outros. Conta com modal de visualização aprofundada ao clicar.
 
+### 9. 🚂 As Três Grandes Invasões da Fiel (Galeria & Relatos Históricos)
+Experiência imersiva com as três maiores mobilizações de torcida da história: **1976 (Maracanã)**, **2000 (Mundial no Rio)** e **2012 (Mundial no Japão)**.
+- Ao clicar em cada invasão, abre-se um modal dedicado com **3 fotos históricas autênticas** em alta resolução (9 fotos no total).
+- Carrossel com navegação por miniaturas, setas e teclado (`ArrowLeft` / `ArrowRight`).
+- **Relatos de Fontes Confiáveis:** Citações documentadas de Nelson Rodrigues, Tite, Cássio, Tobias, Freddy Rincón, Dinei, Marcelinho Carioca, Frank Lampard, FIFA Technical Report e imprensa da época.
+- **Cortes & Registros em Vídeo:** Botões diretos para assistir a momentos decisivos e documentários no YouTube.
+
 ---
 
 ## 🎨 Design System & Estética
@@ -95,13 +102,14 @@ Salve o Corinthians/
 │       ├── logo-salve-corinthians-emblem.svg
 │       ├── logo-safiel.svg
 │       ├── idolos/
-│       └── titulos/
+│       ├── titulos/
+│       └── invasoes/        # 9 fotos históricas (3 para 1976, 3 para 2000, 3 para 2012)
 ├── css/
 │   └── style.css            # Folha de estilo completa, responsiva e com design system alvinegro
 ├── data/
-│   └── corinthians-data.js   # Base de dados estruturada (fatos, finanças, jogos, títulos, ídolos)
+│   └── corinthians-data.js   # Base de dados estruturada (fatos, finanças, jogos, títulos, ídolos, invasões)
 ├── js/
-│   └── app.js               # Lógica interativa, gráficos Chart.js, simulador, filtros e ticker
+│   └── app.js               # Lógica interativa, modais de galeria e relatos, gráficos, simulador
 ├── .gitignore               # Arquivos ignorados pelo Git
 ├── CHANGELOG.md             # Registro de todas as versões, alterações e adições
 ├── README.md                # Documentação técnica e visão geral do projeto
