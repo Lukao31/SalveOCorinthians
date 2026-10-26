@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salve o Corinthians | Glórias, Fatos da Diretoria, Balanço Financeiro e Futuro</title>
+  <meta name="description" content="Portal independente dedicado à história imortal do Corinthians, apuração de fatos da diretoria (erros e acertos de 1910 a 2026), debate sobre intervenção judicial, balanço financeiro transparente, feed de jogos e o projeto SAFIEL.">
+
+  <!-- Google Fonts: Montserrat (Headings) e Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Estilos Personalizados Alvinegros -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-salve-corinthians.svg">
+
+  <!-- Chart.js CDN para gráficos financeiros -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Barra do Relógio de Juros da Dívida em Tempo Real -->
+  <aside class="live-ticker-bar" aria-label="Relógio da Dívida em Tempo Real">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 0.75rem;">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <span class="ticker-pulse-dot"></span>
+        <span class="ticker-label"><i class="fa-solid fa-fire"></i> Relógio dos Juros ao Vivo:</span>
+        <span style="color: #e0e0e0;">Juros acumulados nesta visita:</span>
+        <span id="live-ticker-amount" class="ticker-live-amount">R$ 0,00</span>
+        <span id="live-ticker-seconds" class="ticker-time-elapsed">(0s)</span>
+      </div>
+      <div style="font-size: 0.78rem; color: #a0a0a0;">
+        Taxa estimada: <strong>R$ 8,57/segundo</strong> (~R$ 740 mil/dia) sobre a dívida consolidada de R$ 2,35 Bi
+      </div>
+    </div>
+  </aside>
+
+  <!-- Cabeçalho Principal & Navegação -->
+  <header class="main-header" id="header">
+    <div class="container nav-container">
+      <a href="#inicio" class="brand-logo" aria-label="Salve o Corinthians - Página Inicial">
+        <img src="assets/images/logo-salve-corinthians.svg" alt="Salve o Corinthians" class="brand-logo-img">
+      </a>
+
+      <!-- Menu de Navegação -->
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#dossie-gestao" class="nav-link"><i class="fa-solid fa-list-check"></i> Fatos</a></li>
+          <li><a href="#intervencao-judicial" class="nav-link nav-link-alert"><i class="fa-solid fa-triangle-exclamation"></i> Intervenção</a></li>
+          <li><a href="#balanco-financeiro" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Finanças</a></li>
+          <li><a href="#ultimos-jogos" class="nav-link"><i class="fa-solid fa-futbol"></i> Jogos</a></li>
+          <li><a href="#projetos-futuro" class="nav-link"><i class="fa-solid fa-users-gear"></i> SAFIEL</a></li>
+          <li><a href="#historico-titulos" class="nav-link"><i class="fa-solid fa-trophy"></i> Títulos</a></li>
+          <li><a href="#idolos-eternos" class="nav-link"><i class="fa-solid fa-shield-halved"></i> Ídolos</a></li>
+          <li><a href="#estatisticas" class="nav-link"><i class="fa-solid fa-chart-column"></i> Números</a></li>
+          <li><a href="#fontes" class="nav-link"><i class="fa-solid fa-newspaper"></i> Fontes</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#projetos-futuro" class="btn-safiel-header">
+          <i class="fa-solid fa-users-gear"></i> SAFIEL
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu de navegação">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Hero Section
+         ========================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-bg-wrapper">
+        <img src="assets/images/hero.jpg" alt="Fiel Torcida em festa na Neo Química Arena" class="hero-bg-img">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-shield-halved"></i> O Time do Povo • 116 Anos de Resistência
+          </div>
+
+          <!-- Logo Dedicado em Destaque -->
+          <div class="hero-logo-container">
+            <img src="assets/images/logo-salve-corinthians.svg" alt="Logo Salve o Corinthians" class="hero-logo-img">
+          </div>
+
+          <p class="hero-description">
+            O Corinthians é maior que qualquer cartola, grupo político ou crise financeira. Conheça as glórias imortais, entenda com <strong>fatos concretos os erros e acertos das diretorias (de 1910 a 2026)</strong>, analise o debate sobre a <strong>intervenção judicial</strong> e veja como a força de mais de 35 milhões de loucos pode transformar o futuro alvinegro.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#dossie-gestao" class="btn-primary">
+              <i class="fa-solid fa-list-check"></i> Fatos da Diretoria
+            </a>
+            <a href="#intervencao-judicial" class="btn-secondary" style="border-color: #ff4d4d; color: #ff6b6b;">
+              <i class="fa-solid fa-triangle-exclamation"></i> Intervenção Judicial
+            </a>
+            <a href="#balanco-financeiro" class="btn-secondary">
+              <i class="fa-solid fa-chart-line"></i> Balanço Financeiro
+            </a>
+            <a href="#projetos-futuro" class="btn-secondary">
+              <i class="fa-solid fa-lightbulb"></i> Movimento SAFIEL
+            </a>
+          </div>
+
+          <!-- Métricas Chave do Clube Atualizadas 2026 -->
+          <div class="hero-metrics-grid">
+            <div class="metric-card">
+              <div class="metric-value">1910</div>
+              <div class="metric-label">Origem Operária no Bom Retiro</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">35+ Mi</div>
+              <div class="metric-label">Bando de Loucos Apaixonados</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">2x FIFA</div>
+              <div class="metric-label">Bicampeão Mundial de Clubes</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value" style="color: #ff6b6b;" id="hero-live-debt-amount">R$ 2,350 Bi</div>
+              <div class="metric-label">Passivo Consolidado (2026)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 1: Dossiê de Fatos da Gestão & Diretoria (Erros e Acertos)
+         ========================================================================== -->
+    <section class="section section-darker" id="dossie-gestao">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Transparência Histórica & Atual</span>
+          <h2 class="section-title">Erros e Acertos da Diretoria (1910 - 2026)</h2>
+          <p class="section-subtitle">
+            Análise fria e documental dos momentos decisivos que moldaram o Corinthians. O torcedor precisa ter acesso aos <strong>fatos reais</strong> para discernir quem engrandeceu o clube e quem comprometeu suas finanças, reputação e governança.
+          </p>
+        </div>
+
+        <!-- Filtros do Dossiê -->
+        <div class="timeline-controls" role="tablist">
+          <button class="filter-btn dossie-filter-btn active" data-filter="todos">Todos os Fatos</button>
+          <button class="filter-btn dossie-filter-btn" data-filter="acerto"><i class="fa-solid fa-check"></i> Acertos Históricos</button>
+          <button class="filter-btn dossie-filter-btn" data-filter="erro"><i class="fa-solid fa-triangle-exclamation"></i> Erros Críticos</button>
+          <button class="filter-btn dossie-filter-btn" data-filter="Financeiro"><i class="fa-solid fa-coins"></i> Finanças & Dívida</button>
+          <button class="filter-btn dossie-filter-btn" data-filter="Politico"><i class="fa-solid fa-gavel"></i> Bastidores & Política</button>
+          <button class="filter-btn dossie-filter-btn" data-filter="Estadio"><i class="fa-solid fa-landmark"></i> Arena & Obras</button>
+        </div>
+
+        <!-- Grid de Cards do Dossiê Dinâmico -->
+        <div class="dossie-grid" id="dossie-grid">
+          <!-- Renderizado via app.js a partir de corinthians-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 2: O Debate Crítico sobre Intervenção Judicial
+         ========================================================================== -->
+    <section class="section" id="intervencao-judicial">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" style="color: #ff6b6b;"><i class="fa-solid fa-triangle-exclamation"></i> Crise Institucional Máxima</span>
+          <h2 class="section-title">O Debate sobre Intervenção Judicial no Corinthians</h2>
+          <p class="section-subtitle">
+            Entenda por que juristas, torcedores organizados e o Ministério Público de São Paulo discutem a possibilidade extrema de uma intervenção judicial civil para afastar a diretoria e conselheiros e sanear a governança do clube.
+          </p>
+        </div>
+
+        <div class="intervencao-alert-banner">
+          <div class="intervencao-header">
+            <div class="intervencao-icon-badge">
+              <i class="fa-solid fa-gavel"></i>
+            </div>
+            <div class="intervencao-titles">
+              <span class="badge badge-erro" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i> Inquéritos em Andamento no MPSP</span>
+              <h3>Por Que Uma Intervenção Civil Está Sendo Discutida?</h3>
+            </div>
+          </div>
+
+          <p class="intervencao-lead">
+            O Corinthians vive o maior impasse político de sua história. De um lado, a Diretoria Executiva enfrenta processos de impeachment e investigações policiais sobre empresas laranjas no contrato de patrocínio máster. Do outro, o Conselho Deliberativo trava batalhas de liminares que paralisam o clube. Diante do risco iminente de colapso do Regime Centralizado de Execuções (RCE) e penhoras massivas, cresce a pressão popular para que a Justiça intervenha.
+          </p>
+
+          <!-- 4 Razões Centrais -->
+          <div class="intervencao-razoes-grid" id="intervencao-razoes-grid">
+            <!-- Renderizado via app.js -->
+          </div>
+
+          <!-- Dual Debate: Prós vs Contras / Riscos FIFA -->
+          <div class="debate-dual-grid">
+            <div class="debate-col">
+              <h4 style="color: #22c55e;"><i class="fa-solid fa-circle-check"></i> Argumentos a Favor da Intervenção</h4>
+              <ul class="debate-list favor" id="intervencao-list-favor">
+                <!-- Renderizado via app.js -->
+              </ul>
+            </div>
+
+            <div class="debate-col">
+              <h4 style="color: #ff6b6b;"><i class="fa-solid fa-triangle-exclamation"></i> Riscos e Argumentos Contrários</h4>
+              <ul class="debate-list contra" id="intervencao-list-contra">
+                <!-- Renderizado via app.js -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 3: Balanço Financeiro & Transparência Pública (Atualizado 2026)
+         ========================================================================== -->
+    <section class="section section-darker" id="balanco-financeiro">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Raio-X Contábil Oficial</span>
+          <h2 class="section-title">Balanço Financeiro do Corinthians</h2>
+          <p class="section-subtitle">
+            Dados públicos consolidados dos <strong>Demonstrativos Financeiros Auditados</strong> do Sport Club Corinthians Paulista, relatórios fiscais oficiais e análises de mercado (Convocados / EY / BDO).
+          </p>
+        </div>
+
+        <!-- KPIs Financeiros Atualizados -->
+        <div class="financas-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-card-glow"></div>
+            <div class="kpi-label">Passivo Total Consolidado (2026)</div>
+            <div class="kpi-value alert">R$ 2,35 Bi</div>
+            <div class="kpi-detail">Clube Social + Futebol (~R$ 1,65 Bi) + Financiamento Caixa Arena (~R$ 700 Mi).</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-glow"></div>
+            <div class="kpi-label">Faturamento Anual (Estimado)</div>
+            <div class="kpi-value">R$ 980 Mi</div>
+            <div class="kpi-detail">Receita bruta alavancada por acordos comerciais e direitos de transmissão.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-glow"></div>
+            <div class="kpi-label">Folha Salarial Mensal Atual</div>
+            <div class="kpi-value">R$ 26,5 Mi</div>
+            <div class="kpi-detail">Custo do elenco com atletas de nível europeu (Memphis, Garro, Yuri, encargos e CLT).</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-glow"></div>
+            <div class="kpi-label">Comprometimento de Caixa</div>
+            <div class="kpi-value">~74%</div>
+            <div class="kpi-detail">Proporção da receita operacional consumida exclusivamente pelo departamento de futebol.</div>
+          </div>
+        </div>
+
+        <!-- Gráficos Interativos Chart.js -->
+        <div class="charts-grid">
+          <!-- Gráfico 1: Evolução da Dívida -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title"><i class="fa-solid fa-arrow-trend-up"></i> Evolução da Dívida do Clube (2017 - 2026)</h3>
+                <p class="chart-desc">Crescimento do passivo operacional do Sport Club Corinthians Paulista</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chartDivida"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 2: Composição dos Credores -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title"><i class="fa-solid fa-chart-pie"></i> Composição da Dívida Consolidada</h3>
+                <p class="chart-desc">Distribuição percentual entre Fisco, Caixa, Atletas, Bancos e Agentes</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chartComposicao"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráfico 3: Matriz de Receitas -->
+        <div class="chart-card" style="margin-bottom: 3.5rem;">
+          <div class="chart-card-header">
+            <div>
+              <h3 class="chart-title"><i class="fa-solid fa-money-bill-wave"></i> Matriz das Principais Fontes de Receita</h3>
+              <p class="chart-desc">Origem dos recursos que mantêm o Corinthians operando anualmente</p>
+            </div>
+          </div>
+          <div class="chart-container" style="height: 260px;">
+            <canvas id="chartReceitas"></canvas>
+          </div>
+        </div>
+
+        <!-- Calculadora Didática da Dívida e Relógio Ao Vivo -->
+        <div class="debt-calculator-box">
+          <div class="calc-header">
+            <span class="badge badge-misto" style="margin-bottom: 1rem;"><i class="fa-solid fa-calculator"></i> Impacto em Tempo Real</span>
+            <h3 class="calc-title">O Que Significa Uma Dívida de R$ 2,35 Bilhões?</h3>
+            <p class="calc-subtitle">
+              Para o torcedor entender a gravidade dos juros bancários e da mora acumulada:
+            </p>
+          </div>
+
+          <div class="calc-stats-row">
+            <div class="calc-stat-item">
+              <div class="calc-stat-number">R$ 67,14</div>
+              <div class="calc-stat-label">Custo por torcedor (35 Mi Fiéis)</div>
+            </div>
+            <div class="calc-stat-item">
+              <div class="calc-stat-number">R$ 740 Mil</div>
+              <div class="calc-stat-label">Juros e encargos estimados por dia</div>
+            </div>
+            <div class="calc-stat-item">
+              <div class="calc-stat-number">R$ 514,20</div>
+              <div class="calc-stat-label">Juros acumulados por minuto</div>
+            </div>
+            <div class="calc-stat-item">
+              <div class="calc-stat-number" id="debt-clock-main-val" style="color: #ff6b6b;">R$ 0,00</div>
+              <div class="calc-stat-label">Juros corridos durante sua leitura</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 4: Feed de Últimos Jogos do Corinthians (2026)
+         ========================================================================== -->
+    <section class="section" id="ultimos-jogos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Campo & Bola ao Vivo</span>
+          <h2 class="section-title">Últimos Jogos e Desempenho do Timão</h2>
+          <p class="section-subtitle">
+            Acompanhe os resultados recentes, scout de estatísticas táticas (posse, finalizações e faltas) e assista aos melhores momentos oficiais.
+          </p>
+        </div>
+
+        <!-- Grid de Jogos Renderizado via JS -->
+        <div class="jogos-feed-grid" id="jogos-feed-grid">
+          <!-- Renderizado via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 5: Projetos de Salvação e Futuro (Projeto SAFIEL)
+         ========================================================================== -->
+    <section class="section section-darker" id="projetos-futuro">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">O Futuro Pertence à Fiel</span>
+          <h2 class="section-title">Projetos de Salvação e Governança</h2>
+          <p class="section-subtitle">
+            Como recuperar o clube sem perder sua alma operária? Conheça a proposta do <strong>Projeto SAFIEL</strong> e as principais iniciativas da torcida para blindar o Corinthians de gestões predatórias.
+          </p>
+        </div>
+
+        <!-- Bloco de Destaque Oficial SAFIEL com Logo e Link Clicável -->
+        <div class="safiel-official-brand-box">
+          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+            <img src="assets/images/logo-safiel.svg" alt="Logo Oficial SAFiel" class="safiel-logo-img">
+            <div>
+              <div style="font-weight: 800; font-size: 1.15rem; color: #ffffff;">MOVIMENTO SAFIEL OFICIAL</div>
+              <div style="font-size: 0.85rem; color: #a0a0a0;">A primeira SAF popular e democrática estruturada pela torcida corinthiana</div>
+            </div>
+          </div>
+
+          <div>
+            <a href="https://safiel.com.br" target="_blank" rel="noopener noreferrer" class="btn-safiel-oficial">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Site Oficial: safiel.com.br
+            </a>
+          </div>
+        </div>
+
+        <!-- Vitrine do Projeto SAFIEL -->
+        <div class="safiel-showcase">
+          <div class="safiel-banner-container">
+            <img src="assets/images/safiel.jpg" alt="Conceito da Governança SAFIEL e Transparência" class="safiel-banner-img">
+            <span class="badge badge-acerto safiel-banner-badge">
+              <i class="fa-solid fa-users"></i> SAF Popular do Timão
+            </span>
+          </div>
+
+          <div class="safiel-text-content">
+            <span class="badge badge-misto" style="margin-bottom: 1rem;">Modelo Societário Democrático</span>
+            <h3>PROJETO SAFIEL</h3>
+            <div class="safiel-lema">"Gestão Profissional de Mercado com Dono 100% Popular"</div>
+            <p class="safiel-description">
+              Diferente de modelos de SAF tradicionais onde um único bilionário compra o clube e pode mudar escudo, cores e demitir a história, o <strong>Projeto SAFIEL</strong> (<a href="https://safiel.com.br" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">safiel.com.br</a>) propõe que a torcida corinthiana seja a verdadeira proprietária das ações, inspirando-se no modelo alemão 50+1 da Bundesliga e no cooperativismo.
+            </p>
+            <p class="safiel-description">
+              Com cotas populares acessíveis, qualquer torcedor torna-se acionista fiscalizador. Os recursos arrecadados não vão para o bolso de empresários nem para cartolas, mas sim para uma conta garantida e blindada (Escrow) destinada exclusivamente à liquidação das dívidas do estádio e tributárias.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilares Fundamentais do SAFIEL -->
+        <div class="safiel-pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <h4 class="pillar-title">1. Cotas Populares Acessíveis</h4>
+            <p class="pillar-text">
+              Emissão de ações populares a partir de R$ 50/mês ou aportes únicos. Limite rígido de participação (máximo 1% a 2% por CPF) para impedir monopólio ou investidores predatórios.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-shield"></i></div>
+            <h4 class="pillar-title">2. Regra 50+1 & Golden Share</h4>
+            <p class="pillar-text">
+              O Sport Club Corinthians Paulista mantém a 'Ação de Ouro' com poder de veto irrevogável sobre patrimônio imaterial: escudo, cores preto e branca, hino, sede e tradição intocáveis.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-file-shield"></i></div>
+            <h4 class="pillar-title">3. Compliance e Big Four</h4>
+            <p class="pillar-text">
+              Diretoria executiva técnica contratada por headhunter profissional com metas de sustentabilidade financeira. Auditorias mensais públicas realizadas pelas maiores firmas contábeis mundiais.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-lock"></i></div>
+            <h4 class="pillar-title">4. Fundo Blindado Escrow</h4>
+            <p class="pillar-text">
+              Conta jurídica especial com fiscalização de conselho de notáveis independentes: 100% dos valores arrecadados pela Fiel são canalizados diretamente para o abate de juros e quitação de credores.
+            </p>
+          </div>
+        </div>
+
+        <!-- Simulador Interativo da Força da Fiel Torcida -->
+        <div class="simulator-card">
+          <div class="simulator-header">
+            <span class="badge badge-acerto" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-sliders"></i> Simulador Interativo</span>
+            <h4>A Força dos 35 Milhões de Loucos</h4>
+            <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto;">
+              Arraste os controles abaixo e veja na prática como a mobilização coletiva da Fiel liquida o endividamento do Corinthians:
+            </p>
+          </div>
+
+          <div class="simulator-controls">
+            <!-- Controle 1: Torcedores Engajados -->
+            <div class="control-group">
+              <div class="control-label">
+                <span>Torcedores Engajados no SAFIEL:</span>
+                <span class="control-value" id="lbl-torcedores-val">2.5 Milhões de Fiéis</span>
+              </div>
+              <input type="range" id="range-torcedores" min="200000" max="10000000" step="100000" value="2500000">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #777;">
+                <span>200 mil</span>
+                <span>5 milhões</span>
+                <span>10 milhões (apenas 28% da torcida)</span>
+              </div>
+            </div>
+
+            <!-- Controle 2: Valor Médio de Contribuição Mensal -->
+            <div class="control-group">
+              <div class="control-label">
+                <span>Valor Médio Mensal por Fiel:</span>
+                <span class="control-value" id="lbl-valor-val">R$ 30 / mês</span>
+              </div>
+              <input type="range" id="range-valor" min="10" max="100" step="5" value="30">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #777;">
+                <span>R$ 10</span>
+                <span>R$ 50</span>
+                <span>R$ 100</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resultados do Simulador -->
+          <div class="simulator-results">
+            <div>
+              <div class="sim-res-val" id="res-arrecadacao-mes">R$ 75 Mi</div>
+              <div class="sim-res-sub">Arrecadação Mensal</div>
+            </div>
+            <div>
+              <div class="sim-res-val" id="res-arrecadacao-ano">R$ 900 Mi</div>
+              <div class="sim-res-sub">Arrecadação Anual</div>
+            </div>
+            <div>
+              <div class="sim-res-val" style="color: #22c55e;" id="res-meses-arena">9.3 meses</div>
+              <div class="sim-res-sub">Tempo para Quitar a Arena (R$ 700M)</div>
+            </div>
+            <div>
+              <div class="sim-res-val" style="color: #ffffff;" id="res-meses-total">2.6 anos</div>
+              <div class="sim-res-sub">Para Zerar a Dívida Total (R$ 2,35 Bi)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outras Iniciativas da Torcida -->
+        <div class="other-projects-grid">
+          <div class="other-proj-card">
+            <div>
+              <span class="badge badge-misto" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-piggy-bank"></i> Movimento Popular</span>
+              <h5>Vaquinha da Gaviões / Fiel para a Caixa</h5>
+              <p>
+                Iniciativa pioneira para abrir uma chave PIX oficial vinculada diretamente à Caixa Econômica Federal. O dinheiro depositado pelo torcedor não passa pela conta corrente da diretoria do clube: cada real abate instantaneamente o saldo devedor do financiamento da Arena, liberando as receitas de bilheteria para investimento no futebol.
+              </p>
+            </div>
+          </div>
+
+          <div class="other-proj-card">
+            <div>
+              <span class="badge badge-misto" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check-to-slot"></i> Reforma Estatutária</span>
+              <h5>Democratização do Voto: Fiel Torcedor</h5>
+              <p>
+                Luta permanente para que os torcedores do programa Fiel Torcedor com histórico de adimplência tenham direito a voto direto para Presidente e Conselho Deliberativo. O clube não pode mais ser decidido por apenas cerca de 4.000 frequentadores do Parque São Jorge enquanto 35 milhões de torcedores sustentam a marca.
+              </p>
+            </div>
+          </div>
+
+          <div class="other-proj-card">
+            <div>
+              <span class="badge badge-misto" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-shield-halved"></i> Governança Independente</span>
+              <h5>Conselho de Notáveis e Auditoria Externa Permanente</h5>
+              <p>
+                Criação estatutária de um comitê independente de conformidade formado por juristas e peritos contábeis de renome sem cargos em chapas partidárias. Todo contrato de patrocínio, compra e comissão a intermediários deve passar por crivo público e compliance obrigatório.
+              </p>
+            </div>
+          </div>
+
+          <div class="other-proj-card">
+            <div>
+              <span class="badge badge-misto" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-square-poll-vertical"></i> Democracia Digital</span>
+              <h5>Orçamento Participativo da Fiel</h5>
+              <p>
+                Destinação de uma porcentagem fixa das receitas do programa Fiel Torcedor para ser deliberada diretamente pelos associados através de votação em aplicativo transparente: o torcedor escolhe onde alocar verbas (categorias de base, reforma da Fazendinha ou futebol feminino).
+              </p>
+            </div>
+          </div>
+
+          <div class="other-proj-card">
+            <div>
+              <span class="badge badge-misto" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-scale-unbalanced-flip"></i> Gestão de Passivo</span>
+              <h5>Regime Centralizado de Execuções (RCE)</h5>
+              <p>
+                Aplicação da Lei 14.193/2021 para centralização das cobranças trabalhistas e cíveis com teto máximo de 20% das receitas correntes. Isso elimina o risco mortal de penhoras judiciais surpresa sobre cotas de televisão e receitas de bilheteria que paralisam a folha do clube.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 6: História Imortal, Glórias & Vitrine de Títulos
+         ========================================================================== -->
+    <section class="section" id="historico-titulos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Glórias Imortais</span>
+          <h2 class="section-title">Todas as Conquistas do Corinthians</h2>
+          <p class="section-subtitle">
+            Uma trajetória forjada na superação, no suor e na paixão incomparável da Fiel Torcida. De 1910 ao topo do mundo.
+          </p>
+        </div>
+
+        <!-- Banner Histórico em Preto e Branco -->
+        <div class="historia-hero-banner">
+          <img src="assets/images/historia.jpg" alt="Tributo à História do Sport Club Corinthians Paulista" class="historia-banner-img">
+          <div class="historia-banner-content">
+            <blockquote class="historia-quote">
+              "O Corinthians é o time do povo, e o povo é quem vai fazer o time."
+            </blockquote>
+            <div class="historia-author">— Miguel Battaglia, 1º Presidente do Corinthians (1910)</div>
+          </div>
+        </div>
+
+        <!-- Controles da Vitrine de Títulos -->
+        <div class="titulos-controls">
+          <div class="timeline-controls" style="margin-bottom: 0;" role="tablist">
+            <button class="filter-btn titulo-filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Mundial"><i class="fa-solid fa-globe"></i> Mundiais FIFA</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Continental"><i class="fa-solid fa-earth-americas"></i> Libertadores & Recopa</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Nacional"><i class="fa-solid fa-flag"></i> Brasileirão & Copas</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Estadual"><i class="fa-solid fa-trophy"></i> Paulistão (30x)</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Feminino"><i class="fa-solid fa-crown"></i> As Brabas</button>
+          </div>
+
+          <div class="d-flex align-items-center gap-sm" style="flex-wrap: wrap;">
+            <button id="btn-ordem-titulos" class="btn-ordem-cronologica" type="button" aria-label="Alternar ordem cronológica dos títulos">
+              <i class="fa-solid fa-arrow-down-1-9"></i> <span>Ordem: 1914 ➔ 2024</span>
+            </button>
+
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="search-titulos" placeholder="Buscar título por ano ou nome..." aria-label="Buscar conquistas">
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid de Títulos Renderizado via JS -->
+        <div class="titulos-grid" id="titulos-grid">
+          <!-- Renderizado via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 7: Panteão dos Ídolos e Jogadores Lendários
+         ========================================================================== -->
+    <section class="section section-darker" id="idolos-eternos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Guerreiros Alvinegros</span>
+          <h2 class="section-title">Panteão dos Ídolos Históricos</h2>
+          <p class="section-subtitle">
+            Os homens e mulheres que honraram o manto, desafiaram a lógica, venceram o impossível e se tornaram imortais no coração da torcida.
+          </p>
+        </div>
+
+        <!-- Controles dos Ídolos -->
+        <div class="titulos-controls">
+          <div class="timeline-controls" style="margin-bottom: 0;" role="tablist">
+            <button class="filter-btn idolo-filter-btn active" data-filter="todos">Todos os Ídolos</button>
+            <button class="filter-btn idolo-filter-btn" data-filter="democracia"><i class="fa-solid fa-people-group"></i> Democracia</button>
+            <button class="filter-btn idolo-filter-btn" data-filter="campeao-mundial"><i class="fa-solid fa-earth-americas"></i> Mundiais</button>
+            <button class="filter-btn idolo-filter-btn" data-filter="artilheiro"><i class="fa-solid fa-futbol"></i> Artilheiros</button>
+            <button class="filter-btn idolo-filter-btn" data-filter="recordista"><i class="fa-solid fa-award"></i> Recordistas</button>
+            <button class="filter-btn idolo-filter-btn" data-filter="as-brabas"><i class="fa-solid fa-crown"></i> As Brabas</button>
+          </div>
+
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-idolos" placeholder="Buscar jogador, apelido ou posição..." aria-label="Buscar ídolo">
+          </div>
+        </div>
+
+        <!-- Grid de Ídolos Renderizado via JS -->
+        <div class="idolos-grid" id="idolos-grid">
+          <!-- Renderizado via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 8: Estatísticas, Fatos Lendários e As Grandes Invasões
+         ========================================================================== -->
+    <section class="section" id="estatisticas">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Números & Epopeias</span>
+          <h2 class="section-title">Estatísticas e Feitos Lendários</h2>
+          <p class="section-subtitle">
+            Marcas inatingíveis e momentos em que a Fiel Torcida desafiou as fronteiras e reescreveu a história do futebol.
+          </p>
+        </div>
+
+        <!-- Tabelas de Estatísticas -->
+        <div class="stats-tables-grid">
+          <!-- Maiores Artilheiros -->
+          <div class="stats-table-box">
+            <h4><i class="fa-solid fa-futbol"></i> Maiores Artilheiros da História</h4>
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Jogador</th>
+                  <th>Gols</th>
+                  <th>Jogos</th>
+                  <th>Média</th>
+                </tr>
+              </thead>
+              <tbody id="table-artilheiros-body">
+                <!-- Renderizado via app.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mais Partidas -->
+          <div class="stats-table-box">
+            <h4><i class="fa-solid fa-shield-halved"></i> Atletas Com Mais Jogos Pelo Timão</h4>
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Jogador</th>
+                  <th>Partidas</th>
+                  <th>Período</th>
+                </tr>
+              </thead>
+              <tbody id="table-jogos-body">
+                <!-- Renderizado via app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- As Grandes Invasões Corinthianas -->
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="badge badge-misto"><i class="fa-solid fa-plane-departure"></i> O Povo em Marcha</span>
+          <h3 style="font-size: 1.8rem; margin-top: 0.75rem;">As Três Grandes Invasões da Fiel</h3>
+        </div>
+
+        <div class="invasoes-grid" id="invasoes-grid">
+          <!-- Renderizado via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         Seção 9: Fontes Confiáveis & Mídia Independente
+         ========================================================================== -->
+    <section class="section section-darker" id="fontes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Jornalismo & Consciência</span>
+          <h2 class="section-title">Fontes de Pesquisa e Referência</h2>
+          <p class="section-subtitle">
+            Este projeto apoia-se em canais independentes que trabalham com honestidade, memória histórica e apuração rigorosa em prol do Corinthians.
+          </p>
+        </div>
+
+        <div class="fontes-grid" id="fontes-grid">
+          <!-- Renderizado via app.js com destaque para Canal Do Povo Escolhido, Meu Timão, Identidade Corinthiana -->
+        </div>
+
+        <!-- Manifesto Final -->
+        <div class="manifesto-box">
+          <h3 class="manifesto-title">O CORINTHIANS É DO POVO.</h3>
+          <p class="manifesto-text">
+            "Não viemos da elite. Nascemos sob a luz de um lampião a gás nas ruas do Bom Retiro, pelas mãos calejadas de alfaiates, pintores e sapateiros. O Corinthians não pertence a cartolas, credores ou empresários gananciosos. Pertence a cada um dos 35 milhões de corinthianos que carregam esse escudo no peito na vitória e na derrota."
+          </p>
+          <a href="#inicio" class="btn-primary">
+            <i class="fa-solid fa-arrow-up"></i> Voltar ao Topo
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-salve-corinthians.svg" alt="Salve o Corinthians" style="height: 44px; margin-bottom: 1rem;">
+          <p>
+            Plataforma independente de informação, resgate de memória, auditoria popular e exaltação do Sport Club Corinthians Paulista.
+          </p>
+          <div style="margin-top: 1rem; color: #888; font-size: 0.8rem;">
+            Desenvolvido com respeito absoluto às raízes alvinegras de 1910.
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#dossie-gestao">Fatos da Diretoria</a></li>
+            <li><a href="#intervencao-judicial">Intervenção Judicial</a></li>
+            <li><a href="#balanco-financeiro">Balanço Financeiro</a></li>
+            <li><a href="#ultimos-jogos">Feed de Jogos</a></li>
+            <li><a href="#projetos-futuro">Projeto SAFIEL</a></li>
+            <li><a href="#historico-titulos">Títulos & Glórias</a></li>
+            <li><a href="#idolos-eternos">Ídolos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Canais Recomendados</h5>
+          <ul>
+            <li><a href="https://www.youtube.com/@CanalDoPovoEscolhido" target="_blank" rel="noopener">Canal Do Povo Escolhido</a></li>
+            <li><a href="https://www.meutimao.com.br" target="_blank" rel="noopener">Meu Timão</a></li>
+            <li><a href="https://www.youtube.com/@IdentidadeCorinthiana" target="_blank" rel="noopener">Identidade Corinthiana</a></li>
+            <li><a href="https://safiel.com.br" target="_blank" rel="noopener">Movimento Oficial SAFIEL</a></li>
+            <li><a href="https://www.corinthians.com.br/clube/transparencia" target="_blank" rel="noopener">Portal da Transparência SCCP</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 1910 - 2026 Salve o Corinthians. Feito pela torcida, para a torcida.
+        </div>
+        <div>
+          "Aqui tem um bando de loucos, loucos por ti, Corinthians!"
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Modal de Foto e Momento Histórico do Ídolo
+       ========================================================================== -->
+  <div class="modal-overlay" id="idolo-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar janela de foto do ídolo">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-body">
+        <!-- Coluna da Foto Histórica Real -->
+        <div class="modal-photo-column">
+          <div class="modal-img-wrapper">
+            <img id="modal-idolo-foto" src="" alt="" class="modal-idolo-img">
+            <div class="modal-photo-badge">
+              <i class="fa-solid fa-camera-retro"></i> Momento Histórico Real
+            </div>
+          </div>
+          <div class="modal-photo-caption" id="modal-idolo-momento">
+            <!-- Descrição detalhada do momento capturado -->
+          </div>
+          <div class="modal-photo-source" id="modal-idolo-fonte">
+            <!-- Fonte: Acervo Histórico / Wikimedia Commons -->
+          </div>
+        </div>
+
+        <!-- Coluna de Informações e Legado -->
+        <div class="modal-info-column">
+          <div class="modal-header-meta">
+            <span class="badge badge-misto" id="modal-idolo-tag">Ídolo Eterno</span>
+            <span class="modal-periodo" id="modal-idolo-periodo">1978 - 1984</span>
+          </div>
+
+          <h3 class="modal-idolo-nome" id="modal-idolo-nome">Nome do Ídolo</h3>
+          <div class="modal-idolo-posicao" id="modal-idolo-posicao">Posição no Campo</div>
+
+          <div class="modal-stats-grid">
+            <div class="modal-stat-card">
+              <span class="modal-stat-num" id="modal-idolo-jogos">0</span>
+              <span class="modal-stat-label">Partidas</span>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-num" id="modal-idolo-gols">0</span>
+              <span class="modal-stat-label">Gols</span>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-num" id="modal-idolo-tacas-count"><i class="fa-solid fa-trophy"></i></span>
+              <span class="modal-stat-label" id="modal-idolo-tacas-label">Títulos Oficiais</span>
+            </div>
+          </div>
+
+          <div class="modal-titulos-box">
+            <div class="modal-section-title"><i class="fa-solid fa-award"></i> Conquistas Principais</div>
+            <p id="modal-idolo-titulos">Títulos</p>
+          </div>
+
+          <blockquote class="modal-idolo-frase" id="modal-idolo-frase">
+            <!-- Frase marcante do ídolo -->
+          </blockquote>
+
+          <div class="modal-legado-box">
+            <div class="modal-section-title"><i class="fa-solid fa-monument"></i> O Legado para a Fiel</div>
+            <p id="modal-idolo-legado"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data/corinthians-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

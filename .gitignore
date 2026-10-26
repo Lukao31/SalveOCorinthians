@@ -1,0 +1,18 @@
+# Arquivos de sistema e ambiente
+.DS_Store
+Thumbs.db
+*.log
+
+# Editores e IDEs
+.vscode/
+.idea/
+
+# Dependências (se aplicável futuramente)
+node_modules/
+package-lock.json
+
+# Antigravity & temporários
+.gemini/
+scratch/
+push-to-github.bat
+push.log
