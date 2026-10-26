@@ -13,6 +13,31 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.5.0] - 2026-10-26
+
+### 📷 Substituição Integral por Fotografias Históricas Reais (Sem IA)
+
+Atendendo à diretriz de autenticidade documental rigorosa, todas as imagens da seção **"As Três Grandes Invasões da Fiel"** foram integralmente substituídas por **fotografias históricas reais**, digitalizadas a partir de acervos públicos, arquivos de imprensa da época e memoriais oficiais (Wikimedia Commons, Acervo Fortepan, Memorial do Corinthians, Revista Placar / Internet Archive e coberturas de repórteres fotográficos credenciados).
+
+### 🔄 Modificado (Changed)
+- **Substituição de 100% das 9 Fotografias por Registros Históricos Reais:**
+  - **Invasão de 1976 (Semifinal do Brasileirão no Maracanã):**
+    1. *O Ônibus 'Mosqueteiro' na Dutra:* Registro fotográfico real de Mílton Jung / Acervo Adamo Bazani mostrando o clássico ônibus Caio Gaivota cercado pela multidão de torcedores corinthianos (com torcedores no teto) em plena marcha para o Rio.
+    2. *O Gigante Maracanã em 1976:* Fotografia documental real do acervo histórico Fortepan (Registro Nº 78067, 1976), exibindo as arquibancadas do Maracanã lotadas por 146 mil pessoas.
+    3. *Ingresso Oficial de 05/12/1976:* Digitalização autêntica do bilhete original do jogo Fluminense x Corinthians, preservado no acervo histórico do Memorial do Corinthians.
+  - **Invasão de 2000 (1º Mundial de Clubes da FIFA no Maracanã):**
+    1. *Bandeirão Alvinegro no Maracanã:* Fotografia real da torcida corinthiana com grande bandeirão na arquibancada do Maracanã na grande final mundial.
+    2. *Revista Placar Nº 1159 (Janeiro/2000):* Capa histórica documental da revista Placar com Marcelinho Carioca, Freddy Rincón e o elenco erguendo a primeira taça do Mundial da FIFA.
+    3. *A Taça Oficial do Mundial FIFA 2000:* Registro fotográfico autêntico da taça oficial original da FIFA, exposta no Memorial do Corinthians no Parque São Jorge.
+  - **Invasão de 2012 (2º Mundial de Clubes da FIFA no Japão):**
+    1. *Corinthians no Gramado de Yokohama:* Fotografia documental autêntica de Tomofumi Kitano do time titular do Corinthians perfilado com 30 mil corinthianos e faixas alvinegras nas arquibancadas do International Stadium Yokohama.
+    2. *A Defesa Milagrosa de Cássio:* Fotografia esportiva real de Tomofumi Kitano capturando o momento exato da defesa histórica de Cássio na final contra o Chelsea no chute de Fernando Torres.
+    3. *A Comemoração do Bicampeonato Mundial:* Fotografia documental real de Tomofumi Kitano do elenco do Timão e comissão técnica comemorando a taça mundial no pódio de Yokohama.
+- **Atualização dos Metadados em `data/corinthians-data.js`:**
+  - Revisão rigorosa de títulos, legendas e créditos fotográficos nominais indicando fotógrafo, acervo e licença de uso histórico.
+
+---
+
 ## [1.4.0] - 2026-10-26
 
 ### 🚂 Galeria Fotográfica e Relatos Históricos: As Três Grandes Invasões da Fiel

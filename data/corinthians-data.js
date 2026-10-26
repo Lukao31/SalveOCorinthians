@@ -827,21 +827,21 @@ const CORINTHIANS_DATA = {
         fotos: [
           {
             url: "assets/images/invasoes/1976_dutra_onibus.jpg",
-            titulo: "O Êxodo Alvinegro na Rodovia Presidente Dutra",
-            legenda: "A Rodovia Presidente Dutra tomada por dezenas de milhares de fuscas, caminhonetes, carros e mais de mil ônibus fretados com bandeiras alvinegras rumo ao Rio de Janeiro. A maior caravana rodoviária da história brasileira.",
-            credito: "Acervo Histórico / Folha de S. Paulo & O Estado de S. Paulo (1976)"
+            titulo: "O Ônibus 'Mosqueteiro' e a Caravana da Invasão (1976)",
+            legenda: "Fotografia histórica real tirada por Mílton Jung: o clássico ônibus Caio Gaivota 'Mosqueteiro' cercado pela multidão de torcedores corinthianos (muitos no teto do veículo) durante o deslocamento em massa rumo ao Rio de Janeiro para a semifinal contra o Fluminense.",
+            credito: "Foto Real: Mílton Jung / Acervo Adamo Bazani (Wikimedia Commons - CC BY 2.0)"
           },
           {
             url: "assets/images/invasoes/1976_maracana_arquibancada.jpg",
-            titulo: "O Maracanã Dividido ao Meio: 70 Mil Fiéis",
-            legenda: "Metade do gigantesco Maracanã colorida em preto e branco diante de 146.043 torcedores pagantes. A Fiel cantou sem parar debaixo de tempestade, calando os donos da casa.",
-            credito: "Acervo Histórico Jornal do Brasil / Revista Placar (05/12/1976)"
+            titulo: "O Gigante Maracanã em 1976: Arquibancadas Superlotadas",
+            legenda: "Registro fotográfico real da época (acervo Fortepan, 1976): a visão das arquibancadas e da imensa massa que tomou o estádio Jornalista Mário Filho em 1976. Naquele 5 de dezembro, 146.043 espectadores dividiram o estádio com mais de 70 mil corinthianos.",
+            credito: "Foto Real: Fortepan Archive (Registro Histórico Nº 78067, 1976)"
           },
           {
             url: "assets/images/invasoes/1976_tobias_festa.jpg",
-            titulo: "O Herói Tobias e a Consagração nos Pênaltis",
-            legenda: "O goleiro Tobias defendeu as cobranças de pênalti de Rodrigues Neto e Carlos Alberto Pintinho. Na sequência, a Fiel celebrou a histórica classificação para a grande final do Brasileirão.",
-            credito: "Revista Placar Especial / Acervo Gazeta Esportiva (1976)"
+            titulo: "Ingresso Oficial da Semifinal Fluminense x Corinthians (1976)",
+            legenda: "Registro histórico documental do ingresso original da histórica semifinal de 5 de dezembro de 1976 no Maracanã, preservado no acervo histórico do Memorial do Corinthians.",
+            credito: "Registro Real: Acervo Histórico Memorial Corinthians / Centenário do Timão"
           }
         ],
         relatos: [
@@ -900,21 +900,21 @@ const CORINTHIANS_DATA = {
         fotos: [
           {
             url: "assets/images/invasoes/2000_orla_copacabana.jpg",
-            titulo: "A Fiel Toma as Praias e a Orla do Rio de Janeiro",
-            legenda: "Milhares de torcedores corinthianos concentrados nas praias de Copacabana e Leme antes da grande decisão do Mundial da FIFA, pintando as areias cariocas de preto e branco.",
-            credito: "Acervo Agência Estado / Folha Imagem (Janeiro/2000)"
+            titulo: "A Fiel e o Grande Bandeirão Alvinegro no Maracanã",
+            legenda: "Registro fotográfico real da torcida do Corinthians desfraldando seu grande bandeirão e cantando no Maracanã durante a invasão histórica de mais de 35 mil alvinegros na final contra o Vasco.",
+            credito: "Foto Real: Torcida do Corinthians / Acervo Wikimedia Commons"
           },
           {
             url: "assets/images/invasoes/2000_maracana_arquibancada.jpg",
-            titulo: "Maracanã Alvinegro: A Segunda Invasão do Rio",
-            legenda: "Mais de 35 mil corinthianos cruzaram a serra e ocuparam as arquibancadas do Maracanã, cantando os 120 minutos e empurrando o time contra o poderoso Vasco de Romário e Edmundo.",
-            credito: "Revista Placar Especial Mundial / TV Globo (14/01/2000)"
+            titulo: "Revista Placar Nº 1159: Corinthians Campeão Mundial 2000",
+            legenda: "Capa documental autêntica da edição histórica da Revista Placar de janeiro de 2000 após a final no Maracanã, com Marcelinho Carioca, Freddy Rincón e o elenco corinthiano erguendo a taça do primeiro Mundial de Clubes da FIFA.",
+            credito: "Documento Real: Revista Placar / Acervo Internet Archive (Nº 1159, Jan/2000)"
           },
           {
             url: "assets/images/invasoes/2000_taca_mundial.jpg",
-            titulo: "Corinthians o Primeiro Campeão Mundial FIFA",
-            legenda: "O capitão Freddy Rincón e Marcelinho Carioca erguem o troféu histórico da FIFA sob chuva de confetes prateados no centro do Maracanã.",
-            credito: "FIFA Archives / Acervo Histórico SCCP (14/01/2000)"
+            titulo: "A Taça Oficial do 1º Mundial de Clubes da FIFA (2000)",
+            legenda: "Fotografia autêntica da taça original do 1º Campeonato Mundial de Clubes da FIFA de 2000, conquistada no Maracanã diante do Vasco da Gama e em exposição permanente no Memorial do Parque São Jorge.",
+            credito: "Foto Real: Memorial do Corinthians / Acervo Wikimedia Commons"
           }
         ],
         relatos: [
@@ -973,21 +973,21 @@ const CORINTHIANS_DATA = {
         fotos: [
           {
             url: "assets/images/invasoes/2012_ruas_japao.jpg",
-            titulo: "O 'Tsunami Alvinegro' nas Ruas e Metrôs do Japão",
-            legenda: "Mais de 30 mil torcedores da Fiel ocuparam praças públicas, ruas comerciais e o famoso cruzamento de Shibuya em Tóquio com faixas 'Bando de Loucos', cantando sob temperaturas de inverno.",
-            credito: "Reuters / FIFA Media / Acervo Lance! & GloboEsporte.com (Dez/2012)"
+            titulo: "Corinthians no Gramado e a Fiel em Yokohama (2012)",
+            legenda: "Fotografia documental autêntica tirada por Tomofumi Kitano em 16 de dezembro de 2012: o time titular do Corinthians perfilado no Estádio Internacional de Yokohama com a arquibancada repleta de faixas e 30 mil corinthianos ao fundo.",
+            credito: "Foto Real: Tomofumi Kitano (Flickr / Wikimedia Commons - CC BY 2.0)"
           },
           {
             url: "assets/images/invasoes/2012_yokohama_arquibancada.jpg",
-            titulo: "Yokohama Transformada em Pacaembu: 30 Mil no Estádio",
-            legenda: "O Estádio Internacional de Yokohama em preto e branco diante de 68.275 presentes. A Fiel abafou totalmente a torcida inglesa com faixas da Gaviões da Fiel, Pavilhão 9 e Camisa 12.",
-            credito: "Getty Images / FIFA World Cup 2012 Official Gallery"
+            titulo: "A Defesa Histórica de Cássio contra Fernando Torres (2012)",
+            legenda: "Fotografia autêntica da final do Mundial de Clubes em Yokohama: o milagre do goleiro Cássio em intervenção espetacular no chute de Fernando Torres, garantindo a meta invicta na decisão.",
+            credito: "Foto Real: Tomofumi Kitano (Flickr / Wikimedia Commons - CC BY 2.0)"
           },
           {
             url: "assets/images/invasoes/2012_cassio_guerrero_taca.jpg",
-            titulo: "Bicampeão Mundial: O Milagre de Cássio e Guerrero",
-            legenda: "Cássio (eleito o Bola de Ouro do torneio) e Paolo Guerrero erguem a taça de Bicampeão do Mundo da FIFA após derrotar o Chelsea FC por 1 a 0.",
-            credito: "FIFA Official Photo / Agência Corinthians (16/12/2012)"
+            titulo: "A Comemoração do Bicampeonato Mundial da FIFA (2012)",
+            legenda: "Fotografia documental autêntica do elenco do Corinthians, Tite e comissão técnica comemorando a conquista do Bicampeonato Mundial de Clubes no gramado de Yokohama após vitória por 1 a 0 sobre o Chelsea.",
+            credito: "Foto Real: Tomofumi Kitano (Flickr / Wikimedia Commons - CC BY 2.0)"
           }
         ],
         relatos: [

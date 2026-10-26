@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.4.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.5.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -71,9 +71,10 @@ Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa
 ### 8. 🛡️ Panteão de Ídolos Eternos
 Cards com biografias, estatísticas de partidas, gols marcados, conquistas e frases marcantes de lendas como Sócrates, Rivellino, Marcelinho Carioca, Cássio, Luizinho e outros. Conta com modal de visualização aprofundada ao clicar.
 
-### 9. 🚂 As Três Grandes Invasões da Fiel (Galeria & Relatos Históricos)
+### 9. 🚂 As Três Grandes Invasões da Fiel (Fotografias Históricas Reais & Relatos)
 Experiência imersiva com as três maiores mobilizações de torcida da história: **1976 (Maracanã)**, **2000 (Mundial no Rio)** e **2012 (Mundial no Japão)**.
-- Ao clicar em cada invasão, abre-se um modal dedicado com **3 fotos históricas autênticas** em alta resolução (9 fotos no total).
+- Ao clicar em cada invasão, abre-se um modal dedicado com **3 fotografias históricas 100% reais (sem imagens de IA)**, resgatadas de acervos jornalísticos e institucionais (9 fotos no total).
+- Registros autênticos de Mílton Jung, Acervo Fortepan, Memorial Corinthians, Tomofumi Kitano e Revista Placar.
 - Carrossel com navegação por miniaturas, setas e teclado (`ArrowLeft` / `ArrowRight`).
 - **Relatos de Fontes Confiáveis:** Citações documentadas de Nelson Rodrigues, Tite, Cássio, Tobias, Freddy Rincón, Dinei, Marcelinho Carioca, Frank Lampard, FIFA Technical Report e imprensa da época.
 - **Cortes & Registros em Vídeo:** Botões diretos para assistir a momentos decisivos e documentários no YouTube.
