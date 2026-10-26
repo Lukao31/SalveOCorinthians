@@ -888,87 +888,113 @@ const CORINTHIANS_DATA = {
     }
   },
 
-  // 9. Feed de Últimos Jogos do Corinthians (Resultados, Estatísticas e Melhores Momentos no YouTube)
+  // 9. Feed de Últimos Jogos do Corinthians (Ano Atual: 2026 | Mês Atual: Outubro de 2026)
   ultimosJogos: [
     {
-      id: "corinthians-palmeiras-derby",
-      data: "04/11/2024",
-      campeonato: "Brasileirão Série A • 32ª Rodada (Derby Paulista)",
+      id: "corinthians-mirassol-2026",
+      data: "30/10/2026",
+      horario: "20:00",
+      campeonato: "Brasileirão Série A • 33ª Rodada",
       estadio: "Neo Química Arena, São Paulo - SP",
-      mandante: { nome: "Corinthians", gols: 2, escudo: "COR" },
-      visitante: { nome: "Palmeiras", gols: 0, escudo: "PAL" },
-      golsDetalhes: "Rodrigo Garro 41' 1T, Yuri Alberto 11' 2T",
-      assistencias: "Matheuzinho (assistência para Rodrigo Garro); Rodrigo Garro (assistência para Yuri Alberto)",
-      status: "Encerrado",
-      resumo: "Atuação tática impecável do Timão no Derby Paulista! Rodrigo Garro abriu o placar batendo de chapa de fora da área após assistência de Matheuzinho. No segundo tempo, em contragolpe fulminante, Garro serviu Yuri Alberto para tocar para o gol vazio e selar a festa dos mais de 46 mil torcedores.",
+      mandante: { nome: "Corinthians", gols: "-", escudo: "COR" },
+      visitante: { nome: "Mirassol", gols: "-", escudo: "MIR" },
+      golsDetalhes: "Partida agendada para 30/10/2026 às 20h00",
+      assistencias: "Escalação provável em definição sob o comando de Clarence Seedorf",
+      status: "Agendado",
+      resultado: "agendado",
+      resumo: "Confronto direto e de extrema importância na Neo Química Arena na luta pela permanência na elite do Campeonato Brasileiro. Com o apoio incondicional de mais de 44 mil torcedores esperados em Itaquera, o Timão de Clarence Seedorf entra em campo focado na recuperação dos três pontos.",
       estatisticas: {
-        posseBola: "42% vs 58%",
-        finalizacoes: "14 (6 no gol) vs 17 (4 no gol)",
-        escanteios: "6 vs 8",
-        faltasCometidas: "14 vs 15",
+        posseBola: "Em breve",
+        finalizacoes: "Em breve",
+        escanteios: "Em breve",
+        faltasCometidas: "Em breve",
+        cartoes: "Em breve"
+      },
+      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=corinthians+x+mirassol+brasileirao+2026+pre-jogo"
+    },
+    {
+      id: "vasco-corinthians-2026",
+      data: "24/10/2026",
+      campeonato: "Brasileirão Série A • 32ª Rodada",
+      estadio: "Estádio de São Januário, Rio de Janeiro - RJ",
+      mandante: { nome: "Vasco da Gama", gols: 3, escudo: "VAS" },
+      visitante: { nome: "Corinthians", gols: 2, escudo: "COR" },
+      golsDetalhes: "Gustavo Henrique 5' 2T (cabeceio), Matheus Bidu 12' 2T (desvio) (Corinthians); Puma Rodríguez 34' 1T, Marino Hinestroza 43' 2T e 45'+2' 2T (Vasco)",
+      assistencias: "Breno Bidon (cruzamento milimétrico em escanteio no gol de Gustavo Henrique); Fabrizio Angileri (chute cruzado forte originando o desvio de Matheus Bidu)",
+      status: "Encerrado",
+      resultado: "derrota",
+      resumo: "Duelo de reviravoltas na estreia do técnico Clarence Seedorf à beira do gramado. O Corinthians voltou avassalador no segundo tempo, empatando com Gustavo Henrique e virando com Matheus Bidu, mas o Vasco buscou a virada nos instantes finais com dois gols de Hinestroza.",
+      estatisticas: {
+        posseBola: "46% (COR) vs 54% (VAS)",
+        finalizacoes: "13 (5 no gol) vs 15 (7 no gol)",
+        escanteios: "5 vs 7",
+        faltasCometidas: "14 vs 16",
+        cartoes: "3 amarelos vs 3 amarelos"
+      },
+      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=vasco+3+x+2+corinthians+melhores+momentos+brasileirao+2026"
+    },
+    {
+      id: "corinthians-vitoria-2026",
+      data: "19/10/2026",
+      campeonato: "Brasileirão Série A • 31ª Rodada",
+      estadio: "Neo Química Arena, São Paulo - SP",
+      mandante: { nome: "Corinthians", gols: 1, escudo: "COR" },
+      visitante: { nome: "Vitória", gols: 1, escudo: "VIT" },
+      golsDetalhes: "Yuri Alberto 20' 2T (pênalti) (Corinthians); Renê 45'+1' 1T (Vitória)",
+      assistencias: "André Luiz (jogada individual na grande área sofrendo a penalidade máxima confirmada pelo VAR)",
+      status: "Encerrado",
+      resultado: "empate",
+      resumo: "Partida disputada sob os olhares de Clarence Seedorf nos camarotes da Neo Química Arena. O Vitória abriu o placar nos acréscimos da primeira etapa. No segundo tempo, André Luiz sofreu pênalti após jogada plástica e Yuri Alberto cobrou com extrema categoria no canto direito para assegurar o empate.",
+      estatisticas: {
+        posseBola: "58% (COR) vs 42% (VIT)",
+        finalizacoes: "17 (6 no gol) vs 9 (3 no gol)",
+        escanteios: "8 vs 3",
+        faltasCometidas: "11 vs 15",
+        cartoes: "2 amarelos vs 4 amarelos"
+      },
+      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=corinthians+1+x+1+vitoria+melhores+momentos+brasileirao+2026"
+    },
+    {
+      id: "palmeiras-corinthians-derby-2026",
+      data: "11/10/2026",
+      campeonato: "Brasileirão Série A • 30ª Rodada (Derby Paulista)",
+      estadio: "Allianz Parque, São Paulo - SP",
+      mandante: { nome: "Palmeiras", gols: 4, escudo: "PAL" },
+      visitante: { nome: "Corinthians", gols: 1, escudo: "COR" },
+      golsDetalhes: "Gustavo Henrique 22' 2T (Corinthians); Palmeiras (4 gols)",
+      assistencias: "Rodrigo Garro (cruzamento com efeito magistral em cobrança de escanteio teleguiada na cabeça de Gustavo Henrique)",
+      status: "Encerrado",
+      resultado: "derrota",
+      resumo: "Em clássico Derby no Allianz Parque, o rival conseguiu impor seu ritmo na primeira etapa. O Timão descontou com imposição aérea do zagueiro Gustavo Henrique após assistência precisa de Rodrigo Garro em bola parada.",
+      estatisticas: {
+        posseBola: "41% (COR) vs 59% (PAL)",
+        finalizacoes: "9 (3 no gol) vs 18 (8 no gol)",
+        escanteios: "4 vs 9",
+        faltasCometidas: "16 vs 13",
+        cartoes: "4 amarelos vs 2 amarelos"
+      },
+      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=palmeiras+4+x+1+corinthians+melhores+momentos+brasileirao+2026"
+    },
+    {
+      id: "internacional-corinthians-2026",
+      data: "07/10/2026",
+      campeonato: "Brasileirão Série A • 29ª Rodada",
+      estadio: "Estádio Beira-Rio, Porto Alegre - RS",
+      mandante: { nome: "Internacional", gols: 2, escudo: "INT" },
+      visitante: { nome: "Corinthians", gols: 1, escudo: "COR" },
+      golsDetalhes: "André Luiz 34' 2T (Corinthians); Vitinho 1' 1T, Alan Patrick 31' 2T (Internacional)",
+      assistencias: "Breno Bidon (cruzamento rasteiro rápido da direita para finalização de primeira de André Luiz)",
+      status: "Encerrado",
+      resultado: "derrota",
+      resumo: "Jogo disputado no Beira-Rio onde o Internacional marcou logo no primeiro minuto com Vitinho e ampliou na etapa final. O Corinthians reagiu aos 34' com oportunismo do jovem André Luiz em passe de Breno Bidon, pressionando até o apito final.",
+      estatisticas: {
+        posseBola: "45% (COR) vs 55% (INT)",
+        finalizacoes: "11 (4 no gol) vs 14 (5 no gol)",
+        escanteios: "5 vs 6",
+        faltasCometidas: "15 vs 14",
         cartoes: "3 amarelos vs 2 amarelos"
       },
-      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=corinthians+2+x+0+palmeiras+melhores+momentos+brasileirao+2024"
-    },
-    {
-      id: "corinthians-athletico-pr",
-      data: "17/10/2024",
-      campeonato: "Brasileirão Série A • 30ª Rodada",
-      estadio: "Neo Química Arena, São Paulo - SP",
-      mandante: { nome: "Corinthians", gols: 5, escudo: "COR" },
-      visitante: { nome: "Athletico-PR", gols: 2, escudo: "CAP" },
-      golsDetalhes: "Matheuzinho 5' 1T, Cacá 18' 1T, Memphis Depay 10' 2T, Rodrigo Garro 21' 2T, Yuri Alberto 33' 2T (Corinthians); Nikão 30' 1T, Erick 39' 1T (Athletico)",
-      assistencias: "Yuri Alberto (assistência para Matheuzinho); Rodrigo Garro (assistência para Yuri Alberto); Memphis Depay (gol direto de falta no ângulo)",
-      status: "Encerrado",
-      resumo: "Show alvinegro na Neo Química Arena! Memphis Depay marcou seu primeiro gol pelo Corinthians com uma cobrança de falta antológica na gaveta. O ataque funcionou por música com gols de Matheuzinho, Cacá, Rodrigo Garro e Yuri Alberto, além das assistências de Garro e Yuri.",
-      estatisticas: {
-        posseBola: "59% vs 41%",
-        finalizacoes: "19 (9 no gol) vs 11 (4 no gol)",
-        escanteios: "8 vs 4",
-        faltasCometidas: "12 vs 13",
-        cartoes: "2 amarelos vs 3 amarelos"
-      },
-      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=corinthians+5+x+2+athletico+pr+melhores+momentos+2024"
-    },
-    {
-      id: "corinthians-vasco",
-      data: "24/11/2024",
-      campeonato: "Brasileirão Série A • 35ª Rodada",
-      estadio: "Neo Química Arena, São Paulo - SP",
-      mandante: { nome: "Corinthians", gols: 3, escudo: "COR" },
-      visitante: { nome: "Vasco da Gama", gols: 1, escudo: "VAS" },
-      golsDetalhes: "Gustavo Henrique 10' 1T, Rodrigo Garro 25' 1T, Rodrigo Garro 39' 1T (Corinthians); Puma Rodríguez 44' 1T (Vasco)",
-      assistencias: "Rodrigo Garro (assistência em cobrança de escanteio para Gustavo Henrique); Ángel Romero (assistência de cabeça para o 1º gol de Garro)",
-      status: "Encerrado",
-      resumo: "Comandado por uma atuação mágica do meia argentino Rodrigo Garro (dois gols e uma assistência), o Corinthians dominou o Vasco e emplacou sua sexta vitória consecutiva na arrancada espetacular do Campeonato Brasileiro.",
-      estatisticas: {
-        posseBola: "57% vs 43%",
-        finalizacoes: "16 (8 no gol) vs 10 (3 no gol)",
-        escanteios: "7 vs 4",
-        faltasCometidas: "13 vs 14",
-        cartoes: "2 amarelos vs 2 amarelos"
-      },
-      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=corinthians+3+x+1+vasco+melhores+momentos+2024"
-    },
-    {
-      id: "corinthians-racing-semi",
-      data: "24/10/2024",
-      campeonato: "Copa Sul-Americana • Semifinal (Jogo de Ida)",
-      estadio: "Neo Química Arena, São Paulo - SP",
-      mandante: { nome: "Corinthians", gols: 2, escudo: "COR" },
-      visitante: { nome: "Racing Club", gols: 2, escudo: "RAC" },
-      golsDetalhes: "Yuri Alberto 11' 1T, Yuri Alberto 33' 1T (Corinthians); Maximiliano Salas 9' 1T, Gastón Martirena 9' 2T (Racing)",
-      assistencias: "Memphis Depay (assistência mágica por cobertura por cima da zaga para o 1º gol de Yuri Alberto)",
-      status: "Encerrado",
-      resumo: "Sob chuva torrencial em Itaquera, Yuri Alberto deu show com dois golaços: um toque de cobertura sutil após passe perfeito de Memphis Depay e uma finalização de chapa da entrada da grande área no ângulo do goleiro Arias.",
-      estatisticas: {
-        posseBola: "52% vs 48%",
-        finalizacoes: "15 (6 no gol) vs 11 (4 no gol)",
-        escanteios: "6 vs 5",
-        faltasCometidas: "16 vs 17",
-        cartoes: "3 amarelos vs 4 amarelos"
-      },
-      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=corinthians+2+x+2+racing+sulamericana+melhores+momentos"
+      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=internacional+2+x+1+corinthians+melhores+momentos+brasileirao+2026"
     }
   ],
 

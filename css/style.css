@@ -2288,6 +2288,16 @@ input[type="range"]::-webkit-slider-thumb:hover {
   box-shadow: var(--shadow-md);
 }
 
+.jogo-card.jogo-card-agendado {
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, rgba(18, 18, 18, 0.95) 100%);
+}
+
+.jogo-card.jogo-card-agendado:hover {
+  border-color: #d4af37;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+}
+
 .jogo-meta-top {
   display: flex;
   justify-content: space-between;

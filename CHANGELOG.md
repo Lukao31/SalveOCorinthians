@@ -13,6 +13,37 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.1.0] - 2026-10-26
+
+### ⚽ Atualização do Feed de Jogos (Ano e Mês Atual: Outubro de 2026)
+
+Esta versão traz a atualização completa do painel de jogos recentes e desempenho esportivo, substituindo registros legados por partidas reais do ano corrente (2026) e do mês atual (Outubro de 2026), com checagem e discriminação minuciosa de gols e assistências em estrita ordem cronológica.
+
+### ✨ Adicionado (Added)
+- **Suporte a Jogos Agendados:** Componente visual e estilo dedicado (`.jogo-card-agendado`) com moldura e gradiente dourado suave para destacar compromissos futuros.
+- **Badges Dinâmicos de Resultado:** Identificação cromática instantânea nos cartões de partidas:
+  - `Vitória` (Verde esmeralda / `badge-acerto`)
+  - `Empate` (Cinza neutro alvinegro / `badge-misto`)
+  - `Derrota` (Vermelho carmesim / `badge-erro`)
+  - `Próximo Jogo` (Dourado nobre / `badge-misto`)
+- **Próximo Jogo Cadastrado:**
+  - `30/10/2026`: **Corinthians x Mirassol** (Brasileirão Série A • 33ª Rodada) na Neo Química Arena, sob o comando do técnico Clarence Seedorf.
+
+### 🔄 Modificado (Changed)
+- **Feed em Ordem Cronológica Decrescente:** Todas as partidas de Outubro de 2026 dispostas do confronto mais recente para o início do mês:
+  1. `30/10/2026`: Corinthians x Mirassol (Agendado às 20h00)
+  2. `24/10/2026`: Vasco da Gama 3 x 2 Corinthians (32ª Rodada)
+  3. `19/10/2026`: Corinthians 1 x 1 Vitória (31ª Rodada)
+  4. `11/10/2026`: Palmeiras 4 x 1 Corinthians (30ª Rodada • Derby Paulista)
+  5. `07/10/2026`: Internacional 2 x 1 Corinthians (29ª Rodada)
+- **Apuração Precisa de Gols e Assistências:**
+  - *Vasco 3 x 2 Corinthians:* Gols de Gustavo Henrique (cabeceio) e Matheus Bidu (desvio de peito); assistências de Breno Bidon (escanteio teleguiado) e Fabrizio Angileri (finalização cruzada forte).
+  - *Corinthians 1 x 1 Vitória:* Gol de Yuri Alberto (pênalti no canto direito); lance capital e assistência na jogada por André Luiz (drible na área sofrendo a infração confirmada pelo VAR).
+  - *Palmeiras 4 x 1 Corinthians:* Gol de Gustavo Henrique (cabeçada no ângulo); assistência de Rodrigo Garro (cruzamento milimétrico em escanteio).
+  - *Internacional 2 x 1 Corinthians:* Gol de André Luiz (finalização rápida na pequena área); assistência de Breno Bidon (cruzamento rasteiro da ponta direita).
+- **Placar Flexível:** Formatação inteligente da caixa de placar para partidas agendadas (exibindo o horário da partida ao invés de placar zerado).
+- **Links Oficiais:** Atualização dos atalhos de busca de vídeos no YouTube para os melhores momentos de cada partida de Outubro de 2026.
+
 ---
 
 ## [1.0.0] - 2026-10-26

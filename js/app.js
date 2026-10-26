@@ -726,12 +726,35 @@ function renderUltimosJogos() {
   const jogos = CORINTHIANS_DATA.ultimosJogos;
   if (!jogos || jogos.length === 0) return;
 
-  container.innerHTML = jogos.map(jogo => `
-    <article class="jogo-card">
+  container.innerHTML = jogos.map(jogo => {
+    let badgeResultado = '';
+    if (jogo.status === 'Agendado') {
+      badgeResultado = `<span class="badge badge-misto" style="background: rgba(212, 175, 55, 0.15); border-color: rgba(212, 175, 55, 0.5); color: #fbbf24;"><i class="fa-solid fa-calendar-check"></i> Próximo Jogo</span>`;
+    } else if (jogo.resultado === 'vitoria') {
+      badgeResultado = `<span class="badge badge-acerto"><i class="fa-solid fa-check"></i> Vitória</span>`;
+    } else if (jogo.resultado === 'empate') {
+      badgeResultado = `<span class="badge badge-misto"><i class="fa-solid fa-equals"></i> Empate</span>`;
+    } else {
+      badgeResultado = `<span class="badge badge-erro"><i class="fa-solid fa-xmark"></i> Derrota</span>`;
+    }
+
+    const scoreBoxContent = jogo.status === 'Agendado'
+      ? `<span style="font-size: 1.15rem; font-weight: 800; color: #fbbf24; letter-spacing: 0.05em;"><i class="fa-regular fa-clock"></i> ${jogo.horario || '20:00'}</span>`
+      : `<span>${jogo.mandante.gols}</span><span style="font-size: 1.2rem; color: #666;">x</span><span>${jogo.visitante.gols}</span>`;
+
+    const btnTexto = jogo.status === 'Agendado'
+      ? 'Acompanhar Pré-Jogo & Transmissão'
+      : 'Assistir Melhores Momentos no YouTube';
+
+    return `
+    <article class="jogo-card ${jogo.status === 'Agendado' ? 'jogo-card-agendado' : ''}">
       <div>
         <div class="jogo-meta-top">
           <span class="jogo-campeonato">${jogo.campeonato}</span>
-          <span class="badge badge-misto"><i class="fa-regular fa-clock"></i> ${jogo.data}</span>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            ${badgeResultado}
+            <span class="badge badge-misto"><i class="fa-regular fa-calendar"></i> ${jogo.data}</span>
+          </div>
         </div>
 
         <div style="font-size: 0.78rem; color: #888; margin-bottom: 0.75rem;">
@@ -743,9 +766,7 @@ function renderUltimosJogos() {
             <span class="jogo-team-name">${jogo.mandante.nome}</span>
           </div>
           <div class="jogo-score-box">
-            <span>${jogo.mandante.gols}</span>
-            <span style="font-size: 1.2rem; color: #666;">x</span>
-            <span>${jogo.visitante.gols}</span>
+            ${scoreBoxContent}
           </div>
           <div class="jogo-team">
             <span class="jogo-team-name">${jogo.visitante.nome}</span>
@@ -790,11 +811,12 @@ function renderUltimosJogos() {
 
       <div style="margin-top: 1.25rem;">
         <a href="${jogo.linkMelhoresMomentos}" target="_blank" rel="noopener noreferrer" class="btn-melhores-momentos btn-youtube">
-          <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 1.2rem;"></i> Assistir Melhores Momentos no YouTube
+          <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 1.2rem;"></i> ${btnTexto}
         </a>
       </div>
     </article>
-  `).join('');
+    `;
+  }).join('');
 }
 
 /* ==========================================================================
