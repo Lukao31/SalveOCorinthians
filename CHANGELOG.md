@@ -13,6 +13,31 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.3.0] - 2026-10-26
+
+### 🛡️ Aplicação Global do Novo Emblema em Todo o Site
+
+Esta versão expande a aplicação da nova identidade visual autoral do Corinthians para **todos os pontos de contato do portal** (Cabeçalho de navegação, Hero Section principal, Rodapé institucional e Favicon), garantindo consistência visual, proporção estética e invalidação de cache para atualização instantânea no navegador.
+
+### ✨ Adicionado (Added)
+- **Componente `.brand-logo` Unificado no Cabeçalho:**
+  - O emblema circular com remos cruzados e âncora estilizada agora acompanha o letreiro institucional com subtítulo dourado (*SALVE O*) e nome principal alvinegro (*CORINTHIANS*).
+- **Showcase Monumental no Hero (`.hero-brand-showcase`):**
+  - Brasão de grande porte (140x140px) com relevo, sombras atmosféricas e iluminação dourada sutil.
+  - Tipografia monumental e dinâmica com degradê de alto contraste e barra tricolor (Vermelho Timão, Ouro e Branco).
+- **Novo Cabeçalho de Marca no Rodapé (`.footer-brand-header`):**
+  - Aplicação do novo emblema no encerramento da página com tipografia refinada.
+- **Invalidação de Cache de Imagens (`?v=1.3.0`):**
+  - Adição de parâmetros de versão nas URLs das imagens vetoriais para forçar a atualização imediata nos navegadores dos usuários, impedindo a exibição de versões antigas em cache.
+
+### 🔄 Modificado (Changed)
+- **Estrutura HTML (`index.html`):**
+  - Substituição das tags `img` estáticas isoladas pelo novo padrão de componentes de marca com o emblema em alta fidelidade.
+- **Folha de Estilos (`css/style.css`):**
+  - Implementação de regras para `.hero-brand-showcase`, `.brand-logo-emblem`, `.footer-brand-header` e media queries responsivas para telas móveis (< 768px).
+
+---
+
 ## [1.2.0] - 2026-10-26
 
 ### 🦅 Nova Identidade Visual: Logotipo Único e Exclusivo "Salve o Corinthians"
