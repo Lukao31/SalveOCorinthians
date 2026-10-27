@@ -13,6 +13,38 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.7.0] - 2026-10-26
+
+### 👑 Fotos em Alta Definição com Taças das Brabas, Inclusão de Lelê, Correção Precisa de Títulos e Estatísticas com Efeito 3D Flip
+
+Esta versão traz quatro grandes revisões e acréscimos fundamentais solicitados pela Fiel, elevando o nível de detalhe e tributo à vitoriosa história do Corinthians Feminino ("As Brabas"):
+
+### ✨ Adicionado (Added)
+- **Inclusão da Goleira Histórica Lelê (Letícia Izidoro - "O Paredão das Brabas") no Panteão dos Ídolos:**
+  - Adicionada ao Panteão de Ídolos com perfil completo: 190 partidas oficiais, 15 títulos pelo Timão, posição "Goleira / Ídola Continental", tag `as-brabas`, frase marcante sobre honrar 35 milhões de corinthianos e biografia ressaltando seus pênaltis defendidos na Libertadores de 2017 e atuação histórica na final de 2023.
+  - Fotografia autêntica em alta definição (`assets/images/idolos/lele.jpg`) de Lelê beijando apaixonadamente a taça de campeã da Copa Libertadores da América vestindo a camisa de goleira do Corinthians e a medalha da CONMEBOL no peito (Acervo Oficial @leticiaizidoro94 / Staff Images Woman CONMEBOL).
+- **Módulo Interativo de Estatísticas e Feitos Lendários das Brabas com Efeito 3D Flip:**
+  - Criação de uma barra seletora dinâmica (`stats-switcher-bar`) com setas direcionais anterior/próxima (`btn-stats-prev`, `btn-stats-next`), botões em pílula estilizados e botão central de giro rápido (`btn-stats-flip-center`).
+  - Efeito visual de virada em três dimensões (*3D Card Flip*) com perspectiva e transição suave, permitindo ao usuário alternar instantaneamente entre os dados do Futebol Masculino e do Futebol Feminino ("As Brabas").
+  - **Tabela de Maiores Artilheiras das Brabas:** Vic Albuquerque (108 gols), Grazi (78 gols), Adriana Maga (72 gols), Gabi Zanotti (68 gols), Millene (62 gols) e Jheniffer (51 gols).
+  - **Tabela de Atletas com Mais Jogos pelas Brabas:** Grazi (258 jogos), Gabi Zanotti (230), Vic Albuquerque (215), Paulinha (198), Lelê (190), Katiuscia (184), Tamires (175) e Millene (152).
+  - **Feitos Históricos e Recordes Mundiais:** Cards temáticos destacando a invencibilidade recorde mundial de 48 jogos (28 vitórias consecutivas), o Pentacampeonato da Copa Libertadores da América, a hegemonia nacional do Heptacampeonato Brasileiro e o recorde sul-americano de público na Neo Química Arena (44.529 pagantes).
+
+### 🔄 Modificado & Corrigido (Changed & Fixed)
+- **Substituição de Fotos por Registros Reais em Alta Definição Erguendo Troféus:**
+  - **Vic Albuquerque:** Substituição da foto de baixa qualidade por imagem em alta resolução (941x1176 px, `assets/images/idolos/vic_albuquerque.jpg`) de Vic vibrando e erguendo a taça do Brasileirão Feminino de 2024 sobre a cabeça, com a camisa sagrada do Timão e a medalha dourada no peito.
+  - **Tamires Dias:** Substituição da foto anterior por registro autêntico em alta qualidade (`assets/images/idolos/tamires.jpg`) de Tamires erguendo com as duas mãos a taça da Supercopa do Brasil na Neo Química Arena, sob chuva de fitas e comemoração da Fiel.
+- **Revisão e Correção Documental do Número Real de Títulos das Brabas:**
+  - Correção no motor JavaScript (`numTitulos`) para garantir que o número de conquistas nos cards e modais reflita com exatidão a quantidade real de taças e não a contagem de vírgulas de texto:
+    - **Gabi Zanotti:** 18 Títulos oficiais (5x Libertadores, 7x Brasileirão, 4x Paulistão, 2x Supercopa).
+    - **Vic Albuquerque:** 18 Títulos oficiais (5x Libertadores, 6x Brasileirão, 4x Paulistão, 2x Supercopa, 1x Copa Paulista).
+    - **Tamires Dias:** 17 Títulos oficiais (4x Libertadores, 5x Brasileirão, 4x Paulistão, 3x Supercopa, 1x Copa Paulista).
+    - **Lelê:** 15 Títulos oficiais (5x Libertadores, 5x Brasileirão, 3x Paulistão, 1x Supercopa, 1x Copa Paulista, 1x Copa do Brasil).
+    - **Grazi:** 15 Títulos oficiais catalogados.
+    - **Basílio:** 2 Títulos oficiais (Bicampeão Paulista 1977 e 1979).
+
+---
+
 ## [1.6.0] - 2026-10-26
 
 ### 🎵 Player Oficial do Hino, Fotos Autênticas do Mundial 2000, Identidade no Gráfico da Dívida e Panteão Feminino

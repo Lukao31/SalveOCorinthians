@@ -701,41 +701,122 @@
           </p>
         </div>
 
-        <!-- Tabelas de Estatísticas -->
-        <div class="stats-tables-grid">
-          <!-- Maiores Artilheiros -->
-          <div class="stats-table-box">
-            <h4><i class="fa-solid fa-futbol"></i> Maiores Artilheiros da História</h4>
-            <table class="custom-table">
-              <thead>
-                <tr>
-                  <th>Jogador</th>
-                  <th>Gols</th>
-                  <th>Jogos</th>
-                  <th>Média</th>
-                </tr>
-              </thead>
-              <tbody id="table-artilheiros-body">
-                <!-- Renderizado via app.js -->
-              </tbody>
-            </table>
+        <!-- Seletor de Categoria (Futebol Masculino vs As Brabas) com Setas e Efeito de Virada -->
+        <div class="stats-switcher-bar">
+          <button id="btn-stats-prev" class="stats-flip-arrow" aria-label="Girar para estatísticas anteriores" title="Girar estatísticas (Futebol Masculino / As Brabas)">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          
+          <div class="stats-toggle-pills" role="tablist">
+            <button id="btn-stats-masc" class="stats-pill-btn active" data-mode="masculino" role="tab" aria-selected="true">
+              <i class="fa-solid fa-mars"></i> <span>Futebol Masculino</span>
+            </button>
+            <button id="btn-stats-flip-center" class="stats-flip-center-btn" title="Virar dados (3D Flip)" aria-label="Alternar entre Masculino e As Brabas">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
+            <button id="btn-stats-brabas" class="stats-pill-btn" data-mode="brabas" role="tab" aria-selected="false">
+              <i class="fa-solid fa-crown"></i> <span>As Brabas (Feminino)</span>
+            </button>
           </div>
 
-          <!-- Mais Partidas -->
-          <div class="stats-table-box">
-            <h4><i class="fa-solid fa-shield-halved"></i> Atletas Com Mais Jogos Pelo Timão</h4>
-            <table class="custom-table">
-              <thead>
-                <tr>
-                  <th>Jogador</th>
-                  <th>Partidas</th>
-                  <th>Período</th>
-                </tr>
-              </thead>
-              <tbody id="table-jogos-body">
-                <!-- Renderizado via app.js -->
-              </tbody>
-            </table>
+          <button id="btn-stats-next" class="stats-flip-arrow" aria-label="Girar para próximas estatísticas" title="Girar estatísticas (Futebol Masculino / As Brabas)">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Container de Flip 3D: Duas Faces (Masculino e As Brabas) -->
+        <div class="stats-flip-container" id="stats-flip-container">
+          <!-- Face 1: Futebol Masculino -->
+          <div class="stats-card-face stats-face-masculino active" id="stats-panel-masculino">
+            <div class="stats-panel-header">
+              <span class="badge badge-alvinegro" style="display: inline-flex; align-items: center; gap: 0.4rem; width: fit-content;"><i class="fa-solid fa-futbol"></i> Tradição Centenária (1910 - 2026)</span>
+              <h3>Futebol Masculino • Maiores Goleadores e Recordistas de Jogos</h3>
+            </div>
+            <div class="stats-tables-grid">
+              <!-- Maiores Artilheiros Masculino -->
+              <div class="stats-table-box">
+                <h4><i class="fa-solid fa-futbol"></i> Maiores Artilheiros da História</h4>
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Jogador</th>
+                      <th>Gols</th>
+                      <th>Jogos</th>
+                      <th>Média</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-artilheiros-body">
+                    <!-- Renderizado via app.js -->
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Mais Partidas Masculino -->
+              <div class="stats-table-box">
+                <h4><i class="fa-solid fa-shield-halved"></i> Atletas Com Mais Jogos Pelo Timão</h4>
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Jogador</th>
+                      <th>Partidas</th>
+                      <th>Período</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-jogos-body">
+                    <!-- Renderizado via app.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Face 2: As Brabas (Futebol Feminino) -->
+          <div class="stats-card-face stats-face-brabas" id="stats-panel-brabas">
+            <div class="stats-panel-header">
+              <span class="badge" style="background: linear-gradient(135deg, #7c3aed, #4c1d95); color: #fff; border: 1px solid rgba(255,255,255,0.2); display: inline-flex; align-items: center; gap: 0.4rem; width: fit-content;"><i class="fa-solid fa-crown"></i> Dinastia das Brabas</span>
+              <h3>As Brabas • Maiores Artilheiras, Mais Jogos e Recordes Mundiais</h3>
+            </div>
+            <div class="stats-tables-grid">
+              <!-- Maiores Artilheiras Brabas -->
+              <div class="stats-table-box">
+                <h4><i class="fa-solid fa-crown" style="color: #a78bfa;"></i> Maiores Artilheiras das Brabas</h4>
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Jogadora</th>
+                      <th>Gols</th>
+                      <th>Jogos</th>
+                      <th>Média</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-brabas-artilheiras-body">
+                    <!-- Renderizado via app.js -->
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Mais Partidas Brabas -->
+              <div class="stats-table-box">
+                <h4><i class="fa-solid fa-shield-halved" style="color: #a78bfa;"></i> Mais Jogos pelas Brabas</h4>
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Jogadora</th>
+                      <th>Partidas</th>
+                      <th>Período</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-brabas-jogos-body">
+                    <!-- Renderizado via app.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Feitos Lendários & Recordes Mundiais das Brabas -->
+            <div class="brabas-feitos-grid" id="brabas-feitos-grid">
+              <!-- Renderizado via app.js -->
+            </div>
           </div>
         </div>
 

@@ -417,7 +417,7 @@ function renderIdolos(filtro = 'todos', termoBusca = '') {
   }
 
   container.innerHTML = filtrados.map(item => {
-    const numTitulos = item.titulos ? item.titulos.split(',').length : 0;
+    const numTitulos = item.numTitulos !== undefined ? item.numTitulos : (item.titulos ? item.titulos.split(',').length : 0);
     return `
     <div class="idolo-card" onclick="abrirModalIdolo('${item.id}')" data-id="${item.id}" tabindex="0" role="button" aria-label="Ver foto e história de ${item.nome}">
       <div class="idolo-card-thumb-wrapper">
@@ -478,6 +478,9 @@ function renderIdolos(filtro = 'todos', termoBusca = '') {
 function renderEstatisticas() {
   const containerArtilheiros = document.getElementById('table-artilheiros-body');
   const containerJogos = document.getElementById('table-jogos-body');
+  const containerBrabasArtilheiras = document.getElementById('table-brabas-artilheiras-body');
+  const containerBrabasJogos = document.getElementById('table-brabas-jogos-body');
+  const containerBrabasFeitos = document.getElementById('brabas-feitos-grid');
   const containerInvasoes = document.getElementById('invasoes-grid');
 
   if (containerArtilheiros) {
@@ -498,6 +501,38 @@ function renderEstatisticas() {
         <td class="strong" style="color: #ffffff;">${item.jogos}</td>
         <td>${item.anos}</td>
       </tr>
+    `).join('');
+  }
+
+  // Estatísticas das Brabas
+  if (containerBrabasArtilheiras && CORINTHIANS_DATA.estatisticas.brabas) {
+    containerBrabasArtilheiras.innerHTML = CORINTHIANS_DATA.estatisticas.brabas.maioresArtilheiras.map((item, idx) => `
+      <tr>
+        <td class="strong"><span style="color: #c084fc; margin-right: 4px;">${idx + 1}º</span> ${item.nome}</td>
+        <td class="strong" style="color: #ffffff;">${item.gols}</td>
+        <td>${item.jogos}</td>
+        <td>${item.media}</td>
+      </tr>
+    `).join('');
+  }
+
+  if (containerBrabasJogos && CORINTHIANS_DATA.estatisticas.brabas) {
+    containerBrabasJogos.innerHTML = CORINTHIANS_DATA.estatisticas.brabas.maisJogos.map((item, idx) => `
+      <tr>
+        <td class="strong"><span style="color: #c084fc; margin-right: 4px;">${idx + 1}º</span> ${item.nome}</td>
+        <td class="strong" style="color: #ffffff;">${item.jogos}</td>
+        <td>${item.anos}</td>
+      </tr>
+    `).join('');
+  }
+
+  if (containerBrabasFeitos && CORINTHIANS_DATA.estatisticas.brabas) {
+    containerBrabasFeitos.innerHTML = CORINTHIANS_DATA.estatisticas.brabas.feitosHistoricos.map(item => `
+      <div class="braba-feito-card">
+        <div class="braba-feito-icone"><i class="${item.icone}"></i></div>
+        <div class="braba-feito-titulo">${item.titulo}</div>
+        <div class="braba-feito-desc">${item.desc}</div>
+      </div>
     `).join('');
   }
 
@@ -626,6 +661,60 @@ function setupEventListeners() {
       navMenu.classList.toggle('active');
     });
   }
+
+  // Switcher 3D Flip de Estatísticas (Masculino / As Brabas)
+  setupStatsSwitcher();
+}
+
+function setupStatsSwitcher() {
+  const panelMasc = document.getElementById('stats-panel-masculino');
+  const panelBrabas = document.getElementById('stats-panel-brabas');
+  const btnPrev = document.getElementById('btn-stats-prev');
+  const btnNext = document.getElementById('btn-stats-next');
+  const btnMasc = document.getElementById('btn-stats-masc');
+  const btnBrabas = document.getElementById('btn-stats-brabas');
+  const btnFlipCenter = document.getElementById('btn-stats-flip-center');
+
+  if (!panelMasc || !panelBrabas) return;
+
+  let currentStatsMode = 'masculino';
+
+  function setStatsMode(mode) {
+    currentStatsMode = mode;
+    if (mode === 'brabas') {
+      panelMasc.classList.add('flipped');
+      panelBrabas.classList.add('flipped');
+      if (btnMasc) {
+        btnMasc.classList.remove('active');
+        btnMasc.setAttribute('aria-selected', 'false');
+      }
+      if (btnBrabas) {
+        btnBrabas.classList.add('active');
+        btnBrabas.setAttribute('aria-selected', 'true');
+      }
+    } else {
+      panelMasc.classList.remove('flipped');
+      panelBrabas.classList.remove('flipped');
+      if (btnBrabas) {
+        btnBrabas.classList.remove('active');
+        btnBrabas.setAttribute('aria-selected', 'false');
+      }
+      if (btnMasc) {
+        btnMasc.classList.add('active');
+        btnMasc.setAttribute('aria-selected', 'true');
+      }
+    }
+  }
+
+  function toggleStatsMode() {
+    setStatsMode(currentStatsMode === 'masculino' ? 'brabas' : 'masculino');
+  }
+
+  if (btnPrev) btnPrev.addEventListener('click', toggleStatsMode);
+  if (btnNext) btnNext.addEventListener('click', toggleStatsMode);
+  if (btnFlipCenter) btnFlipCenter.addEventListener('click', toggleStatsMode);
+  if (btnMasc) btnMasc.addEventListener('click', () => setStatsMode('masculino'));
+  if (btnBrabas) btnBrabas.addEventListener('click', () => setStatsMode('brabas'));
 }
 
 function setupScrollSpy() {
@@ -876,7 +965,7 @@ function abrirModalIdolo(id) {
   if (fraseEl) fraseEl.textContent = idolo.frase;
   if (legadoEl) legadoEl.textContent = idolo.legado;
 
-  const numTitulos = idolo.titulos ? idolo.titulos.split(',').length : 0;
+  const numTitulos = idolo.numTitulos !== undefined ? idolo.numTitulos : (idolo.titulos ? idolo.titulos.split(',').length : 0);
   const tacasCountEl = document.getElementById('modal-idolo-tacas-count');
   const tacasLabelEl = document.getElementById('modal-idolo-tacas-label');
   if (tacasCountEl) tacasCountEl.innerHTML = `<i class="fa-solid fa-trophy text-gold"></i> ${numTitulos}`;

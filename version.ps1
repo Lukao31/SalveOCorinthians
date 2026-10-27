@@ -40,14 +40,14 @@ git commit -m $CommitMsg
 
 # 3. Criar Tag
 Write-Host "[3/4] Criando tag $Tag..." -ForegroundColor Cyan
-git tag -a $Tag -m "Release $Tag: $Message"
+git tag -a $Tag -m "Release ${Tag} - ${Message}"
 
 # 4. Push para o GitHub
 Write-Host "[4/4] Enviando branch main e tags para o GitHub..." -ForegroundColor Cyan
 git push origin main --tags
 
 if ($LASTEXITCODE -eq 0) {
-    Write-Host "`n✔ Versão $Tag publicada com sucesso no GitHub!" -ForegroundColor Green
+    Write-Host "`n[OK] Versao $Tag publicada com sucesso no GitHub!" -ForegroundColor Green
 } else {
-    Write-Host "`n⚠ O push falhou. Verifique se o repositório remoto existe no GitHub e se você possui permissão." -ForegroundColor Yellow
+    Write-Host "`n[AVISO] O push falhou. Verifique se o repositorio remoto existe no GitHub e se voce possui permissao." -ForegroundColor Yellow
 }

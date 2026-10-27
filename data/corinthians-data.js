@@ -767,10 +767,11 @@ const CORINTHIANS_DATA = {
       periodo: "2016 - 2023",
       jogos: 258,
       gols: 78,
+      numTitulos: 15,
       posicao: "Meia / Capitã",
-      titulos: "Libertadores Feminina (4x), Brasileirão Feminino (5x), Supercopa (2x), Paulistas",
+      titulos: "Libertadores Feminina (4x), Brasileirão Feminino (5x), Paulistão (3x), Supercopa (2x), Copa Paulista (2022)",
       frase: "'Nós mostramos que a mulher corinthiana joga bola com a mesma garra e alma dos operários de 1910.'",
-      legado: "Símbolo e capitã de toda a revolução vitoriosa do Corinthians Feminino. Maior referência de liderança e profissionalismo na história da modalidade no país.",
+      legado: "Símbolo e capitã de toda a revolução vitoriosa do Corinthians Feminino. Maior referência de liderança e profissionalismo na história da modalidade no país, com 15 títulos oficiais conquistados.",
       tag: "as-brabas",
       foto: "assets/images/idolos/grazi.jpg",
       fotoMomento: "Grazi, a capitã das Brabas, sorrindo e erguendo a taça do Brasileirão em alta definição na Neo Química Arena lotada.",
@@ -782,10 +783,11 @@ const CORINTHIANS_DATA = {
       periodo: "2018 - Presente",
       jogos: 230,
       gols: 68,
+      numTitulos: 18,
       posicao: "Meio-campista / Camisa 10",
-      titulos: "Libertadores Feminina (2018, 2021, 2023, 2024), Brasileirão (2018, 2020, 2021, 2022, 2023, 2024), Supercopa (2022, 2023, 2024), Paulistas",
+      titulos: "Libertadores (5x: 2019, 2021, 2023, 2024, 2025), Brasileirão (7x: 2018, 2020, 2021, 2022, 2023, 2024, 2025), Paulistão (4x: 2019, 2020, 2021, 2023), Supercopa (2x: 2022, 2024)",
       frase: "'Vestir a camisa 10 do Corinthians é saber que quando você entra em campo, 35 milhões de corações jogam com você.'",
-      legado: "A grande maestrina da dinastia das Brabas. Eleita melhor jogadora do continente, dona de inteligência ímpar e autora de gols antológicos em decisões de Libertadores e Brasileirão.",
+      legado: "A grande maestrina da dinastia das Brabas com 18 títulos conquistados pelo Timão. Eleita Rainha da América, dona de inteligência ímpar e autora de gols antológicos em decisões de Libertadores e Brasileirão.",
       tag: "as-brabas",
       foto: "assets/images/idolos/gabi_zanotti.jpg",
       fotoMomento: "Gabi Zanotti com a medalha de campeã continental no peito erguendo a taça da Copa Libertadores Feminina com o manto sagrado alvinegro.",
@@ -797,14 +799,15 @@ const CORINTHIANS_DATA = {
       periodo: "2019 - 2021, 2022 - Presente",
       jogos: 215,
       gols: 108,
+      numTitulos: 18,
       posicao: "Atacante / Meia Ofensiva",
-      titulos: "Libertadores Feminina (4x), Brasileirão Feminino (5x), Supercopa (3x), Paulistas",
+      titulos: "Libertadores (5x: 2019, 2021, 2023, 2024, 2025), Brasileirão (6x: 2020, 2021, 2022, 2023, 2024, 2025), Paulistão (4x: 2019, 2020, 2021, 2023), Supercopa (2x: 2023, 2024), Copa Paulista (2022)",
       frase: "'Ultrapassar 100 gols com a camisa do Timão é viver um sonho que eu nunca quero acordar.'",
-      legado: "Maior artilheira de toda a história do Corinthians Feminino, superando a marca centenária de gols. Decisiva e fria em clássicos e finais, sinônimo de raça e precisão goleadora.",
+      legado: "Maior artilheira de toda a história do Corinthians Feminino com mais de 108 gols e 18 títulos conquistados. Decisiva e fria em clássicos e finais, sinônimo de raça e precisão goleadora.",
       tag: "as-brabas",
       foto: "assets/images/idolos/vic_albuquerque.jpg",
-      fotoMomento: "Vic Albuquerque em comemoração efusiva celebrando gol histórico pelas Brabas do Timão.",
-      fonteFoto: "Agência Corinthians / Rodrigo Gazzanel"
+      fotoMomento: "Vic Albuquerque vibrando intensamente ao erguer a taça do Brasileirão Feminino de 2024 com a medalha de campeã no peito e o manto sagrado alvinegro.",
+      fonteFoto: "Meu Timão / Rodrigo Gazzanel / Agência Corinthians"
     },
     {
       id: "tamires",
@@ -812,14 +815,31 @@ const CORINTHIANS_DATA = {
       periodo: "2019 - Presente",
       jogos: 175,
       gols: 35,
+      numTitulos: 17,
       posicao: "Lateral-esquerda / Ala",
-      titulos: "Libertadores Feminina (4x), Brasileirão Feminino (5x), Supercopa (3x), Prata Olímpica Paris 2024",
+      titulos: "Libertadores (4x: 2019, 2021, 2023, 2024), Brasileirão (5x: 2020, 2021, 2022, 2023, 2024), Paulistão (4x: 2019, 2020, 2021, 2023), Supercopa (3x: 2022, 2023, 2024), Copa Paulista (2022)",
       frase: "'A Fiel nos abraçou e mostrou que aqui nós jogamos por um propósito maior do que o futebol.'",
-      legado: "Capitã da Seleção Brasileira e ícone global do esporte. Modelo de vigor atlético, liderança ética e qualidade técnica internacional, multicampeã de tudo pelo Corinthians.",
+      legado: "Capitã da Seleção Brasileira e ícone global do esporte. Modelo de vigor atlético, liderança ética e qualidade técnica internacional, multicampeã com 17 títulos pelas Brabas e medalhista de prata olímpica em Paris 2024.",
       tag: "as-brabas",
       foto: "assets/images/idolos/tamires.jpg",
-      fotoMomento: "Tamires em ação pelo Corinthians na lateral-esquerda, desfilando sua classe e raça alvinegra.",
-      fonteFoto: "Agência Corinthians / Acervo SCCP"
+      fotoMomento: "Tamires erguendo com as duas mãos o troféu de campeã da Supercopa do Brasil sob chuva de fitas roxas e comemoração da Fiel na Neo Química Arena.",
+      fonteFoto: "Meu Timão / Rodrigo Gazzanel / Agência Corinthians"
+    },
+    {
+      id: "lele",
+      nome: "Lelê (O Paredão das Brabas)",
+      periodo: "2016 - 2020, 2022 - Presente",
+      jogos: 190,
+      gols: 0,
+      numTitulos: 15,
+      posicao: "Goleira / Ídola Continental",
+      titulos: "Libertadores (5x: 2017, 2019, 2023, 2024, 2025), Brasileirão (5x: 2018, 2020, 2022, 2023, 2024), Paulistão (3x: 2019, 2020, 2023), Supercopa (2023), Copa Paulista (2022), Copa do Brasil (2016)",
+      frase: "'Defender o Corinthians não é uma profissão, é uma honra sagrada. Toda bola difícil que eu defendo é empurrada pela força de 35 milhões de loucos.'",
+      legado: "A maior goleira da história do Corinthians e muralha da Seleção Brasileira. Heroína na conquista da Libertadores de 2017 defendendo duas penalidades decisivas e gigante na final de 2023 contra o Palmeiras. Coleciona 15 títulos oficiais com o manto alvinegro.",
+      tag: "as-brabas",
+      foto: "assets/images/idolos/lele.jpg",
+      fotoMomento: "Lelê beijando apaixonadamente a taça da Copa Libertadores da América Feminina com a medalha de campeã no peito e o manto sagrado alvinegro de goleira.",
+      fonteFoto: "Instagram Oficial @leticiaizidoro94 / Staff Images Woman CONMEBOL"
     },
     {
       id: "basilio",
@@ -827,6 +847,7 @@ const CORINTHIANS_DATA = {
       periodo: "1975 - 1981",
       jogos: 253,
       gols: 29,
+      numTitulos: 2,
       posicao: "Meio-campista / Herói Eterno",
       titulos: "Paulista 1977, Paulista 1979",
       frase: "'A bola sobrou na pequena área e eu chutei com a alma de 30 milhões de corinthianos.'",
@@ -856,6 +877,48 @@ const CORINTHIANS_DATA = {
       { nome: "Zé Maria (Super Zé)", jogos: 598, anos: "1970-1983" },
       { nome: "Biro-Biro", jogos: 590, anos: "1978-1988" }
     ],
+    brabas: {
+      maioresArtilheiras: [
+        { nome: "Vic Albuquerque", gols: 108, jogos: 215, media: "0,50" },
+        { nome: "Grazi", gols: 78, jogos: 258, media: "0,30" },
+        { nome: "Adriana (Maga)", gols: 72, jogos: 148, media: "0,49" },
+        { nome: "Gabi Zanotti", gols: 68, jogos: 230, media: "0,30" },
+        { nome: "Millene", gols: 62, jogos: 152, media: "0,41" },
+        { nome: "Jheniffer", gols: 51, jogos: 128, media: "0,40" }
+      ],
+      maisJogos: [
+        { nome: "Grazi", jogos: 258, anos: "2016-2023" },
+        { nome: "Gabi Zanotti", jogos: 230, anos: "2018-Presente" },
+        { nome: "Vic Albuquerque", jogos: 215, anos: "2019-Presente" },
+        { nome: "Paulinha", jogos: 198, anos: "2016-Presente" },
+        { nome: "Lelê (Letícia Izidoro)", jogos: 190, anos: "2016-Presente" },
+        { nome: "Katiuscia", jogos: 184, anos: "2018-2023" },
+        { nome: "Tamires Dias", jogos: 175, anos: "2019-Presente" },
+        { nome: "Millene", jogos: 152, anos: "2018-Presente" }
+      ],
+      feitosHistoricos: [
+        {
+          titulo: "48 Jogos Invicto (Recorde Mundial)",
+          desc: "Maior sequência invicta da história do futebol de clubes mundial (2019 a 2020), com direito a 28 vitórias seguidas reconhecidas internacionalmente.",
+          icone: "fa-solid fa-fire"
+        },
+        {
+          titulo: "Pentacampeã da América",
+          desc: "Maior vencedora da Copa Libertadores Feminina na história (2017, 2019, 2021, 2023, 2024), estabelecendo uma dinastia continental sem precedentes.",
+          icone: "fa-solid fa-earth-americas"
+        },
+        {
+          titulo: "Hegemonia Nacional (Heptacampeão)",
+          desc: "Maior campeão brasileiro da história (2018, 2020, 2021, 2022, 2023, 2024), conquistando um histórico pentacampeonato consecutivo.",
+          icone: "fa-solid fa-trophy"
+        },
+        {
+          titulo: "Recorde Sul-Americano de Público",
+          desc: "44.529 torcedores alvinegros na Neo Química Arena na final do Brasileirão Feminino, a maior presença de público de clubes no continente.",
+          icone: "fa-solid fa-users"
+        }
+      ]
+    },
     invasoesMemoraveis: [
       {
         id: "invasao-1976",

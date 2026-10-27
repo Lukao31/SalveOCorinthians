@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.6.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.7.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -69,11 +69,20 @@ Acompanhamento dos jogos recentes e confrontos futuros do Timão, com placares, 
 Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa Libertadores Invicta, Brasileirões, Copas do Brasil, Recopa Sul-Americana e Paulistões lendários.
 
 ### 8. 🛡️ Panteão de Ídolos Eternos
-Cards com biografias, estatísticas de partidas, gols marcados, conquistas e frases marcantes com modal detalhado ao clicar:
-- **Lendas Históricas Masculinas:** Sócrates (com fotografia clássica de corpo inteiro em campo com o manto alvinegro executando passe de calcanhar), Rivellino, Marcelinho Carioca, Cássio, Luizinho e mais.
-- **As Brabas (Futebol Feminino Multicampeão):** Gabi Zanotti (A Mágica da Camisa 10, tetracampeã da América), Vic Albuquerque (maior artilheira da história do Timão com mais de 100 gols) e Tamires (capitã da Fiel e referência da Seleção Brasileira).
+Cards com biografias, estatísticas de partidas, gols marcados, conquistas exatas e frases marcantes com modal detalhado ao clicar:
+- **Lendas Históricas Masculinas:** Sócrates (com fotografia clássica de corpo inteiro em campo com o manto alvinegro executando passe de calcanhar), Rivellino, Marcelinho Carioca, Cássio, Luizinho, Basílio (Pé de Anjo de 77) e mais.
+- **As Brabas (Futebol Feminino Multicampeão):**
+  - **Gabi Zanotti:** A Mágica da Camisa 10, com 18 títulos oficiais, 230 jogos e foto erguendo a taça da Libertadores.
+  - **Vic Albuquerque:** Maior artilheira da história do Timão com mais de 108 gols e 18 títulos oficiais, com foto real em alta resolução erguendo a taça do Brasileirão 2024.
+  - **Tamires Dias:** Mãe e Capitã da Fiel com 17 títulos oficiais e medalha de prata olímpica, com foto real em alta definição erguendo a taça da Supercopa do Brasil na Neo Química Arena.
+  - **Lelê (Letícia Izidoro):** O lendário "Paredão das Brabas" com 15 títulos oficiais, 190 partidas e fotografia em alta definição beijando a taça da Copa Libertadores.
 
-### 9. 🚂 As Três Grandes Invasões da Fiel (Fotografias Históricas Reais & Relatos)
+### 9. 📈 Estatísticas & Feitos Lendários (Com Switcher 3D Flip Masculino / As Brabas)
+- Seletor interativo com setas de navegação, botões em pílula e botão central de giro que aplica efeito 3D card flip na interface.
+- **Futebol Masculino:** Maiores artilheiros históricos (Cláudio, Baltazar, Teleco...) e atletas com maior número de jogos (Wladimir, Cássio, Luizinho...).
+- **As Brabas:** Maiores artilheiras (Vic, Grazi, Adriana Maga, Gabi Zanotti...), atletas com mais partidas e cards temáticos dos recordes históricos (recorde mundial de 48 jogos invicto, Pentacampeonato da Libertadores, Heptacampeonato Brasileiro e recorde sul-americano de público na Neo Química Arena).
+
+### 10. 🚂 As Três Grandes Invasões da Fiel (Fotografias Históricas Reais & Relatos)
 Experiência imersiva com as três maiores mobilizações de torcida da história: **1976 (Maracanã)**, **2000 (Mundial no Rio)** e **2012 (Mundial no Japão)**.
 - Ao clicar em cada invasão, abre-se um modal dedicado com **3 fotografias históricas 100% reais (sem imagens de IA)**, resgatadas de acervos jornalísticos e institucionais (9 fotos no total).
 - Registros autênticos do Mundial de 2000: defesa épica de pênalti de Dida no Maracanã e o capitão Freddy Rincón erguendo o troféu da FIFA no topo do pódio (Revista Placar / Acervo FIFA).
@@ -81,7 +90,7 @@ Experiência imersiva com as três maiores mobilizações de torcida da históri
 - **Relatos de Fontes Confiáveis:** Citações documentadas de Nelson Rodrigues, Tite, Cássio, Tobias, Freddy Rincón, Dinei, Marcelinho Carioca, Frank Lampard, FIFA Technical Report e imprensa da época.
 - **Cortes & Registros em Vídeo:** Botões diretos para assistir a momentos decisivos e documentários no YouTube.
 
-### 10. 🎵 Player Interativo do Hino do Corinthians
+### 11. 🎵 Player Interativo do Hino do Corinthians
 - **Player Flutuante Dockável:** Localizado no canto inferior, com disco de vinil animado, controles de reprodução (Play, Pause, Stop, Reiniciar), barra interativa de tempo (scrubber), cronômetro dinâmico e controle de volume deslizante.
 - **Botão Rápido no Topo:** Integrado à barra de navegação com barras animadas de equalizador alvinegro para rápida ativação em qualquer página ou dispositivo.
 - **Áudio Nativo:** Gravação oficial ("Salve o Corinthians" - Lauro D'Ávila, 1953) servida localmente em alta fidelidade.
@@ -111,7 +120,7 @@ Salve o Corinthians/
 │       ├── logo-salve-corinthians.svg
 │       ├── logo-salve-corinthians-emblem.svg
 │       ├── logo-safiel.svg
-│       ├── idolos/                 # Sócrates (corpo inteiro), Cássio, Marcelinho, Rivellino, Brabas (Gabi Zanotti, Vic, Tamires)
+│       ├── idolos/                 # Sócrates (corpo inteiro), Cássio, Marcelinho, Rivellino, Brabas (Gabi Zanotti, Vic, Tamires, Lelê)
 │       ├── titulos/
 │       └── invasoes/               # 9 fotos históricas reais (1976, 2000 com Dida e Rincón, 2012)
 ├── css/
