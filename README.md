@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.7.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.8.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -69,13 +69,17 @@ Acompanhamento dos jogos recentes e confrontos futuros do Timão, com placares, 
 Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa Libertadores Invicta, Brasileirões, Copas do Brasil, Recopa Sul-Americana e Paulistões lendários.
 
 ### 8. 🛡️ Panteão de Ídolos Eternos
-Cards com biografias, estatísticas de partidas, gols marcados, conquistas exatas e frases marcantes com modal detalhado ao clicar:
-- **Lendas Históricas Masculinas:** Sócrates (com fotografia clássica de corpo inteiro em campo com o manto alvinegro executando passe de calcanhar), Rivellino, Marcelinho Carioca, Cássio, Luizinho, Basílio (Pé de Anjo de 77) e mais.
+Cards com biografias, estatísticas de partidas, gols marcados ou **defesas de pênaltis** (para goleiros), conquistas exatas e frases marcantes com modal detalhado ao clicar:
+- **Estatísticas Adaptadas para Goleiros:** Substituição automática da métrica "Gols" por **"Pênaltis Salvos / Defendidos"** nos cards e no modal para Cássio e Lelê.
+- **Pênaltis Decisivos Pegos:** Box temático em destaque citando as defesas de pênalti mais emblemáticas de cada goleiro(a) (Rogério Ceni 2013, Dudu/Lucas Lima 2018, Boca Juniors 2022, final da Libertadores Feminina 2017, semifinal 2023, etc.).
+- **Lendas Históricas Masculinas:**
+  - **Cássio Ramos (O Gigante de Yokohama):** 712 jogos, 32 pênaltis defendidos (recordista absoluto), citação dos pênaltis históricos pegos e foto clássica fechando o gol contra o Chelsea no Mundial 2012.
+  - Sócrates (fotografia clássica de corpo inteiro em campo com o manto alvinegro executando passe de calcanhar), Rivellino, Marcelinho Carioca, Wladimir, Luizinho, Ronaldo Fenômeno, Danilo e Basílio (Pé de Anjo de 77).
 - **As Brabas (Futebol Feminino Multicampeão):**
   - **Gabi Zanotti:** A Mágica da Camisa 10, com 18 títulos oficiais, 230 jogos e foto erguendo a taça da Libertadores.
-  - **Vic Albuquerque:** Maior artilheira da história do Timão com mais de 108 gols e 18 títulos oficiais, com foto real em alta resolução erguendo a taça do Brasileirão 2024.
+  - **Vic Albuquerque:** Maior artilheira da história do Timão com mais de 108 gols e 18 títulos oficiais, com foto real em estúdio/celebração (`assets/images/idolos/vic_albuquerque.jpg`, CBF / Staff Images) erguendo a taça oficial do Campeonato Brasileiro com seu rosto 100% visível e iluminado.
   - **Tamires Dias:** Mãe e Capitã da Fiel com 17 títulos oficiais e medalha de prata olímpica, com foto real em alta definição erguendo a taça da Supercopa do Brasil na Neo Química Arena.
-  - **Lelê (Letícia Izidoro):** O lendário "Paredão das Brabas" com 15 títulos oficiais, 190 partidas e fotografia em alta definição beijando a taça da Copa Libertadores.
+  - **Lelê (Letícia Izidoro):** O lendário "Paredão das Brabas" com 15 títulos oficiais, 190 partidas, 10 pênaltis defendidos (com os pênaltis decisivos da final da Libertadores 2017 e semi 2023) e fotografia em alta definição na final da Supercopa do Brasil na Neo Química Arena.
 
 ### 9. 📈 Estatísticas & Feitos Lendários (Com Switcher 3D Flip Masculino / As Brabas)
 - Seletor interativo com setas de navegação, botões em pílula e botão central de giro que aplica efeito 3D card flip na interface.

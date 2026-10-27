@@ -418,6 +418,13 @@ function renderIdolos(filtro = 'todos', termoBusca = '') {
 
   container.innerHTML = filtrados.map(item => {
     const numTitulos = item.numTitulos !== undefined ? item.numTitulos : (item.titulos ? item.titulos.split(',').length : 0);
+    const isGoleiro = item.isGoleiro || (item.posicao && item.posicao.toLowerCase().includes('goleir'));
+    const statMeioNum = isGoleiro
+      ? `<i class="fa-solid fa-hand" style="font-size: 0.9em; margin-right: 2px;"></i> ${item.penaltisDefendidos || 0}`
+      : `${item.gols}`;
+    const statMeioLbl = isGoleiro ? 'Pênaltis Salvos' : 'Gols';
+    const statMeioClass = isGoleiro ? 'idolo-stat-item idolo-stat-penaltis' : 'idolo-stat-item';
+
     return `
     <div class="idolo-card" onclick="abrirModalIdolo('${item.id}')" data-id="${item.id}" tabindex="0" role="button" aria-label="Ver foto e história de ${item.nome}">
       <div class="idolo-card-thumb-wrapper">
@@ -441,15 +448,24 @@ function renderIdolos(filtro = 'todos', termoBusca = '') {
             <span class="idolo-stat-num">${item.jogos}</span>
             <span class="idolo-stat-lbl">Partidas</span>
           </div>
-          <div class="idolo-stat-item">
-            <span class="idolo-stat-num">${item.gols}</span>
-            <span class="idolo-stat-lbl">Gols</span>
+          <div class="${statMeioClass}">
+            <span class="idolo-stat-num">${statMeioNum}</span>
+            <span class="idolo-stat-lbl">${statMeioLbl}</span>
           </div>
           <div class="idolo-stat-item idolo-stat-trofeus">
             <span class="idolo-stat-num"><i class="fa-solid fa-trophy"></i> ${numTitulos}</span>
             <span class="idolo-stat-lbl">Títulos</span>
           </div>
         </div>
+
+        ${isGoleiro && item.penaltisDecisivos ? `
+        <div class="idolo-card-penaltis-box">
+          <div class="idolo-card-penaltis-header">
+            <i class="fa-solid fa-hand-holding-hand"></i> <strong>Pênaltis Decisivos Pegos:</strong>
+          </div>
+          <div class="idolo-card-penaltis-texto">${item.penaltisDecisivos}</div>
+        </div>
+        ` : ''}
 
         <div class="idolo-card-titulos-box">
           <div class="idolo-card-titulos-header">
@@ -945,6 +961,11 @@ function abrirModalIdolo(id) {
   const fraseEl = document.getElementById('modal-idolo-frase');
   const legadoEl = document.getElementById('modal-idolo-legado');
 
+  const isGoleiro = idolo.isGoleiro || (idolo.posicao && idolo.posicao.toLowerCase().includes('goleir'));
+  const golsLabelEl = document.getElementById('modal-idolo-gols-label');
+  const penaltisBoxEl = document.getElementById('modal-idolo-penaltis-box');
+  const penaltisTextoEl = document.getElementById('modal-idolo-penaltis-texto');
+
   if (imgEl) {
     imgEl.src = idolo.foto;
     imgEl.alt = `${idolo.nome} - Momento Histórico Real`;
@@ -960,7 +981,32 @@ function abrirModalIdolo(id) {
   if (nomeEl) nomeEl.textContent = idolo.nome;
   if (posicaoEl) posicaoEl.textContent = `${idolo.posicao} • ${idolo.periodo}`;
   if (jogosEl) jogosEl.textContent = idolo.jogos;
-  if (golsEl) golsEl.textContent = idolo.gols;
+
+  if (isGoleiro) {
+    if (golsEl) {
+      golsEl.innerHTML = `<i class="fa-solid fa-hand text-gold" style="font-size: 0.9em; margin-right: 2px;"></i> ${idolo.penaltisDefendidos || 0}`;
+    }
+    if (golsLabelEl) {
+      golsLabelEl.textContent = 'Pênaltis Defendidos';
+    }
+    if (penaltisBoxEl && penaltisTextoEl && idolo.penaltisDecisivos) {
+      penaltisTextoEl.textContent = idolo.penaltisDecisivos;
+      penaltisBoxEl.style.display = 'block';
+    } else if (penaltisBoxEl) {
+      penaltisBoxEl.style.display = 'none';
+    }
+  } else {
+    if (golsEl) {
+      golsEl.textContent = idolo.gols;
+    }
+    if (golsLabelEl) {
+      golsLabelEl.textContent = 'Gols';
+    }
+    if (penaltisBoxEl) {
+      penaltisBoxEl.style.display = 'none';
+    }
+  }
+
   if (titulosEl) titulosEl.textContent = idolo.titulos;
   if (fraseEl) fraseEl.textContent = idolo.frase;
   if (legadoEl) legadoEl.textContent = idolo.legado;

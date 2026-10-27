@@ -13,6 +13,29 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [1.8.0] - 2026-10-27
+
+### 🧤 Defesas de Pênaltis e Pênaltis Decisivos para Goleiros, Nova Foto Desobstruída de Vic Albuquerque com a Taça e Imagem em Alta Resolução de Lelê
+
+Esta versão atende a quatro importantes aprimoramentos e refinamentos solicitados para o Panteão dos Ídolos:
+
+### ✨ Adicionado (Added)
+- **Métrica Especializada para Goleiros ("Pênaltis Salvos / Defendidos"):**
+  - Quando o ídolo(a) for goleiro(a) (`Cássio` e `Lelê`), a métrica "Gols" é automaticamente substituída por **"Pênaltis Salvos"** (nos cards da galeria) e **"Pênaltis Defendidos"** (no modal de detalhes), acompanhada do ícone temático de luva/defesa (`fa-hand`).
+  - **Cássio Ramos:** Exibição destacada de **32 Pênaltis Defendidos** (recordista absoluto da história alvinegra).
+  - **Lelê (Letícia Izidoro):** Exibição destacada de **10 Pênaltis Defendidos** em tempo normal e disputas eliminatórias.
+- **Citação Detalhada dos Pênaltis Decisivos Históricos Pegos por Cada Goleiro(a):**
+  - **Card da Galeria:** Adição de box exclusivo `.idolo-card-penaltis-box` com borda e ícone dourado (`fa-hand-holding-hand`), detalhando as defesas de pênaltis mais emblemáticas de cada ídolo.
+  - **Modal Interativo:** Inclusão de seção dedicada `.modal-penaltis-box` renderizada sob demanda com o relato completo das penalidades históricas.
+  - **Pênaltis Decisivos de Cássio:** Defesa na semifinal do Paulistão 2013 no Morumbi na cobrança de Rogério Ceni; final do Paulistão 2018 no Allianz Parque contra o Palmeiras (duas penalidades defendidas: Dudu e Lucas Lima); oitavas da Libertadores 2022 em La Bombonera contra o Boca Juniors (defesas épicas em chutes de Sebastián Villa e Juan Ramírez); quartas da Sul-Americana 2023 contra o Estudiantes em La Plata; e decisões contra Flamengo, Grêmio e São Paulo.
+  - **Pênaltis Decisivos de Lelê:** Grande final da Copa Libertadores Feminina 2017 contra o Colo-Colo (defendeu duas penalidades máximas de Rocío Soto e Camila Sáez, garantindo o primeiro título continental da história alvinegra); semifinal da Libertadores Feminina 2023 contra o Internacional (defesa decisiva na cobrança de Isa Haas que carimbou a vaga rumo ao tetracampeonato); além de intervenções salvadoras em disputas da Supercopa do Brasil e do Paulistão Feminino.
+
+### 🔄 Modificado & Corrigido (Changed & Fixed)
+- **Substituição da Foto de Vic Albuquerque (Rosto 100% Desobstruído Erguendo a Taça):**
+  - A imagem anterior em que o troféu cobria parte do rosto da jogadora foi substituída por fotografia autêntica em estúdio/celebração (`assets/images/idolos/vic_albuquerque.jpg`, 683x1024 px, 224 KB, Lívia Villas Boas / Staff Images Woman / CBF / Flickr Oficial), exibindo Vic com o manto sagrado alvinegro e medalha de campeã no peito, erguendo com orgulho a taça oficial do Campeonato Brasileiro com seu rosto totalmente visível, iluminado e sorridente.
+- **Substituição da Foto da Goleira Lelê por Imagem em Alta Resolução:**
+  - Substituição da foto anterior de baixa resolução por imagem nítida em alta definição (`assets/images/idolos/lele.jpg`, 957x1360 px, 417 KB, Fabio Giannelli / Agência Soccer Digital / Wikimedia Commons), retratando Lelê soberana com as luvas e bola na mão em pleno gramado da Neo Química Arena na conquista da Supercopa do Brasil (vitória por 4 a 1 sobre o Flamengo).
+
 ## [1.7.0] - 2026-10-26
 
 ### 👑 Fotos em Alta Definição com Taças das Brabas, Inclusão de Lelê, Correção Precisa de Títulos e Estatísticas com Efeito 3D Flip

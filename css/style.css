@@ -1775,6 +1775,48 @@ input[type="range"]::-webkit-slider-thumb:hover {
   color: #f59e0b;
 }
 
+.idolo-stat-penaltis .idolo-stat-num {
+  color: #f59e0b;
+}
+
+.idolo-card-penaltis-box {
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-left: 3px solid #f59e0b;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1.15rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.idolo-card:hover .idolo-card-penaltis-box {
+  border-color: rgba(245, 158, 11, 0.45);
+  background: rgba(245, 158, 11, 0.09);
+}
+
+.idolo-card-penaltis-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f59e0b;
+  margin-bottom: 0.35rem;
+}
+
+.idolo-card-penaltis-header i {
+  color: #f59e0b;
+}
+
+.idolo-card-penaltis-texto {
+  font-size: 0.81rem;
+  color: #e5e7eb;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
 .idolo-card-titulos-box {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -3152,7 +3194,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   display: block;
 }
 
-.modal-titulos-box, .modal-legado-box {
+.modal-titulos-box, .modal-legado-box, .modal-penaltis-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
@@ -3160,6 +3202,26 @@ input[type="range"]::-webkit-slider-thumb:hover {
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+.modal-penaltis-box {
+  border-left: 3px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.modal-penaltis-box .modal-section-title {
+  color: #f59e0b;
+}
+
+.modal-penaltis-box .modal-section-title i {
+  color: #f59e0b;
+}
+
+.modal-penaltis-box p {
+  margin: 0;
+  color: #e5e5e5;
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
 .modal-section-title {

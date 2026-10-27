@@ -632,6 +632,9 @@ const CORINTHIANS_DATA = {
       periodo: "2012 - 2024",
       jogos: 712,
       gols: 0,
+      isGoleiro: true,
+      penaltisDefendidos: 32,
+      penaltisDecisivos: "Maior pegador de pênaltis dos 116 anos de história do Corinthians com 32 defesas oficiais. Pênaltis decisivos memoráveis: semifinal do Paulistão 2013 no Morumbi (pegou a cobrança de Rogério Ceni); grande final do Paulistão 2018 no Allianz Parque contra o rival Palmeiras (defendeu duas cobranças na decisão por pênaltis — Dudu e Lucas Lima —, garantindo o título na casa do rival); oitavas de final da Libertadores 2022 em La Bombonera contra o Boca Juniors (defendeu os pênaltis de Sebastián Villa e Juan Ramírez diante da pressão argentina); quartas da Copa Sul-Americana 2023 contra o Estudiantes em La Plata; além de defesas salvadoras de penalidades contra Flamengo, Grêmio e São Paulo.",
       posicao: "Goleiro",
       titulos: "Mundial 2012, Libertadores 2012 (Invicto), Recopa 2013, Brasileirão 2015, 2017, Paulista 2013, 2017, 2018, 2019",
       frase: "'Em Yokohama contra o Chelsea, eu sentia que aquela bola do Hazard ou do Torres simplesmente não ia entrar.'",
@@ -806,8 +809,8 @@ const CORINTHIANS_DATA = {
       legado: "Maior artilheira de toda a história do Corinthians Feminino com mais de 108 gols e 18 títulos conquistados. Decisiva e fria em clássicos e finais, sinônimo de raça e precisão goleadora.",
       tag: "as-brabas",
       foto: "assets/images/idolos/vic_albuquerque.jpg",
-      fotoMomento: "Vic Albuquerque vibrando intensamente ao erguer a taça do Brasileirão Feminino de 2024 com a medalha de campeã no peito e o manto sagrado alvinegro.",
-      fonteFoto: "Meu Timão / Rodrigo Gazzanel / Agência Corinthians"
+      fotoMomento: "Vic Albuquerque com o manto alvinegro sagrado e a medalha de campeã no peito, erguendo orgulhosamente a taça oficial do Campeonato Brasileiro com o escudo do Corinthians estampado no coração.",
+      fonteFoto: "Lívia Villas Boas / Staff Images Woman / CBF / Flickr Oficial"
     },
     {
       id: "tamires",
@@ -831,6 +834,9 @@ const CORINTHIANS_DATA = {
       periodo: "2016 - 2020, 2022 - Presente",
       jogos: 190,
       gols: 0,
+      isGoleiro: true,
+      penaltisDefendidos: 10,
+      penaltisDecisivos: "Paredão histórico das Brabas e especialista em decisões sob pressão máxima. Pênaltis decisivos memoráveis: grande final da Copa Libertadores Feminina 2017 contra o Colo-Colo (defendeu duas cobranças na disputa de pênaltis — chutes de Rocío Soto e Camila Sáez —, garantindo a primeira Libertadores Feminina da história alvinegra); semifinal da Libertadores Feminina 2023 contra o Internacional (defendeu a penalidade máxima decisiva de Isa Haas na disputa após 1 a 1 no tempo regulamentar, carimbando o passaporte para o tetracampeonato); além de defesas cruciais em fases eliminatórias da Supercopa do Brasil e do Paulistão Feminino.",
       numTitulos: 15,
       posicao: "Goleira / Ídola Continental",
       titulos: "Libertadores (5x: 2017, 2019, 2023, 2024, 2025), Brasileirão (5x: 2018, 2020, 2022, 2023, 2024), Paulistão (3x: 2019, 2020, 2023), Supercopa (2023), Copa Paulista (2022), Copa do Brasil (2016)",
@@ -838,8 +844,8 @@ const CORINTHIANS_DATA = {
       legado: "A maior goleira da história do Corinthians e muralha da Seleção Brasileira. Heroína na conquista da Libertadores de 2017 defendendo duas penalidades decisivas e gigante na final de 2023 contra o Palmeiras. Coleciona 15 títulos oficiais com o manto alvinegro.",
       tag: "as-brabas",
       foto: "assets/images/idolos/lele.jpg",
-      fotoMomento: "Lelê beijando apaixonadamente a taça da Copa Libertadores da América Feminina com a medalha de campeã no peito e o manto sagrado alvinegro de goleira.",
-      fonteFoto: "Instagram Oficial @leticiaizidoro94 / Staff Images Woman CONMEBOL"
+      fotoMomento: "Lelê soberana de luvas e bola na mão com o manto sagrado de goleira do Corinthians no gramado da Neo Química Arena na grande final da Supercopa do Brasil (vitória por 4 a 1 sobre o Flamengo).",
+      fonteFoto: "Fabio Giannelli / Agência Soccer Digital / Wikimedia Commons"
     },
     {
       id: "basilio",
