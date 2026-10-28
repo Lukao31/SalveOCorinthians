@@ -1404,9 +1404,9 @@ const CORINTHIANS_DATA = {
       legado: "Criador do lendário drible elástico e dono da célebre 'Patada Atômica'. Campeão mundial com a Seleção Brasileira em 1970. Ícone reverenciado por Pelé e Maradona.",
       tag: "recordista",
       tags: ["recordista", "genio", "artilheiro"],
-      foto: "assets/images/idolos/rivellino.jpg",
-      fotoMomento: "Roberto Rivellino, o Reizinho do Parque São Jorge, em sua fase de ouro no Corinthians.",
-      fonteFoto: "Acervo Histórico / Wikimedia Commons"
+      foto: "assets/images/idolos/rivellino.jpg?v=3.1.0",
+      fotoMomento: "Roberto Rivellino, o eterno 'Reizinho do Parque', em campo como jogador do Corinthians vestindo o clássico manto branco com o escudo âncora bordado no peito.",
+      fonteFoto: "Acervo Histórico SCCP / Meu Timão"
     },
     {
       id: "wladimir",
@@ -1465,9 +1465,9 @@ const CORINTHIANS_DATA = {
       legado: "Símbolo máximo da inteligência, elegância com toques de calcanhar e líder da Democracia Corinthiana. Médico, pensador e ícone da resistência popular contra a ditadura militar.",
       tag: "democracia",
       tags: ["democracia", "artilheiro"],
-      foto: "assets/images/idolos/socrates.jpg",
-      fotoMomento: "Dr. Sócrates em clássica jogada de corpo inteiro com a bola no gramado vestindo o manto sagrado alvinegro e executando seu genial toque de calcanhar.",
-      fonteFoto: "Acervo Histórico / Revista Placar"
+      foto: "assets/images/idolos/socrates.jpg?v=3.1.0",
+      fotoMomento: "A imagem imortal do Doutor Sócrates comemorando gol com o braço direito erguido e o punho cerrado para o alto, vestindo o icônico manto listrado alvinegro na Democracia Corinthiana.",
+      fonteFoto: "Acervo Histórico SCCP / Revista Placar / Todo Poderoso Timão"
     },
     {
       id: "neto",

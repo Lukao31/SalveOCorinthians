@@ -1812,7 +1812,7 @@ window.mudarFotoInvasao = mudarFotoInvasao;
 window.selecionarFotoInvasao = selecionarFotoInvasao;
 
 /* ==========================================================================
-   10. Player Oficial do Hino do Corinthians
+   10. Player Oficial do Hino do Corinthians (com Modos Expandido e Minimizado)
    ========================================================================== */
 function initHinoPlayer() {
   const audio = document.getElementById('corinthians-anthem-audio');
@@ -1830,8 +1830,18 @@ function initHinoPlayer() {
   const timeCurrent = document.getElementById('hino-time-current');
   const timeDuration = document.getElementById('hino-time-duration');
   const vinyl = document.getElementById('hino-vinyl');
+
+  // Novos elementos de expansão e minimização
+  const triggerExpand = document.getElementById('hino-trigger-expand');
+  const expandBtn = document.getElementById('hino-btn-expand');
+  const expandIcon = document.getElementById('hino-icon-expand');
+  const collapseBtn = document.getElementById('hino-btn-collapse');
   const minimizeBtn = document.getElementById('hino-btn-minimize');
   const collapseIcon = document.getElementById('hino-icon-collapse');
+  const hintExpand = document.getElementById('hino-hint-expand');
+  const letraToggleBtn = document.getElementById('hino-btn-letra-toggle');
+  const letraBtnText = document.getElementById('hino-letra-btn-text');
+  const lyricsPanel = document.getElementById('hino-expanded-lyrics');
 
   if (!audio || !playerContainer) return;
 
@@ -1869,15 +1879,136 @@ function initHinoPlayer() {
     }
   }
 
+  // Funções de Gestão de Estados do Player: Expandido, Normal e Minimizado
+  function expandPlayer() {
+    playerContainer.classList.remove('minimized');
+    playerContainer.classList.add('expanded');
+    if (hintExpand) {
+      hintExpand.innerHTML = '<i class="fa-solid fa-compress"></i> Clique para recolher';
+    }
+    if (expandBtn) {
+      expandBtn.title = 'Recolher player';
+      if (expandIcon) expandIcon.className = 'fa-solid fa-down-left-and-up-right-to-center';
+    }
+    if (collapseIcon) {
+      collapseIcon.className = 'fa-solid fa-minus';
+    }
+    if (minimizeBtn) {
+      minimizeBtn.title = 'Minimizar player';
+    }
+  }
+
+  function collapsePlayer() {
+    playerContainer.classList.remove('expanded');
+    if (hintExpand) {
+      hintExpand.innerHTML = '<i class="fa-solid fa-expand"></i> Clique para expandir';
+    }
+    if (expandBtn) {
+      expandBtn.title = 'Expandir player';
+      if (expandIcon) expandIcon.className = 'fa-solid fa-up-right-and-down-left-from-center';
+    }
+  }
+
+  function toggleExpand() {
+    if (playerContainer.classList.contains('expanded')) {
+      collapsePlayer();
+    } else {
+      expandPlayer();
+    }
+  }
+
+  function minimizePlayer() {
+    if (playerContainer.classList.contains('minimized')) {
+      // Restaurar player
+      playerContainer.classList.remove('minimized');
+      if (collapseIcon) collapseIcon.className = 'fa-solid fa-minus';
+      if (minimizeBtn) minimizeBtn.title = 'Minimizar player';
+    } else {
+      // Minimizar player
+      playerContainer.classList.remove('expanded');
+      playerContainer.classList.add('minimized');
+      if (collapseIcon) collapseIcon.className = 'fa-solid fa-chevron-up';
+      if (minimizeBtn) minimizeBtn.title = 'Restaurar player';
+    }
+  }
+
+  function toggleLyrics() {
+    if (!lyricsPanel) return;
+    const isVisible = lyricsPanel.classList.toggle('visible');
+    if (letraToggleBtn) {
+      letraToggleBtn.classList.toggle('active', isVisible);
+    }
+    if (letraBtnText) {
+      letraBtnText.textContent = isVisible ? 'Ocultar Letra' : 'Ver Letra Completa';
+    }
+  }
+
   // Toggle pelo botão da barra de navegação
   if (navBtn) {
     navBtn.addEventListener('click', () => {
-      // Se o player estiver minimizado, expande
-      playerContainer.classList.remove('minimized');
-      if (collapseIcon) collapseIcon.className = 'fa-solid fa-chevron-down';
+      // Se o player estiver minimizado, restaura para a visualização normal
+      if (playerContainer.classList.contains('minimized')) {
+        playerContainer.classList.remove('minimized');
+        if (collapseIcon) collapseIcon.className = 'fa-solid fa-minus';
+      }
       togglePlay();
     });
   }
+
+  // Cliques para Expandir / Recolher / Minimizar
+  if (triggerExpand) {
+    triggerExpand.addEventListener('click', (e) => {
+      // Se o player estiver minimizado, restaura primeiro
+      if (playerContainer.classList.contains('minimized')) {
+        playerContainer.classList.remove('minimized');
+        if (collapseIcon) collapseIcon.className = 'fa-solid fa-minus';
+        return;
+      }
+      toggleExpand();
+    });
+
+    triggerExpand.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleExpand();
+      }
+    });
+  }
+
+  if (expandBtn) {
+    expandBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleExpand();
+    });
+  }
+
+  if (collapseBtn) {
+    collapseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      collapsePlayer();
+    });
+  }
+
+  if (minimizeBtn) {
+    minimizeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      minimizePlayer();
+    });
+  }
+
+  if (letraToggleBtn) {
+    letraToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleLyrics();
+    });
+  }
+
+  // Fechar modo expandido com a tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && playerContainer.classList.contains('expanded')) {
+      collapsePlayer();
+    }
+  });
 
   // Controles do player
   if (playBtn) playBtn.addEventListener('click', togglePlay);
@@ -1966,17 +2097,6 @@ function initHinoPlayer() {
         volumeSlider.value = audio.muted ? 0 : audio.volume;
       }
       updateVolumeIcon(audio.muted ? 0 : audio.volume);
-    });
-  }
-
-  // Minimizar / Expandir Player
-  if (minimizeBtn) {
-    minimizeBtn.addEventListener('click', () => {
-      playerContainer.classList.toggle('minimized');
-      const isMinimized = playerContainer.classList.contains('minimized');
-      if (collapseIcon) {
-        collapseIcon.className = isMinimized ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
-      }
     });
   }
 }

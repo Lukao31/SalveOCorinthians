@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-3.0.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-3.2.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -95,7 +95,10 @@ Experiência imersiva com as três maiores mobilizações de torcida da históri
 - **Relatos de Fontes Confiáveis:** Citações documentadas de Nelson Rodrigues, Tite, Cássio, Tobias, Freddy Rincón, Dinei, Marcelinho Carioca, Frank Lampard, FIFA Technical Report e imprensa da época.
 - **Cortes & Registros em Vídeo:** Botões diretos para assistir a momentos decisivos e documentários no YouTube.
 
-### 11. 🎵 Player Interativo do Hino do Corinthians
+### 11. 🎵 Player Interativo do Hino do Corinthians (Modos Normal, Expandido e Minimizado)
+- **Leitura Completa do Nome Oficial:** Exibição clara e sem cortes do título **"Hino Oficial do Sport Club Corinthians Paulista"** e do subtítulo **"Salve o Corinthians • Lauro D'Ávila (1953)"**.
+- **Modo Expandido Interativo:** Ao clicar no player ou no botão de expansão, ele se transforma em uma central musical com cabeçalho de gala (*Hino Centenário Oficial*), botões de ação e gaveta com a **letra oficial completa** dividida em estrofes e refrão destacado.
+- **Modo Minimizado / Reduzido:** Botão dedicado para diminuir o player a uma pílula flutuante compacta de apenas 220px, mantendo o vinil giratório e controle ágil sem sobrepor conteúdos do site.
 - **Player Flutuante Dockável:** Localizado no canto inferior, com disco de vinil animado, controles de reprodução (Play, Pause, Stop, Reiniciar), barra interativa de tempo (scrubber), cronômetro dinâmico e controle de volume deslizante.
 - **Botão Rápido no Topo:** Integrado à barra de navegação com barras animadas de equalizador alvinegro para rápida ativação em qualquer página ou dispositivo.
 - **Áudio Nativo:** Gravação oficial ("Salve o Corinthians" - Lauro D'Ávila, 1953) servida localmente em alta fidelidade.

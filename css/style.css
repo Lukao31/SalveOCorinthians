@@ -4613,22 +4613,106 @@ input[type="range"]::-webkit-slider-thumb:hover {
   bottom: 24px;
   right: 24px;
   z-index: 1050;
-  max-width: 480px;
+  max-width: 590px;
   width: calc(100% - 48px);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hino-player-card {
   display: flex;
+  flex-direction: column;
+  background: rgba(12, 12, 14, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  padding: 0.85rem 1.15rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header Exclusivo do Modo Expandido */
+.hino-expanded-header {
+  display: none;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  background: rgba(12, 12, 14, 0.92);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
-  padding: 0.85rem 1.1rem;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.hino-expanded-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #eab308;
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hino-expanded-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hino-btn-letra-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hino-btn-letra-action:hover,
+.hino-btn-letra-action.active {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.35);
+}
+
+.hino-btn-collapse-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #a1a1aa;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hino-btn-collapse-top:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Linha Principal do Player */
+.hino-player-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  width: 100%;
 }
 
 .hino-player-left {
@@ -4636,13 +4720,26 @@ input[type="range"]::-webkit-slider-thumb:hover {
   align-items: center;
   gap: 0.85rem;
   min-width: 0;
-  flex: 1;
+  flex: 1.35;
+  cursor: pointer;
+  padding: 0.25rem 0.45rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.hino-player-left:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hino-player-left:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
 }
 
 .hino-vinyl-disc {
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   border-radius: 50%;
   background: radial-gradient(circle, #27272a 0%, #111111 60%, #09090b 100%);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -4652,6 +4749,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .hino-vinyl-disc::before {
@@ -4663,8 +4761,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .hino-vinyl-logo {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
   z-index: 2;
 }
@@ -4686,17 +4784,44 @@ input[type="range"]::-webkit-slider-thumb:hover {
   font-size: 0.88rem;
   font-weight: 800;
   color: #ffffff;
-  white-space: nowrap;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  transition: all 0.2s ease;
 }
 
 .hino-track-subtitle {
   font-size: 0.72rem;
   color: #a1a1aa;
+  line-height: 1.3;
+  margin-top: 2px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: all 0.2s ease;
+}
+
+.hino-hint-expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.64rem;
+  color: #eab308;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.hino-player-left:hover .hino-hint-expand {
+  opacity: 1;
+  color: #fde047;
+  transform: translateX(2px);
 }
 
 /* Center Controls */
@@ -4705,7 +4830,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
-  flex: 1.4;
+  flex: 1.15;
   min-width: 140px;
 }
 
@@ -4835,6 +4960,16 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: #dc2626;
 }
 
+.hino-btn-expand-toggle {
+  color: #eab308;
+  font-size: 0.85rem;
+}
+
+.hino-btn-expand-toggle:hover {
+  color: #fde047;
+  background: rgba(234, 179, 8, 0.15);
+}
+
 .hino-btn-minimize {
   background: transparent;
   border: none;
@@ -4854,20 +4989,163 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Estado Minimizado */
-.hino-floating-player.minimized {
-  max-width: 190px;
+/* ==========================================================================
+   Modo Expandido (.expanded)
+   ========================================================================== */
+.hino-floating-player.expanded {
+  max-width: 660px;
+  width: calc(100% - 32px);
+  right: 16px;
+  bottom: 16px;
+  z-index: 1060;
 }
 
-.hino-floating-player.minimized .hino-player-center,
-.hino-floating-player.minimized .hino-volume-control,
-.hino-floating-player.minimized .hino-track-subtitle {
-  display: none !important;
+.hino-floating-player.expanded .hino-player-card {
+  padding: 1.25rem 1.4rem;
+  background: rgba(10, 10, 13, 0.98);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.92), 0 0 35px rgba(234, 179, 8, 0.15);
+}
+
+.hino-floating-player.expanded .hino-expanded-header {
+  display: flex;
+}
+
+.hino-floating-player.expanded .hino-track-title {
+  font-size: 1.05rem;
+  -webkit-line-clamp: unset;
+  display: block;
+}
+
+.hino-floating-player.expanded .hino-track-subtitle {
+  font-size: 0.8rem;
+  color: #e4e4e7;
+  white-space: normal;
+}
+
+.hino-floating-player.expanded .hino-vinyl-disc {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+}
+
+.hino-floating-player.expanded .hino-vinyl-logo {
+  width: 30px;
+  height: 30px;
+}
+
+/* Gaveta da Letra do Hino */
+.hino-expanded-lyrics {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.hino-expanded-lyrics.visible {
+  display: block;
+}
+
+.hino-lyrics-body {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  text-align: center;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #d4d4d8;
+}
+
+.hino-lyrics-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hino-lyrics-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+.hino-lyrics-refrao {
+  font-weight: 700;
+  color: #fbbf24;
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.hino-lyrics-estrofe {
+  margin-bottom: 0.85rem;
+}
+
+.hino-lyrics-final {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.hino-lyrics-credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  color: #a1a1aa;
+  margin-top: 0.85rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 0.65rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Modo Minimizado / Reduzido (.minimized)
+   ========================================================================== */
+.hino-floating-player.minimized {
+  max-width: 220px;
+  width: auto;
 }
 
 .hino-floating-player.minimized .hino-player-card {
-  padding: 0.6rem 0.8rem;
+  padding: 0.5rem 0.85rem;
   border-radius: 9999px;
+  background: rgba(12, 12, 14, 0.96);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.85);
+}
+
+.hino-floating-player.minimized .hino-player-main-row {
+  gap: 0.5rem;
+}
+
+.hino-floating-player.minimized .hino-expanded-header,
+.hino-floating-player.minimized .hino-player-center,
+.hino-floating-player.minimized .hino-volume-control,
+.hino-floating-player.minimized .hino-btn-expand-toggle,
+.hino-floating-player.minimized .hino-hint-expand,
+.hino-floating-player.minimized .hino-track-subtitle,
+.hino-floating-player.minimized .hino-expanded-lyrics {
+  display: none !important;
+}
+
+.hino-floating-player.minimized .hino-vinyl-disc {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+}
+
+.hino-floating-player.minimized .hino-vinyl-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.hino-floating-player.minimized .hino-track-title {
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 95px;
 }
 
 /* Mobile responsive */
@@ -4876,10 +5154,16 @@ input[type="range"]::-webkit-slider-thumb:hover {
     display: none;
   }
   .hino-floating-player {
-    bottom: 16px;
+    bottom: 14px;
     right: 12px;
     width: calc(100% - 24px);
     max-width: none;
+  }
+  .hino-floating-player.expanded {
+    bottom: 8px;
+    right: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
   }
   .hino-player-card {
     padding: 0.65rem 0.85rem;

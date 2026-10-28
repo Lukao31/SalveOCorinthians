@@ -13,6 +13,41 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.2.0] - 2026-10-28
+
+### 🎵 Novo Layout do Player do Hino com Exibição Completa do Nome, Modos Expandido e Minimizado
+
+Nesta versão, aprimoramos o **Player Flutuante Oficial do Hino do Corinthians** (`#hino-player-container`) atendendo à solicitação de permitir a leitura integral do nome oficial do hino e novos controles de tamanho:
+
+### ✨ Adicionado & Modificado (Added & Changed)
+- **Leitura Completa do Nome Oficial sem Cortes:**
+  - O título oficial é apresentado com destaque e sem truncamentos: **"Hino Oficial do Sport Club Corinthians Paulista"**, acompanhado pelo subtítulo **"Salve o Corinthians • Lauro D'Ávila (1953)"**.
+- **Função de Expansão para Melhor Visualização (Modo Expandido):**
+  - Ao clicar na área de identificação do hino (`#hino-trigger-expand`) ou no novo botão dedicado de expansão (`#hino-btn-expand`), o player transiciona suavemente para o **Modo Expandido** (`.expanded`).
+  - Apresenta cabeçalho especial com badge dourado (*Hino Centenário Oficial*), tipografia ampliada, botão de atalho para a letra completa e botão superior de recolhimento (*Recolher*).
+  - Inclui gaveta expansível (`#hino-expanded-lyrics`) com toda a poesia clássica do hino oficial formatada em estrofes, com destaque para o refrão histórico.
+- **Função para Diminuir / Minimizar o Player (Modo Reduzido):**
+  - Implementado o botão de diminuir/minimizar (`#hino-btn-minimize`), permitindo encolher o player a uma discreta pílula flutuante (`.minimized`) de apenas 220px, mantendo o vinil giratório e os controles essenciais sem obstruir a leitura da página.
+  - Ao clicar no botão de restaurar (`fa-chevron-up`) ou na própria pílula, o player retorna instantaneamente ao tamanho padrão.
+- **Suporte a Acessibilidade e Teclado:**
+  - Possibilidade de expandir via teclado (`Enter` ou `Espaço`) e fechar o modo expandido pressionando a tecla `Escape`.
+
+---
+
+## [3.1.0] - 2026-10-28
+
+### 🦅 Atualização das Fotografias Históricas de Roberto Rivellino e Doutor Sócrates na Seção de Ídolos
+
+Nesta versão, atualizamos as fotografias de **Roberto Rivellino** e **Doutor Sócrates** no **Panteão de Ídolos** (`#idolos-eternos`) utilizando registros autênticos de fontes históricas confiáveis (*Meu Timão*, *Memorial Corinthians*, *Revista Placar* e *Todo Poderoso Timão*):
+
+### ✨ Modificado (Changed)
+- **Roberto Rivellino (`assets/images/idolos/rivellino.jpg`):**
+  - Substituída a imagem anterior (em que aparecia com a camisa da Seleção Brasileira) por uma fotografia histórica de **Rivellino em campo como jogador do Corinthians**, vestindo o clássico manto branco alvinegro com o escudo âncora bordado no peito (Fonte: *Acervo Histórico SCCP / Meu Timão*).
+- **Doutor Sócrates (`assets/images/idolos/socrates.jpg`):**
+  - Substituída a imagem anterior pela **icônica fotografia de Sócrates comemorando um gol com o braço direito erguido e o punho cerrado para o alto**, vestindo a camisa listrada alvinegra (`Cofap` / `Topper`) da época da Democracia Corinthiana (Fonte: *Acervo Histórico SCCP / Revista Placar / Todo Poderoso Timão*).
+
+---
+
 ## [3.0.0] - 2026-10-28
 
 ### 🏆 Galeria Completa de Todos os 31 Paulistões (1914–2025), Todos os 22 Títulos das Brabas (Futebol Feminino) e Seletor Masculino / Feminino / Ambos Juntos em Ordem Cronológica
