@@ -13,6 +13,223 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.0.0] - 2026-10-28
+
+### 🏆 Galeria Completa de Todos os 31 Paulistões (1914–2025), Todos os 22 Títulos das Brabas (Futebol Feminino) e Seletor Masculino / Feminino / Ambos Juntos em Ordem Cronológica
+
+Nesta versão, expandimos a seção **Todas as Conquistas do Corinthians** (`#historico-titulos`) com as fotografias históricas de **todos os 31 elencos campeões do Campeonato Paulista**, adicionamos **todos os 22 títulos oficiais das Brabas (Futebol Feminino)** no mesmo formato dos títulos masculinos e criamos um seletor interativo para visualizar **Masculino, Feminino ou os 2 Juntos por Ordem Cronológica**:
+
+### ✨ Adicionado & Modificado (Added & Changed)
+- **Fotos Históricas de Todos os 31 Elencos Campeões do Paulistão na Mini-Seção (`#paulistao-hegemonia`):**
+  - Todos os **31 títulos paulistas (`1914, 1916, 1922, 1923, 1924, 1928, 1929, 1930, 1937, 1938, 1939, 1941, 1951, 1952, 1954, 1977, 1979, 1982, 1983, 1988, 1995, 1997, 1999, 2001, 2003, 2009, 2013, 2017, 2018, 2019 e 2025`)** contam agora com foto individual do elenco campeão (`assets/images/titulos/paulista_YYYY_elenco.jpg`), obtidas em fontes históricas confiáveis (*Meu Timão*, *Memorial Corinthians*, *Todo Poderoso Timão*, *Gazeta Press*, *Folhapress* e *Agência Corinthians*).
+  - As 31 pílulas de anos e os 31 cards na galeria `#paulistao-all31-grid` são 100% clicáveis e abrem a fotografia expandida e a escalação/legenda completa no modal `#titulo-modal`.
+- **Adição de Todos os 22 Títulos Oficiais das Brabas (Futebol Feminino) no Mesmo Formato (`assets/images/titulos/brabas_*.jpg`):**
+  - Catalogação completa das **22 taças oficiais da história do Corinthians Feminino (2016 a 2025)** com foto real do elenco campeão, placar, sede, artilheiras e legenda detalhada:
+    - **6x Libertadores Feminina:** `2017, 2019, 2021, 2023, 2024 e 2025`
+    - **7x Campeonato Brasileiro Feminino:** `2018, 2020, 2021, 2022, 2023, 2024 e 2025`
+    - **4x Campeonato Paulista Feminino:** `2019, 2020, 2021 e 2023`
+    - **3x Supercopa do Brasil Feminina:** `2022, 2023 e 2024`
+    - **1x Copa do Brasil Feminina:** `2016`
+    - **1x Copa Paulista Feminina:** `2022`
+- **Seletor Interativo de Modalidade na Seção de Títulos (`.titulos-switcher-bar`):**
+  - Inspirado no seletor da seção de Estatísticas, permite alternar com 1 clique ou pelas setas laterais entre:
+    1. **Ambos Juntos • Ordem Cronológica (70 Taças):** Exibe todos os 48 títulos masculinos e os 22 títulos das Brabas intercalados rigorosamente por ano e mês (`item.ordem`, de `1914 ➔ 2026` ou `2026 ➔ 1914`).
+    2. **Futebol Masculino (48 Taças):** Exibe todas as conquistas masculinas (31 Paulistões + 7 Brasileirões + 4 Copas do Brasil + 2 Supercopas + 1 Libertadores + 1 Recopa + 2 Mundiais FIFA).
+    3. **As Brabas • Feminino (22 Taças):** Exibe todas as 22 conquistas da dinastia feminina alvinegra.
+
+---
+
+## [2.9.0] - 2026-10-28
+
+### 🏆 Mini-Seção Especial da Hegemonia no Paulistão (31x Campeão & As 5 Maiores Conquistas) e Adição dos Títulos Recentes de 2025 e 2026
+
+Nesta versão, expandimos a seção **Todas as Conquistas do Corinthians** (`#historico-titulos`) com uma mini-seção exclusiva dedicada à soberania estadual no Campeonato Paulista e adicionamos as conquistas mais recentes do Timão (**Paulistão 2025**, **Copa do Brasil 2025** e **Supercopa do Brasil 2026**) no mesmo padrão interativo das demais conquistas:
+
+### ✨ Adicionado & Modificado (Added & Changed)
+- **Mini-Seção Especial "Hegemonia no Paulistão: 31 Títulos Conquistados" (`#paulistao-hegemonia`):**
+  - Destaque para o recorde absoluto de **31 títulos estaduais conquistados (1914 a 2025)**, incluindo todas as **31 edições vencidas** (`1914, 1916, 1922, 1923, 1924, 1928, 1929, 1930, 1937, 1938, 1939, 1941, 1951, 1952, 1954, 1977, 1979, 1982, 1983, 1988, 1995, 1997, 1999, 2001, 2003, 2009, 2013, 2017, 2018, 2019 e 2025`), os **4 Tricampeonatos Paulistas** e os **5 títulos invictos**.
+  - **Galeria com 5 Fotos das 5 Maiores Conquistas da História do Paulistão** (todas clicáveis para expandir a foto do elenco campeão e sua legenda completa no modal `#titulo-modal`):
+    1. **1914 — 1º Paulistão (Campeão Invicto):** `titulo_1914.jpg`
+    2. **1954 — O Campeão do IV Centenário:** `titulo_1954.jpg`
+    3. **1977 — A Libertação após 23 Anos de Jejum:** `titulo_1977.jpg`
+    4. **1982–1983 — Bicampeonato da Democracia Corinthiana:** `titulo_1983_paulista_elenco.jpg` (fotografia histórica da *Folhapress / UOL* com o elenco completo posado: Solito, Zé Maria, Mauro, Daniel González, Sócrates, Wladimir, Ataliba, Biro-Biro, Casagrande, Zenon e Paulinho).
+    5. **2017–2018–2019 — O 4º Tricampeonato Paulista & Volta Olímpica no Allianz Parque:** `titulo_2018_paulista_elenco.jpg` (fotografia oficial da *Agência Corinthians / Meu Timão* com o elenco campeão posado no Allianz Parque).
+- **Adição das 3 Conquistas Mais Recentes (2025–2026) na Vitrine de Títulos (`CORINTHIANS_DATA.titulos`):**
+  1. **Campeonato Paulista de 2025 (31º Título Estadual - `titulo-2025-paulista`):** Vitória por 1 a 0 sobre o Palmeiras no Allianz Parque (gol de Yuri Alberto) e 0 a 0 na Neo Química Arena diante de 48.196 pagantes (com pênalti defendido por Hugo Souza), acompanhada da foto oficial do elenco erguendo a taça (`titulo_2025_paulista_elenco.jpg`).
+  2. **Copa do Brasil de 2025 (Tetracampeão - `titulo-2025-copadobrasil`):** Vitória épica por 2 a 1 sobre o Vasco da Gama no Maracanã em 21/12/2025 com gols de Yuri Alberto e Memphis Depay sob o comando de Dorival Júnior, acompanhada da foto oficial do elenco campeão posado no Maracanã (`titulo_2025_copadobrasil_elenco.jpg`).
+  3. **Supercopa do Brasil / Supercopa Rei de 2026 (Bicampeão - `titulo-2026-supercopa`):** Vitória por 2 a 0 sobre o Flamengo na Arena BRB Mané Garrincha em 01/02/2026 com gols de Gabriel Paulista e Yuri Alberto, acompanhada da foto oficial do elenco campeão no pódio (`titulo_2026_supercopa_elenco.jpg`).
+
+---
+
+## [2.8.0] - 2026-10-28
+
+### 🏆 Mural Fotográfico Épico das Glórias Corinthianas ("Sofrido, Suado e Eternamente Merecido") na Seção Títulos
+
+Nesta versão, transformamos o banner principal da seção **Todas as Conquistas do Corinthians** (`#historico-titulos`) em um **Mural Fotográfico Interativo de 12 Momentos Gloriosos, Sofridos e Merecidos**, composto exclusivamente por fotografias históricas autênticas de fontes confiáveis (*Memorial Corinthians*, *Agência Corinthians*, *FIFA*, *CONMEBOL*, *Getty Images* e *Meu Timão*), preservando em destaque a célebre frase do 1º presidente Miguel Battaglia:
+
+### ✨ Adicionado & Modificado (Added & Changed)
+- **Mural Mosaico de 12 Fotografias Históricas Reais (`assets/images/mural/` e `historia_mural.jpg`):**
+  1. **1954 • IV Centenário (`mural_01_1954_centenario.jpg`):** O Esquadrão de Ouro de Cláudio, Luizinho, Baltazar, Idário e Gilmar com as faixas de Campeão do IV Centenário de São Paulo.
+  2. **1977 • Fim do Jejum (`mural_02_1977_libertacao.jpg`):** A libertação após 22 anos de sofrimento e fidelidade incondicional no Morumbi com Basílio, Zé Maria e Wladimir.
+  3. **1982–83 • Democracia (`mural_03_1983_socrates.jpg`):** Dr. Sócrates celebrando de braços abertos no bicampeonato paulista da Democracia Corinthiana.
+  4. **1990 • 1º Brasileirão (`mural_04_1990_brasileirao.jpg`):** Craque Neto vibrando de punhos cerrados na conquista do primeiro Campeonato Brasileiro da história do clube.
+  5. **2000 • 1º Mundial FIFA (`mural_05_2000_mundial_rincon.jpg`):** Capitão Freddy Rincón erguendo a taça do 1º Mundial de Clubes da FIFA no Maracanã.
+  6. **2000 • Pé de Anjo (`mural_06_2000_marcelinho.jpg`):** O grito de campeão mundial de Marcelinho Carioca abraçado ao troféu da FIFA após a batalha nos pênaltis.
+  7. **2009 • A Retomada (`mural_07_2009_ronaldo.jpg`):** Da dor à glória: Ronaldo Fenômeno e Dentinho celebrando o título da Copa do Brasil de 2009.
+  8. **2011 • Penta por Sócrates (`mural_08_2011_socrates_fiel.jpg`):** A Fiel Torcida de punho cerrado no Pacaembu homenageando o Doutor Sócrates no domingo do Pentacampeonato Brasileiro.
+  9. **2012 • América Invicta (`mural_09_2012_libertadores_alessandro.jpg`):** Capitão Alessandro erguendo a inédita e invicta Taça Libertadores da América no Pacaembu.
+  10. **2012 • Milagre de Cássio (`mural_10_2012_cassio_milagre.jpg`):** O voo impossível do Gigante Cássio nos pés de Fernando Torres em Yokohama — símbolo máximo da vitória sofrida e eternamente merecida.
+  11. **2012 • Bi Mundial FIFA (`mural_11_2012_mundial_podio.jpg`):** Tite e o elenco alvinegro erguendo a taça do Bicampeonato Mundial da FIFA no pódio em Yokohama diante de 30 mil corinthianos.
+  12. **2017 • Hepta na Arena (`mural_12_2017_hepta_arena.jpg`):** Cássio e o elenco erguendo a taça do Heptacampeonato Brasileiro sob chuva de prata na Neo Química Arena.
+- **Frase Imortal de Miguel Battaglia em Placa de Honra Alvinegra e Dourada:**
+  - Mantida em destaque central/inferior com tipografia monumental: *"O Corinthians é o time do povo, e o povo é quem vai fazer o time." — Miguel Battaglia, 1º Presidente do Corinthians (1910)*.
+- **Expansão em Modal Lightbox ao Clicar em Qualquer Foto do Mural (`abrirModalMural`):**
+  - Cada uma das 12 fotografias do mural é interativa e clicável, abrindo o modal expandido com a foto em alta definição, fonte documental e relato histórico completo, com navegação pelos botões *Anterior / Próximo* ou setas do teclado.
+
+---
+
+## [2.7.0] - 2026-10-28
+
+### 📸 Fotografias Oficiais dos Elencos Campeões do Mundial 2000, Brasileirão 2011, Libertadores 2012 e Mundial 2012
+
+Nesta versão, substituímos as imagens de quatro grandes conquistas na seção **Títulos** por fotografias históricas em alta resolução dos respectivos elencos campeões posados no gramado das decisões, obtidas em fontes confiáveis (*Meu Timão*, *Agência Corinthians*, *CONMEBOL*, *FIFA*):
+
+### 🔄 Modificado & Aprimorado (Changed)
+- **1º Mundial de Clubes da FIFA de 2000 (`titulo_2000_elenco.jpg?v=2.7.0`):**
+  - Substituída a foto fechada em Freddy Rincón pelo registro oficial do **elenco titular completo de 2000 posado no gramado do Maracanã** na decisão contra o Vasco (em pé: Dida, Índio, Fábio Luciano, Adílson, Freddy Rincón e Vampeta; agachados: Luizão, Kléber, Ricardinho, Marcelinho Carioca e Edílson Capetinha).
+- **Campeonato Brasileiro de 2011 - Pentacampeão (`titulo_2011_elenco.jpg?v=2.7.0`):**
+  - Substituída a imagem aberta do círculo central pela fotografia em alta definição do **elenco campeão brasileiro de 2011 posado no gramado do Pacaembu** no jogo do título em 04/12/2011 (em pé: Alessandro, Danilo, Danilo Fernandes, Leandro Castán, Paulo André, Ralf, Júlio César, Chicão e Adriano Imperador; agachados: Willian, Emerson Sheik, Edenílson, Paulinho, Liedson, Fábio Santos, Welder, Jorge Henrique e Alex).
+- **Copa Libertadores da América de 2012 - Campeão Invicto (`titulo_2012_libertadores_elenco.jpg?v=2.7.0`):**
+  - Substituída a foto antiga por um registro nítido em alta resolução (`1140x576`) do **elenco campeão invicto da Libertadores posado no Pacaembu** na grande final de 04/07/2012 contra o Boca Juniors (em pé: Alessandro, Chicão, Leandro Castán, Júlio César, Ralf, Marquinhos, Wallace, Romarinho, Danilo e Cássio; agachados: Paulinho, Alex, Emerson Sheik, Douglas, Fábio Santos, Ramón, Liedson e Jorge Henrique).
+- **Mundial de Clubes da FIFA de 2012 - Bicampeão (`titulo_2012_mundial_elenco.jpg?v=2.7.0`):**
+  - Substituída a foto cortada pelo registro oficial em alta definição (`1140x576`) do **elenco bicampeão mundial posado no gramado do International Stadium Yokohama** na final contra o Chelsea em 16/12/2012 (em pé: Alessandro, Paulo André, Paolo Guerrero, Chicão, Ralf e Cássio; agachados: Jorge Henrique, Emerson Sheik, Paulinho, Fábio Santos e Danilo).
+
+---
+
+## [2.6.0] - 2026-10-28
+
+### 🏳️ Reconstrução Fidedigna dos Uniformes Históricos e Bandeiras Fotográficas no Banner "Todas as Conquistas do Corinthians"
+
+Nesta versão, reconstruímos o banner histórico da seção de Títulos (`assets/images/historia.jpg` e `assets/images/historia_v2.jpg`) com fidelidade absoluta aos mantos reais de cada era e fundo fotográfico documental:
+
+### 🔄 Modificado & Aprimorado (Changed)
+- **Uniformes Históricos 100% Fiéis aos Modelos Reais:**
+  - **Era 1954 (IV Centenário) / 1977 (Ídolo à esquerda):** Substituída a camisa de listras grossas por uma **camisa branca lisa clássica do Corinthians com gola polo preta e punhos pretos**, trazendo o escudo oficial com âncora e remos no peito.
+  - **Era 1914 (Neco - Primeiro Título Invicto):** Substituída a camisa listrada pela autêntica **camisa creme/branca lisa de algodão com gola de cordão (cadarço)** e o histórico primeiro escudo com o monograma **"CP"** (*Corinthians Paulista*) no peito.
+  - **Era 1982–1983 (Dr. Sócrates e Wladimir - Democracia Corinthiana):** Ajustados os mantos para a tradicional **camisa preta com finas listras brancas verticais (listradinha)** e gola V branca, removendo o logotipo incorreto de três folhas e mantendo o escudo oficial do Corinthians.
+  - **Mesa de Relíquias Históricas:** As duas camisas dobradas sobre a mesa de madeira agora reproduzem fielmente o manto creme de gola de cordão de 1914 (com monograma "CP") e a camisa preta de listras finas brancas da década de 1980.
+- **Arquibancada e Bandeiras com Realismo Fotográfico (Sem Aspecto de IA):**
+  - Substituição completa do fundo por **bandeirões alvinegros reais de mastro com o escudo do Corinthians** tremulando sob a névoa e os refletores do estádio, além das faixas históricas **`SCCP | TIME DO POVO`** e **`FIEL TORCIDA | CAMPEÃO`** (removendo o antigo texto incorreto *"O Mais Querido"* e eliminando distorções na torcida ao fundo).
+  - Ajuste em `.historia-banner-img` (`max-height: 580px`) para exibir toda a composição histórica sem cortes severos.
+
+---
+
+## [2.5.0] - 2026-10-28
+
+### 🏆 Modal de Foto Expandida dos Elencos Campeões, Contenção Visual do Overlay e Cache-Busting Definitivo da Foto do Elenco Completo de 1991
+
+Nesta versão, aprimoramos significativamente a experiência visual da seção de **Vitrine de Títulos** e eliminamos qualquer retenção de cache do navegador sobre a imagem de 1991:
+
+### 🚀 Adicionado (Added)
+- **Modal de Foto Expandida e Legenda Completa para Elencos Campeões (`#titulo-modal`):**
+  - Implementação de modal seguindo o mesmo padrão visual consagrado na seção de ídolos, permitindo clicar na foto de qualquer elenco campeão, no card ou no botão dedicado **"Ver Foto e Legenda Expandida"** para visualizar a imagem histórica em grande formato (`1.25fr 1fr`, até `1100px` de largura) com a legenda completa destacada logo abaixo da foto.
+  - Exibição de cabeçalho completo no modal com categoria (`Mundial`, `Continental`, `Nacional`, `Estadual`, `Feminino`), ano, cards de métricas (`Ano da Glória`, `Categoria`, `Taça Oficial`), sede da decisão, relato da conquista, legenda integral do elenco e fonte documental (`fonteFoto`).
+  - **Navegação Contínua no Modal:** Botões `Conquista Anterior` e `Próxima Conquista` e atalhos por teclado (`ArrowLeft`, `ArrowRight` e `Escape`).
+
+### 🔄 Modificado & Corrigido (Changed & Fixed)
+- **Foto Histórica do Elenco Completo da Supercopa do Brasil de 1991 (`titulo_1991_elenco.jpg?v=2.5.0`):**
+  - Substituição definitiva da fotografia antiga (que exibia apenas o Craque Neto) por um registro autêntico e colorido do **elenco completo campeão de 1991** posado no gramado com a camisa Kalunga (Fonte: Acervo Meu Timão / Memorial Corinthians).
+  - Criação do novo arquivo `assets/images/titulos/titulo_1991_elenco.jpg` (além da atualização de `titulo_1991.jpg`) com query string `?v=2.5.0` em todas as imagens de `CORINTHIANS_DATA.titulos`, impedindo que o cache do navegador exiba a imagem antiga.
+- **Ajuste de Proporção e Visibilidade no Overlay dos Cards de Títulos (`.titulo-card`):**
+  - Ajuste de `min-height: 350px` no card, `height: 52%` na imagem e `height: 48%` na área de legenda com `-webkit-line-clamp: 3`, garantindo que o botão **"Ver Foto e Legenda Expandida"** fique 100% visível dentro do card ao passar o mouse sem qualquer corte por `overflow: hidden`.
+  - Bump de versão de cache para `v=2.5.0` em `index.html`, `style.css`, `corinthians-data.js` e `app.js`.
+
+---
+
+## [2.3.0] - 2026-10-27
+
+### 📐 Enquadramento, Responsividade e Contenção Visual dos Cards de Jogos (100% Dentro do Retângulo)
+
+Nesta versão, corrigimos definitivamente o transbordamento visual em cards de jogos onde nomes de clubes extensos (como "Internacional X Corinthians") ultrapassavam os limites laterais do card:
+
+### 🛠️ Corrigido (Fixed)
+- **Contenção Total dos Cards de Confronto (`.jogo-card`):**
+  - Aplicação de `box-sizing: border-box`, `overflow: hidden`, `width: 100%` e recalibração do espaçamento interno de `padding: 2rem` para `padding: 1.5rem 1.35rem`, liberando mais de 20px de respiro interno sem comprometer a elegância alvinegra.
+- **Estruturação Robusta do Placar (`.jogo-scoreboard`):**
+  - Implementação de background sutil translúcido (`rgba(255, 255, 255, 0.02)`), borda discreta e container com `box-sizing: border-box` e `width: 100%`.
+  - Correção do comportamento flexbox dos times (`.jogo-team`): definição estrita de `flex: 1 1 0` e `min-width: 0`, impedindo que textos longos forcem o container a estourar a largura do card.
+- **Tipografia e Escudos Perfeitamente Dimensionados:**
+  - Redimensionamento milimétrico dos escudos oficiais (`.jogo-team-logo`) de 32px para **26px x 26px** (e **22px** em telas mobile), mantendo resolução impecável, nitidez e alinhamento centralizado com o nome do clube.
+  - Ajuste tipográfico em `.jogo-team-name`: `font-size: 0.88rem`, `font-weight: 800`, `line-height: 1.2` e quebra de palavras segura (`overflow-wrap: break-word`), garantindo que até os nomes mais longos ("Internacional", "Vasco da Gama", "Corinthians") fiquem 100% contidos dentro do retângulo do card em qualquer resolução.
+  - Placar estilo broadcast de televisão (`.jogo-score-box`): `font-size: 1.65rem`, padding otimizado, fundo com contraste refinado e classes dedicadas `.score-x` e `.score-clock`.
+- **Grid Adaptativo (`.jogos-feed-grid`):**
+  - Atualização do `minmax` das colunas de 320px para **360px**, assegurando que em telas widescreen e tablets os cards tenham largura confortável para exibir logo + nome + placar + logo + nome lado a lado sem nenhum aperto.
+- **Otimização para Dispositivos Móveis (`@media (max-width: 480px)`):**
+  - Ajustes responsivos para manter a harmonia visual em smartphones, com logos de 22px, placar proporcional e padding equilibrado.
+
+## [2.2.0] - 2026-10-27
+
+### 🛡️ Escudos e Logos Oficiais dos Clubes no Feed de Últimos Jogos
+
+Nesta versão, adicionamos os escudos e logos oficiais de todos os clubes envolvidos nas partidas recentes do Corinthians:
+
+### ✨ Adicionado (Added)
+- **Logos Oficiais dos Clubes (`assets/images/clubes/`):**
+  - Download e integração dos escudos autênticos, vetorizados e com transparência de fontes oficiais (Wikimedia Commons / Registros Oficiais dos Clubes):
+    - `corinthians.png`: Escudo oficial do Sport Club Corinthians Paulista (com âncora, remos e bandeira paulista);
+    - `mirassol.png`: Escudo oficial do Mirassol Futebol Clube com as 3 estrelas;
+    - `vasco.png`: Escudo oficial do Club de Regatas Vasco da Gama (com a caravela e cruz de malta);
+    - `vitoria.png`: Escudo oficial do Esporte Clube Vitória (versão 2024 com estrela dourada);
+    - `palmeiras.png`: Escudo oficial da Sociedade Esportiva Palmeiras (com estrela vermelha);
+    - `internacional.png`: Escudo oficial do Sport Club Internacional.
+- **Layout Harmonioso e Alinhado ao Lado dos Nomes dos Clubes:**
+  - Inserção de `.jogo-team-wrap` e `.jogo-team-logo` no placar de cada confronto (`.jogo-scoreboard`), mantendo o layout padrão intocado e posicionando cada logo com proporção de 32x32px (`24x24px` em telas mobile) ao lado do nome do clube.
+  - Efeito suave de hover com leve escala (`1.12x`) e drop-shadow para profundidade visual alvinegra.
+  - Atualização dos metadados de partidas em `data/corinthians-data.js` (`mandante.logo` e `visitante.logo`).
+  - Cache-busting atualizado para `?v=2.2.0`.
+
+## [2.1.0] - 2026-10-27
+
+### 👑 Fotografia Nítida e Desobstruída de Tamires Dias com o Manto Alvinegro e Escudo de Campeã Continental
+
+Nesta versão, realizamos a substituição e aprimoramento da fotografia de Tamires Dias (Mãe e Capitã da Fiel) na seção de Ídolos e Lendas Eternas:
+
+### 🔄 Modificado (Changed)
+- **Substituição da Foto de Tamires Dias (`assets/images/idolos/tamires.jpg`):**
+  - A imagem anterior (onde a comemoração sob fitas e o celular de outra atleta encobriam parcialmente a testa e o rosto de Tamires) foi substituída por um registro de estúdio oficial da CONMEBOL Libertadores em altíssima definição.
+  - A nova fotografia apresenta o rosto de Tamires 100% nítido, luminoso e totalmente desobstruído, com sorriso radiante e olhar direto para a Fiel, vestindo o manto sagrado alvinegro oficial com o escudo do Timão e o cobiçado **patch dourado oficial de Campeã da Copa Libertadores Feminina** no peito.
+  - O enquadramento foi milimetricamente calibrado (683x820) para manter destaque facial na proporção 0.83 idêntica aos maiores ídolos do portal, funcionando perfeitamente tanto no card miniatura (zoom nos olhos e peito) quanto no modal expandido (retrato completo).
+  - Atualização dos metadados em `data/corinthians-data.js` (`fotoMomento` e `fonteFoto`) para referenciar o acervo oficial da CONMEBOL Libertadores e Staff Images.
+  - Atualização do controle de cache (`?v=2.1.0`) para garantir renderização imediata nos navegadores.
+
+## [1.9.0] - 2026-10-27
+
+### 🦅 Ordem Cronológica das Lendas, Alternador de "Mais Considerados Ídolos" (Votações & Dados) e Linguagem Inclusiva de Gênero
+
+Esta versão atende a três importantes revisões fundamentadas na seção de Ídolos e Lendas Eternas:
+
+### ✨ Adicionado (Added)
+- **Ordenação Cronológica Nativa (Eras Históricas de 1945 a 2026):**
+  - Todas as lendas alvinegras agora são organizadas por padrão em ordem cronológica de estreia e consagração no Parque São Jorge: desde o clássico esquadrão dos anos 40/50 (Claudio Christóvam e Baltazar em 1945, Luizinho em 1948), passando por Rivellino (1965), Wladimir (1972), Basílio (1975), Sócrates (1978), Neto (1989), Marcelinho Carioca (1994), Ronaldo Fenômeno (2009), Danilo (2010), Cássio (2012), até a vitoriosa era das Brabas (Grazi e Lelê em 2016, Gabi Zanotti em 2018, Tamires e Vic Albuquerque em 2019).
+  - Cada card exibe badge de era com ano de estreia (`Estreia em 1945`, `Estreia em 1978`, etc.) e linha de contexto temporal.
+- **Alternador de Ordenação "Mais Considerados Ídolos" (Votações & Dados Confiáveis):**
+  - Implementada a barra de ordenação `.idolos-sort-bar` com botões interativos para alternar instantaneamente entre a **Ordem Cronológica** e a **Ordem dos Mais Considerados Ídolos**.
+  - O ranking de idolatria é fundamentado em dados consolidados de fontes de alta credibilidade:
+    1. **Megaenquete Histórica do Globo Esporte (ge.globo, 2020)** com mais de 100 mil votos populares que elegeu Cássio Ramos como #1, seguido por Sócrates (#2), Marcelinho Carioca (#3), Neto (#4) e Rivellino (#5);
+    2. **Especiais Históricos da Revista Placar** e Acervo do Memorial Corinthians;
+    3. **Grandes lendas do Corinthians Feminino** integradas ao ranking pelo peso histórico, conquistas continentais e idolatria da Fiel (Gabi Zanotti, Grazi, Vic Albuquerque, Lelê e Tamires Dias).
+  - Quando ativada a ordenação por idolatria, cada card ganha o badge dourado comemorativo com a posição (ex: `#1 Mais Considerado`, `#2 Mais Considerado`) e box exclusivo citando o destaque e as fontes documentadas.
+- **Inclusão em Múltiplas Categorias:**
+  - Lendas femininas e masculinas agora podem responder a múltiplos filtros (ex: Vic Albuquerque categorizada tanto em "As Brabas" quanto em "Artilheiros(as)", Wladimir em "Democracia" e "Recordistas", Cássio em "Mundiais" e "Recordistas").
+
+### 🔄 Modificado & Corrigido (Changed & Fixed)
+- **Readequação Completa de Linguagem Inclusiva de Gênero:**
+  - A frase anterior `"Guerreiros Alvinegros"` no eyebrow foi readequada para **`"Guerreiras e Guerreiros da Fiel"`**.
+  - Título da seção ampliado para **`"Panteão dos Ídolos e Ídolas Históricas"`** e subtítulo reescrito de forma inclusiva: *"As lendas e atletas que honraram o manto alvinegro, desafiaram a lógica, venceram o impossível e se tornaram imortais no coração da Fiel Torcida."*
+  - Botão de filtro atualizado de *"Todos os Ídolos"* para **`"Todas as Lendas"`** e *"Artilheiros"* para **`"Artilheiros(as)"`**.
+  - Placeholder e aria-label da busca readequados para **`"Buscar atleta, ídolo(a), apelido ou posição..."`**.
+  - Rótulos e textos do modal de biografia ajustados para neutralidade e inclusão de gênero.
+
 ## [1.8.0] - 2026-10-27
 
 ### 🧤 Defesas de Pênaltis e Pênaltis Decisivos para Goleiros, Nova Foto Desobstruída de Vic Albuquerque com a Taça e Imagem em Alta Resolução de Lelê

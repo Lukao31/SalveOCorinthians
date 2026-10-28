@@ -14,8 +14,13 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- Controle de Cache e Desempenho -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <!-- Estilos Personalizados Alvinegros -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=3.0.0">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo-salve-corinthians-emblem.svg">
 
   <!-- Chart.js CDN para gráficos financeiros -->
@@ -59,7 +64,7 @@
           <li><a href="#ultimos-jogos" class="nav-link"><i class="fa-solid fa-futbol"></i> Jogos</a></li>
           <li><a href="#projetos-futuro" class="nav-link"><i class="fa-solid fa-users-gear"></i> SAFIEL</a></li>
           <li><a href="#historico-titulos" class="nav-link"><i class="fa-solid fa-trophy"></i> Títulos</a></li>
-          <li><a href="#idolos-eternos" class="nav-link"><i class="fa-solid fa-shield-halved"></i> Ídolos</a></li>
+          <li><a href="#idolos-eternos" class="nav-link"><i class="fa-solid fa-shield-halved"></i> Ídolos & Ídolas</a></li>
           <li><a href="#estatisticas" class="nav-link"><i class="fa-solid fa-chart-column"></i> Números</a></li>
           <li><a href="#fontes" class="nav-link"><i class="fa-solid fa-newspaper"></i> Fontes</a></li>
         </ul>
@@ -602,40 +607,284 @@
           <span class="section-eyebrow">Glórias Imortais</span>
           <h2 class="section-title">Todas as Conquistas do Corinthians</h2>
           <p class="section-subtitle">
-            Uma trajetória forjada na superação, no suor e na paixão incomparável da Fiel Torcida. De 1910 ao topo do mundo.
+            Uma trajetória forjada na superação, no suor e na paixão incomparável da Fiel Torcida. De 1910 ao topo do mundo. <strong>Passe o mouse sobre os cards e clique na foto de qualquer elenco campeão para expandir a imagem e sua legenda completa.</strong>
           </p>
         </div>
 
-        <!-- Banner Histórico em Preto e Branco -->
-        <div class="historia-hero-banner">
-          <img src="assets/images/historia.jpg" alt="Tributo à História do Sport Club Corinthians Paulista" class="historia-banner-img">
-          <div class="historia-banner-content">
-            <blockquote class="historia-quote">
-              "O Corinthians é o time do povo, e o povo é quem vai fazer o time."
-            </blockquote>
-            <div class="historia-author">— Miguel Battaglia, 1º Presidente do Corinthians (1910)</div>
+        <!-- Banner Mural Épico de Momentos Gloriosos, Sofridos e Merecidos -->
+        <div class="historia-hero-banner" aria-label="Mural Fotográfico dos Momentos Mais Gloriosos do Corinthians">
+          <div class="historia-mural-grid">
+            <!-- 1. 1954 - IV Centenário -->
+            <div class="mural-photo-item" onclick="abrirModalMural(0)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(0);}" aria-label="1954: Campeão do IV Centenário - Clique para expandir">
+              <img src="assets/images/mural/mural_01_1954_centenario.jpg?v=2.8.0" alt="Esquadrão de 1954 - Campeão do IV Centenário de São Paulo" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-crown"></i> 1954 • IV Centenário</span>
+              <div class="mural-photo-caption">
+                <strong>Esquadrão de Ouro (1954)</strong>
+                <span>Cláudio, Luizinho, Baltazar e Gilmar eternizados com a faixa do IV Centenário.</span>
+              </div>
+            </div>
+
+            <!-- 2. 1977 - Fim do Jejum -->
+            <div class="mural-photo-item" onclick="abrirModalMural(1)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(1);}" aria-label="1977: O Fim dos 22 Anos de Sofrimento - Clique para expandir">
+              <img src="assets/images/mural/mural_02_1977_libertacao.jpg?v=2.8.0" alt="Elenco de 1977 - A Libertação após 22 anos de jejum" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-fire-flame-curved"></i> 1977 • Fim do Jejum</span>
+              <div class="mural-photo-caption">
+                <strong>A Libertação (1977)</strong>
+                <span>22 anos de lágrimas e fidelidade recompensados no gol salvador de Basílio.</span>
+              </div>
+            </div>
+
+            <!-- 3. 1982-83 - Democracia Corinthiana -->
+            <div class="mural-photo-item" onclick="abrirModalMural(2)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(2);}" aria-label="1982-1983: Democracia Corinthiana e Dr. Sócrates - Clique para expandir">
+              <img src="assets/images/mural/mural_03_1983_socrates.jpg?v=2.8.0" alt="Dr. Sócrates celebrando na Democracia Corinthiana (1982-1983)" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-fist-raised"></i> 1982–83 • Democracia</span>
+              <div class="mural-photo-caption">
+                <strong>Democracia em Campo (1982–83)</strong>
+                <span>Dr. Sócrates, Wladimir e Casagrande: liberdade, arte e bicampeonato paulista.</span>
+              </div>
+            </div>
+
+            <!-- 4. 1990 - 1º Brasileirão -->
+            <div class="mural-photo-item" onclick="abrirModalMural(3)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(3);}" aria-label="1990: Conquista do 1º Campeonato Brasileiro - Clique para expandir">
+              <img src="assets/images/mural/mural_04_1990_brasileirao.jpg?v=2.8.0" alt="Neto vibrando na conquista do Campeonato Brasileiro de 1990" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-star"></i> 1990 • 1º Brasileirão</span>
+              <div class="mural-photo-caption">
+                <strong>O Brasil é Alvinegro (1990)</strong>
+                <span>Contra todos os prognósticos, a raça de Neto, Ronaldo e Tupãzinho cala o Morumbi.</span>
+              </div>
+            </div>
+
+            <!-- 5. 2000 - 1º Mundial FIFA (Rincón) -->
+            <div class="mural-photo-item" onclick="abrirModalMural(4)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(4);}" aria-label="2000: Rincón erguendo a taça do 1º Mundial de Clubes da FIFA - Clique para expandir">
+              <img src="assets/images/mural/mural_05_2000_mundial_rincon.jpg?v=2.8.0" alt="Capitão Freddy Rincón erguendo o 1º Mundial de Clubes da FIFA no Maracanã (2000)" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge badge-gold"><i class="fa-solid fa-globe"></i> 2000 • 1º Mundial FIFA</span>
+              <div class="mural-photo-caption">
+                <strong>O Topo do Mundo no Maracanã (2000)</strong>
+                <span>Após drama nos pênaltis e milagres de Dida, Rincón ergue a 1ª taça mundial da FIFA.</span>
+              </div>
+            </div>
+
+            <!-- 6. 2000 - Marcelinho Carioca com a Taça -->
+            <div class="mural-photo-item" onclick="abrirModalMural(5)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(5);}" aria-label="2000: O grito de campeão mundial de Marcelinho Carioca - Clique para expandir">
+              <img src="assets/images/mural/mural_06_2000_marcelinho.jpg?v=2.8.0" alt="Marcelinho Carioca gritando é campeão com a taça do Mundial FIFA 2000" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-trophy"></i> 2000 • Pé de Anjo</span>
+              <div class="mural-photo-caption">
+                <strong>O Grito do Pé de Anjo (2000)</strong>
+                <span>Marcelinho Carioca abraça a taça mundial diante de 30 mil fiéis que invadiram o Rio.</span>
+              </div>
+            </div>
+
+            <!-- 7. 2009 - O Renascimento com Ronaldo Fenômeno -->
+            <div class="mural-photo-item" onclick="abrirModalMural(6)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(6);}" aria-label="2009: O Renascimento Triunfal com Ronaldo Fenômeno - Clique para expandir">
+              <img src="assets/images/mural/mural_07_2009_ronaldo.jpg?v=2.8.0" alt="Ronaldo Fenômeno e Dentinho celebrando a Copa do Brasil de 2009" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-bolt"></i> 2009 • A Retomada</span>
+              <div class="mural-photo-caption">
+                <strong>Renascido das Cinzas (2009)</strong>
+                <span>Da dor de 2007 à glória: Ronaldo Fenômeno lidera o Paulistão invicto e o Tri da Copa do Brasil.</span>
+              </div>
+            </div>
+
+            <!-- 8. 2011 - O Penta da Resistência & Adeus a Sócrates -->
+            <div class="mural-photo-item" onclick="abrirModalMural(7)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(7);}" aria-label="2011: Pentacampeonato Brasileiro e Tributo da Fiel a Sócrates - Clique para expandir">
+              <img src="assets/images/mural/mural_08_2011_socrates_fiel.jpg?v=2.8.0" alt="Fiel Torcida de punho cerrado homenageando Sócrates no Pentacampeonato de 2011" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-hand-fist"></i> 2011 • Penta por Sócrates</span>
+              <div class="mural-photo-caption">
+                <strong>Um Domingo e o Corinthians Campeão (2011)</strong>
+                <span>No dia da partida do Doutor, o Pacaembu ergue o punho cerrado e consagra o Penta da Resistência.</span>
+              </div>
+            </div>
+
+            <!-- 9. 2012 - Libertadores Invicta (Alessandro) -->
+            <div class="mural-photo-item" onclick="abrirModalMural(8)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(8);}" aria-label="2012: Capitão Alessandro erguendo a Libertadores Invicta - Clique para expandir">
+              <img src="assets/images/mural/mural_09_2012_libertadores_alessandro.jpg?v=2.8.0" alt="Capitão Alessandro erguendo a Taça Libertadores da América Invicta em 2012" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge badge-gold"><i class="fa-solid fa-earth-americas"></i> 2012 • América Invicta</span>
+              <div class="mural-photo-caption">
+                <strong>A Libertação da América (04/07/2012)</strong>
+                <span>Invicto contra tudo e todos: Alessandro ergue a Libertadores no Pacaembu após noite mágica contra o Boca.</span>
+              </div>
+            </div>
+
+            <!-- 10. 2012 - O Milagre de Cássio em Yokohama -->
+            <div class="mural-photo-item" onclick="abrirModalMural(9)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(9);}" aria-label="2012: Defesa milagrosa de Cássio contra Fernando Torres em Yokohama - Clique para expandir">
+              <img src="assets/images/mural/mural_10_2012_cassio_milagre.jpg?v=2.8.0" alt="Voo milagroso do goleiro Cássio defendendo chute de Fernando Torres na final do Mundial de 2012" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge badge-gold"><i class="fa-solid fa-hands-holding-circle"></i> 2012 • Milagre de Cássio</span>
+              <div class="mural-photo-caption">
+                <strong>Sofrido no Limite, Merecido p/ Sempre (2012)</strong>
+                <span>O voo impossível do Gigante Cássio nos pés de Fernando Torres em Yokohama que parou o coração da Fiel.</span>
+              </div>
+            </div>
+
+            <!-- 11. 2012 - Bicampeão Mundial FIFA no Pódio -->
+            <div class="mural-photo-item" onclick="abrirModalMural(10)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(10);}" aria-label="2012: Elenco e Tite erguendo o Bicampeonato Mundial FIFA no Japão - Clique para expandir">
+              <img src="assets/images/mural/mural_11_2012_mundial_podio.jpg?v=2.8.0" alt="Tite e os jogadores do Corinthians erguendo a taça do Mundial de Clubes da FIFA 2012 em Yokohama" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge badge-gold"><i class="fa-solid fa-globe"></i> 2012 • Bi Mundial FIFA</span>
+              <div class="mural-photo-caption">
+                <strong>O Mundo é Preto e Branco de Novo (16/12/2012)</strong>
+                <span>Com gol de Guerrero e 30 mil corinthianos no Japão, Tite e o elenco erguem o Bicampeonato Mundial.</span>
+              </div>
+            </div>
+
+            <!-- 12. 2015-2017 - Hegemonia na Casa do Povo -->
+            <div class="mural-photo-item" onclick="abrirModalMural(11)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalMural(11);}" aria-label="2017: Heptacampeonato Brasileiro na Neo Química Arena - Clique para expandir">
+              <img src="assets/images/mural/mural_12_2017_hepta_arena.jpg?v=2.8.0" alt="Cássio e elenco erguendo a taça do Heptacampeonato Brasileiro de 2017 na Neo Química Arena" class="mural-photo-img" loading="lazy">
+              <span class="mural-photo-badge"><i class="fa-solid fa-trophy"></i> 2017 • Hepta na Arena</span>
+              <div class="mural-photo-caption">
+                <strong>Hegemonia na Casa do Povo (2015–2017)</strong>
+                <span>Chuva de prata em Itaquera: Cássio, Jô, Balbuena e Romero consagram a dinastia nacional do Timão.</span>
+              </div>
+            </div>
           </div>
+
+          <!-- Placa Épica Central/Inferior com a Frase Imortal de Miguel Battaglia -->
+          <div class="historia-banner-content">
+            <div class="historia-banner-plaque">
+              <div class="historia-mural-eyebrow">
+                <i class="fa-solid fa-fire-flame-curved"></i> MURAL DAS GLÓRIAS • SOFRIDO, SUADO E ETERNAMENTE MERECIDO
+              </div>
+              <blockquote class="historia-quote">
+                "O Corinthians é o time do povo, e o povo é quem vai fazer o time."
+              </blockquote>
+              <div class="historia-author">— Miguel Battaglia, 1º Presidente do Corinthians (1910)</div>
+              <div class="historia-mural-hint">
+                <i class="fa-solid fa-expand"></i> <span>Passe o mouse ou clique em qualquer fotografia histórica do mural acima para expandir o momento e sua história</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini-Seção Especial: Títulos Paulistas Conquistados (31x Campeão & Todos os 31 Elencos Campeões) -->
+        <div class="paulistao-hegemonia-box" id="paulistao-hegemonia">
+          <div class="paulistao-hegemonia-header">
+            <div class="paulistao-hegemonia-title-col">
+              <span class="paulistao-eyebrow">
+                <i class="fa-solid fa-crown"></i> SOBERANIA ESTADUAL • RECORDISTA ABSOLUTO DE SÃO PAULO
+              </span>
+              <h3 class="paulistao-main-title">
+                Hegemonia no Paulistão: <span class="text-gold">Todos os 31 Títulos Conquistados</span>
+              </h3>
+              <p class="paulistao-subtitle">
+                Do primeiro troféu operário invicto em 1914 à conquista épica de 2025 na Neo Química Arena, o Sport Club Corinthians Paulista é o maior campeão da história de São Paulo com <strong>31 taças estaduais</strong>, sendo o único clube do estado a conquistar <strong>4 Tricampeonatos Paulistas</strong> e <strong>5 títulos invictos</strong>. Confira abaixo a galeria completa com a foto histórica de <strong>todos os 31 elencos campeões paulistas</strong>.
+              </p>
+            </div>
+
+            <div class="paulistao-counter-card">
+              <div class="paulistao-counter-num">31<span class="paulistao-counter-x">x</span></div>
+              <div class="paulistao-counter-label">Campeão Paulista</div>
+              <div class="paulistao-counter-sub">1914 ➔ 2025 • 31 Elencos</div>
+            </div>
+          </div>
+
+          <!-- Marcos Históricos e Todas as 31 Edições Vencidas (100% Clicáveis) -->
+          <div class="paulistao-anos-panel">
+            <div class="paulistao-anos-label">
+              <span><i class="fa-solid fa-trophy text-gold"></i> Todos os 31 Anos de Conquista Estadual (1914–2025):</span>
+              <span class="paulistao-anos-legend"><i class="fa-solid fa-camera-retro text-gold"></i> Clique em qualquer um dos 31 anos para abrir a foto do elenco campeão</span>
+            </div>
+            <div class="paulistao-anos-badges">
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1914')" title="1914: 1º Título Paulista (Invicto) - Clique para ver a foto do elenco">1914 ★ Invicto</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1916')" title="1916: 2º Título Paulista (Invicto) - Clique para ver a foto do elenco">1916 ★ Invicto</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1922')" title="1922: 3º Título Paulista (Centenário da Independência) - Clique para ver a foto do elenco">1922 ★ Centenário</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1923')" title="1923: 4º Título Paulista (Bicampeão) - Clique para ver a foto do elenco">1923 ★ Bi</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1924')" title="1924: 5º Título Paulista (1º Tricampeonato) - Clique para ver a foto do elenco">1924 ★ 1º Tri</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1928')" title="1928: 6º Título Paulista - Clique para ver a foto do elenco">1928 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1929')" title="1929: 7º Título Paulista (Invicto) - Clique para ver a foto do elenco">1929 ★ Invicto</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1930')" title="1930: 8º Título Paulista (2º Tricampeonato) - Clique para ver a foto do elenco">1930 ★ 2º Tri</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1937')" title="1937: 9º Título Paulista - Clique para ver a foto do elenco">1937 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1938')" title="1938: 10º Título Paulista (Invicto) - Clique para ver a foto do elenco">1938 ★ Invicto</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1939')" title="1939: 11º Título Paulista (3º Tricampeonato) - Clique para ver a foto do elenco">1939 ★ 3º Tri</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1941')" title="1941: 12º Título Paulista - Clique para ver a foto do elenco">1941 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1951')" title="1951: 13º Título Paulista (Ataque dos 103 Gols) - Clique para ver a foto do elenco">1951 ★ 103 Gols</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1952')" title="1952: 14º Título Paulista (Bicampeão) - Clique para ver a foto do elenco">1952 ★ Bi</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-1954')" title="1954: 15º Título Paulista (Campeão do IV Centenário) - Clique para ver a foto do elenco">1954 ★ IV Centenário</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-1977')" title="1977: 16º Título Paulista (Fim do Jejum de 23 Anos) - Clique para ver a foto do elenco">1977 ★ Libertação</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1979')" title="1979: 17º Título Paulista - Clique para ver a foto do elenco">1979 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1982')" title="1982: 18º Título Paulista (Democracia Corinthiana) - Clique para ver a foto do elenco">1982 ★ Democracia</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-1983-paulista')" title="1983: 19º Título Paulista (Bi da Democracia Corinthiana) - Clique para ver a foto do elenco">1983 ★ Bi Democracia</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1988')" title="1988: 20º Título Paulista (Gol de Viola na Prorrogação) - Clique para ver a foto do elenco">1988 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1995')" title="1995: 21º Título Paulista - Clique para ver a foto do elenco">1995 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1997')" title="1997: 22º Título Paulista - Clique para ver a foto do elenco">1997 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-1999')" title="1999: 23º Título Paulista - Clique para ver a foto do elenco">1999 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-2001')" title="2001: 24º Título Paulista - Clique para ver a foto do elenco">2001 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-2003')" title="2003: 25º Título Paulista - Clique para ver a foto do elenco">2003 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-2009')" title="2009: 26º Título Paulista (Invicto com Ronaldo Fenômeno) - Clique para ver a foto do elenco">2009 ★ Invicto</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-2013')" title="2013: 27º Título Paulista - Clique para ver a foto do elenco">2013 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-2017')" title="2017: 28º Título Paulista - Clique para ver a foto do elenco">2017 ★</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-2018-paulista')" title="2018: 29º Título Paulista (Final Histórica no Allianz Parque) - Clique para ver a foto do elenco">2018 ★ Final no Allianz</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-paulista-2019')" title="2019: 30º Título Paulista (4º Tricampeonato Paulista) - Clique para ver a foto do elenco">2019 ★ 4º Tri</button>
+              <button type="button" class="paulistao-ano-pill is-highlight" onclick="abrirModalTitulo('titulo-2025-paulista')" title="2025: 31º Título Paulista (Sobre o Palmeiras na Neo Química Arena) - Clique para ver a foto do elenco">2025 ★ 31º Título</button>
+            </div>
+          </div>
+
+          <!-- Galeria Completa com Todos os 31 Elencos Campeões do Paulistão (1914 a 2025) -->
+          <div class="paulistao-top5-header">
+            <h4><i class="fa-solid fa-camera-retro text-gold"></i> Galeria Completa: Todos os 31 Elencos Campeões do Paulistão (1914 ➔ 2025)</h4>
+            <span>Clique na foto de qualquer um dos 31 elencos abaixo para expandir a fotografia histórica e sua legenda completa</span>
+          </div>
+
+          <div class="paulistao-top5-grid paulistao-all31-grid" id="paulistao-all31-grid">
+            <!-- Renderizado dinamicamente via app.js com todos os 31 Paulistões -->
+          </div>
+
+          <div class="paulistao-footer-callout">
+            <div class="paulistao-footer-text">
+              <i class="fa-solid fa-bolt text-gold"></i>
+              <span><strong>De 1914 a 2025 (31x Campeão):</strong> Todas as 31 conquistas estaduais documentadas com fotos reais dos elencos campeões em fontes históricas confiáveis!</span>
+            </div>
+            <button type="button" class="btn-paulistao-2025" onclick="abrirModalTitulo('titulo-2025-paulista')">
+              <i class="fa-solid fa-trophy"></i> Ver 31º Título Paulista (2025)
+            </button>
+          </div>
+        </div>
+
+        <!-- Seletor de Modalidade (Inspirado na Seção de Estatísticas): Masculino + Feminino Juntos, Só Masculino ou Só As Brabas -->
+        <div class="stats-switcher-bar titulos-switcher-bar" aria-label="Alternar modalidade de títulos entre Masculino, As Brabas e Ambos Juntos">
+          <button id="btn-titulos-mod-prev" class="stats-flip-arrow" type="button" aria-label="Alternar modalidade anterior" title="Alternar visualização (Ambos Juntos / Masculino / As Brabas)">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="stats-toggle-pills titulos-toggle-pills" role="tablist">
+            <button id="btn-titulos-mod-todos" class="stats-pill-btn titulos-mod-pill active" data-modalidade="todos" role="tab" aria-selected="true" type="button">
+              <i class="fa-solid fa-layer-group"></i> <span>Ambos Juntos • Ordem Cronológica (70)</span>
+            </button>
+            <button id="btn-titulos-mod-flip" class="stats-flip-center-btn" type="button" title="Alternar entre Ambos Juntos, Masculino e As Brabas" aria-label="Alternar modalidade">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
+            <button id="btn-titulos-mod-masc" class="stats-pill-btn titulos-mod-pill" data-modalidade="Masculino" role="tab" aria-selected="false" type="button">
+              <i class="fa-solid fa-mars"></i> <span>Futebol Masculino (48)</span>
+            </button>
+            <button id="btn-titulos-mod-fem" class="stats-pill-btn titulos-mod-pill" data-modalidade="Feminino" role="tab" aria-selected="false" type="button">
+              <i class="fa-solid fa-crown"></i> <span>As Brabas • Feminino (22)</span>
+            </button>
+          </div>
+
+          <button id="btn-titulos-mod-next" class="stats-flip-arrow" type="button" aria-label="Alternar próxima modalidade" title="Alternar visualização (Ambos Juntos / Masculino / As Brabas)">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="titulos-modalidade-banner" id="titulos-modalidade-banner">
+          <i class="fa-solid fa-clock-rotate-left text-gold"></i>
+          <span id="titulos-modalidade-status">Exibindo <strong>Ambos Juntos (Futebol Masculino + As Brabas)</strong> por <strong>Ordem Cronológica (1914 ➔ 2026)</strong> • <strong>70 títulos oficiais</strong> no mesmo formato com fotos dos elencos campeões.</span>
         </div>
 
         <!-- Controles da Vitrine de Títulos -->
         <div class="titulos-controls">
           <div class="timeline-controls" style="margin-bottom: 0;" role="tablist">
-            <button class="filter-btn titulo-filter-btn active" data-filter="todos">Todos</button>
-            <button class="filter-btn titulo-filter-btn" data-filter="Mundial"><i class="fa-solid fa-globe"></i> Mundiais FIFA</button>
-            <button class="filter-btn titulo-filter-btn" data-filter="Continental"><i class="fa-solid fa-earth-americas"></i> Libertadores & Recopa</button>
-            <button class="filter-btn titulo-filter-btn" data-filter="Nacional"><i class="fa-solid fa-flag"></i> Brasileirão & Copas</button>
-            <button class="filter-btn titulo-filter-btn" data-filter="Estadual"><i class="fa-solid fa-trophy"></i> Paulistão (30x)</button>
-            <button class="filter-btn titulo-filter-btn" data-filter="Feminino"><i class="fa-solid fa-crown"></i> As Brabas</button>
+            <button class="filter-btn titulo-filter-btn active" data-filter="todos">Todas as Categorias</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Mundial"><i class="fa-solid fa-globe"></i> Mundiais FIFA (2)</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Continental"><i class="fa-solid fa-earth-americas"></i> Libertadores &amp; Recopa (8)</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Nacional"><i class="fa-solid fa-flag"></i> Brasileirão, Copa do Brasil &amp; Supercopa (24)</button>
+            <button class="filter-btn titulo-filter-btn" data-filter="Estadual"><i class="fa-solid fa-trophy"></i> Paulistão &amp; Estaduais (36)</button>
           </div>
 
           <div class="d-flex align-items-center gap-sm" style="flex-wrap: wrap;">
             <button id="btn-ordem-titulos" class="btn-ordem-cronologica" type="button" aria-label="Alternar ordem cronológica dos títulos">
-              <i class="fa-solid fa-arrow-down-1-9"></i> <span>Ordem: 1914 ➔ 2024</span>
+              <i class="fa-solid fa-arrow-down-1-9"></i> <span>Ordem: 1914 ➔ 2026</span>
             </button>
 
             <div class="search-box">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" id="search-titulos" placeholder="Buscar título por ano ou nome..." aria-label="Buscar conquistas">
+              <input type="text" id="search-titulos" placeholder="Buscar título por ano, competição ou craque..." aria-label="Buscar conquistas">
             </div>
           </div>
         </div>
@@ -650,32 +899,49 @@
     <div class="section-divider"></div>
 
     <!-- ==========================================================================
-         Seção 7: Panteão dos Ídolos e Jogadores Lendários
+         Seção 7: Panteão das Lendas, Ídolos e Ídolas Imortais (Futebol Masculino e Feminino)
          ========================================================================== -->
     <section class="section section-darker" id="idolos-eternos">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Guerreiros Alvinegros</span>
-          <h2 class="section-title">Panteão dos Ídolos Históricos</h2>
+          <span class="section-eyebrow"><i class="fa-solid fa-crown text-gold"></i> Guerreiras e Guerreiros da Fiel</span>
+          <h2 class="section-title">Panteão de Ídolos, Ídolas e Lendas Imortais</h2>
           <p class="section-subtitle">
-            Os homens e mulheres que honraram o manto, desafiaram a lógica, venceram o impossível e se tornaram imortais no coração da torcida.
+            As mulheres e homens que honraram o manto sagrado alvinegro, desafiaram a lógica, venceram o impossível e se tornaram divindades eternas no coração de mais de 35 milhões de corinthianos e corinthianas.
           </p>
         </div>
 
-        <!-- Controles dos Ídolos -->
+        <!-- Controles dos Ídolos: Filtros de Categoria e Busca -->
         <div class="titulos-controls">
           <div class="timeline-controls" style="margin-bottom: 0;" role="tablist">
-            <button class="filter-btn idolo-filter-btn active" data-filter="todos">Todos os Ídolos</button>
+            <button class="filter-btn idolo-filter-btn active" data-filter="todos">Todas as Lendas</button>
+            <button class="filter-btn idolo-filter-btn idolo-filter-ranking" data-filter="mais-considerados"><i class="fa-solid fa-star text-gold"></i> Mais Considerados (Ranking)</button>
             <button class="filter-btn idolo-filter-btn" data-filter="democracia"><i class="fa-solid fa-people-group"></i> Democracia</button>
-            <button class="filter-btn idolo-filter-btn" data-filter="campeao-mundial"><i class="fa-solid fa-earth-americas"></i> Mundiais</button>
-            <button class="filter-btn idolo-filter-btn" data-filter="artilheiro"><i class="fa-solid fa-futbol"></i> Artilheiros</button>
+            <button class="filter-btn idolo-filter-btn" data-filter="campeao-mundial"><i class="fa-solid fa-earth-americas"></i> Campeões Mundiais</button>
+            <button class="filter-btn idolo-filter-btn" data-filter="artilheiro"><i class="fa-solid fa-futbol"></i> Artilheiros(as)</button>
             <button class="filter-btn idolo-filter-btn" data-filter="recordista"><i class="fa-solid fa-award"></i> Recordistas</button>
             <button class="filter-btn idolo-filter-btn" data-filter="as-brabas"><i class="fa-solid fa-crown"></i> As Brabas</button>
           </div>
 
           <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="search-idolos" placeholder="Buscar jogador, apelido ou posição..." aria-label="Buscar ídolo">
+            <input type="text" id="search-idolos" placeholder="Buscar craque, ídolo(a), apelido ou posição..." aria-label="Buscar atleta, ídolo ou ídola">
+          </div>
+        </div>
+
+        <!-- Barra de Ordenação: Cronológica vs Mais Considerados Ídolos -->
+        <div class="idolos-sort-bar">
+          <div class="idolos-sort-buttons" role="group" aria-label="Modo de ordenação dos ídolos">
+            <span class="idolos-sort-label"><i class="fa-solid fa-arrow-down-short-wide"></i> Ordenação:</span>
+            <button type="button" class="sort-btn idolo-sort-btn active" data-sort="cronologica" id="btn-sort-cronologica" title="Visualizar por ordem cronológica de estreia (1945 a 2019)">
+              <i class="fa-solid fa-clock-rotate-left"></i> <span>Ordem Cronológica (1945 ➔ Atual)</span>
+            </button>
+            <button type="button" class="sort-btn idolo-sort-btn" data-sort="idolatria" id="btn-sort-idolatria" title="Visualizar por ordem de maior idolatria segundo dados e votações">
+              <i class="fa-solid fa-star"></i> <span>Mais Considerados Ídolos (Votações & Dados)</span>
+            </button>
+          </div>
+          <div class="idolos-sort-caption" id="idolos-sort-caption">
+            <i class="fa-solid fa-circle-info"></i> <span id="idolos-sort-caption-text">Exibindo lendas em <strong>ordem cronológica de estreia</strong> no Corinthians (do clássico esquadrão de 1945 às Brabas).</span>
           </div>
         </div>
 
@@ -929,7 +1195,7 @@
        ========================================================================== -->
   <div class="modal-overlay" id="idolo-modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-container">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar janela de foto do ídolo">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar janela da lenda alvinegra">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
@@ -953,11 +1219,11 @@
         <!-- Coluna de Informações e Legado -->
         <div class="modal-info-column">
           <div class="modal-header-meta">
-            <span class="badge badge-misto" id="modal-idolo-tag">Ídolo Eterno</span>
+            <span class="badge badge-misto" id="modal-idolo-tag">Lenda Alvinegra</span>
             <span class="modal-periodo" id="modal-idolo-periodo">1978 - 1984</span>
           </div>
 
-          <h3 class="modal-idolo-nome" id="modal-idolo-nome">Nome do Ídolo</h3>
+          <h3 class="modal-idolo-nome" id="modal-idolo-nome">Nome da Lenda</h3>
           <div class="modal-idolo-posicao" id="modal-idolo-posicao">Posição no Campo</div>
 
           <div class="modal-stats-grid">
@@ -992,6 +1258,83 @@
           <div class="modal-legado-box">
             <div class="modal-section-title"><i class="fa-solid fa-monument"></i> O Legado para a Fiel</div>
             <p id="modal-idolo-legado"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Modal de Foto Expandida e Legenda do Elenco Campeão
+       ========================================================================== -->
+  <div class="modal-overlay" id="titulo-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container modal-titulo-container">
+      <button class="modal-close-btn" id="modal-titulo-close-btn" aria-label="Fechar foto do elenco campeão">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-body">
+        <!-- Coluna da Foto Histórica do Elenco Campeão -->
+        <div class="modal-photo-column">
+          <div class="modal-img-wrapper modal-titulo-img-wrapper">
+            <img id="modal-titulo-foto" src="" alt="" class="modal-titulo-img">
+            <div class="modal-photo-badge">
+              <i class="fa-solid fa-camera-retro text-gold"></i> Elenco Campeão Oficial
+            </div>
+          </div>
+          <div class="modal-photo-caption" id="modal-titulo-legenda">
+            <!-- Legenda completa do elenco campeão -->
+          </div>
+          <div class="modal-photo-source" id="modal-titulo-fonte">
+            <i class="fa-solid fa-landmark"></i> <strong>Arquivo / Fonte:</strong> Acervo Histórico do SCCP / Memorial Corinthians
+          </div>
+        </div>
+
+        <!-- Coluna de Informações da Conquista -->
+        <div class="modal-info-column">
+          <div class="modal-header-meta">
+            <span class="badge badge-misto" id="modal-titulo-categoria">Categoria</span>
+            <span class="modal-periodo" id="modal-titulo-ano">Ano</span>
+          </div>
+
+          <h3 class="modal-idolo-nome" id="modal-titulo-nome">Nome da Conquista</h3>
+          <div class="modal-idolo-posicao" id="modal-titulo-sede">
+            <i class="fa-solid fa-location-dot"></i> Sede da Decisão
+          </div>
+
+          <div class="modal-stats-grid">
+            <div class="modal-stat-card">
+              <span class="modal-stat-num" id="modal-titulo-stat-ano">1991</span>
+              <span class="modal-stat-label">Ano da Glória</span>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-num" id="modal-titulo-stat-cat">Nacional</span>
+              <span class="modal-stat-label">Categoria</span>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-num"><i class="fa-solid fa-trophy text-gold"></i> Campeão</span>
+              <span class="modal-stat-label">Taça Oficial</span>
+            </div>
+          </div>
+
+          <div class="modal-titulos-box">
+            <div class="modal-section-title"><i class="fa-solid fa-award text-gold"></i> A Conquista Histórica</div>
+            <p id="modal-titulo-detalhe" style="color: #e0e0e0; font-size: 0.92rem; line-height: 1.6;"></p>
+          </div>
+
+          <div class="modal-legado-box">
+            <div class="modal-section-title"><i class="fa-solid fa-users text-gold"></i> Elenco Campeão &amp; Legenda Completa</div>
+            <p id="modal-titulo-elenco-desc" style="color: #e5e5e5; font-size: 0.9rem; line-height: 1.6;"></p>
+          </div>
+
+          <!-- Navegação rápida entre conquistas -->
+          <div class="modal-titulo-nav-bar">
+            <button class="btn-modal-titulo-nav" id="modal-titulo-btn-prev" type="button" aria-label="Conquista anterior">
+              <i class="fa-solid fa-chevron-left"></i> Conquista Anterior
+            </button>
+            <button class="btn-modal-titulo-nav" id="modal-titulo-btn-next" type="button" aria-label="Próxima conquista">
+              Próxima Conquista <i class="fa-solid fa-chevron-right"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -1145,8 +1488,8 @@
     </div>
   </aside>
 
-  <!-- Scripts -->
-  <script src="data/corinthians-data.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Scripts com Cache Busting -->
+  <script src="data/corinthians-data.js?v=3.0.0"></script>
+  <script src="js/app.js?v=3.0.0"></script>
 </body>
 </html>

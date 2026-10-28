@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.8.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-3.0.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -63,10 +63,11 @@ Ferramenta interativa onde o torcedor ajusta:
 - Exibe o valor arrecadado por mês e por ano, além de prever em quantos meses a dívida do clube seria integralmente quitada pela Fiel.
 
 ### 6. ⚽ Central de Jogos e Resultados
-Acompanhamento dos jogos recentes e confrontos futuros do Timão, com placares, competições, datas e locais mantidos em ordem cronológica contínua.
+Acompanhamento dos jogos recentes e confrontos futuros do Timão, com placares, competições, datas, locais e escudos/logos oficiais de todos os clubes envolvidos (Corinthians, Mirassol, Vasco da Gama, Vitória, Palmeiras, Internacional) posicionados ao lado dos nomes, preservando a harmonia, contenção 100% dentro do retângulo dos cards (`overflow-wrap`, `min-width: 0`, logos 26x26px) e o layout padrão do placar alvinegro em qualquer dispositivo.
 
-### 7. 🏆 Memorial de Títulos
-Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa Libertadores Invicta, Brasileirões, Copas do Brasil, Recopa Sul-Americana e Paulistões lendários.
+### 7. 🏆 Memorial de Títulos (Com Modal de Expansão de Foto e Legenda)
+Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa Libertadores Invicta, Brasileirões, Copas do Brasil, Supercopa do Brasil de 1991 (com foto oficial do elenco completo posado com o manto Kalunga), Recopa Sul-Americana, Paulistões lendários e dinastia das Brabas.
+- **Expansão de Foto e Legenda (Padrão Seção de Ídolos):** Ao passar o mouse sobre qualquer título e clicar na foto do elenco campeão (ou no botão *"Ver Foto e Legenda Expandida"*), abre-se o modal dedicado (`#titulo-modal`) com a fotografia do esquadrão em grande formato, legenda completa destacada, fonte documental e navegação rápida entre as conquistas (`Conquista Anterior` / `Próxima Conquista` e setas do teclado).
 
 ### 8. 🛡️ Panteão de Ídolos Eternos
 Cards com biografias, estatísticas de partidas, gols marcados ou **defesas de pênaltis** (para goleiros), conquistas exatas e frases marcantes com modal detalhado ao clicar:
@@ -78,7 +79,7 @@ Cards com biografias, estatísticas de partidas, gols marcados ou **defesas de p
 - **As Brabas (Futebol Feminino Multicampeão):**
   - **Gabi Zanotti:** A Mágica da Camisa 10, com 18 títulos oficiais, 230 jogos e foto erguendo a taça da Libertadores.
   - **Vic Albuquerque:** Maior artilheira da história do Timão com mais de 108 gols e 18 títulos oficiais, com foto real em estúdio/celebração (`assets/images/idolos/vic_albuquerque.jpg`, CBF / Staff Images) erguendo a taça oficial do Campeonato Brasileiro com seu rosto 100% visível e iluminado.
-  - **Tamires Dias:** Mãe e Capitã da Fiel com 17 títulos oficiais e medalha de prata olímpica, com foto real em alta definição erguendo a taça da Supercopa do Brasil na Neo Química Arena.
+  - **Tamires Dias:** Mãe e Capitã da Fiel com 17 títulos oficiais e medalha de prata olímpica, com fotografia oficial de alta definição de estúdio da CONMEBOL Libertadores (`assets/images/idolos/tamires.jpg`), com rosto 100% nítido, luminoso e desobstruído vestindo o manto sagrado alvinegro com o escudo dourado oficial de Campeã da Copa Libertadores Feminina no peito.
   - **Lelê (Letícia Izidoro):** O lendário "Paredão das Brabas" com 15 títulos oficiais, 190 partidas, 10 pênaltis defendidos (com os pênaltis decisivos da final da Libertadores 2017 e semi 2023) e fotografia em alta definição na final da Supercopa do Brasil na Neo Química Arena.
 
 ### 9. 📈 Estatísticas & Feitos Lendários (Com Switcher 3D Flip Masculino / As Brabas)

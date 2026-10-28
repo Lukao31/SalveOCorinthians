@@ -1311,47 +1311,241 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* ==========================================================================
-   4. História Imortal, Glórias & Títulos
+   4. História Imortal, Glórias & Títulos (Mural Épico de Conquistas)
    ========================================================================== */
 .historia-hero-banner {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: 4rem;
-  border: 1px solid var(--border-medium);
+  background: #0a0a0c;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
 
-.historia-banner-img {
+.historia-mural-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 5px;
+  background: linear-gradient(135deg, #0b0b0e 0%, #1c1810 50%, #0b0b0e 100%);
+}
+
+.mural-photo-item {
+  position: relative;
+  aspect-ratio: 16 / 10.5;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #121215;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mural-photo-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 0, 0, 0.05) 42%,
+    rgba(0, 0, 0, 0.86) 100%
+  );
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.mural-photo-img {
   width: 100%;
-  height: 420px;
+  height: 100%;
   object-fit: cover;
-  filter: contrast(1.2) grayscale(100%);
+  object-position: center 28%;
+  filter: contrast(1.08) saturate(0.95) brightness(0.92);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+}
+
+.mural-photo-item:hover,
+.mural-photo-item:focus-visible {
+  z-index: 3;
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(212, 175, 55, 0.85);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.85), 0 0 18px rgba(212, 175, 55, 0.32);
+  outline: none;
+}
+
+.mural-photo-item:hover .mural-photo-img,
+.mural-photo-item:focus-visible .mural-photo-img {
+  transform: scale(1.09);
+  filter: contrast(1.12) saturate(1.08) brightness(1.05);
+}
+
+.mural-photo-badge {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.24rem 0.58rem;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  background: rgba(10, 10, 12, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.mural-photo-badge.badge-gold,
+.mural-photo-item:hover .mural-photo-badge {
+  background: rgba(20, 16, 8, 0.9);
+  border-color: rgba(212, 175, 55, 0.75);
+  color: #f3d06b;
+}
+
+.mural-photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 0.65rem 0.75rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  pointer-events: none;
+}
+
+.mural-photo-caption strong {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.mural-photo-caption span {
+  font-size: 0.69rem;
+  color: rgba(235, 235, 235, 0.88);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  opacity: 0.82;
+  transition: opacity 0.25s ease;
+}
+
+.mural-photo-item:hover .mural-photo-caption span {
+  opacity: 1;
+  color: #ffffff;
 }
 
 .historia-banner-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3rem;
-  background: linear-gradient(0deg, #080808 20%, transparent 100%);
+  position: relative;
+  padding: 1.75rem 2.25rem 1.85rem;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 12, 0.96) 0%,
+    rgba(16, 14, 10, 0.98) 50%,
+    rgba(10, 10, 12, 1) 100%
+  );
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.historia-banner-plaque {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.historia-mural-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #f3d06b;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .historia-quote {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 900;
   color: #ffffff;
-  max-width: 800px;
+  max-width: 860px;
   line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+  margin: 0.15rem 0 0;
 }
 
 .historia-author {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #e5c158;
   text-transform: uppercase;
-  margin-top: 0.5rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
+}
+
+.historia-mural-hint {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.historia-mural-hint i {
+  color: #e5c158;
+}
+
+@media (max-width: 1024px) {
+  .historia-mural-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .historia-mural-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    padding: 4px;
+  }
+  .mural-photo-badge {
+    font-size: 0.6rem;
+    padding: 0.18rem 0.45rem;
+  }
+  .mural-photo-caption strong {
+    font-size: 0.72rem;
+  }
+  .mural-photo-caption span {
+    font-size: 0.64rem;
+    -webkit-line-clamp: 1;
+  }
+  .historia-banner-content {
+    padding: 1.35rem 1.15rem 1.45rem;
+  }
 }
 
 /* Vitrine de Títulos */
@@ -1411,7 +1605,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  min-height: 310px;
+  min-height: 350px;
   cursor: pointer;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 }
@@ -1504,7 +1698,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .titulo-card:hover .titulo-card-elenco-overlay,
-.titulo-card:focus-within .titulo-card-elenco-overlay,
+.titulo-card:focus-visible .titulo-card-elenco-overlay,
 .titulo-card.active-elenco .titulo-card-elenco-overlay {
   opacity: 1;
   visibility: visible;
@@ -1514,9 +1708,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .titulo-elenco-img-wrapper {
   position: relative;
   width: 100%;
-  height: 56%;
+  height: 52%;
   background: #000000;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .titulo-elenco-img {
@@ -1529,6 +1724,63 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .titulo-card:hover .titulo-elenco-img {
   transform: scale(1.07);
+}
+
+.titulo-elenco-zoom-hint {
+  position: absolute;
+  bottom: 0.65rem;
+  right: 0.65rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.titulo-card:hover .titulo-elenco-zoom-hint {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.45);
+}
+
+.btn-expandir-elenco {
+  margin-top: 0.5rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 0.48rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-expandir-elenco:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
 }
 
 .titulo-elenco-badge {
@@ -1555,22 +1807,23 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .titulo-elenco-legenda {
-  padding: 0.85rem 1rem 0.95rem 1rem;
+  height: 48%;
+  padding: 0.7rem 0.95rem 0.8rem 0.95rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex: 1;
+  justify-content: space-between;
   background: linear-gradient(180deg, rgba(16, 16, 16, 0.98) 0%, rgba(8, 8, 8, 1) 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
+  overflow: hidden;
 }
 
 .titulo-elenco-legenda-titulo {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #ffffff;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -1581,10 +1834,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .titulo-elenco-legenda-texto {
-  font-size: 0.77rem;
+  font-size: 0.75rem;
   color: #d4d4d4;
-  line-height: 1.45;
+  line-height: 1.4;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .btn-ordem-cronologica {
@@ -1613,8 +1870,203 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* ==========================================================================
-   5. Panteão dos Ídolos
+   5. Panteão dos Ídolos e Lendas Alvinegras
    ========================================================================== */
+.filter-btn.idolo-filter-ranking {
+  border-color: rgba(212, 175, 55, 0.5);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.filter-btn.idolo-filter-ranking:hover {
+  border-color: #ffd700;
+  background: rgba(212, 175, 55, 0.18);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+}
+
+.filter-btn.idolo-filter-ranking.active {
+  background: linear-gradient(135deg, #d4af37 0%, #aa8420 100%);
+  color: #0a0a0c !important;
+  border-color: #ffd700;
+  font-weight: 800;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.45);
+}
+
+.filter-btn.idolo-filter-ranking.active i {
+  color: #0a0a0c !important;
+}
+
+.idolos-sort-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.idolos-sort-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.idolos-sort-label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sort-btn.idolo-sort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #d1d5db;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.sort-btn.idolo-sort-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.sort-btn.idolo-sort-btn.active {
+  background: linear-gradient(135deg, #d4af37 0%, #aa8420 100%);
+  color: #0a0a0c;
+  border-color: #ffd700;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+}
+
+.sort-btn.idolo-sort-btn.active i {
+  color: #0a0a0c;
+}
+
+.idolos-sort-caption {
+  font-size: 0.82rem;
+  color: #a0a5b0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  line-height: 1.4;
+}
+
+.idolos-sort-caption i {
+  color: var(--gold-primary);
+  font-size: 0.95rem;
+}
+
+.idolos-sort-caption strong {
+  color: #ffffff;
+}
+
+/* Badges e boxes especiais dos Ídolos */
+.idolo-card-order-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 3;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.idolo-card-order-badge.badge-cronologia {
+  background: rgba(14, 15, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.idolo-card-order-badge.badge-idolatria {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.95) 0%, rgba(170, 132, 32, 0.95) 100%);
+  border: 1px solid #ffd700;
+  color: #0a0a0c;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.45);
+}
+
+.idolo-card-order-badge.badge-idolatria-top1 {
+  background: linear-gradient(135deg, #ffd700 0%, #ff9900 100%);
+  border: 1px solid #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.6);
+}
+
+.idolo-card-ranking-box {
+  background: rgba(212, 175, 55, 0.08);
+  border-left: 3px solid var(--gold-primary);
+  border-radius: 4px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #e5e5e5;
+  transition: all 0.2s ease;
+}
+
+.idolo-card:hover .idolo-card-ranking-box {
+  background: rgba(212, 175, 55, 0.14);
+}
+
+.idolo-card-ranking-box strong {
+  color: var(--gold-primary);
+}
+
+.idolo-card-ranking-box .ranking-fonte {
+  display: block;
+  font-size: 0.7rem;
+  color: #a0a0a0;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.idolo-card-era-box {
+  background: rgba(255, 255, 255, 0.035);
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  padding: 0.55rem 0.85rem;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #d1d5db;
+}
+
+.idolo-card-era-box strong {
+  color: #ffffff;
+}
+
 .idolos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -2805,8 +3257,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
    ========================================================================== */
 .jogos-feed-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.75rem;
   margin-bottom: 3.5rem;
 }
 
@@ -2814,12 +3266,15 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 2rem;
+  padding: 1.5rem 1.35rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: var(--transition-normal);
   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .jogo-card:hover {
@@ -2842,7 +3297,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .jogo-campeonato {
@@ -2857,36 +3314,121 @@ input[type="range"]::-webkit-slider-thumb:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 0;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.85rem 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
   margin-bottom: 1.25rem;
+  gap: 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .jogo-team {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 0.2rem;
+}
+
+.jogo-team-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  max-width: 100%;
+  width: 100%;
+}
+
+.jogo-team-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.jogo-card:hover .jogo-team-logo {
+  transform: scale(1.12);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
 }
 
 .jogo-team-name {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-weight: 800;
   text-align: center;
   color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .jogo-score-box {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 1.65rem;
   font-weight: 900;
   color: #ffffff;
-  padding: 0 1rem;
-  display: flex;
+  padding: 0.3rem 0.65rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  min-width: 68px;
+  text-align: center;
+}
+
+.score-x {
+  font-size: 1.1rem;
+  color: #888888;
+  font-weight: 700;
+  margin: 0 0.15rem;
+}
+
+.score-clock {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+@media (max-width: 480px) {
+  .jogo-card {
+    padding: 1.25rem 1rem;
+  }
+  .jogo-scoreboard {
+    gap: 0.25rem;
+    padding: 0.75rem 0.25rem;
+  }
+  .jogo-team-logo {
+    width: 22px;
+    height: 22px;
+  }
+  .jogo-team-wrap {
+    gap: 0.35rem;
+  }
+  .jogo-team-name {
+    font-size: 0.8rem;
+  }
+  .jogo-score-box {
+    font-size: 1.4rem;
+    padding: 0.2rem 0.45rem;
+    min-width: 58px;
+  }
 }
 
 .jogo-gols-assistencias {
@@ -3245,6 +3787,96 @@ input[type="range"]::-webkit-slider-thumb:hover {
   padding-left: 0.85rem;
   margin: 0.25rem 0;
   line-height: 1.5;
+}
+
+/* ==========================================================================
+   Modal do Elenco Campeão (Foto Expandida & Legenda Oficial)
+   ========================================================================== */
+.modal-titulo-container {
+  max-width: 1100px;
+}
+
+.modal-titulo-container .modal-body {
+  grid-template-columns: 1.25fr 1fr;
+}
+
+.modal-titulo-img-wrapper {
+  min-height: 350px;
+  max-height: 460px;
+  background: #000000;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85);
+}
+
+.modal-titulo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.modal-titulo-img-wrapper:hover .modal-titulo-img {
+  transform: scale(1.03);
+}
+
+.modal-titulo-container .modal-photo-caption {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #f59e0b;
+}
+
+.modal-titulo-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-modal-titulo-nav {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.btn-modal-titulo-nav:hover:not(:disabled) {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-modal-titulo-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ==========================================================================
@@ -3734,7 +4366,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 @media (max-width: 860px) {
-  .modal-body {
+  .modal-body,
+  .modal-titulo-container .modal-body {
     grid-template-columns: 1fr;
     padding: 1.5rem;
   }
@@ -4256,4 +4889,471 @@ input[type="range"]::-webkit-slider-thumb:hover {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Mini-Seção Especial: Hegemonia no Paulistão (31x Campeão & Top 5 Conquistas)
+   ========================================================================== */
+.paulistao-hegemonia-box {
+  background: linear-gradient(145deg, rgba(18, 18, 22, 0.96) 0%, rgba(8, 8, 10, 0.98) 100%);
+  border: 1px solid rgba(234, 179, 8, 0.32);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.paulistao-hegemonia-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #eab308, #ffffff, #eab308, transparent);
+}
+
+.paulistao-hegemonia-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.paulistao-hegemonia-title-col {
+  flex: 1;
+}
+
+.paulistao-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #eab308;
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.65rem;
+}
+
+.paulistao-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 0.55rem;
+  line-height: 1.2;
+}
+
+.paulistao-subtitle {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 780px;
+}
+
+.paulistao-counter-card {
+  background: radial-gradient(circle at top, rgba(234, 179, 8, 0.18), rgba(0, 0, 0, 0.85));
+  border: 1px solid rgba(234, 179, 8, 0.45);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.65rem;
+  text-align: center;
+  min-width: 195px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.paulistao-counter-num {
+  font-family: var(--font-heading);
+  font-size: 3.1rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+  text-shadow: 0 0 22px rgba(234, 179, 8, 0.45);
+}
+
+.paulistao-counter-x {
+  font-size: 1.6rem;
+  color: #eab308;
+  margin-left: 2px;
+}
+
+.paulistao-counter-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #eab308;
+  margin-top: 0.3rem;
+}
+
+.paulistao-counter-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.paulistao-anos-panel {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.65rem;
+}
+
+.paulistao-anos-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e4e4e7;
+  margin-bottom: 0.75rem;
+}
+
+.paulistao-anos-legend {
+  font-size: 0.72rem;
+  color: #eab308;
+  font-weight: 600;
+}
+
+.paulistao-anos-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.paulistao-ano-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.28rem 0.62rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d4d4d8;
+}
+
+button.paulistao-ano-pill.is-highlight {
+  background: rgba(234, 179, 8, 0.14);
+  border-color: rgba(234, 179, 8, 0.5);
+  color: #fef08a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.paulistao-ano-pill.is-highlight:hover {
+  background: #eab308;
+  color: #09090b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.35);
+}
+
+.paulistao-top5-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.paulistao-top5-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.paulistao-top5-header span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.paulistao-top5-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.paulistao-all31-grid {
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 0.95rem;
+}
+
+/* ==========================================================================
+   Seletor de Modalidade na Seção de Títulos (Ambos Juntos / Masculino / As Brabas)
+   ========================================================================== */
+.titulos-switcher-bar {
+  margin-bottom: 1.15rem;
+}
+
+.titulos-toggle-pills {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.titulos-mod-pill.active[data-modalidade="todos"] {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  color: #09090b;
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.45);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.titulos-mod-pill.active[data-modalidade="Masculino"] {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.38);
+}
+
+.titulos-mod-pill.active[data-modalidade="Feminino"] {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.55);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.titulos-modalidade-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(234, 179, 8, 0.28);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.86rem;
+  color: #e4e4e7;
+  text-align: center;
+}
+
+.titulo-modalidade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.22rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.titulo-modalidade-badge.is-masculino {
+  background: rgba(234, 179, 8, 0.14);
+  border: 1px solid rgba(234, 179, 8, 0.42);
+  color: #fde047;
+}
+
+.titulo-modalidade-badge.is-brabas {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.28) 0%, rgba(109, 40, 217, 0.38) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.55);
+  color: #e9d5ff;
+}
+
+.titulo-card.titulo-card-brabas {
+  border-color: rgba(139, 92, 246, 0.32);
+}
+
+.titulo-card.titulo-card-brabas:hover {
+  border-color: #a78bfa;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.8), 0 0 22px rgba(139, 92, 246, 0.28);
+}
+
+.paulistao-top5-card {
+  background: rgba(15, 15, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.28s ease;
+}
+
+.paulistao-top5-card:hover,
+.paulistao-top5-card:focus-visible {
+  transform: translateY(-5px);
+  border-color: #eab308;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8), 0 0 18px rgba(234, 179, 8, 0.22);
+  outline: none;
+}
+
+.paulistao-top5-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #000000;
+  overflow: hidden;
+}
+
+.paulistao-top5-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.4s ease;
+}
+
+.paulistao-top5-card:hover .paulistao-top5-img {
+  transform: scale(1.07);
+}
+
+.paulistao-top5-rank {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(234, 179, 8, 0.65);
+  color: #fde047;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.paulistao-top5-zoom {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.paulistao-top5-card:hover .paulistao-top5-zoom {
+  background: #eab308;
+  color: #000000;
+  border-color: #eab308;
+}
+
+.paulistao-top5-body {
+  padding: 0.85rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.paulistao-top5-body h5 {
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.paulistao-top5-body p {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.paulistao-footer-callout {
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.paulistao-footer-text {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #e4e4e7;
+}
+
+.btn-paulistao-2025 {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  color: #09090b;
+  border: none;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+
+.btn-paulistao-2025:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(234, 179, 8, 0.35);
+}
+
+@media (max-width: 1150px) {
+  .paulistao-top5-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .paulistao-hegemonia-box {
+    padding: 1.35rem;
+  }
+  .paulistao-hegemonia-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .paulistao-counter-card {
+    width: 100%;
+  }
+  .paulistao-top5-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .paulistao-top5-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
