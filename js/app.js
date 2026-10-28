@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderEstatisticas();
   renderFontes();
   initHinoPlayer();
+  initFundacaoModal();
   setupEventListeners();
   setupScrollSpy();
 });
@@ -2102,3 +2103,98 @@ function initHinoPlayer() {
 }
 
 
+
+/* ==========================================================================
+   11. Modal Interativo da Galeria da Fundação de 1910
+   ========================================================================== */
+let currentFundacaoIndex = 0;
+
+function abrirModalFundacao(index) {
+  const modal = document.getElementById('fundacao-modal');
+  if (!modal || !window.CORINTHIANS_DATA || !CORINTHIANS_DATA.fundacao || !CORINTHIANS_DATA.fundacao.fotosHistoricas) return;
+  const fotos = CORINTHIANS_DATA.fundacao.fotosHistoricas;
+  if (index < 0 || index >= fotos.length) index = 0;
+  currentFundacaoIndex = index;
+  renderFundacaoModalFoto(fotos[currentFundacaoIndex]);
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModalFundacao() {
+  const modal = document.getElementById('fundacao-modal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function renderFundacaoModalFoto(fotoObj) {
+  if (!fotoObj) return;
+  const imgEl = document.getElementById('modal-fundacao-foto');
+  const tituloEl = document.getElementById('modal-fundacao-titulo');
+  const catEl = document.getElementById('modal-fundacao-categoria');
+  const legendaEl = document.getElementById('modal-fundacao-legenda');
+  const fonteEl = document.getElementById('modal-fundacao-fonte');
+  const detalheEl = document.getElementById('modal-fundacao-detalhe');
+
+  if (imgEl) {
+    imgEl.src = fotoObj.foto;
+    imgEl.alt = fotoObj.titulo;
+  }
+  if (tituloEl) tituloEl.textContent = fotoObj.titulo;
+  if (catEl) catEl.textContent = fotoObj.categoria || 'Origem 1910';
+  if (legendaEl) legendaEl.textContent = fotoObj.titulo;
+  if (fonteEl) fonteEl.innerHTML = `<i class="fa-solid fa-camera"></i> Fonte: ${fotoObj.fonte || 'Acervo Histórico'}`;
+  if (detalheEl) detalheEl.textContent = fotoObj.legenda || '';
+}
+
+function navegarFundacaoModal(direcao) {
+  const fotos = CORINTHIANS_DATA.fundacao?.fotosHistoricas || [];
+  if (!fotos.length) return;
+  currentFundacaoIndex = (currentFundacaoIndex + direcao + fotos.length) % fotos.length;
+  renderFundacaoModalFoto(fotos[currentFundacaoIndex]);
+}
+
+function initFundacaoModal() {
+  const modal = document.getElementById('fundacao-modal');
+  if (!modal) return;
+
+  const closeBtn = document.getElementById('modal-fundacao-close-btn');
+  const prevBtn = document.getElementById('modal-fundacao-btn-prev');
+  const nextBtn = document.getElementById('modal-fundacao-btn-next');
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', fecharModalFundacao);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => navegarFundacaoModal(-1));
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => navegarFundacaoModal(1));
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      fecharModalFundacao();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape') {
+      fecharModalFundacao();
+    } else if (e.key === 'ArrowLeft') {
+      navegarFundacaoModal(-1);
+    } else if (e.key === 'ArrowRight') {
+      navegarFundacaoModal(1);
+    }
+  });
+}
+
+// Expor funções globalmente para chamadas via onclick
+window.abrirModalFundacao = abrirModalFundacao;
+window.fecharModalFundacao = fecharModalFundacao;
+window.navegarFundacaoModal = navegarFundacaoModal;

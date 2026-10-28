@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-3.2.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-3.3.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -65,11 +65,17 @@ Ferramenta interativa onde o torcedor ajusta:
 ### 6. ⚽ Central de Jogos e Resultados
 Acompanhamento dos jogos recentes e confrontos futuros do Timão, com placares, competições, datas, locais e escudos/logos oficiais de todos os clubes envolvidos (Corinthians, Mirassol, Vasco da Gama, Vitória, Palmeiras, Internacional) posicionados ao lado dos nomes, preservando a harmonia, contenção 100% dentro do retângulo dos cards (`overflow-wrap`, `min-width: 0`, logos 26x26px) e o layout padrão do placar alvinegro em qualquer dispositivo.
 
-### 7. 🏆 Memorial de Títulos (Com Modal de Expansão de Foto e Legenda)
+### 7. 🏛️ A Origem do Clube do Povo (A Fundação de 1910)
+- **O Manifesto Operário:** A frase imortal de Miguel Battaglia (*"O Corinthians vai ser o time do povo e o povo é quem vai fazer o time"*), desmistificando o elitismo do futebol e afirmando a soberania democrática da classe trabalhadora.
+- **Os 4 Pilares da Origem:** Ano e horário (01/09/1910, 20h30), local (Rua dos Imigrantes com Cônego Martins, Bom Retiro), quem eram os 5 operários pioneiros e o propósito inclusivo do batismo inspirado no Corinthian FC inglês.
+- **Galeria Visual da Fundação com Modal:** 4 fotografias autênticas (1º esquadrão de 1910, Corinthian FC britânico, 1º distintivo artesanal e a histórica Rua José Paulino no Bom Retiro).
+- **Linha do Tempo (1910–1914):** A vaquinha da 1ª bola, a carpina do Campo do Lenheiro, a estreia na Lapa, a 1ª vitória e o 1º título paulista invicto de 1914.
+
+### 8. 🏆 Memorial de Títulos (Com Modal de Expansão de Foto e Legenda)
 Histórico categorizado das principais taças alvinegras: Mundiais da FIFA, Copa Libertadores Invicta, Brasileirões, Copas do Brasil, Supercopa do Brasil de 1991 (com foto oficial do elenco completo posado com o manto Kalunga), Recopa Sul-Americana, Paulistões lendários e dinastia das Brabas.
 - **Expansão de Foto e Legenda (Padrão Seção de Ídolos):** Ao passar o mouse sobre qualquer título e clicar na foto do elenco campeão (ou no botão *"Ver Foto e Legenda Expandida"*), abre-se o modal dedicado (`#titulo-modal`) com a fotografia do esquadrão em grande formato, legenda completa destacada, fonte documental e navegação rápida entre as conquistas (`Conquista Anterior` / `Próxima Conquista` e setas do teclado).
 
-### 8. 🛡️ Panteão de Ídolos Eternos
+### 9. 🛡️ Panteão de Ídolos Eternos
 Cards com biografias, estatísticas de partidas, gols marcados ou **defesas de pênaltis** (para goleiros), conquistas exatas e frases marcantes com modal detalhado ao clicar:
 - **Estatísticas Adaptadas para Goleiros:** Substituição automática da métrica "Gols" por **"Pênaltis Salvos / Defendidos"** nos cards e no modal para Cássio e Lelê.
 - **Pênaltis Decisivos Pegos:** Box temático em destaque citando as defesas de pênalti mais emblemáticas de cada goleiro(a) (Rogério Ceni 2013, Dudu/Lucas Lima 2018, Boca Juniors 2022, final da Libertadores Feminina 2017, semifinal 2023, etc.).
@@ -95,7 +101,7 @@ Experiência imersiva com as três maiores mobilizações de torcida da históri
 - **Relatos de Fontes Confiáveis:** Citações documentadas de Nelson Rodrigues, Tite, Cássio, Tobias, Freddy Rincón, Dinei, Marcelinho Carioca, Frank Lampard, FIFA Technical Report e imprensa da época.
 - **Cortes & Registros em Vídeo:** Botões diretos para assistir a momentos decisivos e documentários no YouTube.
 
-### 11. 🎵 Player Interativo do Hino do Corinthians (Modos Normal, Expandido e Minimizado)
+### 12. 🎵 Player Interativo do Hino do Corinthians (Modos Normal, Expandido e Minimizado)
 - **Leitura Completa do Nome Oficial:** Exibição clara e sem cortes do título **"Hino Oficial do Sport Club Corinthians Paulista"** e do subtítulo **"Salve o Corinthians • Lauro D'Ávila (1953)"**.
 - **Modo Expandido Interativo:** Ao clicar no player ou no botão de expansão, ele se transforma em uma central musical com cabeçalho de gala (*Hino Centenário Oficial*), botões de ação e gaveta com a **letra oficial completa** dividida em estrofes e refrão destacado.
 - **Modo Minimizado / Reduzido:** Botão dedicado para diminuir o player a uma pílula flutuante compacta de apenas 220px, mantendo o vinil giratório e controle ágil sem sobrepor conteúdos do site.

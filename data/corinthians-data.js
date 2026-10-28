@@ -21,7 +21,117 @@ const CORINTHIANS_DATA = {
     lema: "O Corinthians não é apenas um time de futebol. O Corinthians é uma religião, uma paixão, uma razão de viver."
   },
 
-  // 1. Dossiê de Fatos da Gestão e Diretoria (Erros e Acertos Históricos)
+    // 0. A Fundação do Clube do Povo (1910): Origens, Propósito e História
+  fundacao: {
+    data: "1º de setembro de 1910, às 20h30",
+    ano: 1910,
+    local: "Esquina da Rua dos Imigrantes (atual Rua José Paulino) com a Rua Cônego Martins, bairro do Bom Retiro, São Paulo - SP",
+    marco: "Sob a luz amarela de um lampião a gás da iluminação pública",
+    fraseEterna: "O Corinthians vai ser o time do povo e o povo é quem vai fazer o time.",
+    autorFrase: "Miguel Battaglia (1º Presidente do Corinthians, alfaiate do Bom Retiro)",
+    proposito: "Democratizar o futebol brasileiro, rompendo com as correntes do elitismo aristocrático para criar uma agremiação verdadeiramente popular, aberta e inclusiva para operários, trabalhadores braçais, imigrantes humildes e negros que eram sumariamente banidos dos clubes nobres da capital paulista.",
+
+    fundadores: [
+      { nome: "Joaquim Ambrósio", profissao: "Pintor de paredes", papel: "Idealizador pioneiro que sugeriu o batismo com o nome 'Corinthians Paulista'" },
+      { nome: "Antônio Pereira", profissao: "Pintor de paredes", papel: "Idealizador, organizador da vaquinha e atacante do primeiro time histórico" },
+      { nome: "Rafael Perrone", profissao: "Sapateiro", papel: "Idealizador, zagueiro de raça e primeiro capitão do clube" },
+      { nome: "Anselmo Corrêa", profissao: "Cocheiro", papel: "Idealizador e elo de união entre os operários da ferrovia São Paulo Railway" },
+      { nome: "Carlos Silva", profissao: "Trabalhador braçal", papel: "Idealizador e líder dos mutirões na enxada para carpina do Campo do Lenheiro" }
+    ],
+
+    demaisPioneiros: [
+      "Miguel Battaglia (Alfaiate do Bom Retiro e 1º Presidente do Clube)",
+      "Alexandre Magnani (Secretário e comerciante)",
+      "Salvador Intrieri (Primeiro Tesoureiro)",
+      "Leonel Silva (Conselheiro e operário)",
+      "Francisco Luz (Conselheiro e operário)",
+      "João da Silva (Atacante do primeiro jogo)",
+      "César Nunes (Atacante do primeiro jogo)",
+      "Alfredo de Assis (Médio do primeiro jogo)"
+    ],
+
+    origemNome: {
+      inspiracao: "Corinthian Football Club (Londres, Inglaterra)",
+      contexto: "O lendário clube amador inglês realizava excursão invicta pelo Brasil em agosto e setembro de 1910, encantando os paulistanos ao golear as equipes da elite com um futebol de extrema habilidade, lealdade e espírito esportivo ('Corinthian Spirit').",
+      escolha: "Entre sugestões como 'Santos Dumont' e 'Carlos Gomes', prevaleceu a proposta entusiasta de Joaquim Ambrósio de homenagear a coragem dos ingleses, acrescentando com orgulho 'Paulista' para enraizar definitivamente o clube na alma dos trabalhadores de São Paulo."
+    },
+
+    campoDoLenheiro: {
+      local: "Rua dos Imigrantes (atual Rua José Paulino), esquina com a Rua Ribeiro de Lima, Bom Retiro",
+      periodo: "1910 a 1912",
+      historia: "Um terreno baldio alugado de um comerciante de lenha que guardava carroças e cavalos. Os próprios operários, jogadores e vizinhos do bairro limparam a área com foices e enxadas para construir o primeiro gramado de terra batida da história alvinegra."
+    },
+
+    fotosHistoricas: [
+      {
+        id: "time-1910",
+        titulo: "O Primeiro Esquadrão Corinthiano (1910)",
+        foto: "assets/images/fundacao/corinthians_1910_primeiro_time.jpg?v=3.3.0",
+        categoria: "Esquadrão Pioneiro",
+        fonte: "Acervo Histórico / Wikimedia Commons",
+        legenda: "O primeiro registro fotográfico do time do Corinthians após a fundação em 1910. Composto por operários, alfaiates e cocheiros do Bom Retiro, vestindo o uniforme bege original com calções brancos. Em campo: Valente, Perrone, Atílio, Lepre, Alfredo, Police, João da Silva, Jorge Campbell, Luiz Fabbi, César Nunes e Joaquim Ambrósio."
+      },
+      {
+        id: "corinthian-casuals-1910",
+        titulo: "A Inspiração: Corinthian Football Club (1910)",
+        foto: "assets/images/fundacao/corinthian_casuals_1910.jpg?v=3.3.0",
+        categoria: "Origem do Nome",
+        fonte: "Acervo Histórico / Wikimedia Commons",
+        legenda: "A lendária delegação do Corinthian Football Club (Inglaterra) em excursão pelo Brasil em agosto/setembro de 1910. Ao golear os aristocráticos clubes de São Paulo com técnica primorosa e cavalheirismo ('Corinthian Spirit'), os ingleses inspiraram os operários do Bom Retiro a batizar o recém-fundado clube com o seu glorioso nome."
+      },
+      {
+        id: "primeiro-escudo-1910",
+        titulo: "O Primeiro Escudo Oficial (1910)",
+        foto: "assets/images/fundacao/primeiro_escudo_1910.png?v=3.3.0",
+        categoria: "Emblema Histórico",
+        fonte: "Acervo Histórico SCCP / Wikimedia Commons",
+        legenda: "O primeiro distintivo da história do Corinthians: o entrelaçamento artesanal das letras 'C' e 'P' (Corinthians Paulista), bordado carinhosamente à mão nos primeiros uniformes beges em 1910. Décadas mais tarde, em 1939, o artista plástico Orfeu Maia criaria o clássico escudo com a âncora e os remos."
+      },
+      {
+        id: "rua-jose-paulino-bom-retiro",
+        titulo: "Rua José Paulino: O Berço Sagrado",
+        foto: "assets/images/fundacao/rua_jose_paulino_bom_retiro.jpg?v=3.3.0",
+        categoria: "Marco Zero",
+        fonte: "Acervo Público de São Paulo / Wikimedia Commons",
+        legenda: "A tradicional Rua José Paulino (antiga Rua dos Imigrantes), no coração do Bom Retiro. Na esquina com a Rua Cônego Martins, sob a luz de um lampião a gás da calçada pública, nasceu em 1º de setembro de 1910 o Sport Club Corinthians Paulista. Hoje, o local abriga o obelisco comemorativo do Marco Zero do clube."
+      }
+    ],
+
+    cronologia: [
+      {
+        data: "01/09/1910",
+        titulo: "A Reunião sob a Luz do Lampião",
+        descricao: "Cinco operários do Bom Retiro (Joaquim Ambrósio, Antônio Pereira, Rafael Perrone, Anselmo Corrêa e Carlos Silva) reúnem-se na esquina das ruas dos Imigrantes e Cônego Martins e fundam o Sport Club Corinthians Paulista. Miguel Battaglia é aclamado primeiro presidente e profere a frase imortal: 'O Corinthians vai ser o time do povo e o povo é quem vai fazer o time'."
+      },
+      {
+        data: "05/09/1910",
+        titulo: "A Primeira Bola e o Campo do Lenheiro",
+        descricao: "Com uma vaquinha popular de 6 mil réis recolhida entre moradores e operários, o clube adquire sua primeira bola de futebol de couro. No mesmo dia, é alugado o terreno do Campo do Lenheiro, limpo a enxadas e foices pelos próprios jogadores."
+      },
+      {
+        data: "10/09/1910",
+        titulo: "O Primeiro Jogo da História",
+        descricao: "Na Lapa, o Corinthians realiza sua primeira partida contra o temido União Lapa. Vestindo camisas beges e calções brancos, a equipe operária é derrotada com bravura por 1 a 0, conquistando o respeito da torcida rival pela garra demonstrada."
+      },
+      {
+        data: "14/09/1910",
+        titulo: "A Primeira Vitória e o Primeiro Gol",
+        descricao: "No Campo do Lenheiro, o Timão vence o Estrela Polar por 2 a 0. O atacante Luiz Fabbi marca o primeiro gol da história centenária do Sport Club Corinthians Paulista, seguido pelo gol de Jorge Amorim."
+      },
+      {
+        data: "1913",
+        titulo: "A Conquista da Vaga na Liga Paulista",
+        descricao: "Após arrasar nos torneios de várzea e superar a barreira preconceituosa das elites esportivas, o Corinthians vence o Minas Gerais e o São Paulo Railway, garantindo o direito de disputar o Campeonato Paulista da Primeira Divisão."
+      },
+      {
+        data: "1914",
+        titulo: "O Primeiro Título: Campeão Paulista Invicto",
+        descricao: "Apenas quatro anos após a reunião na calçada, o clube do povo alcança o topo do futebol paulista de maneira incontestável: 10 vitórias em 10 jogos, 37 gols marcados e apenas 9 sofridos. O Corinthians provava a todo o Brasil a força invencível dos trabalhadores!"
+      }
+    ]
+  },
+
+// 1. Dossiê de Fatos da Gestão e Diretoria (Erros e Acertos Históricos)
   fatosGestao: [
     {
       id: "democracia-corinthiana",

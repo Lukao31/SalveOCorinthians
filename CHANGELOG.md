@@ -13,6 +13,35 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.3.0] - 2026-10-28
+
+### 🏛️ Nova Seção Oficial: A Origem do Clube do Povo (A Fundação de 1910)
+
+Nesta versão, criamos a seção dedicada à história completa da fundação do Sport Club Corinthians Paulista (`#fundacao-origem`), resgatando as origens operárias e o propósito democrático do clube com rica contextualização histórica, galeria fotográfica autêntica com modal de alta resolução e linha do tempo dos primeiros passos:
+
+### ✨ Adicionado (Added)
+- **O Propósito Democrático e a Quebra do Elitismo:**
+  - Detalhamento aprofundado do propósito fundador: a quebra do monopólio aristocrático do futebol em São Paulo (que excluía a classe trabalhadora e negros) e a criação de uma agremiação verdadeiramente democrática, onde qualquer pessoa tem o direito de jogar, torcer e governar.
+  - Destaque monumental para a célebre proclamação do 1º presidente **Miguel Battaglia**: *"O Corinthians vai ser o time do povo e o povo é quem vai fazer o time"*.
+- **Ano de Criação, Local Sagrado e Como Surgiu:**
+  - **Data e Horário:** 1º de setembro de 1910, por volta das 20h30.
+  - **Local:** Bairro operário do Bom Retiro, na esquina da Rua dos Imigrantes (atual Rua José Paulino) com a Rua Cônego Martins, sob a luz de um lampião a gás da iluminação pública.
+  - **Os 5 Operários Fundadores:** Joaquim Ambrósio e Antônio Pereira (pintores de paredes), Rafael Perrone (sapateiro), Anselmo Corrêa (cocheiro) e Carlos Silva (trabalhador braçal), somados a Miguel Battaglia (alfaiate) e outros 8 companheiros pioneiros.
+  - **A Inspiração do Nome:** A turnê do *Corinthian Football Club* (de Londres) por São Paulo em 1910, com acréscimo de "Paulista" por sugestão de Joaquim Ambrósio.
+  - **A Epopeia do Início:** A vaquinha popular de 6 mil réis para a 1ª bola, o mutirão na foice e enxada no Campo do Lenheiro, as camisas beges e o primeiro jogo oficial (10/09/1910 contra o União Lapa).
+- **Galeria Fotográfica Histórica com Modal de Expansão (`#fundacao-modal`):**
+  - Integração de 4 registros históricos de fontes confiáveis (Acervo Histórico / Wikimedia Commons) expansíveis em tela cheia com legendas detalhadas e navegação:
+    1. *O Primeiro Esquadrão Corinthiano (1910)*
+    2. *A Inspiração Inglesa: Corinthian Football Club (1910)*
+    3. *O Primeiro Escudo Oficial Bordado à Mão ('C' e 'P' de 1910)*
+    4. *A Histórica Rua José Paulino no Bom Retiro (Marco Zero)*
+- **Linha do Tempo Cronológica (1910–1914):**
+  - Dos trilhos da ferrovia São Paulo Railway e a reunião sob o lampião até o título paulista invicto de 1914 (10 jogos, 10 vitórias, 37 gols marcados).
+- **Integração na Navegação e no Design System:**
+  - Novo item no menu principal da navbar (`Fundação`) com ScrollSpy automático e link direto no rodapé institucional.
+
+---
+
 ## [3.2.0] - 2026-10-28
 
 ### 🎵 Novo Layout do Player do Hino com Exibição Completa do Nome, Modos Expandido e Minimizado
