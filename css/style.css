@@ -4607,261 +4607,119 @@ input[type="range"]::-webkit-slider-thumb:hover {
   to { transform: rotate(360deg); }
 }
 
-/* Floating Player Widget */
+/* ==========================================================================
+   Player Flutuante do Hino do Corinthians (Simples, Compacto & Objetivo)
+   ========================================================================== */
 .hino-floating-player {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 1050;
-  max-width: 590px;
-  width: calc(100% - 48px);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  bottom: 20px;
+  right: 20px;
+  z-index: 1040;
+  max-width: 360px;
+  width: calc(100% - 40px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
-.hino-player-card {
+.hino-compact-card {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  background: rgba(12, 12, 14, 0.94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(14, 14, 18, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 18px;
-  padding: 0.85rem 1.15rem;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.06);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 16px;
+  padding: 0.65rem 0.95rem 0.85rem 0.85rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: all 0.25s ease;
 }
 
-/* Header Exclusivo do Modo Expandido */
-.hino-expanded-header {
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 0.85rem;
-  margin-bottom: 0.85rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
-}
-
-.hino-expanded-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #eab308;
-  background: rgba(234, 179, 8, 0.12);
-  border: 1px solid rgba(234, 179, 8, 0.3);
-  padding: 0.3rem 0.7rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.hino-expanded-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.hino-btn-letra-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 0.35rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.hino-btn-letra-action:hover,
-.hino-btn-letra-action.active {
-  background: #dc2626;
-  border-color: #dc2626;
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(220, 38, 38, 0.35);
-}
-
-.hino-btn-collapse-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: rgba(255, 255, 255, 0.06);
-  color: #a1a1aa;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 0.35rem 0.7rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.hino-btn-collapse-top:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* Linha Principal do Player */
-.hino-player-main-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.9rem;
-  width: 100%;
-}
-
-.hino-player-left {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  min-width: 0;
-  flex: 1.35;
-  cursor: pointer;
-  padding: 0.25rem 0.45rem;
-  border-radius: 12px;
-  transition: all 0.2s ease;
-}
-
-.hino-player-left:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.hino-player-left:focus-visible {
-  outline: 2px solid #dc2626;
-  outline-offset: 2px;
+.hino-compact-card:hover {
+  border-color: rgba(234, 179, 8, 0.4);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(234, 179, 8, 0.15);
 }
 
 .hino-vinyl-disc {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
   border-radius: 50%;
   background: radial-gradient(circle, #27272a 0%, #111111 60%, #09090b 100%);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.hino-vinyl-disc::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.15);
 }
 
 .hino-vinyl-logo {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
-  z-index: 2;
 }
 
-.hino-vinyl-disc.rotating {
+.hino-vinyl-disc.rotating,
+.hino-mini-disc.rotating {
   animation: spinSlow 3s linear infinite;
   border-color: #dc2626;
-  box-shadow: 0 0 16px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.5);
 }
 
-.hino-track-info {
+.hino-info-col {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  flex: 1;
 }
 
-.hino-track-title {
+.hino-track-name {
   font-family: var(--font-heading);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
   overflow: hidden;
-  transition: all 0.2s ease;
+  text-overflow: ellipsis;
+  line-height: 1.25;
 }
 
-.hino-track-subtitle {
-  font-size: 0.72rem;
+.hino-track-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
   color: #a1a1aa;
-  line-height: 1.3;
   margin-top: 2px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: all 0.2s ease;
 }
 
-.hino-hint-expand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.64rem;
-  color: #eab308;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-top: 2px;
-  opacity: 0.85;
-  transition: all 0.2s ease;
-}
-
-.hino-player-left:hover .hino-hint-expand {
-  opacity: 1;
-  color: #fde047;
-  transform: translateX(2px);
-}
-
-/* Center Controls */
-.hino-player-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  flex: 1.15;
-  min-width: 140px;
-}
-
-.hino-controls-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.hino-btn-icon {
-  background: transparent;
-  border: none;
+.hino-track-author {
   color: #a1a1aa;
-  font-size: 0.85rem;
-  cursor: pointer;
-  padding: 0.3rem;
-  border-radius: 50%;
-  display: inline-flex;
+}
+
+.hino-track-time {
+  font-family: monospace;
+  color: #eab308;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.hino-actions-col {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
+  gap: 0.4rem;
+  flex-shrink: 0;
 }
 
-.hino-btn-icon:hover {
-  color: #ffffff;
-  transform: scale(1.15);
-}
-
-.hino-btn-play {
-  width: 36px;
-  height: 36px;
+.hino-btn-circle-play {
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: #ffffff;
   color: #09090b;
@@ -4870,307 +4728,139 @@ input[type="range"]::-webkit-slider-thumb:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.25);
 }
 
-.hino-btn-play:hover {
+.hino-btn-circle-play:hover {
   background: #dc2626;
   color: #ffffff;
   transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.45);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
 }
 
-.is-playing .hino-btn-play {
+.is-playing .hino-btn-circle-play {
   background: #dc2626;
   color: #ffffff;
 }
 
-.hino-timeline-row {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  width: 100%;
-}
-
-.hino-time {
-  font-size: 0.68rem;
-  font-family: monospace;
-  color: #71717a;
-  min-width: 28px;
-  text-align: center;
-}
-
-.hino-progress-bar-wrap {
-  flex: 1;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 9999px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.hino-progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #dc2626, #eab308);
-  border-radius: 9999px;
-  transition: width 0.1s linear;
-}
-
-/* Right Controls */
-.hino-player-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.hino-volume-control {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.hino-volume-slider {
-  width: 55px;
-  height: 4px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 9999px;
-  outline: none;
-  cursor: pointer;
-}
-
-.hino-volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ffffff;
-  cursor: pointer;
-  transition: transform 0.15s ease;
-}
-
-.hino-volume-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.3);
-  background: #dc2626;
-}
-
-.hino-btn-expand-toggle {
-  color: #eab308;
-  font-size: 0.85rem;
-}
-
-.hino-btn-expand-toggle:hover {
-  color: #fde047;
-  background: rgba(234, 179, 8, 0.15);
-}
-
-.hino-btn-minimize {
+.hino-btn-subtle {
   background: transparent;
   border: none;
-  color: #71717a;
-  font-size: 0.85rem;
+  color: #a1a1aa;
+  font-size: 0.82rem;
   cursor: pointer;
   padding: 0.35rem;
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 0.18s ease;
 }
 
-.hino-btn-minimize:hover {
+.hino-btn-subtle:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* ==========================================================================
-   Modo Expandido (.expanded)
-   ========================================================================== */
-.hino-floating-player.expanded {
-  max-width: 660px;
-  width: calc(100% - 32px);
-  right: 16px;
-  bottom: 16px;
-  z-index: 1060;
+/* Barra Scrub no Rodapé do Card */
+.hino-scrub-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: height 0.15s ease;
 }
 
-.hino-floating-player.expanded .hino-player-card {
-  padding: 1.25rem 1.4rem;
-  background: rgba(10, 10, 13, 0.98);
-  border: 1px solid rgba(234, 179, 8, 0.4);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.92), 0 0 35px rgba(234, 179, 8, 0.15);
+.hino-scrub-bar:hover {
+  height: 6px;
 }
 
-.hino-floating-player.expanded .hino-expanded-header {
-  display: flex;
+.hino-scrub-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #dc2626 0%, #eab308 100%);
+  transition: width 0.1s linear;
 }
 
-.hino-floating-player.expanded .hino-track-title {
-  font-size: 1.05rem;
-  -webkit-line-clamp: unset;
-  display: block;
-}
-
-.hino-floating-player.expanded .hino-track-subtitle {
-  font-size: 0.8rem;
-  color: #e4e4e7;
-  white-space: normal;
-}
-
-.hino-floating-player.expanded .hino-vinyl-disc {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-}
-
-.hino-floating-player.expanded .hino-vinyl-logo {
-  width: 30px;
-  height: 30px;
-}
-
-/* Gaveta da Letra do Hino */
-.hino-expanded-lyrics {
+/* Modo Minimizado Discreto */
+.hino-mini-trigger {
   display: none;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  animation: fadeIn 0.3s ease;
-}
-
-.hino-expanded-lyrics.visible {
-  display: block;
-}
-
-.hino-lyrics-body {
-  max-height: 220px;
-  overflow-y: auto;
-  padding-right: 0.5rem;
-  text-align: center;
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: #d4d4d8;
-}
-
-.hino-lyrics-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.hino-lyrics-body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(14, 14, 18, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(234, 179, 8, 0.35);
   border-radius: 9999px;
-}
-
-.hino-lyrics-refrao {
-  font-weight: 700;
-  color: #fbbf24;
-  background: rgba(234, 179, 8, 0.08);
-  border: 1px solid rgba(234, 179, 8, 0.2);
-  border-radius: 10px;
-  padding: 0.75rem;
-  margin-bottom: 0.85rem;
-}
-
-.hino-lyrics-estrofe {
-  margin-bottom: 0.85rem;
-}
-
-.hino-lyrics-final {
-  font-weight: 700;
+  padding: 0.35rem 0.75rem 0.35rem 0.4rem;
   color: #ffffff;
-  margin-bottom: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 15px rgba(234, 179, 8, 0.2);
+  transition: all 0.22s ease;
 }
 
-.hino-lyrics-credits {
+.hino-mini-trigger:hover {
+  border-color: #eab308;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.9), 0 0 20px rgba(234, 179, 8, 0.35);
+}
+
+.hino-mini-disc {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #27272a 0%, #111111 60%, #09090b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
-  color: #a1a1aa;
-  margin-top: 0.85rem;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
-  padding-top: 0.65rem;
-  text-align: center;
 }
 
-/* ==========================================================================
-   Modo Minimizado / Reduzido (.minimized)
-   ========================================================================== */
+.hino-mini-logo {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.hino-mini-label {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fde047;
+}
+
+/* Quando minimizado */
 .hino-floating-player.minimized {
-  max-width: 220px;
+  max-width: fit-content;
   width: auto;
 }
 
-.hino-floating-player.minimized .hino-player-card {
-  padding: 0.5rem 0.85rem;
-  border-radius: 9999px;
-  background: rgba(12, 12, 14, 0.96);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.85);
+.hino-floating-player.minimized .hino-compact-card {
+  display: none;
 }
 
-.hino-floating-player.minimized .hino-player-main-row {
-  gap: 0.5rem;
+.hino-floating-player.minimized .hino-mini-trigger {
+  display: flex;
 }
 
-.hino-floating-player.minimized .hino-expanded-header,
-.hino-floating-player.minimized .hino-player-center,
-.hino-floating-player.minimized .hino-volume-control,
-.hino-floating-player.minimized .hino-btn-expand-toggle,
-.hino-floating-player.minimized .hino-hint-expand,
-.hino-floating-player.minimized .hino-track-subtitle,
-.hino-floating-player.minimized .hino-expanded-lyrics {
-  display: none !important;
-}
-
-.hino-floating-player.minimized .hino-vinyl-disc {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-}
-
-.hino-floating-player.minimized .hino-vinyl-logo {
-  width: 20px;
-  height: 20px;
-}
-
-.hino-floating-player.minimized .hino-track-title {
-  font-size: 0.78rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 95px;
-}
-
-/* Mobile responsive */
+/* Responsividade Mobile do Player */
 @media (max-width: 640px) {
-  .btn-hino-header .btn-hino-text {
-    display: none;
-  }
   .hino-floating-player {
-    bottom: 14px;
+    bottom: 12px;
     right: 12px;
     width: calc(100% - 24px);
-    max-width: none;
+    max-width: 340px;
   }
-  .hino-floating-player.expanded {
-    bottom: 8px;
-    right: 8px;
-    left: 8px;
-    width: calc(100% - 16px);
-  }
-  .hino-player-card {
-    padding: 0.65rem 0.85rem;
+  .hino-compact-card {
+    padding: 0.55rem 0.8rem 0.75rem 0.75rem;
     gap: 0.6rem;
-  }
-  .hino-volume-control {
-    display: none;
   }
 }
 
@@ -6222,5 +5912,171 @@ button.paulistao-ano-pill.is-highlight:hover {
 @media (max-width: 768px) {
   .footer-legal-notice {
     padding: 1.25rem 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   MASTER RESPONSIVIDADE & AJUSTES GERAIS DE LAYOUT (Mobile, Tablet & PC)
+   ========================================================================== */
+
+/* Prevenção Absoluta de Scroll Horizontal */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* Ajuste Geral de Containers em Telas Pequenas */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .section {
+    padding: 3.5rem 0;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .section-subtitle {
+    font-size: 0.88rem;
+  }
+}
+
+/* Breakpoint Aperfeiçoado do Menu Mobile (1180px para acomodar os 10 links) */
+@media (max-width: 1180px) {
+  .nav-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(8, 8, 8, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.75rem 1.5rem;
+    gap: 0.5rem;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid var(--border-medium);
+    display: none;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  .nav-menu.active {
+    display: flex;
+    animation: fadeIn 0.25s ease forwards;
+  }
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-sm);
+    justify-content: flex-start;
+  }
+  .mobile-toggle {
+    display: block !important;
+  }
+}
+
+/* Grids 100% Responsivos em Celulares */
+@media (max-width: 768px) {
+  .dossie-grid,
+  .pros-contras-grid,
+  .leis-grid,
+  .matches-grid,
+  .stats-tables-grid,
+  .invasoes-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .search-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .titulos-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .titulos-filters {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+/* Tabelas Estatísticas com Rolagem Suave */
+.stats-table-box {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  .stats-table-box {
+    padding: 1.25rem 0.85rem;
+  }
+  .custom-table th,
+  .custom-table td {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Modais Adaptáveis em Telas Pequenas */
+@media (max-width: 860px) {
+  .modal-overlay {
+    padding: 0.75rem;
+    align-items: center;
+  }
+  .modal-container,
+  .modal-content,
+  .modal-fundacao-content,
+  .modal-invasao-container {
+    width: 100% !important;
+    max-height: 92vh !important;
+    margin: 0 auto;
+    padding: 1.25rem !important;
+  }
+  .modal-close-btn {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Ajuste Fino dos Cards de Jogos em Celulares Estreitos */
+@media (max-width: 480px) {
+  .match-card {
+    padding: 1rem;
+  }
+  .match-team-name {
+    font-size: 0.82rem;
+  }
+  .match-team-logo {
+    width: 22px;
+    height: 22px;
+  }
+  .btn-hino-header .btn-hino-text {
+    display: none;
+  }
+  .btn-safiel-header {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.72rem;
   }
 }

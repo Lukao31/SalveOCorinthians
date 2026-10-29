@@ -20,7 +20,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Estilos Personalizados Alvinegros -->
-  <link rel="stylesheet" href="css/style.css?v=3.0.0">
+  <link rel="stylesheet" href="css/style.css?v=3.5.0">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo-salve-corinthians-emblem.svg">
 
   <!-- Chart.js CDN para gráficos financeiros -->
@@ -1752,120 +1752,59 @@
   </div>
 
   <!-- ==========================================================================
-       Player Flutuante do Hino Oficial do Corinthians
+       Player Flutuante do Hino Oficial do Corinthians (Simples e Objetivo)
        ========================================================================== -->
   <aside class="hino-floating-player" id="hino-player-container" aria-label="Player do Hino do Corinthians">
     <audio id="corinthians-anthem-audio" preload="metadata" src="assets/audio/hino-corinthians.mp3"></audio>
-    <div class="hino-player-card" id="hino-player-card">
 
-      <!-- Header exclusivo do modo expandido -->
-      <div class="hino-expanded-header" id="hino-expanded-header">
-        <div class="hino-expanded-badge">
-          <i class="fa-solid fa-certificate"></i>
-          <span>Hino Centenário Oficial</span>
-        </div>
-        <div class="hino-expanded-actions">
-          <button id="hino-btn-letra-toggle" class="hino-btn-letra-action" aria-label="Alternar exibição da letra" title="Ver ou ocultar letra completa do hino">
-            <i class="fa-solid fa-file-lines"></i>
-            <span id="hino-letra-btn-text">Ver Letra Completa</span>
-          </button>
-          <button id="hino-btn-collapse" class="hino-btn-collapse-top" aria-label="Recolher modo expandido" title="Recolher player">
-            <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
-            <span>Recolher</span>
-          </button>
+    <!-- Player Card Compacto Principal -->
+    <div class="hino-compact-card" id="hino-compact-card">
+      
+      <!-- Disco de Vinil com rotação suave ao tocar -->
+      <div class="hino-vinyl-disc" id="hino-vinyl" title="Hino do Corinthians">
+        <img src="assets/images/logo-salve-corinthians-emblem.svg?v=1.3.0" alt="Emblema Salve o Corinthians" class="hino-vinyl-logo">
+      </div>
+
+      <!-- Informações diretas da faixa -->
+      <div class="hino-info-col">
+        <span class="hino-track-name" title="Hino Oficial do Sport Club Corinthians Paulista">Hino do Corinthians</span>
+        <div class="hino-track-meta">
+          <span class="hino-track-author">Lauro D'Ávila (1953)</span>
+          <span class="hino-track-time" id="hino-time-display">0:00 / 0:00</span>
         </div>
       </div>
 
-      <!-- Linha Principal de Reprodução -->
-      <div class="hino-player-main-row">
-        <!-- Lado esquerdo: Vinil giratório + Título Completo sem cortes -->
-        <div class="hino-player-left" id="hino-trigger-expand" role="button" tabindex="0" aria-label="Expandir detalhes do Hino do Corinthians" title="Clique para expandir visualização completa">
-          <div class="hino-vinyl-disc" id="hino-vinyl">
-            <img src="assets/images/logo-salve-corinthians-emblem.svg?v=1.3.0" alt="Emblema Salve o Corinthians" class="hino-vinyl-logo">
-          </div>
-          <div class="hino-track-info">
-            <span class="hino-track-title" id="hino-track-title">Hino Oficial do Sport Club Corinthians Paulista</span>
-            <span class="hino-track-subtitle" id="hino-track-subtitle">Salve o Corinthians • Lauro D'Ávila (1953)</span>
-            <span class="hino-hint-expand" id="hino-hint-expand"><i class="fa-solid fa-expand"></i> Clique para expandir</span>
-          </div>
-        </div>
-
-        <!-- Centro: Controles de reprodução e timeline -->
-        <div class="hino-player-center">
-          <div class="hino-controls-row">
-            <button id="hino-btn-prev" class="hino-btn-icon" aria-label="Reiniciar Hino" title="Voltar ao início">
-              <i class="fa-solid fa-backward-step"></i>
-            </button>
-            <button id="hino-btn-play" class="hino-btn-play" aria-label="Reproduzir Hino do Corinthians" title="Tocar / Pausar">
-              <i class="fa-solid fa-play" id="hino-icon-play"></i>
-            </button>
-            <button id="hino-btn-stop" class="hino-btn-icon" aria-label="Parar Hino" title="Parar">
-              <i class="fa-solid fa-stop"></i>
-            </button>
-          </div>
-          <div class="hino-timeline-row">
-            <span id="hino-time-current" class="hino-time">0:00</span>
-            <div class="hino-progress-bar-wrap" id="hino-progress-wrap" role="slider" aria-label="Progresso do áudio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-              <div class="hino-progress-fill" id="hino-progress-fill"></div>
-            </div>
-            <span id="hino-time-duration" class="hino-time">0:00</span>
-          </div>
-        </div>
-
-        <!-- Lado direito: Volume + Botão Expandir + Botão Minimizar / Diminuir -->
-        <div class="hino-player-right">
-          <div class="hino-volume-control">
-            <button id="hino-btn-mute" class="hino-btn-icon" aria-label="Mutar áudio" title="Volume">
-              <i class="fa-solid fa-volume-high" id="hino-icon-volume"></i>
-            </button>
-            <input type="range" id="hino-volume-slider" class="hino-volume-slider" min="0" max="1" step="0.05" value="0.8" aria-label="Controle de volume">
-          </div>
-          <button id="hino-btn-expand" class="hino-btn-icon hino-btn-expand-toggle" aria-label="Expandir visualização do player" title="Expandir player">
-            <i class="fa-solid fa-up-right-and-down-left-from-center" id="hino-icon-expand"></i>
-          </button>
-          <button id="hino-btn-minimize" class="hino-btn-minimize" aria-label="Minimizar / Restaurar Player" title="Minimizar player">
-            <i class="fa-solid fa-minus" id="hino-icon-collapse"></i>
-          </button>
-        </div>
+      <!-- Ações Simples: Play/Pause, Mute e Minimizar -->
+      <div class="hino-actions-col">
+        <button id="hino-btn-play" class="hino-btn-circle-play" aria-label="Tocar ou pausar o Hino" title="Tocar / Pausar">
+          <i class="fa-solid fa-play" id="hino-icon-play"></i>
+        </button>
+        <button id="hino-btn-mute" class="hino-btn-subtle" aria-label="Mutar ou desmutar volume" title="Volume">
+          <i class="fa-solid fa-volume-high" id="hino-icon-volume"></i>
+        </button>
+        <button id="hino-btn-minimize" class="hino-btn-subtle" aria-label="Minimizar player" title="Minimizar player">
+          <i class="fa-solid fa-chevron-down" id="hino-icon-collapse"></i>
+        </button>
       </div>
 
-      <!-- Gaveta da Letra Completa (expandível) -->
-      <div class="hino-expanded-lyrics" id="hino-expanded-lyrics">
-        <div class="hino-lyrics-body">
-          <p class="hino-lyrics-refrao">
-            <strong>"Salve o Corinthians,</strong><br>
-            O campeão dos campeões,<br>
-            Eternamente dentro dos nossos corações!
-          </p>
-          <p class="hino-lyrics-estrofe">
-            Salve o Corinthians,<br>
-            De tradições e glórias mil,<br>
-            Tu és orgulho dos desportistas do Brasil!
-          </p>
-          <p class="hino-lyrics-estrofe">
-            Teu passado é uma bandeira,<br>
-            Teu presente é uma lição!<br>
-            Figuras entre os primeiros<br>
-            Do nosso esporte bretão!
-          </p>
-          <p class="hino-lyrics-final">
-            Corinthians grande,<br>
-            Sempre altaneiro,<br>
-            És do Brasil<br>
-            O clube mais brasileiro!"
-          </p>
-        </div>
-        <div class="hino-lyrics-credits">
-          <i class="fa-solid fa-pen-nib"></i>
-          <span>Letra e Música: <strong>Lauro D'Ávila (1953)</strong> • Hino oficial do Sport Club Corinthians Paulista</span>
-        </div>
+      <!-- Barra de Progresso Scrub Fina e Discreta no Rodapé -->
+      <div class="hino-scrub-bar" id="hino-progress-wrap" role="slider" aria-label="Progresso da música" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+        <div class="hino-scrub-fill" id="hino-progress-fill"></div>
       </div>
 
     </div>
+
+    <!-- Pílula Mini Discreta quando minimizado -->
+    <button class="hino-mini-trigger" id="hino-mini-restore" aria-label="Restaurar player do hino" title="Abrir player do hino">
+      <div class="hino-mini-disc" id="hino-mini-vinyl">
+        <img src="assets/images/logo-salve-corinthians-emblem.svg?v=1.3.0" alt="Emblema" class="hino-mini-logo">
+      </div>
+      <span class="hino-mini-label"><i class="fa-solid fa-music"></i> Hino</span>
+    </button>
   </aside>
 
   <!-- Scripts com Cache Busting -->
-  <script src="data/corinthians-data.js?v=3.3.0"></script>
-  <script src="js/app.js?v=3.3.0"></script>
+  <script src="data/corinthians-data.js?v=3.5.0"></script>
+  <script src="js/app.js?v=3.5.0"></script>
 </body>
 </html>

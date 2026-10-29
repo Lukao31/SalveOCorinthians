@@ -13,6 +13,29 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.5.0] - 2026-10-28
+
+### 📱 Responsividade Total Mobile/PC & Redesign Compacto do Player do Hino
+
+Nesta versão, realizamos uma auditoria minuciosa de layout em todas as resoluções (smartphones, tablets, notebooks e monitores ultrawide) e reformulamos completamente o player do Hino Oficial do Corinthians para um modelo simples, objetivo, compacto e discreto:
+
+### ✨ Modificado e Aprimorado (Changed & Enhanced)
+- **Novo Player Compacto do Hino Oficial (\#hino-compact-card\):**
+  - Substituição da estrutura anterior extensa (590px multi-colunas) por uma barra flutuante horizontal e elegante de apenas 56px de altura e max-width de 360px (desktop) / calc(100% - 24px) (mobile).
+  - Disco de vinil alvinegro com rotação suave ao tocar e glow sutil.
+  - Exibição limpa do título (*Hino do Corinthians*), autoria (*Lauro D'Ávila - 1953*) e contador dinâmico de reprodução (*0:00 / 0:00*).
+  - Controles táteis e intuitivos: botão circular alvinegro de Play/Pause, botão de mute/unmute com alternância de ícones, botão de minimizar para uma pílula ultracompacta (\#hino-mini-restore\) e barra scrub fina e discreta no rodapé do player.
+  - Integração perfeita com o botão de acionamento do Hino na navbar do cabeçalho.
+- **Auditoria de Layout & Responsividade Global:**
+  - **Eliminação de Rolagem Horizontal Indesejada:** Aplicação de guardrails globais (\overflow-x: hidden\ em \html, body\) e correção de todas as larguras fixas.
+  - **Menu Hamburger Otimizado:** Elevação do breakpoint do menu de navegação para 	80px\, acomodando com total folga os 10 links de navegação e os 2 botões de ação sem sobreposição em notebooks e tablets.
+  - **Auto-fechamento do Menu Mobile:** Fechamento suave e automático da gaveta de navegação ao clicar em qualquer link de âncora.
+  - **Adaptação de Grids CSS:** Fallback automático para coluna única (fr\) em telas inferiores a 768px nas seções de Fatos, Títulos, Estatísticas, Finanças e Fundação.
+  - **Tabelas com Rolagem Tátil:** Contêineres de tabelas estatísticas com \overflow-x: auto\ e scroll suave no iOS/Android.
+  - **Modais Adaptáveis (\860px\ e inferiores):** Ajuste dinâmico de largura (\width: 100%\), altura máxima (\92vh\) e centralização para modais de fatos, galeria da fundação de 1910 e invasão corinthiana.
+
+---
+
 ## [3.4.0] - 2026-10-28
 
 ### ⚖️ Aviso Legal, Direitos Autorais e Diretrizes de Cibersegurança na Hospedagem

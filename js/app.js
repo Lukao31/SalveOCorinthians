@@ -886,12 +886,22 @@ function setupEventListeners() {
     });
   });
 
-  // Mobile Menu Toggle
+  // Mobile Menu Toggle com Fechamento Automático ao Clicar
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
+    });
+
+    // Auto-fechar ao navegar em telas mobile/tablets
+    const navItems = navMenu.querySelectorAll('.nav-link, .btn-safiel-header, .btn-hino-header');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 1180) {
+          navMenu.classList.remove('active');
+        }
+      });
     });
   }
 
@@ -1813,36 +1823,23 @@ window.mudarFotoInvasao = mudarFotoInvasao;
 window.selecionarFotoInvasao = selecionarFotoInvasao;
 
 /* ==========================================================================
-   10. Player Oficial do Hino do Corinthians (com Modos Expandido e Minimizado)
+   10. Player Oficial do Hino do Corinthians (Simples, Compacto & Objetivo)
    ========================================================================== */
 function initHinoPlayer() {
   const audio = document.getElementById('corinthians-anthem-audio');
   const playerContainer = document.getElementById('hino-player-container');
+  const miniRestoreBtn = document.getElementById('hino-mini-restore');
   const navBtn = document.getElementById('btn-toggle-hino-nav');
   const playBtn = document.getElementById('hino-btn-play');
   const playIcon = document.getElementById('hino-icon-play');
-  const prevBtn = document.getElementById('hino-btn-prev');
-  const stopBtn = document.getElementById('hino-btn-stop');
   const muteBtn = document.getElementById('hino-btn-mute');
   const volumeIcon = document.getElementById('hino-icon-volume');
-  const volumeSlider = document.getElementById('hino-volume-slider');
+  const minimizeBtn = document.getElementById('hino-btn-minimize');
   const progressWrap = document.getElementById('hino-progress-wrap');
   const progressFill = document.getElementById('hino-progress-fill');
-  const timeCurrent = document.getElementById('hino-time-current');
-  const timeDuration = document.getElementById('hino-time-duration');
+  const timeDisplay = document.getElementById('hino-time-display');
   const vinyl = document.getElementById('hino-vinyl');
-
-  // Novos elementos de expansão e minimização
-  const triggerExpand = document.getElementById('hino-trigger-expand');
-  const expandBtn = document.getElementById('hino-btn-expand');
-  const expandIcon = document.getElementById('hino-icon-expand');
-  const collapseBtn = document.getElementById('hino-btn-collapse');
-  const minimizeBtn = document.getElementById('hino-btn-minimize');
-  const collapseIcon = document.getElementById('hino-icon-collapse');
-  const hintExpand = document.getElementById('hino-hint-expand');
-  const letraToggleBtn = document.getElementById('hino-btn-letra-toggle');
-  const letraBtnText = document.getElementById('hino-letra-btn-text');
-  const lyricsPanel = document.getElementById('hino-expanded-lyrics');
+  const miniVinyl = document.getElementById('hino-mini-vinyl');
 
   if (!audio || !playerContainer) return;
 
@@ -1853,17 +1850,26 @@ function initHinoPlayer() {
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
   }
 
+  function updateTimeDisplay() {
+    if (!timeDisplay) return;
+    const current = audio.currentTime || 0;
+    const duration = audio.duration || 0;
+    timeDisplay.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
+  }
+
   function setPlayingState(isPlaying) {
     if (isPlaying) {
       playerContainer.classList.add('is-playing');
       if (playIcon) playIcon.className = 'fa-solid fa-pause';
       if (navBtn) navBtn.classList.add('is-playing');
       if (vinyl) vinyl.classList.add('rotating');
+      if (miniVinyl) miniVinyl.classList.add('rotating');
     } else {
       playerContainer.classList.remove('is-playing');
       if (playIcon) playIcon.className = 'fa-solid fa-play';
       if (navBtn) navBtn.classList.remove('is-playing');
       if (vinyl) vinyl.classList.remove('rotating');
+      if (miniVinyl) miniVinyl.classList.remove('rotating');
     }
   }
 
@@ -1880,114 +1886,27 @@ function initHinoPlayer() {
     }
   }
 
-  // Funções de Gestão de Estados do Player: Expandido, Normal e Minimizado
-  function expandPlayer() {
-    playerContainer.classList.remove('minimized');
-    playerContainer.classList.add('expanded');
-    if (hintExpand) {
-      hintExpand.innerHTML = '<i class="fa-solid fa-compress"></i> Clique para recolher';
-    }
-    if (expandBtn) {
-      expandBtn.title = 'Recolher player';
-      if (expandIcon) expandIcon.className = 'fa-solid fa-down-left-and-up-right-to-center';
-    }
-    if (collapseIcon) {
-      collapseIcon.className = 'fa-solid fa-minus';
-    }
-    if (minimizeBtn) {
-      minimizeBtn.title = 'Minimizar player';
-    }
-  }
-
-  function collapsePlayer() {
-    playerContainer.classList.remove('expanded');
-    if (hintExpand) {
-      hintExpand.innerHTML = '<i class="fa-solid fa-expand"></i> Clique para expandir';
-    }
-    if (expandBtn) {
-      expandBtn.title = 'Expandir player';
-      if (expandIcon) expandIcon.className = 'fa-solid fa-up-right-and-down-left-from-center';
-    }
-  }
-
-  function toggleExpand() {
-    if (playerContainer.classList.contains('expanded')) {
-      collapsePlayer();
-    } else {
-      expandPlayer();
-    }
-  }
-
   function minimizePlayer() {
-    if (playerContainer.classList.contains('minimized')) {
-      // Restaurar player
-      playerContainer.classList.remove('minimized');
-      if (collapseIcon) collapseIcon.className = 'fa-solid fa-minus';
-      if (minimizeBtn) minimizeBtn.title = 'Minimizar player';
-    } else {
-      // Minimizar player
-      playerContainer.classList.remove('expanded');
-      playerContainer.classList.add('minimized');
-      if (collapseIcon) collapseIcon.className = 'fa-solid fa-chevron-up';
-      if (minimizeBtn) minimizeBtn.title = 'Restaurar player';
-    }
+    playerContainer.classList.add('minimized');
   }
 
-  function toggleLyrics() {
-    if (!lyricsPanel) return;
-    const isVisible = lyricsPanel.classList.toggle('visible');
-    if (letraToggleBtn) {
-      letraToggleBtn.classList.toggle('active', isVisible);
-    }
-    if (letraBtnText) {
-      letraBtnText.textContent = isVisible ? 'Ocultar Letra' : 'Ver Letra Completa';
-    }
+  function restorePlayer() {
+    playerContainer.classList.remove('minimized');
   }
 
-  // Toggle pelo botão da barra de navegação
+  // Alternar play/pause ou restaurar pelo botão da barra de navegação no header
   if (navBtn) {
     navBtn.addEventListener('click', () => {
-      // Se o player estiver minimizado, restaura para a visualização normal
       if (playerContainer.classList.contains('minimized')) {
-        playerContainer.classList.remove('minimized');
-        if (collapseIcon) collapseIcon.className = 'fa-solid fa-minus';
+        restorePlayer();
       }
       togglePlay();
     });
   }
 
-  // Cliques para Expandir / Recolher / Minimizar
-  if (triggerExpand) {
-    triggerExpand.addEventListener('click', (e) => {
-      // Se o player estiver minimizado, restaura primeiro
-      if (playerContainer.classList.contains('minimized')) {
-        playerContainer.classList.remove('minimized');
-        if (collapseIcon) collapseIcon.className = 'fa-solid fa-minus';
-        return;
-      }
-      toggleExpand();
-    });
-
-    triggerExpand.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleExpand();
-      }
-    });
-  }
-
-  if (expandBtn) {
-    expandBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleExpand();
-    });
-  }
-
-  if (collapseBtn) {
-    collapseBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      collapsePlayer();
-    });
+  // Controles do player compacto
+  if (playBtn) {
+    playBtn.addEventListener('click', togglePlay);
   }
 
   if (minimizeBtn) {
@@ -1997,44 +1916,28 @@ function initHinoPlayer() {
     });
   }
 
-  if (letraToggleBtn) {
-    letraToggleBtn.addEventListener('click', (e) => {
+  if (miniRestoreBtn) {
+    miniRestoreBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleLyrics();
+      restorePlayer();
     });
   }
 
-  // Fechar modo expandido com a tecla Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && playerContainer.classList.contains('expanded')) {
-      collapsePlayer();
-    }
-  });
-
-  // Controles do player
-  if (playBtn) playBtn.addEventListener('click', togglePlay);
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      audio.currentTime = 0;
+  // Mute / Unmute
+  if (muteBtn) {
+    muteBtn.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      if (volumeIcon) {
+        volumeIcon.className = audio.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
+      }
     });
   }
 
-  if (stopBtn) {
-    stopBtn.addEventListener('click', () => {
-      audio.pause();
-      audio.currentTime = 0;
-      setPlayingState(false);
-      if (progressFill) progressFill.style.width = '0%';
-      if (timeCurrent) timeCurrent.textContent = '0:00';
-    });
-  }
-
-  // Eventos de tempo do áudio
+  // Atualização da timeline e scrubbing
   audio.addEventListener('timeupdate', () => {
-    const current = audio.currentTime;
+    const current = audio.currentTime || 0;
     const duration = audio.duration || 0;
-    if (timeCurrent) timeCurrent.textContent = formatTime(current);
+    updateTimeDisplay();
     if (duration > 0 && progressFill) {
       const pct = (current / duration) * 100;
       progressFill.style.width = `${pct}%`;
@@ -2043,21 +1946,18 @@ function initHinoPlayer() {
   });
 
   audio.addEventListener('loadedmetadata', () => {
-    if (timeDuration && audio.duration) {
-      timeDuration.textContent = formatTime(audio.duration);
-    }
+    updateTimeDisplay();
   });
 
   audio.addEventListener('ended', () => {
     setPlayingState(false);
     audio.currentTime = 0;
     if (progressFill) progressFill.style.width = '0%';
-    if (timeCurrent) timeCurrent.textContent = '0:00';
+    updateTimeDisplay();
   });
 
-  // Barra de progresso interativa
   if (progressWrap) {
-    const handleSeek = (e) => {
+    progressWrap.addEventListener('click', (e) => {
       const rect = progressWrap.getBoundingClientRect();
       const clickX = e.clientX - rect.left;
       const width = rect.width;
@@ -2065,44 +1965,9 @@ function initHinoPlayer() {
         const targetPercent = Math.max(0, Math.min(1, clickX / width));
         audio.currentTime = targetPercent * audio.duration;
       }
-    };
-    progressWrap.addEventListener('click', handleSeek);
-  }
-
-  // Controle de volume
-  if (volumeSlider) {
-    audio.volume = parseFloat(volumeSlider.value);
-    volumeSlider.addEventListener('input', (e) => {
-      const val = parseFloat(e.target.value);
-      audio.volume = val;
-      audio.muted = (val === 0);
-      updateVolumeIcon(val);
-    });
-  }
-
-  function updateVolumeIcon(vol) {
-    if (!volumeIcon) return;
-    if (audio.muted || vol === 0) {
-      volumeIcon.className = 'fa-solid fa-volume-xmark';
-    } else if (vol < 0.5) {
-      volumeIcon.className = 'fa-solid fa-volume-low';
-    } else {
-      volumeIcon.className = 'fa-solid fa-volume-high';
-    }
-  }
-
-  if (muteBtn) {
-    muteBtn.addEventListener('click', () => {
-      audio.muted = !audio.muted;
-      if (volumeSlider) {
-        volumeSlider.value = audio.muted ? 0 : audio.volume;
-      }
-      updateVolumeIcon(audio.muted ? 0 : audio.volume);
     });
   }
 }
-
-
 
 /* ==========================================================================
    11. Modal Interativo da Galeria da Fundação de 1910
