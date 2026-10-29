@@ -2264,3 +2264,11 @@ const CORINTHIANS_DATA = {
     explicacao: "Cálculo baseado na taxa Selic + spread médio bancário sobre dívidas fiscais, cíveis e financiamento bancário do clube e da Arena."
   }
 };
+
+// Exportação universal para Browser e Node.js
+if (typeof window !== 'undefined') {
+  window.CORINTHIANS_DATA = CORINTHIANS_DATA;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = CORINTHIANS_DATA;
+}

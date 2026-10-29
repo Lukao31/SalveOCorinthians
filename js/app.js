@@ -1970,17 +1970,28 @@ function initHinoPlayer() {
 }
 
 /* ==========================================================================
-   11. Modal Interativo da Galeria da Fundação de 1910
+   11. Modal Interativo da Galeria da Fundação de 1910 (Memória Visual Expandida)
    ========================================================================== */
 let currentFundacaoIndex = 0;
 
+function getFundacaoFotos() {
+  const data = (typeof CORINTHIANS_DATA !== 'undefined' ? CORINTHIANS_DATA : (window.CORINTHIANS_DATA || {}));
+  return data?.fundacao?.fotosHistoricas || [];
+}
+
 function abrirModalFundacao(index) {
   const modal = document.getElementById('fundacao-modal');
-  if (!modal || !window.CORINTHIANS_DATA || !CORINTHIANS_DATA.fundacao || !CORINTHIANS_DATA.fundacao.fotosHistoricas) return;
-  const fotos = CORINTHIANS_DATA.fundacao.fotosHistoricas;
-  if (index < 0 || index >= fotos.length) index = 0;
-  currentFundacaoIndex = index;
-  renderFundacaoModalFoto(fotos[currentFundacaoIndex]);
+  const fotos = getFundacaoFotos();
+
+  if (!modal || !fotos.length) {
+    console.warn('Modal de fundação ou fotos não encontradas.');
+    return;
+  }
+
+  const idx = parseInt(index, 10);
+  currentFundacaoIndex = isNaN(idx) || idx < 0 || idx >= fotos.length ? 0 : idx;
+
+  renderFundacaoModalFoto(fotos[currentFundacaoIndex], currentFundacaoIndex, fotos.length);
   modal.classList.add('active');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -1994,31 +2005,49 @@ function fecharModalFundacao() {
   document.body.style.overflow = '';
 }
 
-function renderFundacaoModalFoto(fotoObj) {
+function renderFundacaoModalFoto(fotoObj, index, total) {
   if (!fotoObj) return;
   const imgEl = document.getElementById('modal-fundacao-foto');
   const tituloEl = document.getElementById('modal-fundacao-titulo');
   const catEl = document.getElementById('modal-fundacao-categoria');
-  const legendaEl = document.getElementById('modal-fundacao-legenda');
   const fonteEl = document.getElementById('modal-fundacao-fonte');
   const detalheEl = document.getElementById('modal-fundacao-detalhe');
+  const contadorEl = document.getElementById('modal-fundacao-contador');
+  const navIndicatorEl = document.getElementById('modal-fundacao-nav-indicator');
 
   if (imgEl) {
     imgEl.src = fotoObj.foto;
     imgEl.alt = fotoObj.titulo;
   }
-  if (tituloEl) tituloEl.textContent = fotoObj.titulo;
-  if (catEl) catEl.textContent = fotoObj.categoria || 'Origem 1910';
-  if (legendaEl) legendaEl.textContent = fotoObj.titulo;
-  if (fonteEl) fonteEl.innerHTML = `<i class="fa-solid fa-camera"></i> Fonte: ${fotoObj.fonte || 'Acervo Histórico'}`;
-  if (detalheEl) detalheEl.textContent = fotoObj.legenda || '';
+  if (tituloEl) {
+    tituloEl.textContent = fotoObj.titulo;
+  }
+  if (catEl) {
+    catEl.innerHTML = `<i class="fa-solid fa-landmark"></i> ${fotoObj.categoria || 'Origem 1910'}`;
+  }
+  if (fonteEl) {
+    fonteEl.innerHTML = `<i class="fa-solid fa-building-columns"></i> Fonte: ${fotoObj.fonte || 'Acervo Histórico'}`;
+  }
+  if (detalheEl) {
+    detalheEl.textContent = fotoObj.legenda || '';
+  }
+
+  const totalNum = total || getFundacaoFotos().length || 4;
+  const currentNum = (typeof index === 'number' ? index + 1 : currentFundacaoIndex + 1);
+
+  if (contadorEl) {
+    contadorEl.innerHTML = `<i class="fa-solid fa-camera"></i> Foto ${currentNum} de ${totalNum}`;
+  }
+  if (navIndicatorEl) {
+    navIndicatorEl.textContent = `${currentNum} / ${totalNum}`;
+  }
 }
 
 function navegarFundacaoModal(direcao) {
-  const fotos = CORINTHIANS_DATA.fundacao?.fotosHistoricas || [];
+  const fotos = getFundacaoFotos();
   if (!fotos.length) return;
   currentFundacaoIndex = (currentFundacaoIndex + direcao + fotos.length) % fotos.length;
-  renderFundacaoModalFoto(fotos[currentFundacaoIndex]);
+  renderFundacaoModalFoto(fotos[currentFundacaoIndex], currentFundacaoIndex, fotos.length);
 }
 
 function initFundacaoModal() {
@@ -2028,6 +2057,22 @@ function initFundacaoModal() {
   const closeBtn = document.getElementById('modal-fundacao-close-btn');
   const prevBtn = document.getElementById('modal-fundacao-btn-prev');
   const nextBtn = document.getElementById('modal-fundacao-btn-next');
+
+  // Adicionar ouvintes para todos os cards e fotos da galeria de fundação
+  const photoCards = document.querySelectorAll('.fundacao-photo-card');
+  photoCards.forEach((card, idx) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      abrirModalFundacao(idx);
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        abrirModalFundacao(idx);
+      }
+    });
+  });
 
   if (closeBtn) {
     closeBtn.addEventListener('click', fecharModalFundacao);
@@ -2059,7 +2104,7 @@ function initFundacaoModal() {
   });
 }
 
-// Expor funções globalmente para chamadas via onclick
+// Expor funções globalmente para chamadas via onclick ou console
 window.abrirModalFundacao = abrirModalFundacao;
 window.fecharModalFundacao = fecharModalFundacao;
 window.navegarFundacaoModal = navegarFundacaoModal;

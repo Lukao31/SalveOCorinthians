@@ -13,6 +13,23 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.5.1] - 2026-10-28
+
+### 🖼️ Expansão Fotográfica e Legenda Histórica da Memória Visual da Fundação (1910)
+
+Nesta versão, aprimoramos a experiência interativa da seção **Memória Visual da Fundação (1910)**, permitindo que o usuário clique em qualquer foto para abrir um modal dedicado em alta resolução, com foco total na imagem e no aprofundamento de sua legenda histórica:
+
+### ✨ Aprimorado e Adicionado (Enhanced & Added)
+- **Modal de Memória Visual da Fundação (\#fundacao-modal\):**
+  - Layout elegante de 2 colunas no desktop e adaptável no mobile com enquadramento radial e alta nitidez para os registros centenários de 1910.
+  - **Card Destaque de Legenda Histórica (\.modal-fundacao-legenda-card\):** Texto contextualizado com as histórias reais do 1º Esquadrão, da delegação do Corinthian FC de Londres, do bordado do monograma 'CP' e da esquina sagrada da Rua dos Imigrantes.
+  - **Navegação Contínua e Acessível:** Navegação pelas 4 fotos históricas através dos botões *Anterior* e *Próxima*, setas do teclado (\←\ e \→\), clique fora ou tecla \Esc\ para fechar.
+  - **Indicadores de Navegação:** Badges de contagem dinâmica (\Foto X de 4\ e indicador numérico \X / 4\).
+  - **Feedback Visual nos Cards da Página:** Inclusão de botão/tag \Expandir\ e zoom hover nos 4 cartões da galeria na página principal, com ativação tanto por clique quanto por teclado (\Enter\ / \Espaço\).
+  - **Garantia de Exportação Global:** Vinculação explícita de \window.CORINTHIANS_DATA\ e fallback em runtime para evitar qualquer falha de carregamento assíncrono.
+
+---
+
 ## [3.5.0] - 2026-10-28
 
 ### 📱 Responsividade Total Mobile/PC & Redesign Compacto do Player do Hino

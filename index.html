@@ -20,7 +20,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Estilos Personalizados Alvinegros -->
-  <link rel="stylesheet" href="css/style.css?v=3.5.0">
+  <link rel="stylesheet" href="css/style.css?v=3.5.1">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo-salve-corinthians-emblem.svg">
 
   <!-- Chart.js CDN para gráficos financeiros -->
@@ -720,58 +720,70 @@
           <div class="fundacao-photos-grid">
             
             <!-- Foto 1: Primeiro Esquadrão (1910) -->
-            <div class="fundacao-photo-card" onclick="abrirModalFundacao(0)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(0);}" aria-label="Primeiro Esquadrão Corinthiano de 1910 - Clique para expandir">
+            <div class="fundacao-photo-card" data-index="0" onclick="abrirModalFundacao(0)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(0);}" aria-label="Primeiro Esquadrão Corinthiano de 1910 - Clique para expandir imagem e legenda">
               <div class="fundacao-photo-img-wrap">
-                <img src="assets/images/fundacao/corinthians_1910_primeiro_time.jpg?v=3.3.0" alt="Primeiro time do Corinthians em 1910" class="fundacao-photo-img" loading="lazy">
+                <img src="assets/images/fundacao/corinthians_1910_primeiro_time.jpg?v=3.5.0" alt="Primeiro time do Corinthians em 1910" class="fundacao-photo-img" loading="lazy">
                 <span class="fundacao-photo-badge"><i class="fa-solid fa-users"></i> Esquadrão 1910</span>
-                <span class="fundacao-photo-zoom-icon"><i class="fa-solid fa-maximize"></i></span>
+                <span class="fundacao-photo-zoom-icon" title="Clique para expandir imagem e legenda"><i class="fa-solid fa-maximize"></i></span>
               </div>
               <div class="fundacao-photo-info">
                 <h4 class="fundacao-photo-card-title">O Primeiro Esquadrão da História</h4>
                 <p class="fundacao-photo-card-desc">Os pioneiros que entraram em campo em 1910 com camisa bege e calção branco na várzea de São Paulo.</p>
-                <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Histórico / Wikimedia</span>
+                <div class="fundacao-photo-footer">
+                  <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Histórico / Wikimedia</span>
+                  <span class="fundacao-photo-click-cta"><i class="fa-solid fa-expand"></i> Expandir</span>
+                </div>
               </div>
             </div>
 
             <!-- Foto 2: Corinthian FC da Inglaterra (1910) -->
-            <div class="fundacao-photo-card" onclick="abrirModalFundacao(1)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(1);}" aria-label="Corinthian FC de Londres na excursão ao Brasil em 1910 - Clique para expandir">
+            <div class="fundacao-photo-card" data-index="1" onclick="abrirModalFundacao(1)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(1);}" aria-label="Corinthian FC de Londres na excursão ao Brasil em 1910 - Clique para expandir imagem e legenda">
               <div class="fundacao-photo-img-wrap">
-                <img src="assets/images/fundacao/corinthian_casuals_1910.jpg?v=3.3.0" alt="Corinthian Football Club da Inglaterra em 1910" class="fundacao-photo-img" loading="lazy">
+                <img src="assets/images/fundacao/corinthian_casuals_1910.jpg?v=3.5.0" alt="Corinthian Football Club da Inglaterra em 1910" class="fundacao-photo-img" loading="lazy">
                 <span class="fundacao-photo-badge"><i class="fa-solid fa-compass"></i> A Inspiração</span>
-                <span class="fundacao-photo-zoom-icon"><i class="fa-solid fa-maximize"></i></span>
+                <span class="fundacao-photo-zoom-icon" title="Clique para expandir imagem e legenda"><i class="fa-solid fa-maximize"></i></span>
               </div>
               <div class="fundacao-photo-info">
                 <h4 class="fundacao-photo-card-title">Corinthian FC de Londres (1910)</h4>
                 <p class="fundacao-photo-card-desc">A delegação inglesa que encantou os operários do Bom Retiro e inspirou o batismo do clube.</p>
-                <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Histórico / Wikimedia</span>
+                <div class="fundacao-photo-footer">
+                  <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Histórico / Wikimedia</span>
+                  <span class="fundacao-photo-click-cta"><i class="fa-solid fa-expand"></i> Expandir</span>
+                </div>
               </div>
             </div>
 
             <!-- Foto 3: Primeiro Escudo Oficial (1910) -->
-            <div class="fundacao-photo-card" onclick="abrirModalFundacao(2)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(2);}" aria-label="Primeiro escudo oficial do Corinthians em 1910 - Clique para expandir">
+            <div class="fundacao-photo-card" data-index="2" onclick="abrirModalFundacao(2)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(2);}" aria-label="Primeiro escudo oficial do Corinthians em 1910 - Clique para expandir imagem e legenda">
               <div class="fundacao-photo-img-wrap fundacao-photo-emblem-wrap">
-                <img src="assets/images/fundacao/primeiro_escudo_1910.png?v=3.3.0" alt="Primeiro escudo do Corinthians 1910 com C e P" class="fundacao-photo-img contain-emblem" loading="lazy">
+                <img src="assets/images/fundacao/primeiro_escudo_1910.png?v=3.5.0" alt="Primeiro escudo do Corinthians 1910 com C e P" class="fundacao-photo-img contain-emblem" loading="lazy">
                 <span class="fundacao-photo-badge"><i class="fa-solid fa-shield-halved"></i> 1º Escudo (1910)</span>
-                <span class="fundacao-photo-zoom-icon"><i class="fa-solid fa-maximize"></i></span>
+                <span class="fundacao-photo-zoom-icon" title="Clique para expandir imagem e legenda"><i class="fa-solid fa-maximize"></i></span>
               </div>
               <div class="fundacao-photo-info">
                 <h4 class="fundacao-photo-card-title">O Primeiro Distintivo ('C' e 'P')</h4>
                 <p class="fundacao-photo-card-desc">Monograma artesanal com as letras entrelaçadas, bordado à mão nas primeiras camisas beges.</p>
-                <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Histórico SCCP</span>
+                <div class="fundacao-photo-footer">
+                  <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Histórico SCCP</span>
+                  <span class="fundacao-photo-click-cta"><i class="fa-solid fa-expand"></i> Expandir</span>
+                </div>
               </div>
             </div>
 
             <!-- Foto 4: Rua José Paulino no Bom Retiro -->
-            <div class="fundacao-photo-card" onclick="abrirModalFundacao(3)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(3);}" aria-label="Rua José Paulino no Bom Retiro, berço do Corinthians - Clique para expandir">
+            <div class="fundacao-photo-card" data-index="3" onclick="abrirModalFundacao(3)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirModalFundacao(3);}" aria-label="Rua José Paulino no Bom Retiro, berço do Corinthians - Clique para expandir imagem e legenda">
               <div class="fundacao-photo-img-wrap">
-                <img src="assets/images/fundacao/rua_jose_paulino_bom_retiro.jpg?v=3.3.0" alt="Rua José Paulino no Bom Retiro" class="fundacao-photo-img" loading="lazy">
+                <img src="assets/images/fundacao/rua_jose_paulino_bom_retiro.jpg?v=3.5.0" alt="Rua José Paulino no Bom Retiro" class="fundacao-photo-img" loading="lazy">
                 <span class="fundacao-photo-badge"><i class="fa-solid fa-location-dot"></i> Marco Zero</span>
-                <span class="fundacao-photo-zoom-icon"><i class="fa-solid fa-maximize"></i></span>
+                <span class="fundacao-photo-zoom-icon" title="Clique para expandir imagem e legenda"><i class="fa-solid fa-maximize"></i></span>
               </div>
               <div class="fundacao-photo-info">
                 <h4 class="fundacao-photo-card-title">Rua José Paulino • O Berço</h4>
                 <p class="fundacao-photo-card-desc">Antiga Rua dos Imigrantes, onde sob a luz do lampião da esquina nasceu a paixão alvinegra.</p>
-                <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Público de SP</span>
+                <div class="fundacao-photo-footer">
+                  <span class="fundacao-photo-source"><i class="fa-solid fa-camera"></i> Acervo Público de SP</span>
+                  <span class="fundacao-photo-click-cta"><i class="fa-solid fa-expand"></i> Expandir</span>
+                </div>
               </div>
             </div>
 
@@ -1717,35 +1729,62 @@
   </div>
 
   <!-- ==========================================================================
-       Modal de Fotografia Histórica da Fundação de 1910
+       Modal de Fotografia Histórica da Fundação de 1910 (Memória Visual Expandida)
        ========================================================================== -->
   <div class="modal-overlay" id="fundacao-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-content modal-fundacao-content">
-      <button class="modal-close-btn" id="modal-fundacao-close-btn" aria-label="Fechar foto histórica da fundação">
+    <div class="modal-content modal-fundacao-container">
+      <button class="modal-close-btn" id="modal-fundacao-close-btn" aria-label="Fechar foto histórica da fundação" title="Fechar (Esc)">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
-      <div class="modal-photo-wrapper">
-        <img id="modal-fundacao-foto" src="" alt="Registro Histórico da Fundação de 1910" class="modal-fundacao-img">
-        <div class="modal-photo-caption" id="modal-fundacao-legenda">Legenda da Imagem</div>
-        <div class="modal-photo-source" id="modal-fundacao-fonte"><i class="fa-solid fa-camera"></i> Fonte: Acervo Histórico</div>
-      </div>
-
-      <div class="modal-fundacao-info">
-        <div class="modal-badges-row">
-          <span class="badge badge-misto" id="modal-fundacao-categoria">Origem 1910</span>
-          <span class="modal-periodo">1910</span>
+      <div class="modal-fundacao-grid">
+        <!-- Coluna Visual da Foto Expandida -->
+        <div class="modal-fundacao-photo-col">
+          <div class="modal-fundacao-img-wrapper" id="modal-fundacao-img-wrapper">
+            <img id="modal-fundacao-foto" src="" alt="Registro Histórico da Fundação de 1910" class="modal-fundacao-img">
+            <span class="modal-fundacao-counter-badge" id="modal-fundacao-contador">
+              <i class="fa-solid fa-camera"></i> Foto 1 de 4
+            </span>
+          </div>
+          <div class="modal-fundacao-fonte-bar" id="modal-fundacao-fonte">
+            <i class="fa-solid fa-building-columns"></i> Fonte: Acervo Histórico / Wikimedia Commons
+          </div>
         </div>
-        <h3 class="modal-idolo-nome" id="modal-fundacao-titulo">Título do Momento</h3>
-        <p id="modal-fundacao-detalhe" style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.7; margin-top: 0.85rem;"></p>
-        
-        <div class="modal-titulo-nav-buttons" style="margin-top: 1.5rem;">
-          <button class="btn-modal-titulo-nav" id="modal-fundacao-btn-prev" type="button" aria-label="Foto anterior">
-            <i class="fa-solid fa-chevron-left"></i> Anterior
-          </button>
-          <button class="btn-modal-titulo-nav" id="modal-fundacao-btn-next" type="button" aria-label="Próxima foto">
-            Próxima <i class="fa-solid fa-chevron-right"></i>
-          </button>
+
+        <!-- Coluna de Informações, Título e Legenda Detalhada -->
+        <div class="modal-fundacao-info-col">
+          <div class="modal-badges-row">
+            <span class="badge badge-misto" id="modal-fundacao-categoria">
+              <i class="fa-solid fa-landmark"></i> Origem 1910
+            </span>
+            <span class="modal-periodo">
+              <i class="fa-solid fa-calendar-day"></i> Setembro de 1910
+            </span>
+          </div>
+
+          <h3 class="modal-fundacao-titulo" id="modal-fundacao-titulo">Título da Fotografia Histórica</h3>
+
+          <!-- Card de Destaque da Legenda Histórica Expandida -->
+          <div class="modal-fundacao-legenda-card">
+            <div class="modal-fundacao-legenda-header">
+              <i class="fa-solid fa-quote-left"></i>
+              <span>Memória & Contexto Histórico</span>
+            </div>
+            <p class="modal-fundacao-legenda-body" id="modal-fundacao-detalhe">
+              Descrição completa da fotografia histórica com todos os detalhes fidedignos.
+            </p>
+          </div>
+
+          <!-- Barra de Navegação Entre as Fotos da Fundação -->
+          <div class="modal-fundacao-nav-bar">
+            <button class="btn-modal-titulo-nav" id="modal-fundacao-btn-prev" type="button" aria-label="Foto anterior" title="Foto anterior (Seta para a esquerda)">
+              <i class="fa-solid fa-chevron-left"></i> Anterior
+            </button>
+            <span class="modal-fundacao-nav-indicator" id="modal-fundacao-nav-indicator">1 / 4</span>
+            <button class="btn-modal-titulo-nav" id="modal-fundacao-btn-next" type="button" aria-label="Próxima foto" title="Próxima foto (Seta para a direita)">
+              Próxima <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1804,7 +1843,7 @@
   </aside>
 
   <!-- Scripts com Cache Busting -->
-  <script src="data/corinthians-data.js?v=3.5.0"></script>
-  <script src="js/app.js?v=3.5.0"></script>
+  <script src="data/corinthians-data.js?v=3.5.1"></script>
+  <script src="js/app.js?v=3.5.1"></script>
 </body>
 </html>
