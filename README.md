@@ -3,7 +3,7 @@
 > **Portal independente dedicado à história imortal do Sport Club Corinthians Paulista, apuração de fatos da diretoria (1910 a 2026), debate técnico sobre intervenção judicial, transparência financeira, feed de jogos e o projeto SAFIEL.**
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-black.svg?style=for-the-badge)](LICENSE)
-[![Versão](https://img.shields.io/badge/Vers%C3%A3o-3.3.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
+[![Versão](https://img.shields.io/badge/Vers%C3%A3o-3.4.0-gold.svg?style=for-the-badge)](CHANGELOG.md)
 [![Status](https://img.shields.io/badge/Status-Ativo%20%26%20Em%20Evolu%C3%A7%C3%A3o-success.svg?style=for-the-badge)](#)
 
 ---
@@ -188,6 +188,17 @@ As informações financeiras e históricas são compiladas a partir de documento
 - Auditorias independentes (Ernst & Young, Falconi e relatórios do CORI).
 - Coberturas investigativas de veículos esportivos (ge.globo, UOL Esporte, Gazeta Esportiva, Meu Timão).
 - Acervo histórico oficial do clube e Memória do Futebol Brasileiro.
+
+---
+
+## ⚖️ Aviso Legal, Propósito Cultural e Direitos Autorais (Fair Use)
+
+Este portal foi concebido e estruturado de maneira **estritamente informativa, cultural, histórica e factual**, com objetivo memorialista, educativo e cívico, **sem fins comerciais ou auferimento de lucros**:
+
+1. **Finalidade Educativa, Memorialista e Histórica:** O portal tem como missão preservar a memória e a história centenária do Sport Club Corinthians Paulista, registrar os feitos desportivos, promover a transparência orçamentária e engajar os torcedores na auditoria cidadã.
+2. **Propriedade Intelectual e Uso Nominativo:** Todas as marcas registradas, nomes, escudos e símbolos pertencem exclusivamente ao *Sport Club Corinthians Paulista* e a seus legítimos titulares. Seu uso neste site é puramente nominativo e identificativo, amparado pelo **Artigo 132 da Lei Federal nº 9.279/1996 (Lei da Propriedade Industrial)**.
+3. **Respaldo na Lei de Direitos Autorais (Lei nº 9.610/1998):** As fotografias históricas, citações literárias, matérias de época e dados públicos são utilizados em conformidade com as limitações aos direitos autorais do **Artigo 46, incisos III, IV e VIII da Lei Federal nº 9.610/1998** (reprodução para fins de estudo, crítica, citação jornalística e registro de acontecimentos históricos, sem cunho comercial e sem prejuízo à exploração normal das obras).
+4. **Política de Atendimento e Retirada:** Todos os materiais de fontes documentais confiáveis possuem indicação de autoria e acervo. Caso qualquer detentor de direitos requeira atualização de crédito ou descontinuidade de exibição, a solicitação será prontamente atendida.
 
 ---
 

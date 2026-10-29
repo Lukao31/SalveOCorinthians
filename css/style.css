@@ -6169,3 +6169,58 @@ button.paulistao-ano-pill.is-highlight:hover {
     padding: 1.5rem 1.25rem;
   }
 }
+
+/* ==========================================================================
+   Aviso Legal e Direitos Autorais no Rodapé
+   ========================================================================== */
+.footer-legal-notice {
+  margin-top: 2.2rem;
+  padding: 1.6rem 2rem;
+  background: rgba(14, 14, 18, 0.7);
+  border: 1px solid rgba(234, 179, 8, 0.25);
+  border-left: 4px solid #eab308;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.legal-notice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-notice-header i {
+  color: #fde047;
+  font-size: 1.15rem;
+}
+
+.legal-notice-header h5 {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.legal-notice-text {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #d4d4d8;
+  margin: 0 0 0.65rem 0;
+}
+
+.legal-notice-subtext {
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-legal-notice {
+    padding: 1.25rem 1.25rem;
+  }
+}

@@ -13,6 +13,23 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.4.0] - 2026-10-28
+
+### ⚖️ Aviso Legal, Direitos Autorais e Diretrizes de Cibersegurança na Hospedagem
+
+Nesta versão, adicionamos um bloco formal e visualmente destacado de **Aviso Legal, Propósito Cultural e Direitos Autorais** no rodapé do portal (`#footer-legal-notice`) e na documentação, garantindo total amparo legislativo (Lei nº 9.610/1998 e Lei nº 9.279/1996) para o caráter estritamente informativo, cultural, histórico e factual do projeto:
+
+### ✨ Adicionado (Added)
+- **Aviso Legal de Direitos Autorais e Propósito Cultural (Fair Use):**
+  - Declaração explícita no rodapé (`index.html`) e no `README.md` afirmando a natureza estritamente informativa, memorialista, cultural e factual, sem fins comerciais ou lucrativos.
+  - Respaldo formal no **Art. 46, incisos III, IV e VIII da Lei Federal nº 9.610/1998** (isenção de direitos autorais para estudo, crítica, citação e registro histórico sem intuito de lucro).
+  - Reconhecimento da titularidade das marcas e símbolos ao *Sport Club Corinthians Paulista*, com uso puramente nominativo e referencial sob o **Art. 132 da Lei nº 9.279/1996 (LPI)**.
+  - Canal transparente de contato para atualização prioritária de créditos ou atendimento a solicitações de titulares.
+- **Guia de Cibersegurança e Hardening para Hospedagem:**
+  - Elaboração das diretrizes técnicas e operacionais para publicação segura do portal na Hostinger, cobrindo SSL/HTTPS, cabeçalhos HTTP de segurança (`.htaccess`), estratégia 3-2-1 de backups e proteção contra ataques.
+
+---
+
 ## [3.3.0] - 2026-10-28
 
 ### 🏛️ Nova Seção Oficial: A Origem do Clube do Povo (A Fundação de 1910)
