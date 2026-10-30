@@ -20,7 +20,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Estilos Personalizados Alvinegros -->
-  <link rel="stylesheet" href="css/style.css?v=3.6.1">
+  <link rel="stylesheet" href="css/style.css?v=3.6.2">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo-salve-corinthians-emblem.svg">
 
   <!-- Chart.js CDN para gráficos financeiros -->
@@ -1838,14 +1838,32 @@
         </div>
       </div>
 
-      <!-- Ações Simples: Play/Pause, Mute e Minimizar -->
+      <!-- Ações: Play/Pause, Controlador de Volume Completo e Minimizar -->
       <div class="hino-actions-col">
         <button id="hino-btn-play" class="hino-btn-circle-play" aria-label="Tocar ou pausar o Hino" title="Tocar / Pausar">
           <i class="fa-solid fa-play" id="hino-icon-play"></i>
         </button>
-        <button id="hino-btn-mute" class="hino-btn-subtle" aria-label="Mutar ou desmutar volume" title="Volume">
-          <i class="fa-solid fa-volume-high" id="hino-icon-volume"></i>
-        </button>
+
+        <!-- Controlador de Volume: Botão Mute + Slider Interativo -->
+        <div class="hino-volume-control" id="hino-volume-control" title="Volume: 100%">
+          <button id="hino-btn-mute" class="hino-btn-subtle hino-btn-vol" aria-label="Mutar ou desmutar volume" title="Mutar / Desmutar áudio">
+            <i class="fa-solid fa-volume-high" id="hino-icon-volume"></i>
+          </button>
+          <div class="hino-volume-slider-box">
+            <input 
+              type="range" 
+              id="hino-volume-slider" 
+              class="hino-volume-range" 
+              min="0" 
+              max="100" 
+              value="100" 
+              step="1" 
+              aria-label="Ajustar volume do hino" 
+              title="Ajustar volume (100%)"
+            >
+          </div>
+        </div>
+
         <button id="hino-btn-minimize" class="hino-btn-subtle" aria-label="Minimizar player" title="Minimizar player">
           <i class="fa-solid fa-chevron-down" id="hino-icon-collapse"></i>
         </button>
@@ -1868,7 +1886,7 @@
   </aside>
 
   <!-- Scripts com Cache Busting -->
-  <script src="data/corinthians-data.js?v=3.6.1"></script>
-  <script src="js/app.js?v=3.6.1"></script>
+  <script src="data/corinthians-data.js?v=3.6.2"></script>
+  <script src="js/app.js?v=3.6.2"></script>
 </body>
 </html>

@@ -13,6 +13,23 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.6.2] - 2026-10-30
+
+### 🔊 Controlador Completo de Volume no Player do Hino do Timão
+
+Nesta versão, atendemos à solicitação de aprimoramento da experiência musical do torcedor, adicionando controle granular de volume:
+
+### ✨ Adicionado e Aprimorado (Added & Enhanced)
+- **Controlador de Volume com Slider e Mute:**
+  - Inserção de controle deslizante interativo (`<input type="range">`) estilizado nas cores do Corinthians com trilha de preenchimento dinâmico (`--vol-pct`) em gradiente dourado/vermelho.
+  - Ajuste de volume contínuo de 0% a 100%, permitindo diminuir ou aumentar o som com facilidade.
+  - Botão de alternância rápida de mudo (*mute/unmute*) que armazena na memória o volume anterior e o restaura com precisão ao desmutar.
+  - Ícones sonoros reativos em tempo real (`fa-volume-high` para volume >= 50%, `fa-volume-low` para volume moderado/baixo e `fa-volume-xmark` quando silenciado ou em 0%).
+  - Suporte a rolagem rápida via scroll do mouse (*wheel listener*) diretamente sobre a área de volume.
+  - Calibração de layout responsivo do card flutuante em dispositivos móveis e telas estreitas (< 380px).
+
+---
+
 ## [3.6.1] - 2026-10-30
 
 ### 🏟️ Fotos de Yokohama Lotado, Crédito Oficial da SAFIEL e Correção Estrita do Feed de Jogos

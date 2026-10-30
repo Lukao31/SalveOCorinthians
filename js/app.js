@@ -1865,6 +1865,8 @@ function initHinoPlayer() {
   const playIcon = document.getElementById('hino-icon-play');
   const muteBtn = document.getElementById('hino-btn-mute');
   const volumeIcon = document.getElementById('hino-icon-volume');
+  const volumeSlider = document.getElementById('hino-volume-slider');
+  const volumeControl = document.getElementById('hino-volume-control');
   const minimizeBtn = document.getElementById('hino-btn-minimize');
   const progressWrap = document.getElementById('hino-progress-wrap');
   const progressFill = document.getElementById('hino-progress-fill');
@@ -1873,6 +1875,9 @@ function initHinoPlayer() {
   const miniVinyl = document.getElementById('hino-mini-vinyl');
 
   if (!audio || !playerContainer) return;
+
+  // Estado e persistência de volume
+  let lastVolume = 1.0;
 
   function formatTime(seconds) {
     if (isNaN(seconds) || seconds < 0) return '0:00';
@@ -1925,6 +1930,61 @@ function initHinoPlayer() {
     playerContainer.classList.remove('minimized');
   }
 
+  // Atualização visual do controlador de volume (ícone, slider e percentual de preenchimento)
+  function updateVolumeUI(volumePercent, isMuted) {
+    const val = isMuted ? 0 : volumePercent;
+    if (volumeSlider) {
+      volumeSlider.value = val;
+      volumeSlider.style.setProperty('--vol-pct', `${val}%`);
+      const titleText = isMuted ? 'Volume: Mutado (Clique no ícone para desmutar)' : `Volume: ${val}% (Ajuste ou role com o mouse)`;
+      volumeSlider.setAttribute('title', titleText);
+      volumeSlider.setAttribute('aria-valuenow', val);
+    }
+    if (volumeControl) {
+      volumeControl.setAttribute('title', isMuted ? 'Volume: Mutado (Clique para ativar o som)' : `Volume: ${val}%`);
+    }
+    if (volumeIcon) {
+      if (isMuted || val === 0) {
+        volumeIcon.className = 'fa-solid fa-volume-xmark';
+      } else if (val < 50) {
+        volumeIcon.className = 'fa-solid fa-volume-low';
+      } else {
+        volumeIcon.className = 'fa-solid fa-volume-high';
+      }
+    }
+  }
+
+  // Ajustar volume de forma numérica (0 a 100)
+  function setVolume(pct) {
+    const clampedPct = Math.max(0, Math.min(100, Math.round(pct)));
+    if (clampedPct === 0) {
+      audio.muted = true;
+      audio.volume = 0;
+      updateVolumeUI(0, true);
+    } else {
+      audio.muted = false;
+      audio.volume = clampedPct / 100;
+      lastVolume = audio.volume;
+      updateVolumeUI(clampedPct, false);
+    }
+  }
+
+  // Alternar mudo preservando o nível anterior
+  function toggleMute() {
+    if (audio.muted || audio.volume === 0) {
+      audio.muted = false;
+      const restoreVol = lastVolume > 0.05 ? lastVolume : 1.0;
+      audio.volume = restoreVol;
+      const pct = Math.round(restoreVol * 100);
+      updateVolumeUI(pct, false);
+    } else {
+      lastVolume = audio.volume > 0 ? audio.volume : 1.0;
+      audio.muted = true;
+      audio.volume = 0;
+      updateVolumeUI(0, true);
+    }
+  }
+
   // Alternar play/pause ou restaurar pelo botão da barra de navegação no header
   if (navBtn) {
     navBtn.addEventListener('click', () => {
@@ -1954,14 +2014,43 @@ function initHinoPlayer() {
     });
   }
 
-  // Mute / Unmute
+  // Botão de Mudo / Desmudo
   if (muteBtn) {
-    muteBtn.addEventListener('click', () => {
-      audio.muted = !audio.muted;
-      if (volumeIcon) {
-        volumeIcon.className = audio.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
-      }
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMute();
     });
+  }
+
+  // Slider de Volume Interativo
+  if (volumeSlider) {
+    // Inicialização segura no volume 100%
+    audio.volume = 1.0;
+    audio.muted = false;
+    updateVolumeUI(100, false);
+
+    volumeSlider.addEventListener('input', (e) => {
+      e.stopPropagation();
+      const val = parseFloat(e.target.value);
+      setVolume(val);
+    });
+
+    volumeSlider.addEventListener('change', (e) => {
+      e.stopPropagation();
+      const val = parseFloat(e.target.value);
+      setVolume(val);
+    });
+  }
+
+  // Ajuste rápido de volume via Scroll do mouse (Wheel) sobre o controle de volume
+  if (volumeControl) {
+    volumeControl.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const currentVal = parseInt(volumeSlider ? volumeSlider.value : (audio.volume * 100), 10);
+      const delta = e.deltaY < 0 ? 5 : -5;
+      setVolume(currentVal + delta);
+    }, { passive: false });
   }
 
   // Atualização da timeline e scrubbing
