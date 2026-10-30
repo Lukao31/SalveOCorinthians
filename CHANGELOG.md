@@ -13,6 +13,27 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.6.1] - 2026-10-30
+
+### 🏟️ Fotos de Yokohama Lotado, Crédito Oficial da SAFIEL e Correção Estrita do Feed de Jogos
+
+Nesta versão, realizamos os refinamentos visuais e contextuais solicitados:
+
+### ✨ Modificado e Aprimorado (Changed & Enhanced)
+- **Invasão do Japão de 2012 (Estádio de Yokohama Lotado pela Fiel):**
+  - Substituição das duas primeiras fotos da Galeria Histórica da Invasão de 2012 por registros fotográficos reais e de alta definição (1920x1080) do **Estádio Internacional de Yokohama completamente lotado pela torcida do Corinthians** na final contra o Chelsea:
+    1. *O Mar Alvinegro em Yokohama:* Vista panorâmica das arquibancadas tomadas por mais de 30 mil fiéis com o histórico bandeirão da Gaviões da Fiel cobrindo múltiplos anéis do estádio (Acervo FolhaPress / UOL Esporte, 16/12/2012).
+    2. *A Festa da Fiel nas Arquibancadas de Yokohama:* A torcida em apoteose vibrando intensamente no estádio com faixas de caravanas de todo o planeta, balões e cantos ininterruptos (Acervo FolhaPress / UOL Esporte, 16/12/2012).
+- **Projetos de Salvação e Governança (Crédito Oficial SAFIEL):**
+  - Adicionado elemento dedicado de crédito e fonte oficial logo abaixo do banner do projeto (`.safiel-banner-credit`): *"Fonte: Identidade Oficial do Movimento SAFiel (@safiel1910 / safielja.com.br)"*, em conformidade total com as diretrizes de atribuição.
+  - Implementação do arquivo vetorial oficial SVG da SAFiel (`logo-safiel.svg`) no card institucional.
+- **Últimos Jogos e Desempenho do Timão (Feed Fiel e Cronológico):**
+  - Remoção dos jogos extras que haviam sido inseridos fora da ordem cronológica recente.
+  - Manutenção estrita da sequência real dos confrontos do Corinthians (Mirassol, Vasco da Gama, Vitória, Derby Paulista contra o Palmeiras — com o escudo rival em preto e branco sem a cor verde — e Internacional).
+  - Preservação da lógica dinâmica condicional no motor JavaScript (`getRivalInfo`) para aplicação automática das regras de humor para Palmeiras, São Paulo e Santos em qualquer confronto.
+
+---
+
 ## [3.6.0] - 2026-10-30
 
 ### 🎨 Ajustes Gráficos Gerais, Identidade SAFIEL Oficial, Rivais com Humor e Invasões
