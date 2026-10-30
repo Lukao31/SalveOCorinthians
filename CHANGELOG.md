@@ -13,6 +13,41 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 - `Segurança` (Security): para melhorias de segurança ou proteção de dados.
 - `Removido` (Removed): para recursos descontinuados.
 
+## [3.6.0] - 2026-10-30
+
+### 🎨 Ajustes Gráficos Gerais, Identidade SAFIEL Oficial, Rivais com Humor e Invasões
+
+Nesta versão, realizamos uma série de aprimoramentos gráficos, correções de enquadramento e refinamentos visuais pedidos pela torcida:
+
+### ✨ Modificado e Aprimorado (Changed & Enhanced)
+- **Cabeçalho Simétrico e Proteção de Range:**
+  - Ajuste de simetria dimensional entre o botão do Hino do Timão e o botão da SAFIEL (altura de 38px, padding e tipografia padronizados).
+  - Elevação e calibração do breakpoint do menu de navegação para \`1380px\`, impedindo que os 10 links e botões de ação transbordem o range da tela em qualquer monitor ou notebook.
+- **Balanço Financeiro (Ano de Referência & Atualização Contínua):**
+  - Inclusão de nota oficial destacada no rodapé da seção (`.financas-nota-rodape`) citando os anos-base (Exercício 2024 / Prévia 2025–2026).
+  - Observação explícita de compromisso com a atualização contínua assim que novos demonstrativos contábeis, auditorias ou relatórios do CORI/COF forem publicados.
+- **Feed de Últimos Jogos (Apenas Siglas):**
+  - Exibição direta das siglas oficiais dos clubes (ex: Corinthians -> **COR**, Palmeiras -> **PAL**, São Paulo -> **SPFC**, Santos -> **SAN**, etc.) mantendo o nome por extenso no tooltip de acessibilidade.
+- **Humor Alvinegro com os Rivais:**
+  - **Palmeiras:** Escudo 100% em preto e branco (proibido verde no território corinthiano).
+  - **São Paulo:** Escudo virado de cabeça para baixo (180°).
+  - **Santos:** Escudo virado de cabeça para baixo (180°).
+  - Adição dos clássicos Majestoso (COR 2 x 1 SPFC) e Clássico Alvinegro (SAN 0 x 2 COR) no feed com tratamento visual bem-humorado.
+- **Identidade Oficial da SAFIEL:**
+  - Substituição da arte anterior pela marca registrada oficial do movimento (*SAFIEL ® SOCIEDADE DO POVO*), extraída das fontes oficiais do projeto (*safielja.com.br / safiel.com.br*), perfeitamente integrada no banner em alta definição.
+- **Verificação Lexicográfica de "Ídola":**
+  - Consulta ao Vocabulário Ortográfico da Língua Portuguesa (VOLP) da Academia Brasileira de Letras (ABL), confirmando que a palavra **"ídola"** é registrada e reconhecida como substantivo feminino regular de "ídolo". A denominação foi mantida com total rigor linguístico.
+- **Galeria da Invasão 2000 (Taça do Mundial):**
+  - Correção do enquadramento e aplicação de \`object-fit: contain\` com proporção 16:9 limpa, garantindo visualização integral da taça oficial sem nenhum corte vertical ou horizontal.
+- **Galeria da Invasão 2012 (Japão):**
+  - Substituição das duas fotos iniciais por registros autênticos de fotojornalismo em Full HD:
+    1. A Fiel Torcida ocupando em massa as ruas de Yokohama com bateria e bandeirões;
+    2. O Estádio Internacional de Yokohama completamente tomado pelo mar alvinegro na final contra o Chelsea.
+- **Fontes de Pesquisa e Referência:**
+  - Inclusão do **Site Oficial do Sport Club Corinthians Paulista** (*corinthians.com.br*) entre os canais institucionais consultados.
+
+---
+
 ## [3.5.1] - 2026-10-28
 
 ### 🖼️ Expansão Fotográfica e Legenda Histórica da Memória Visual da Fundação (1910)

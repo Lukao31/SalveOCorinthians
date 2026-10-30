@@ -329,21 +329,35 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
+.btn-safiel-header,
+.btn-hino-header {
+  height: 38px;
+  min-height: 38px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0 0.95rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 1;
+}
+
 .btn-safiel-header {
   background: #ffffff;
   color: #000000;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  padding: 0.6rem 1.2rem;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  transition: var(--transition-fast);
   border: 1px solid #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.22);
 }
 
 .btn-safiel-header:hover {
@@ -351,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   border-color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.35);
 }
 
 .mobile-toggle {
@@ -1102,8 +1116,8 @@ h1, h2, h3, h4, h5, h6 {
 .safiel-banner-img {
   width: 100%;
   height: 480px;
-  object-fit: cover;
-  filter: contrast(1.15) grayscale(100%);
+  object-fit: contain;
+  background: #09090c;
   transition: var(--transition-normal);
 }
 
@@ -4018,7 +4032,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .invasao-foto-destaque {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: radial-gradient(circle, #1a1a1f 0%, #08080a 100%);
   display: block;
   transition: opacity 0.3s ease;
 }
@@ -4533,21 +4548,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 /* Botão no Header */
 .btn-hino-header {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #f5f5f5;
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.5rem 0.9rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.25s ease;
   backdrop-filter: blur(8px);
 }
 
@@ -6125,8 +6128,8 @@ html, body {
   }
 }
 
-/* Breakpoint Aperfeiçoado do Menu Mobile (1180px para acomodar os 10 links) */
-@media (max-width: 1180px) {
+/* Breakpoint do Menu Mobile (1380px para acomodar 10 links + botões simétricos sem transbordar) */
+@media (max-width: 1380px) {
   .nav-menu {
     position: fixed;
     top: 72px;
@@ -6258,5 +6261,114 @@ html, body {
   .btn-safiel-header {
     padding: 0.45rem 0.75rem;
     font-size: 0.72rem;
+  }
+}
+
+/* ==========================================================================
+   Ajustes Gráficos: Logos dos Rivais com Humor & Nota do Balanço Financeiro
+   ========================================================================== */
+
+/* Rivais nos Jogos: P&B para o Palmeiras (Sem Verde) e Inversão de Cabeça para Baixo (SPFC & Santos) */
+.jogo-team-logo.rival-palmeiras {
+  filter: grayscale(100%) contrast(1.35) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+}
+
+.jogo-team-logo.rival-saopaulo,
+.jogo-team-logo.rival-santos {
+  transform: rotate(180deg);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+}
+
+.jogo-card:hover .jogo-team-logo.rival-saopaulo,
+.jogo-card:hover .jogo-team-logo.rival-santos {
+  transform: rotate(180deg) scale(1.12);
+}
+
+/* Nota Oficial no Rodapé do Balanço Financeiro */
+.financas-nota-rodape {
+  margin-top: 2.75rem;
+  background: linear-gradient(135deg, rgba(20, 20, 24, 0.95) 0%, rgba(12, 12, 14, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 4px solid #eab308;
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.financas-nota-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.financas-nota-badge {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #fde047;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.financas-nota-status {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.financas-nota-texto {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e4e4e7;
+  margin: 0;
+}
+
+.financas-nota-obs {
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px dashed rgba(234, 179, 8, 0.35);
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #fef08a;
+}
+
+.financas-nota-obs i {
+  color: #eab308;
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Ajustes no cabeçalho para telas médias e celulares */
+@media (max-width: 640px) {
+  .nav-actions {
+    gap: 0.4rem;
+  }
+  .btn-hino-header,
+  .btn-safiel-header {
+    height: 34px;
+    min-height: 34px;
+    padding: 0 0.7rem;
+    font-size: 0.7rem;
+  }
+  .btn-hino-header .btn-hino-text {
+    display: none;
   }
 }

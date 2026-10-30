@@ -1065,6 +1065,30 @@ function renderIntervencaoJudicial() {
 /* ==========================================================================
    10. Feed de Últimos Jogos do Corinthians
    ========================================================================== */
+function getRivalInfo(team) {
+  const nomeLower = (team?.nome || '').toLowerCase();
+  const escudo = (team?.escudo || '').toUpperCase();
+  if (nomeLower.includes('palmeiras') || escudo === 'PAL') {
+    return {
+      cssClass: 'rival-palmeiras',
+      humorTitle: 'Palmeiras (Sem Verde - Proibido Verde no Território Alvinegro)'
+    };
+  }
+  if (nomeLower.includes('são paulo') || nomeLower.includes('sao paulo') || escudo === 'SPFC') {
+    return {
+      cssClass: 'rival-saopaulo',
+      humorTitle: 'São Paulo (De Cabeça para Baixo)'
+    };
+  }
+  if (nomeLower.includes('santos') || escudo === 'SAN') {
+    return {
+      cssClass: 'rival-santos',
+      humorTitle: 'Santos (De Cabeça para Baixo)'
+    };
+  }
+  return { cssClass: '', humorTitle: team?.nome || '' };
+}
+
 function renderUltimosJogos() {
   const container = document.getElementById('jogos-feed-grid');
   if (!container) return;
@@ -1092,6 +1116,13 @@ function renderUltimosJogos() {
       ? 'Acompanhar Pré-Jogo & Transmissão'
       : 'Assistir Melhores Momentos no YouTube';
 
+    const mandanteRival = getRivalInfo(jogo.mandante);
+    const visitanteRival = getRivalInfo(jogo.visitante);
+
+    // Sigla dos times (ex: Corinthians -> COR, Palmeiras -> PAL, São Paulo -> SPFC, etc.)
+    const siglaMandante = jogo.mandante.escudo || jogo.mandante.nome;
+    const siglaVisitante = jogo.visitante.escudo || jogo.visitante.nome;
+
     return `
     <article class="jogo-card ${jogo.status === 'Agendado' ? 'jogo-card-agendado' : ''}">
       <div>
@@ -1110,8 +1141,8 @@ function renderUltimosJogos() {
         <div class="jogo-scoreboard">
           <div class="jogo-team">
             <div class="jogo-team-wrap">
-              ${jogo.mandante.logo ? `<img src="${jogo.mandante.logo}" alt="Escudo do ${jogo.mandante.nome}" class="jogo-team-logo" loading="lazy">` : ''}
-              <span class="jogo-team-name">${jogo.mandante.nome}</span>
+              ${jogo.mandante.logo ? `<img src="${jogo.mandante.logo}" alt="Escudo do ${jogo.mandante.nome}" class="jogo-team-logo ${mandanteRival.cssClass}" title="${mandanteRival.humorTitle}" loading="lazy">` : ''}
+              <span class="jogo-team-name" title="${jogo.mandante.nome}">${siglaMandante}</span>
             </div>
           </div>
           <div class="jogo-score-box">
@@ -1119,13 +1150,13 @@ function renderUltimosJogos() {
           </div>
           <div class="jogo-team">
             <div class="jogo-team-wrap">
-              ${jogo.visitante.logo ? `<img src="${jogo.visitante.logo}" alt="Escudo do ${jogo.visitante.nome}" class="jogo-team-logo" loading="lazy">` : ''}
-              <span class="jogo-team-name">${jogo.visitante.nome}</span>
+              ${jogo.visitante.logo ? `<img src="${jogo.visitante.logo}" alt="Escudo do ${jogo.visitante.nome}" class="jogo-team-logo ${visitanteRival.cssClass}" title="${visitanteRival.humorTitle}" loading="lazy">` : ''}
+              <span class="jogo-team-name" title="${jogo.visitante.nome}">${siglaVisitante}</span>
             </div>
           </div>
         </div>
 
-        <!-- Autores dos Gols e Assistências Claramente Discriminados -->
+        <!-- Autores dos Gols e Assistências -->
         <div class="jogo-gols-assistencias">
           <div class="jogo-lance-row">
             <span class="lance-label"><i class="fa-solid fa-futbol"></i> Gols:</span>

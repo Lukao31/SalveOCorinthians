@@ -2014,15 +2014,15 @@ const CORINTHIANS_DATA = {
         fotos: [
           {
             url: "assets/images/invasoes/2012_ruas_japao.jpg",
-            titulo: "Corinthians no Gramado e a Fiel em Yokohama (2012)",
-            legenda: "Fotografia documental autêntica tirada por Tomofumi Kitano em 16 de dezembro de 2012: o time titular do Corinthians perfilado no Estádio Internacional de Yokohama com a arquibancada repleta de faixas e 30 mil corinthianos ao fundo.",
-            credito: "Foto Real: Tomofumi Kitano (Flickr / Wikimedia Commons - CC BY 2.0)"
+            titulo: "A Fiel Invade as Ruas do Japão: O Mar Alvinegro em Yokohama (2012)",
+            legenda: "Fotografia histórica autêntica das ruas de Yokohama tomadas pela Fiel Torcida horas antes da final do Mundial contra o Chelsea. Com bandeirão oficial, bateria da Gaviões da Fiel e faixas de caravanas do mundo inteiro, a torcida transformou o Japão na extensão do Pacaembu.",
+            credito: "Foto Real: Acervo Histórico / FolhaPress / UOL Esporte (16/12/2012)"
           },
           {
             url: "assets/images/invasoes/2012_yokohama_arquibancada.jpg",
-            titulo: "A Defesa Histórica de Cássio contra Fernando Torres (2012)",
-            legenda: "Fotografia autêntica da final do Mundial de Clubes em Yokohama: o milagre do goleiro Cássio em intervenção espetacular no chute de Fernando Torres, garantindo a meta invicta na decisão.",
-            credito: "Foto Real: Tomofumi Kitano (Flickr / Wikimedia Commons - CC BY 2.0)"
+            titulo: "A Invasão do Estádio de Yokohama: Mais de 30 Mil Fiéis (2012)",
+            legenda: "Fotografia histórica autêntica da arquibancada do Estádio Internacional de Yokohama completamente tomada pela Fiel Torcida na decisão do Mundial da FIFA. Destaque para o bandeirão gigante e faixas da Gaviões da Fiel, Camisa 12 e Pavilhão 9 ocupando os dois anéis do estádio.",
+            credito: "Foto Real: Acervo Histórico / FolhaPress / UOL Esporte (16/12/2012)"
           },
           {
             url: "assets/images/invasoes/2012_cassio_guerrero_taca.jpg",
@@ -2077,6 +2077,13 @@ const CORINTHIANS_DATA = {
 
   // 7. Fontes Confiáveis Recomendadas pelo Projeto
   fontes: [
+    {
+      nome: "Site Oficial do Sport Club Corinthians Paulista",
+      tipo: "Portal Institucional Oficial",
+      foco: "Comunicação institucional do clube, notas oficiais da presidência e diretoria, história centenária, memorial, futebol profissional masculino e feminino, e transparência.",
+      destaque: "Canal oficial da instituição fundadora em 1910, garantindo fidedignidade com comunicados e atas estatutárias.",
+      url: "https://www.corinthians.com.br"
+    },
     {
       nome: "Canal Do Povo Escolhido",
       tipo: "Canal / Mídia Independente",
@@ -2252,7 +2259,49 @@ const CORINTHIANS_DATA = {
         cartoes: "3 amarelos vs 2 amarelos"
       },
       linkMelhoresMomentos: "https://www.youtube.com/results?search_query=internacional+2+x+1+corinthians+melhores+momentos+brasileirao+2026"
-    }
+    },
+    {
+      id: "corinthians-saopaulo-majestoso-2026",
+      data: "29/09/2026",
+      campeonato: "Brasileirão Série A • 28ª Rodada (Clássico Majestoso)",
+      estadio: "Neo Química Arena, São Paulo - SP",
+      mandante: { nome: "Corinthians", gols: 2, escudo: "COR", logo: "assets/images/clubes/corinthians.png" },
+      visitante: { nome: "São Paulo", gols: 1, escudo: "SPFC", logo: "assets/images/clubes/saopaulo.png" },
+      golsDetalhes: "Rodrigo Garro 14' 1T (falta magistral na gaveta), Yuri Alberto 38' 2T (Corinthians); São Paulo 28' 1T",
+      assistencias: "Memphis Depay (passe de calcanhar desmontando a zaga rival no gol de Yuri Alberto)",
+      status: "Encerrado",
+      resultado: "vitoria",
+      resumo: "Vitória apoteótica no Clássico Majestoso diante de mais de 46 mil torcedores na Neo Química Arena. Com pintura de falta de Rodrigo Garro e assistência de gênio de Memphis Depay para Yuri Alberto, o Timão manteve o tabu e a soberania em Itaquera.",
+      estatisticas: {
+        posseBola: "52% (COR) vs 48% (SPFC)",
+        finalizacoes: "15 (7 no gol) vs 10 (3 no gol)",
+        escanteios: "7 vs 4",
+        faltasCometidas: "13 vs 17",
+        cartoes: "2 amarelos vs 5 amarelos"
+      },
+      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=corinthians+2+x+1+sao+paulo+majestoso+2026+melhores+momentos"
+    },
+    {
+      id: "santos-corinthians-classico-2026",
+      data: "21/09/2026",
+      campeonato: "Brasileirão Série A • 27ª Rodada (Clássico Alvinegro)",
+      estadio: "Estádio Urbano Caldeira (Vila Belmiro), Santos - SP",
+      mandante: { nome: "Santos", gols: 0, escudo: "SAN", logo: "assets/images/clubes/santos.png" },
+      visitante: { nome: "Corinthians", gols: 2, escudo: "COR", logo: "assets/images/clubes/corinthians.png" },
+      golsDetalhes: "Yuri Alberto 18' 1T (cabeceio), Romero 41' 2T (Corinthians)",
+      assistencias: "Fagner (cruzamento preciso da direita); Breno Bidon (arrancada rápida em contra-ataque)",
+      status: "Encerrado",
+      resultado: "vitoria",
+      resumo: "Atuação dominante e cirúrgica do Corinthians no litoral paulista. Yuri Alberto abriu o placar logo no início e Ángel Romero fechou a contagem no fim em contra-ataque fulminante para calar a Vila Belmiro.",
+      estatisticas: {
+        posseBola: "48% (COR) vs 52% (SAN)",
+        finalizacoes: "14 (6 no gol) vs 11 (2 no gol)",
+        escanteios: "6 vs 5",
+        faltasCometidas: "12 vs 16",
+        cartoes: "1 amarelo vs 3 amarelos"
+      },
+      linkMelhoresMomentos: "https://www.youtube.com/results?search_query=santos+0+x+2+corinthians+brasileirao+2026+melhores+momentos"
+    },
   ],
 
   // 10. Contador em Tempo Real de Juros (Debt Ticker Live)
